@@ -1,0 +1,137 @@
+/*
+ * Interface-layer theme (Sunny Cobalt). Variables are injected by ThemeScope; this file only
+ * consumes them. Road-control materials (sign faces, paint, signal lenses) are never styled here.
+ */
+.ottie-theme {
+  font-family: var(--ottie-font-brand);
+  font-size: calc(1rem * var(--ottie-text-scale, 1));
+  line-height: 1.5;
+  color: var(--ottie-text-ink);
+  background: var(--ottie-surface-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ottie-theme *,
+.ottie-theme *::before,
+.ottie-theme *::after {
+  box-sizing: border-box;
+}
+
+/* Type roles: sizes are em-based so the learner text scale applies uniformly. */
+.ottie-type-question {
+  font-size: 1.5em; /* 24px */
+  line-height: 1.3334; /* 32px */
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.ottie-type-explanation {
+  font-size: 1.125em; /* 18px */
+  line-height: 1.5; /* 27px */
+  font-weight: 400;
+  margin: 0;
+}
+
+.ottie-type-control {
+  font-size: 1em; /* 16px */
+  line-height: 1.5; /* 24px */
+  font-weight: 600;
+}
+
+.ottie-type-metadata {
+  font-size: 0.8125em; /* 13px */
+  line-height: 1.385; /* 18px */
+  font-weight: 500;
+  color: var(--ottie-text-muted);
+}
+
+/* Shared control primitives */
+.ottie-btn {
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  min-height: var(--ottie-min-hit);
+  min-width: var(--ottie-min-hit);
+  padding: 0.6em 1em;
+  border-radius: 0.75em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--ottie-motion-duration) ease-out,
+    border-color var(--ottie-motion-duration) ease-out;
+  touch-action: manipulation;
+}
+
+.ottie-btn:focus-visible,
+.ottie-choice:focus-visible,
+.ottie-term:focus-visible {
+  outline: 3px solid var(--ottie-brand-action);
+  outline-offset: 2px;
+}
+
+.ottie-btn--primary {
+  background: var(--ottie-brand-action);
+  color: var(--ottie-surface-white);
+  width: 100%;
+}
+
+.ottie-btn--primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ottie-btn--quiet {
+  background: var(--ottie-surface-white);
+  color: var(--ottie-text-ink);
+  border-color: color-mix(in srgb, var(--ottie-text-ink) 18%, transparent);
+}
+
+.ottie-btn--quiet[aria-pressed='true'] {
+  background: var(--ottie-brand-action);
+  border-color: var(--ottie-brand-action);
+  color: var(--ottie-surface-white);
+}
+
+/* Inline glossary term slot: a real button so it is focusable and cannot be a choice. */
+.ottie-term {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0 0.05em;
+  margin: 0 -0.05em;
+  border-radius: 0.2em;
+  text-decoration: underline dashed;
+  text-decoration-color: var(--ottie-brand-action);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  cursor: help;
+  display: inline;
+  min-height: 0;
+  line-height: inherit;
+}
+
+.ottie-term:hover {
+  background: var(--ottie-brand-mint);
+}
+
+.ottie-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ottie-theme * {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
