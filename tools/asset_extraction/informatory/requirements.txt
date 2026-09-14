@@ -1,0 +1,9 @@
+PyMuPDF==1.26.3
+Pillow==11.3.0
+ruff==0.12.9
+mypy==1.17.1
+types-Pillow==10.2.0.20240822
+svgpathtools==1.7.1
+numpy==2.2.6
+scipy==1.15.3
+svgwrite==1.4.3

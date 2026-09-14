@@ -1,0 +1,90 @@
+slug,name,source,pdf_page,x0,y0,x1,y1,kind
+bus-lane-full-day-source-hours,Full-day bus lane source hours board,TFI,3,330,83,506,281,sign_face
+bus-lane-normal-hours,Normal bus lane hours board,TFI,3,657,83,821,317,sign_face
+one-way-left,One-way traffic left,TFI,3,924,97,1098,271,sign_face
+one-way-right,One-way traffic right,TFI,3,123,421,298,596,sign_face
+no-through-road,No through road,TFI,3,380,461,554,593,sign_face
+no-through-road-right,No through road on right,TFI,3,646,461,821,593,sign_face
+no-through-road-left,No through road on left,TFI,3,924,461,1098,593,sign_face
+pedestrian-crossing,Pedestrian crossing,TFI,4,184,85,359,260,sign_face
+one-way-ahead,One-way traffic ahead,TFI,4,535,85,709,260,sign_face
+u-turn,U-turn facility ahead,TFI,4,884,85,1058,260,sign_face
+passenger-pick-up-point,Passenger Pick-Up Point,TFI,4,538,422,713,597,sign_face
+expressway-start,Expressway start,TFI,5,374,299,548,473,sign_face
+expressway-end,Expressway end,TFI,5,790,298,965,472,sign_face
+end-of-expressway,End Of Expressway,TFI,6,137,103,506,313,sign_face
+end-of-expressway-500m,End Of Expressway 500m,TFI,6,710,87,1079,378,sign_face
+dual-carriageway-ahead,Dual Carriageway Ahead,TFI,6,188,460,426,640,sign_face
+red-light-camera,Red Light Camera,TFI,6,506,416,669,595,sign_face
+keep-left-unless-overtaking,Keep Left Unless Overtaking,TFI,6,819,462,1031,642,sign_face
+overpass-left,Overpass left,TFI,7,246,164,421,339,sign_face
+taxi-drop-off-point,Taxi drop-off point,TFI,7,239,470,414,602,sign_face
+underpass-left,Underpass left,TFI,7,766,156,941,331,sign_face
+end-of-restricted-zone,End Of Restricted Zone,TFI,7,781,469,957,603,sign_face
+concealed-exit-ahead,Concealed Exit Ahead,TFI,8,195,142,370,274,sign_face
+queue-here-for-taxi-left,Queue Here For Taxi left,TFI,8,535,135,710,310,sign_face
+bicycle-stand,Bicycle stand,TFI,8,194,461,370,595,sign_face
+u-turning-vehicles-keep-right,U-Turning Vehicles KEEP RIGHT,TFI,8,520,459,694,591,sign_face
+speed-regulating-strips-ahead,Speed Regulating Strips Ahead,TFI,8,827,198,1004,460,sign_face
+no-parking-bicycles,No parking of bicycles,TFI,9,187,71,363,332,sign_face
+pedestrians-left,Pedestrians left,TFI,9,513,158,687,291,sign_face
+rochor-road-keep-left,Rochor Rd KEEP LEFT,TFI,9,853,177,1059,299,sign_face
+speed-check-area,Speed Check Area,TFI,9,188,468,362,642,sign_face
+rain-shelter-left,Rain shelter left,TFI,9,513,468,687,642,sign_face
+police-post-right,Police Post right with source logo placeholder,TFI,9,854,405,1030,494,sign_face
+pek-kio-community-centre-right,Pek Kio Community Centre right with source logo placeholder,TFI,9,854,576,1088,646,sign_face
+direction-woodlands-admiralty-sembawang,Woodlands Admiralty BKE Sembawang advance board,TFI,10,149,83,429,353,sign_face
+direction-woodlands-mandai-sembawang,Woodlands Rd Mandai Rd Sembawang Way advance board,TFI,10,557,71,832,317,sign_face
+direction-woodlands-road-left,Woodlands Rd left,TFI,10,903,71,1094,128,sign_face
+direction-bke-woodlands-mandai-left,BKE Woodlands Rd Mandai Rd left,TFI,10,871,184,1094,334,sign_face
+direction-bke-woodlands-mandai-right,BKE Woodlands Rd Mandai Rd right,TFI,10,891,387,1114,537,sign_face
+direction-ang-mo-kio-cte-pie,Ang Mo Kio CTE SLE TPE PIE advance board,TFI,10,143,407,480,671,sign_face
+direction-woodlands-centre-bke,Woodlands Centre Rd BKE Mandai Woodlands Ave St board,TFI,10,557,354,840,635,sign_face
+exit-9,EXIT 9 marker,TFI,11,172,166,255,218,sign_face
+direction-clementi-road-left,Clementi Rd left,TFI,11,123,217,303,275,sign_face
+direction-clementi-road-exit9-300m,Clementi Rd EXIT 9 300m,TFI,11,366,166,566,257,sign_face
+distance-insert-600m,600m insert A detail,TFI,11,612,164,768,275,layout_reference
+direction-punggol-sengkang-pie-map,PIE Punggol Rd Sengkang East Rd Punggol Way map board,TFI,11,847,89,1101,413,sign_face
+direction-clementi-changi-gantry,Clementi Rd EXIT 9 1000m Changi gantry board,TFI,11,162,461,858,588,sign_face
+direction-clementi-pie-radius-reference,Clementi Ave 6 PIE exit 11 300m corner-radius illustration,TFI,12,226,101,612,341,layout_reference
+pie-panel-font-factor-6,PIE expressway panel font factor 6,TFI,12,776,94,897,150,sign_face
+pie-panel-font-factor-10,PIE expressway panel font factor 10,TFI,12,744,199,936,284,sign_face
+pie-panel-font-factor-12,PIE expressway panel font factor 12,TFI,12,727,335,955,434,sign_face
+left-turn-green-arrow-ahead,Left Turn Green Arrow Ahead,TFI,13,96,71,271,416,sign_face
+bus-signal-bus-bay-only,B-Signal For Buses On Bus Bay Only,TFI,13,96,445,425,664,sign_face
+bus-signal-leftmost-lane-only,B-Signal For Buses On Left Most Lane Only,TFI,13,731,388,1012,660,sign_face
+motorcycles-slower-traffic-keep-left,Motorcycles and Slower Traffic Keep Left,TFI,14,579,290,1101,639,sign_face
+speed-camera-ahead,Speed Camera Ahead,TFI,15,419,94,735,630,sign_face
+restricted-zone-right,Restricted Zone right,TFI,16,203,152,379,286,sign_face
+right-turn-lane-ahead,Right Turn Lane Ahead,TFI,16,516,70,691,330,sign_face
+right-turn-lanes-ahead,Right Turn Lanes Ahead,TFI,16,808,70,984,330,sign_face
+keep-safe-distance,Keep A Safe Distance From Vehicle In Front,TFI,16,283,413,629,625,sign_face
+do-not-drive-road-shoulder,Do Not Drive On Road Shoulder,TFI,16,735,411,913,610,sign_face
+pedestrian-instructions-425mm,Pedestrian crossing instruction board 425mm,TFI,17,117,46,262,654,sign_face
+pedestrian-instructions-525mm,Pedestrian crossing instruction board 525mm with longer crossing time,TFI,17,322,53,441,655,sign_face
+lane-indication-five-lanes-shared-right,Five lane indication with shared straight and right lane,TFI,17,634,124,1032,277,sign_face
+lane-indication-five-lanes-right-taper,Five lane indication with right taper,TFI,17,634,430,1032,620,sign_face
+cyclist-crossing-ahead-right,Cyclist crossing ahead facing right,TFI,18,368,70,543,244,sign_face
+cyclist-crossing-ahead-left,Cyclist crossing ahead facing left,TFI,18,368,427,543,602,sign_face
+congestion-expected,Congestion Expected,TFI,18,787,210,962,470,sign_face
+lane-indication-two-lanes-left-split,Two lane indication with left turn and shared straight-left,TFI,19,250,54,936,626,sign_face
+height-limit-4p5m-one-lane-reference,Height limit 4.5m one-lane board with placeholder sign,TFI,20,99,91,814,350,layout_reference
+height-limit-4p5m-multilane-reference,Height limit 4.5m multilane board with placeholder signs,TFI,20,93,404,1087,664,layout_reference
+curve-alignment-left-arterial,Curve alignment marker left for arterial road 600x750mm,TFI,21,145,86,319,303,sign_face
+object-marker-600mm,Object marker 600x600mm,TFI,21,483,86,657,260,sign_face
+object-marker-diagonal-down-right,Object marker 340x990mm with down-right stripes,TFI,21,801,86,900,370,sign_face
+object-marker-diagonal-down-left,Object marker 340x990mm with down-left stripes,TFI,21,1004,86,1103,370,sign_face
+curve-alignment-left-expressway,Curve alignment marker left for expressway 750x900mm,TFI,21,240,409,387,585,sign_face
+object-marker-900mm,Object marker 900x900mm,TFI,21,493,409,669,585,sign_face
+kerb-strip-marker-reference,Kerb strip marker arrangement,TFI,21,789,526,1057,562,layout_reference
+school-zone-400m,School Zone For 400m,TFS,2,140,145,316,322,sign_face
+except-school-buses,Except School Buses,TFS,2,423,179,598,312,sign_face
+vehicles-not-exceeding-2500kg,Vehicles Not Exceeding 2500kg In Unladen Weight,TFS,2,654,259,827,519,sign_face
+exceeding-2500kg,Exceeding 2500kg In Unladen Weight,TFS,2,139,467,313,642,sign_face
+except-authorised-vehicles,Except Authorised Vehicles,TFS,2,423,467,599,600,sign_face
+supplementary-arrow-right,Supplementary directional arrow right,TFS,2,923,275,1098,322,sign_face
+supplementary-arrow-both,Supplementary directional arrow both directions,TFS,2,923,404,1098,451,sign_face
+except-ambulance-police,Except Ambulance and Police Vehicles,TFS,3,304,144,479,320,sign_face
+way-out-right,WAY OUT right,TFS,3,719,144,894,277,sign_face
+way-out-ahead,WAY OUT ahead,TFS,3,306,460,481,594,sign_face
+except-loading-unloading,Except Loading Unloading,TFS,3,719,437,895,614,sign_face
