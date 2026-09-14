@@ -1,32 +1,23 @@
-# React + TypeScript + Vite
+# Drive with Ottie
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Mobile-first (PWA-ready) prep app for the Singapore Basic Theory Test. See `DESIGN.md` for the concept.
 
-Currently, two official plugins are available:
+## Develop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev          # http://localhost:5173 — open with a mobile viewport
+npm run check        # oxlint + content lint + tsc + vite build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+`npm run lint:content` verifies every `{{term}}` in a question stem has a matching sign / light / marking / vehicle in that question's `scene`, so nothing the question talks about is missing from the picture.
+
+## Layout
+
+- `src/content/` — `Term`, `Question`, `SceneSpec` types, seed questions (LTA Highway Code based, provisional) and glossary terms
+- `src/scene/` — SVG scene renderer: perspective road, markings, signs, traffic lights, vehicles, weather, time of day
+- `src/engine/run.ts` — question picking, warm-up on return, energy modes, mock paper
+- `src/state/progress.ts` — `localStorage` progress (road km, per-question / per-term stats, runs)
+- `src/screens/` — Home, Run, Rest Stop, Sign Book, Mock Exam, Scene Gallery (visual QA of all scenes)
+
+Requires Node 20.19+ or 22.12+ (Vite 8).
