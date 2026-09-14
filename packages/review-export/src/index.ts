@@ -5,4 +5,4 @@ export { buildWorldProvenance, type WorldProvenanceExport } from './provenance';
 export { composeContactSheet, type ContactSheetHeader, type ContactSheetTile } from './contact-sheet';
 export { buildReviewPack, type ReviewPack, type ReviewWorldPack } from './pack';
 export { assetChangeImpact, impactForAssets, type AssetImpactReport } from './impact';
-export { assessReleaseExport, type ReviewRefusalReason, type ReviewReleaseExport, type ReleaseRefusal } from './release';
+export { assessReleaseExport, assessWorldRelease, type ReviewRefusalReason, type ReviewReleaseExport, type ReleaseRefusal } from './release';

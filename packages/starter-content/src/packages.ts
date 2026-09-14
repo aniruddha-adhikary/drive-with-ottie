@@ -5,6 +5,7 @@ import {
   type DeepReadonly,
   type Explanation,
   type GenerationRequest,
+  type Generator,
   type Option,
   type Question,
   type SourceLocator,
@@ -23,7 +24,7 @@ import {
   topicId,
   worldId,
 } from '@ottie/contracts';
-import { createDevelopmentGenerator } from '@ottie/scenario-core';
+import { computeCanonicalHash } from '@ottie/scenario-core';
 import giveWayScenarioJson from '@ottie/content/scenarios/starter/give-way-t-junction.json';
 import stopScenarioJson from '@ottie/content/scenarios/starter/stop-development-access.json';
 import signalScenarioJson from '@ottie/content/scenarios/starter/signalised-crossroads-green-right-red.json';
@@ -38,10 +39,9 @@ import signalQuestionsJson from '@ottie/content/questions/starter/signalised-cro
  * them against the v1 contracts and brands the IDs. Nothing here promotes review status: every
  * package must carry the literal `reviewStatus: 'development'`.
  *
- * I1 owns the runtime boundary. The intended handoff is to move (not copy-and-fork) these schemas
- * next to `packages/scenario-validation/src/content-data.ts` (or the runtime content loader I1
- * chooses) and to feed `generationRequest()` output into the shared generator; see
- * content/scenarios/starter/README.md for the exact file shapes and remaining integration inputs.
+ * This is the runtime-owned home of the schemas (moved from tests/content by I1); tests, the review
+ * CLI and the web lesson all read the packages through it. See content/scenarios/starter/README.md
+ * for the file shapes.
  */
 
 /* ------------------------------------------------------------------------------------------------
@@ -233,18 +233,56 @@ export interface GeneratedWorld {
   readonly world: DeepReadonly<World>;
 }
 
-/** Generates every package world with the shared development generator; throws with diagnostics if any request is rejected. */
-export function generatePackageWorlds(pkg: ScenarioPackage): readonly GeneratedWorld[] {
-  const generator = createDevelopmentGenerator();
-  return pkg.worlds.map((authored) => {
-    const result = generator.generate(generationRequest(pkg, authored));
-    if (!result.ok) {
-      throw new Error(
-        `${pkg.id}/${authored.worldId} rejected: ${result.diagnostics.map((d) => `${d.code}: ${d.message}`).join('; ')}`,
-      );
-    }
-    return { pkg, authored, world: result.world };
-  });
+export class StarterContentError extends Error {
+  readonly code: 'generation_rejected' | 'canonical_hash_mismatch' | 'registry_hash_mismatch' | 'pin_mismatch' | 'source_conflict' | 'world_missing';
+  readonly detail: Readonly<Record<string, unknown>>;
+
+  constructor(code: StarterContentError['code'], message: string, detail: Readonly<Record<string, unknown>> = {}) {
+    super(message);
+    this.name = 'StarterContentError';
+    this.code = code;
+    this.detail = detail;
+  }
+}
+
+/**
+ * Generates one pinned request and refuses the result unless its canonical hash is exactly the
+ * authored pin. A mismatch is never patched over: the authored pin, the generator or an asset
+ * changed, and the message names the reproducible command that re-derives the pin for review.
+ */
+export function generatePinnedWorld(
+  generator: Generator,
+  request: GenerationRequest,
+  expectedHash: ReturnType<typeof sha256>,
+  label: string,
+): DeepReadonly<World> {
+  const result = generator.generate(request);
+  if (!result.ok) {
+    throw new StarterContentError(
+      'generation_rejected',
+      `${label} rejected: ${result.diagnostics.map((d) => `${d.code}: ${d.message}`).join('; ')}`,
+      { diagnostics: result.diagnostics },
+    );
+  }
+  const actual = result.world.provenance.canonicalHash ?? computeCanonicalHash(result.world);
+  if (actual !== expectedHash) {
+    throw new StarterContentError(
+      'canonical_hash_mismatch',
+      `${label}: generated canonical hash ${actual} does not match the authored pin ${expectedHash}; ` +
+        'inspect the diff with `npm run review:export -- pins` and re-derive the pins with `--write` only after reviewing why the world changed',
+      { expected: expectedHash, actual, worldId: request.id },
+    );
+  }
+  return result.world;
+}
+
+/** Generates every package world with the runtime generator, checking each authored canonical hash. */
+export function generatePackageWorlds(pkg: ScenarioPackage, generator: Generator): readonly GeneratedWorld[] {
+  return pkg.worlds.map((authored) => ({
+    pkg,
+    authored,
+    world: generatePinnedWorld(generator, generationRequest(pkg, authored), authored.canonicalHash, `${pkg.id}/${authored.worldId}`),
+  }));
 }
 
 /* ------------------------------------------------------------------------------------------------

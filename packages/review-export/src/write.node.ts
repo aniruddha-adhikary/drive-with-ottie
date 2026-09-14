@@ -8,6 +8,8 @@ export interface ReviewManifest {
   readonly packHash: string;
   readonly registryHash: string;
   readonly worlds: readonly { readonly worldId: string; readonly files: readonly { readonly path: string; readonly sha256: string }[] }[];
+  /** Root files (renderer limitations, registry diagnostics/conflicts) that travel with every pack. */
+  readonly files: readonly { readonly path: string; readonly sha256: string }[];
 }
 
 function digest(bytes: string): string {
@@ -35,8 +37,18 @@ export async function writeReviewPack(pack: ReviewPack, outDir: string): Promise
     }
     files.push({ worldId: world.worldId, files: manifestFiles });
   }
-  const manifest: ReviewManifest = { packHash: pack.packHash, registryHash: pack.registryHash, worlds: files };
   await mkdir(outDir, { recursive: true });
+  const rootEntries: [string, string][] = [
+    ['renderer-limitations.json', canonicalJson({ rendererLimitations: pack.rendererLimitations })],
+    ['registry-diagnostics.json', canonicalJson({ registryHash: pack.registryHash, registryDiagnostics: pack.registryDiagnostics, sourceConflicts: pack.sourceConflicts, conflictedIds: pack.conflictedIds })],
+  ];
+  const rootFiles: { path: string; sha256: string }[] = [];
+  for (const [name, body] of rootEntries) {
+    const bytes = `${body}\n`;
+    await writeFile(path.join(outDir, name), bytes);
+    rootFiles.push({ path: name, sha256: digest(bytes) });
+  }
+  const manifest: ReviewManifest = { packHash: pack.packHash, registryHash: pack.registryHash, worlds: files, files: rootFiles };
   await writeFile(path.join(outDir, 'manifest.json'), `${canonicalJson(manifest)}\n`);
   return manifest;
 }

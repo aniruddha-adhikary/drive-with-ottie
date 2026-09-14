@@ -15,7 +15,7 @@
     "generatorVersion": 1,
     "worldSchemaVersion": 1,
     "sourceProfileId": "sg-sources-2026-09",
-    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+    "assetRegistryHash": "911955e3b7941717e71cef6d836fb09eae5d521a0a4f55e49cfba88dbc1066d7"
   },
   "worlds": [
     {
@@ -34,7 +34,7 @@
         "approach_ego",
         "entity_detail"
       ],
-      "canonicalHash": "2dafca3c7163a6eb33e273bd40a3dc4f7422f9dc613f68e528c55ca982d3c2d6",
+      "canonicalHash": "5c8747341ed528f9f91deed1b72d39e994baa95a80040d4c86bd02c87da90189",
       "entities": {
         "ego": "ego.car",
         "lorry": "major.lorry",
@@ -74,7 +74,7 @@
         "approach_ego",
         "entity_detail"
       ],
-      "canonicalHash": "f530eb88b60bd66016a3a0b7e8bf15879eaaee6f49f6eab39bef3f010649841b",
+      "canonicalHash": "f37d7b03e040b2a01fdd9e819fce3e80187999b3bff1ebe61d21d11b523041bc",
       "entities": {
         "ego": "ego.car",
         "giveWayLine": "minor.give-way-line",
@@ -236,7 +236,7 @@
           "majorRoadVehicle.category": "bus",
           "majorRoadVehicle.approach": "west"
         },
-        "canonicalHash": "e26f59d87bd13c9e09d6342040ab34e453dcb912b9c0e7c1497cf26d051216f0"
+        "canonicalHash": "7040e7c0205229c84ae8ad2990d5eb36864c16174085264481f824d913446231"
       },
       "generationNote": null
     }

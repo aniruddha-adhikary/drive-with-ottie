@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Diagnostic, Question, ValidationReport } from '@ottie/contracts';
 import { DEVELOPMENT_CONTENT_BUNDLE } from '@ottie/contracts/fixtures';
 import { loadStarterContent, validateQuestion } from '@ottie/scenario-validation';
-import { type GeneratedWorld, type QuestionPackage, generatePackageWorlds, loadStarterPackages } from './starter-packages';
+import { type GeneratedWorld, type QuestionPackage, createClosureResolver, createStarterGenerator, generatePackageWorlds, loadStarterClosure, loadStarterPackages } from '@ottie/starter-content';
 
 const PACKAGES = loadStarterPackages();
 const STARTER = loadStarterContent();
@@ -17,7 +17,7 @@ interface Authored {
 }
 
 const AUTHORED: readonly Authored[] = PACKAGES.flatMap(({ scenario, questions }) => {
-  const worlds = generatePackageWorlds(scenario);
+  const worlds = generatePackageWorlds(scenario, createStarterGenerator(createClosureResolver(loadStarterClosure())));
   return questions.questions.map((question) => {
     const generated = worlds.find((g) => g.authored.worldId === question.worldId);
     if (!generated) throw new Error(`${question.id} names world ${question.worldId} which ${scenario.id} does not author`);
