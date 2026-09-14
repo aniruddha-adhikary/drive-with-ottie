@@ -1,0 +1,283 @@
+[
+  {
+    "pdf_page": 1,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.550048828125,
+      841.8900146484375
+    ],
+    "rotation": 0,
+    "drawing_paths": 757,
+    "raster_images": 0,
+    "pdf_fonts": 1,
+    "text_characters": 869,
+    "sheet": null
+  },
+  {
+    "pdf_page": 2,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 3165,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 1,
+      "revision": "D",
+      "title": "Lane markings (sheet 1 of 3)"
+    }
+  },
+  {
+    "pdf_page": 3,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 1901,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 2,
+      "revision": "B",
+      "title": "Lane markings (sheet 2 of 3)"
+    }
+  },
+  {
+    "pdf_page": 4,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 3155,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 3,
+      "revision": "A",
+      "title": "Lane markings (sheet 3 of 3)"
+    }
+  },
+  {
+    "pdf_page": 5,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 1019,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 4,
+      "revision": "A",
+      "title": "Arrow markings"
+    }
+  },
+  {
+    "pdf_page": 6,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 1074,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 5,
+      "revision": "A",
+      "title": "Multi-head arrow for turning movements"
+    }
+  },
+  {
+    "pdf_page": 7,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 2292,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 6,
+      "revision": "B",
+      "title": "Typical acceleration lane at expressway"
+    }
+  },
+  {
+    "pdf_page": 8,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 3282,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 7,
+      "revision": "B",
+      "title": "Typical deceleration lane at expressway"
+    }
+  },
+  {
+    "pdf_page": 9,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 13058,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 8,
+      "revision": "A",
+      "title": "Chevron markings"
+    }
+  },
+  {
+    "pdf_page": 10,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 35549,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 9,
+      "revision": "H",
+      "title": "Road signs & markings and traffic signal placement"
+    }
+  },
+  {
+    "pdf_page": 11,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 2378,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 10,
+      "revision": "E",
+      "title": "Bus lane markings and alternative traffic (turn on green arrow) signal placement"
+    }
+  },
+  {
+    "pdf_page": 12,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 999,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 11,
+      "revision": "-",
+      "title": "Mandatory give way to bus (MGWTB)"
+    }
+  },
+  {
+    "pdf_page": 13,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 1187,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 12,
+      "revision": "A",
+      "title": "Pavement markings for sharp curve"
+    }
+  },
+  {
+    "pdf_page": 14,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 1758,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 13,
+      "revision": "-",
+      "title": "Curve alignment markers (CAM)"
+    }
+  },
+  {
+    "pdf_page": 15,
+    "page_size_points": [
+      0.0,
+      0.0,
+      1190.52001953125,
+      841.9200439453125
+    ],
+    "rotation": 0,
+    "drawing_paths": 2993,
+    "raster_images": 0,
+    "pdf_fonts": 0,
+    "text_characters": 0,
+    "sheet": {
+      "sheet": 14,
+      "revision": "B",
+      "title": "Guiding lines and turning pockets at intersections"
+    }
+  }
+]
