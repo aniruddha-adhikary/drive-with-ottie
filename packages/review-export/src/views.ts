@@ -2,7 +2,7 @@ import { type DeepReadonly, type Viewport, type World } from '@ottie/contracts';
 import { buildWorldScene, type WorldScene } from '@ottie/renderer-geometry';
 import { type FitOptions, fitView, presetToThreeCamera, type ViewFitReport } from '@ottie/renderer-cameras';
 import { indexOccluders } from '@ottie/renderer-evidence';
-import { renderSceneTileSvg } from './render.node';
+import { renderSceneTileSvg } from './render.node.js';
 import { type ContactSheetTile } from './contact-sheet';
 
 export interface ReviewView {
