@@ -1,0 +1,87 @@
+{
+  "$comment": "Official sources cited by content/**. Shape mirrors SourceRef in packages/contracts/src/source.ts. Hashes, URLs and revisions are copied verbatim from assets/sg/*/manifest.json and were re-verified against the original downloaded bytes on 2026-09-14 (TP handbook) and against tools/asset_extraction/assemblies/rule11-web-text.txt (Rule 11 capture). Nothing here grants content or reuse approval.",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "sources": [
+    {
+      "id": "spf-btt-2026",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf",
+      "publisher": "Singapore Police Force, Traffic Police",
+      "edition": "Updated 2 January 2026",
+      "collectionRevision": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 90,
+      "verifiedFacts": [
+        "PDF p.2 (printed 1): 'Last updated on 2.1.2026'; contents list marks PART B as '(to be tested during Basic Theory Test)'.",
+        "PDF p.11 (printed 10): Stop = 'Stop before the white line. Give way to traffic from the right and left'; Give Way = 'Slow down. Stop if necessary. Give way to traffic on major road'.",
+        "PDF p.36 (printed 35) §52(a)/(b): parallel broken white lines = give way to traffic on a major road; single white line = stop close to and before the line.",
+        "PDF p.45 (printed 44) §58: circular RED/AMBER/FLASHING AMBER/GREEN/GREEN ARROW/FLICKERING GREEN ARROW meanings.",
+        "PDF p.46 (printed 45): GREEN 'B' is for buses only; GREEN/AMBER/RED ARROW meanings; red arrow: do not turn right even when there is no traffic from the opposite direction.",
+        "PDF p.47 (printed 46): worked examples where circular green means GO straight ahead while the right-turn arrow is amber or red.",
+        "PDF p.53 (printed 52) §81–82: Give Way rule at junctions with a major road and priority at uncontrolled junctions."
+      ],
+      "unresolved": [
+        "The handbook carries a reproduction notice; page crops are research references, not licensed product assets.",
+        "The handbook does not state the BTT question count, pass mark or paper format; no exam format is asserted anywhere in content/**."
+      ]
+    },
+    {
+      "id": "lta-sdre-i-tfm",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-15_TFM_1-2_March_2026.pdf",
+      "publisher": "LTA",
+      "edition": null,
+      "collectionRevision": "I",
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "8decfe2306c6fb1b738c82a82bc4d657ef6a8a16ba4a0a342522126fd0113af1",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 3,
+      "verifiedFacts": [
+        "TFM1 (PDF p.2, printed 15-1) carries the Stop and Give Way sign faces used by the starter terms."
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "lta-sdre-I-rms",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf",
+      "publisher": "LTA",
+      "edition": null,
+      "collectionRevision": "I",
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 15,
+      "verifiedFacts": [
+        "RMS2 rev B (PDF p.3, printed 8-2): marking D (Give Way) and marking J (Stop / edge) geometry; J's semantic role depends on context and is stated per use."
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "rule11",
+      "url": "https://sso.agc.gov.sg/SL/RTA1961-R33?ProvIds=pr11-&ViewType=Within",
+      "publisher": "Singapore Statutes Online / Attorney-General's Chambers",
+      "edition": null,
+      "collectionRevision": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "c0ec46b7d0a405fa076383364a7e1e2028a44a300b7cfd57dc0d74564c895f05",
+      "hashScope": "captured web_get_contents tool text, not original HTML bytes",
+      "pageCount": null,
+      "verifiedFacts": [
+        "Red, amber, green circular meanings; red arrow prohibits the movement 'notwithstanding sub-paragraphs (vi) and (ix)'; amber arrow meaning; green 'B' limited to buses in the innermost left lane."
+      ],
+      "unresolved": [
+        "Direct HTTP retrieval returned 403; captured text ends partway through the final green-arrow paragraph.",
+        "Sub-paragraph numbering is only partly preserved in the capture; section locators therefore name the paragraph by subject rather than by number."
+      ]
+    }
+  ]
+}

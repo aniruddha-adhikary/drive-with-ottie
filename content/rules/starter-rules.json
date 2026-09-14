@@ -1,0 +1,426 @@
+{
+  "$comment": "Starter Rule records (Rule in packages/contracts/src/content.ts, contract version 1). Development content only. IDs shared with packages/contracts/src/fixtures/content.ts denote the same rule; this file is the canonical owner going forward. Predicate grammar: content/rules/README.md.",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "rules": [
+    {
+      "id": "give-way-at-double-broken-line",
+      "version": 2,
+      "summary": "At a GIVE WAY sign or the double broken (parallel broken) white line, slow down, stop only if necessary, and give way to traffic on the major road. A Give Way control is not an unconditional Stop.",
+      "predicate": "control(ego.lane) ∈ {give_way_sign, give_way_line} ⇒ permission(movement) = slow_stop_if_necessary AND priority(ego, any vehicle on major_road) AND NOT required(full_stop) WHEN ¬∃ conflicting vehicle on major_road",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+        },
+        {
+          "sourceId": "lta-sdre-I-rms",
+          "pdfPage": 3,
+          "printedPage": "8-2",
+          "drawing": "LTA/SDRE14/8/RMS2",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [145, 88, 532, 127],
+          "section": "Marking D",
+          "quote": null
+        }
+      ],
+      "unresolved": [
+        "The handbook does not define 'major road' formally; the starter term major-road paraphrases the junction context and is glossary-only until reviewed.",
+        "Whether a Give Way sign is always accompanied by marking D is not stated by TP or SDRE; scenarios must not assume the pairing."
+      ]
+    },
+    {
+      "id": "stop-before-stop-line",
+      "version": 2,
+      "summary": "At a STOP sign or the single continuous white stop line, come to a complete stop close to and before the line, then give way to traffic from the right and left before moving off.",
+      "predicate": "control(ego.lane) ∈ {stop_sign, stop_line} ⇒ required(full_stop) AND ego.front upstream of stop_line at the stop AND permission(movement) = stop_then_proceed_with_caution AND priority(ego, traffic from right) AND priority(ego, traffic from left)",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(b) Single White Line",
+          "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "Where there is a \u201cSTOP\u201d sign, stop before the stop-line."
+        },
+        {
+          "sourceId": "lta-sdre-I-rms",
+          "pdfPage": 3,
+          "printedPage": "8-2",
+          "drawing": "LTA/SDRE14/8/RMS2",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [145, 340, 532, 379],
+          "section": "Marking J",
+          "quote": null
+        }
+      ],
+      "unresolved": [
+        "RMS2 marking J is also used as an edge/shoulder line; it is a stop line only where its semantic role is stop_line in the World. Geometry alone does not imply Stop.",
+        "The handbook does not state a minimum stopping duration; 'stop' is modelled as speed = 0 before the line."
+      ]
+    },
+    {
+      "id": "uncontrolled-junction-priority",
+      "version": 1,
+      "summary": "At an uncontrolled junction (no traffic lights, GIVE WAY or STOP sign): going straight or turning left, give way to traffic going straight from the right; turning right, give way to traffic going straight from all directions, to right-turners from the right and to left-turners from the opposite direction.",
+      "predicate": "control(ego.lane) = none AND junction has no signal ⇒ (movement ∈ {through, turn_left} ⇒ priority(ego, through traffic from right)) AND (movement = turn_right ⇒ priority(ego, through traffic from any direction) AND priority(ego, right-turning traffic from right) AND priority(ego, left-turning traffic from opposite))",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§82 (a)–(c)",
+          "quote": "If you are going straight across the junction, you must give way to traffic going straight from the right."
+        }
+      ],
+      "unresolved": [
+        "Only the Traffic Police handbook was reviewed for this rule; the corresponding statutory provision was not captured and is not cited.",
+        "No starter World fixture exercises this rule yet; it is content-only until a scenario template owns an uncontrolled junction."
+      ]
+    },
+    {
+      "id": "circular-red-prohibits-all-movements",
+      "version": 1,
+      "summary": "A lit circular red light means STOP: no vehicle may proceed beyond the stop line, for any movement, unless a separate lit green arrow (or green 'B' for a bus) permits a specific movement.",
+      "predicate": "aspect(circular, red).lit AND ¬∃ aspect(arrow_*, green).lit controlling movement ⇒ permission(movement) = stop",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, RED",
+          "quote": "Means \u201cSTOP\u201d."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated red light",
+          "quote": "the illuminated red light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road provided in conjunction with the signals"
+        }
+      ],
+      "unresolved": [
+        "Rule 11 lists exceptions (sub-paragraphs (v), (ix), (x), (xi)) including signed left/right turns on red (diagram 161); no such sign is in the starter set, so the exception is not modelled."
+      ]
+    },
+    {
+      "id": "circular-amber-stop-unless-too-close",
+      "version": 1,
+      "summary": "A lit circular amber light means STOP before the stop line, unless you are already so close to the line when it appears that you cannot stop safely.",
+      "predicate": "aspect(circular, amber).lit AND NOT aspect.flashing ⇒ permission(movement) = stop UNLESS ego cannot stop safely before stop_line",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, AMBER",
+          "quote": "Means \u201cSTOP\u201d unless you are so close to the stop-line when the lights turn AMBER that you cannot stop safely."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated amber light",
+          "quote": "the illuminated amber light shall be taken to denote an impending change from green light to red light"
+        }
+      ],
+      "unresolved": [
+        "'Cannot stop safely' is a judgement; no distance threshold is given by either source and none is invented here."
+      ]
+    },
+    {
+      "id": "flashing-amber-signal-out-of-order",
+      "version": 1,
+      "summary": "Flashing circular amber means the signals are out of order: proceed with caution and give way to traffic on the right.",
+      "predicate": "aspect(circular, amber).flashing ⇒ permission(movement) = proceed_if_clear AND priority(ego, traffic from right)",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, FLASHING AMBER",
+          "quote": "Means that the traffic light signals are out of order. Proceed with caution. Give way to traffic on the right."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, intermittent amber light",
+          "quote": "vehicles shall slow down on approaching the signals and may thereafter, with caution and due regard to the safety of other users of the road and precedence to pedestrians, proceed beyond the stop line"
+        }
+      ],
+      "unresolved": [
+        "Rule 11 states a 60–80 flashes per minute rate and 'slow down'; the handbook adds 'give way to traffic on the right'. Both are kept; the learner-facing meaning follows the handbook."
+      ]
+    },
+    {
+      "id": "circular-green-permits-uncontrolled-movements",
+      "version": 1,
+      "summary": "A lit circular green means GO for movements that are not governed by a lit arrow: proceed straight, or turn left/right with due regard to pedestrians and oncoming traffic, after looking right and left. It says nothing about a movement that has its own arrow.",
+      "predicate": "aspect(circular, green).lit AND ¬∃ aspect(arrow_*, any).lit WITH aspect.controls(movement) ⇒ permission(movement) = proceed_if_clear",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN",
+          "quote": "Look to the right and left to ensure it is safe before you proceed."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated green light",
+          "quote": "turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples",
+          "quote": "Means \u201cGO\u201d for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ],
+      "unresolved": [
+        "Signs prohibiting a turn on green (Rule 11 'subject to any sign prohibiting left or right turn') are not in the starter set."
+      ]
+    },
+    {
+      "id": "red-arrow-prohibits-movement",
+      "version": 2,
+      "summary": "A lit red arrow prohibits proceeding beyond the stop line in the direction it points, even when the circular green is lit and even when there is no oncoming traffic. Overrides circular green for that movement.",
+      "predicate": "aspect(arrow_*, red).lit AND aspect.controls(movement) ⇒ permission(movement) = stop AND overrides(circular-green-permits-uncontrolled-movements)",
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, red arrow",
+          "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "RED ARROW",
+          "quote": "Do not turn right even when there is no traffic from the opposite direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "bboxDisplayPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "section": "Examples, circular green with red right arrow",
+          "quote": "Means \u201cGO\u201d for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ],
+      "unresolved": [
+        "Rule 11 capture ends partway through the green-arrow paragraph; the red-arrow paragraph is complete.",
+        "The handbook illustrates the right arrow only; left and straight-ahead red arrows follow the same statutory wording but have no handbook illustration in the starter set."
+      ]
+    },
+    {
+      "id": "amber-arrow-ready-to-stop",
+      "version": 1,
+      "summary": "A lit (steady) amber arrow means the movement it points to is about to be prohibited: stop behind the stop line for that movement unless you are too close to stop safely, even if the circular green is lit.",
+      "predicate": "aspect(arrow_*, amber).lit AND NOT aspect.flashing AND aspect.controls(movement) ⇒ permission(movement) = stop UNLESS ego cannot stop safely before stop_line; overrides(circular-green-permits-uncontrolled-movements)",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "AMBER ARROW",
+          "quote": "Means \u201cREADY TO STOP\u201d behind the stop-line in the direction indicated."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, amber arrow",
+          "quote": "notwithstanding that they would otherwise be required by the illuminated green or amber light or lights to proceed on"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples, circular green with amber right arrow",
+          "quote": "Vehicles turning right must get ready to \u201cSTOP\u201d."
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "id": "green-arrow-permits-indicated-movement",
+      "version": 1,
+      "summary": "A lit green arrow means GO only in the direction it points, after making sure oncoming traffic is clear. It permits that movement even while the circular red or amber is lit.",
+      "predicate": "aspect(arrow_*, green).lit AND NOT aspect.flashing AND aspect.controls(movement) ⇒ permission(movement) = proceed_if_clear; a green arrow permits ONLY its own movement",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN ARROW",
+          "quote": "Means \u201cGO\u201d but only in the direction indicated after ensuring that oncoming traffic is clear."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "GREEN ARROW",
+          "quote": "Means \u201cGO\u201d in the direction indicated. (Turn right)"
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, additional green arrow light",
+          "quote": "notwithstanding that they would otherwise be required by the illuminated red or amber light to stop, may proceed in the direction or directions indicated by the green arrow or arrows with precedence to pedestrians"
+        }
+      ],
+      "unresolved": [
+        "The final Rule 11 green-arrow paragraph is truncated in the stored capture ('...vehicles, notw'); the statutory citation above is the earlier 'additional green arrow light' paragraph, which is complete. Coverage of the truncated paragraph is MISSING until an original capture is obtained.",
+        "FLICKERING GREEN ARROW (handbook p.44: 'Do not proceed if you have not crossed the stop-line') is described but has no starter term or fixture."
+      ]
+    },
+    {
+      "id": "green-b-buses-only",
+      "version": 1,
+      "summary": "An additional green 'B' light means GO for buses only (a bus in the innermost left lane may proceed straight on despite the red). It gives no permission to a car or motorcycle.",
+      "predicate": "aspect(letter_B, green).lit ⇒ (ego.kind = bus AND ego.lane = innermost_left AND path unobstructed ⇒ permission(through) = proceed) AND (ego.kind ≠ bus ⇒ no change to permission(movement))",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "GREEN 'B'",
+          "quote": "Means \u201cGO\u201d for all buses only."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, additional green light showing the letter B",
+          "quote": "any bus in the innermost left lane of the road before the stop line or broken lines on the road provided in conjunction with the signals may"
+        }
+      ],
+      "unresolved": [
+        "No starter asset or fixture renders a green 'B' aspect; the rule is content-only."
+      ]
+    }
+  ]
+}
