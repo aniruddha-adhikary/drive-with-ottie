@@ -1,0 +1,5 @@
+PyMuPDF==1.26.3
+Pillow==11.0.0
+ruff==0.12.2
+mypy==1.16.1
+types-Pillow==10.2.0.20240822
