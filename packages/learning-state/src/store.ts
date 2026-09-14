@@ -13,9 +13,9 @@ import { freezeDeep } from '@ottie/contracts';
 
 export class LearningStateError extends Error {
   readonly reason: string;
-  readonly event: LearningEvent;
+  readonly event: LearningEvent | null;
 
-  constructor(reason: string, event: LearningEvent) {
+  constructor(reason: string, event: LearningEvent | null = null) {
     super(reason);
     this.name = 'LearningStateError';
     this.reason = reason;
