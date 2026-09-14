@@ -5,6 +5,8 @@ import { type Viewport } from '@ottie/contracts';
 
 interface DomWindow {
   readonly document: Document;
+  readonly DOMParser: typeof DOMParser;
+  readonly Element: typeof Element;
 }
 
 interface JSDOMLike {
@@ -24,16 +26,35 @@ export const RENDERER_LIMITATIONS: readonly string[] = [
 
 export function withDom<T>(fn: () => T): T {
   if (typeof globalThis.document !== 'undefined') return fn();
-  const priorWindow = (globalThis as { window?: unknown }).window;
+  const globalScope = globalThis as {
+    document?: Document;
+    window?: unknown;
+    DOMParser?: typeof DOMParser;
+    Element?: typeof Element;
+  };
+  const priorDocument = globalScope.document;
+  const priorWindow = globalScope.window;
+  const priorDomParser = globalScope.DOMParser;
+  const priorElement = globalScope.Element;
   const dom: JSDOMLike = new JSDOM('<!doctype html><html><body></body></html>');
-  Object.assign(globalThis, { document: dom.window.document, window: dom.window });
+  Object.assign(globalThis, {
+    document: dom.window.document,
+    window: dom.window,
+    DOMParser: dom.window.DOMParser,
+    Element: dom.window.Element,
+  });
   let restored = false;
   const restore = () => {
     if (restored) return;
     restored = true;
-    delete (globalThis as { document?: Document }).document;
-    if (priorWindow === undefined) delete (globalThis as { window?: unknown }).window;
-    else Object.assign(globalThis, { window: priorWindow });
+    if (priorDocument === undefined) delete globalScope.document;
+    else globalScope.document = priorDocument;
+    if (priorWindow === undefined) delete globalScope.window;
+    else globalScope.window = priorWindow;
+    if (priorDomParser === undefined) delete globalScope.DOMParser;
+    else globalScope.DOMParser = priorDomParser;
+    if (priorElement === undefined) delete globalScope.Element;
+    else globalScope.Element = priorElement;
   };
   try {
     const result = fn();
@@ -48,7 +69,12 @@ export function withDom<T>(fn: () => T): T {
   }
 }
 
-export function renderSceneTileSvg(root: Object3D, camera: Camera, viewport: Viewport): string {
+export interface RenderedSceneTile {
+  readonly viewBox: string;
+  readonly inner: string;
+}
+
+export function renderSceneTileSvg(root: Object3D, camera: Camera, viewport: Viewport): RenderedSceneTile {
   if (typeof globalThis.document === 'undefined') {
     throw new Error('renderSceneTileSvg requires a document; call withDom() in Node');
   }
@@ -58,9 +84,10 @@ export function renderSceneTileSvg(root: Object3D, camera: Camera, viewport: Vie
   const scene = new Scene();
   scene.add(root);
   renderer.render(scene, camera);
+  const viewBox = renderer.domElement.getAttribute('viewBox') ?? `${-viewport.widthPx / 2} ${-viewport.heightPx / 2} ${viewport.widthPx} ${viewport.heightPx}`;
   const svg = renderer.domElement.outerHTML;
   const open = svg.indexOf('>');
   const close = svg.lastIndexOf('</svg>');
   scene.remove(root);
-  return open >= 0 && close > open ? svg.slice(open + 1, close) : svg;
+  return { viewBox, inner: open >= 0 && close > open ? svg.slice(open + 1, close) : svg };
 }

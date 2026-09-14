@@ -1,6 +1,7 @@
 export interface ContactSheetTile {
   readonly label: string;
   readonly svgInner: string;
+  readonly viewBox: string;
   readonly width: number;
   readonly height: number;
 }
@@ -28,7 +29,7 @@ export function composeContactSheet(tiles: readonly ContactSheetTile[], header: 
   const body = tiles.map((tile, index) => {
     const x = (index % columns) * cellW;
     const y = 92 + Math.floor(index / columns) * cellH;
-    return `<g transform="translate(${x},${y})"><svg viewBox="0 0 ${tile.width} ${tile.height}" width="${tile.width}" height="${tile.height}">${tile.svgInner}</svg><text x="8" y="${tile.height + 22}" font-family="sans-serif" font-size="14">${escape(tile.label)}</text></g>`;
+    return `<g transform="translate(${x},${y})"><svg viewBox="${escape(tile.viewBox)}" width="${tile.width}" height="${tile.height}">${tile.svgInner}</svg><text x="8" y="${tile.height + 22}" font-family="sans-serif" font-size="14">${escape(tile.label)}</text></g>`;
   }).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}"><rect width="100%" height="92" fill="#f4ead2"/><text x="18" y="28" font-family="sans-serif" font-size="18" font-weight="700">${escape(banner)}</text><text x="18" y="54" font-family="monospace" font-size="12">registry ${escape(header.registryHash)}</text><text x="18" y="72" font-family="monospace" font-size="12">world ${escape(header.canonicalHash ?? 'null')}</text>${body}</svg>`;
 }

@@ -35,16 +35,16 @@ export function buildWorldViews(
   for (const name of names) {
     const report = fitView(scene, world, viewport, world.evidence, name, { occluders } satisfies FitOptions);
     const camera = presetToThreeCamera(report.camera, viewport);
-    const svgInner = renderSceneTileSvg(scene.root, camera, viewport);
+    const rendered = renderSceneTileSvg(scene.root, camera, viewport);
     const visible = report.evidence.filter((e) => e.visible).length;
     const total = report.evidence.length;
     const label = `${name}${report.adjusted ? ' (adjusted)' : ''} — ${report.chosenCandidate} — evidence ${visible}/${total}`;
     views.push({ presetName: name, viewport, report });
-    tiles.push({ label, svgInner, width: viewport.widthPx, height: viewport.heightPx });
+    tiles.push({ label, svgInner: rendered.inner, viewBox: rendered.viewBox, width: viewport.widthPx, height: viewport.heightPx });
     for (const detail of report.linkedDetails) {
       const detailCamera = presetToThreeCamera(detail.preset, viewport);
-      const detailSvg = renderSceneTileSvg(scene.root, detailCamera, viewport);
-      tiles.push({ label: detail.label, svgInner: detailSvg, width: viewport.widthPx, height: viewport.heightPx });
+      const detailRendered = renderSceneTileSvg(scene.root, detailCamera, viewport);
+      tiles.push({ label: detail.label, svgInner: detailRendered.inner, viewBox: detailRendered.viewBox, width: viewport.widthPx, height: viewport.heightPx });
     }
   }
   return { scene, result: { views, contactSheetTiles: tiles } };
