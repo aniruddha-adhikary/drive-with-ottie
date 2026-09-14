@@ -10,6 +10,7 @@ import { canonicalJson } from '@ottie/contracts';
 import { DEVELOPMENT_ASSETS, DEVELOPMENT_CONTENT_BUNDLE, DEVELOPMENT_TEMPLATES, DEVELOPMENT_WORLDS, EXTRACTED_DEVELOPMENT_ASSETS } from '@ottie/contracts/fixtures';
 import { createFileArtworkSource } from '@ottie/renderer-geometry/artwork.node';
 import { cameraMatrices } from '@ottie/renderer-cameras';
+import { canonicalWorldJson } from '@ottie/scenario-core';
 import { buildReviewPack } from './pack';
 import { writeReviewPack } from './write.node';
 
@@ -42,6 +43,9 @@ describe('review pack export', () => {
     expect(first.packHash).toBe(second.packHash);
     expect(first.worlds).toHaveLength(3);
     for (const world of first.worlds) {
+      const fixture = DEVELOPMENT_WORLDS.find((candidate) => candidate.id === world.worldId);
+      if (!fixture) throw new Error(`missing fixture ${world.worldId}`);
+      expect(world.provenance.canonicalJson).toBe(canonicalWorldJson(fixture));
       expect(world.views.length).toBeGreaterThanOrEqual(4);
       expect(world.views.map((view) => view.presetName)).toEqual(expect.arrayContaining(['plan', 'study_oblique', 'approach_ego', 'entity_detail']));
       for (const view of world.views) {
@@ -74,6 +78,11 @@ describe('review pack export', () => {
       const firstManifest = await writeReviewPack(pack, firstDir);
       const secondManifest = await writeReviewPack(pack, secondDir);
       expect(canonicalJson(firstManifest)).toBe(canonicalJson(secondManifest));
+      const firstWorldId = pack.worlds[0]?.worldId;
+      const firstSheet = pack.worlds[0]?.contactSheets[0];
+      if (!firstWorldId || !firstSheet) throw new Error('pack has no first-world contact sheet');
+      const sheetName = `contact-sheet.${firstSheet.viewport.widthPx}x${firstSheet.viewport.heightPx}.svg`;
+      expect(readFileSync(path.join(firstDir, firstWorldId, sheetName), 'utf8')).toBe(readFileSync(path.join(secondDir, firstWorldId, sheetName), 'utf8'));
       const digest = createHash('sha256').update(readFileSync(path.join(firstDir, 'manifest.json'))).digest('hex');
       expect(digest).toMatch(/^[0-9a-f]{64}$/);
     } finally {

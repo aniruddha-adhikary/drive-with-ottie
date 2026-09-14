@@ -1,6 +1,6 @@
 import { type AssetId } from '@ottie/contracts';
 import { type AssetDependents, type CompiledRegistry, buildDependencyIndex, type DependencyIndex } from '@ottie/asset-registry';
-import { type ReviewInputs } from './inputs.js';
+import { type ReviewInputs } from './inputs';
 
 export interface AssetImpactReport {
   readonly assetId: AssetId;
@@ -18,15 +18,20 @@ function reportFor(inputs: ReviewInputs, index: DependencyIndex, id: AssetId): A
   const asset = inputs.registry.assets.find((candidate) => candidate.id === id);
   const dependents = index.dependents(id);
   const directRecord = asset ? { version: asset.version, releaseReady: asset.review.releaseReady, review: asset.review, conflicted: inputs.registry.conflictedIds.includes(id) } : null;
-  const paths = dependents.worlds.map((worldId) => ({
-    worldId,
-    chain: [
-      id,
-      ...dependents.definitions,
-      ...dependents.assets.map((ref) => `${ref.id}@${ref.version}`),
-      `world:${worldId}`,
-    ],
-  }));
+  const paths = dependents.worlds.map((worldId) => {
+    const closure = index.worldClosure(worldId);
+    const chain = closure
+      ? [
+        id,
+        ...dependents.definitions.filter((definition) => closure.definitions.includes(definition)),
+        ...dependents.assets
+          .filter((ref) => closure.assets.some((candidate) => candidate.id === ref.id && candidate.version === ref.version))
+          .map((ref) => `${ref.id}@${ref.version}`),
+        `world:${worldId}`,
+      ]
+      : [id, `world:${worldId}`];
+    return { worldId, chain };
+  });
   return {
     assetId: id,
     found: asset !== undefined,

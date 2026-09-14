@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { type ReviewPack } from './pack.js';
+import { type ReviewPack } from './pack';
 import { canonicalJson } from '@ottie/contracts';
 
 export interface ReviewManifest {
@@ -23,7 +23,7 @@ export async function writeReviewPack(pack: ReviewPack, outDir: string): Promise
       ['world.canonical.json', world.provenance.canonicalJson],
       ['provenance.json', canonicalJson(world.provenance)],
       ['validation.json', canonicalJson(world.validation)],
-      ['diagnostics.json', canonicalJson(world.diagnostics)],
+      ['diagnostics.json', canonicalJson({ ...world.diagnostics, views: world.views })],
       ['release.json', canonicalJson(world.release)],
     ];
     for (const sheet of world.contactSheets) entries.push([`contact-sheet.${sheet.viewport.widthPx}x${sheet.viewport.heightPx}.svg`, sheet.svg]);

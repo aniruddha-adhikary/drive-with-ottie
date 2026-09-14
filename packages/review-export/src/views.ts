@@ -1,18 +1,14 @@
 import { type DeepReadonly, type Viewport, type World } from '@ottie/contracts';
 import { buildWorldScene, type WorldScene } from '@ottie/renderer-geometry';
-import { type FitOptions, fitView, presetToThreeCamera } from '@ottie/renderer-cameras';
+import { type FitOptions, fitView, presetToThreeCamera, type ViewFitReport } from '@ottie/renderer-cameras';
 import { indexOccluders } from '@ottie/renderer-evidence';
-import { renderSceneTileSvg } from './render.node.js';
-import { type ContactSheetTile } from './contact-sheet.js';
+import { renderSceneTileSvg } from './render.node';
+import { type ContactSheetTile } from './contact-sheet';
 
 export interface ReviewView {
   readonly presetName: string;
   readonly viewport: Viewport;
-  readonly report: ReturnType<typeof fitView>;
-  readonly diagnostics: readonly unknown[];
-  readonly sceneIssues: readonly unknown[];
-  readonly schematicChoices: readonly unknown[];
-  readonly svgInner: string;
+  readonly report: ViewFitReport;
 }
 
 export interface ReviewViewsResult {
@@ -43,7 +39,7 @@ export function buildWorldViews(
     const visible = report.evidence.filter((e) => e.visible).length;
     const total = report.evidence.length;
     const label = `${name}${report.adjusted ? ' (adjusted)' : ''} — ${report.chosenCandidate} — evidence ${visible}/${total}`;
-    views.push({ presetName: name, viewport, report, diagnostics: report.diagnostics, sceneIssues: scene.issues, schematicChoices: scene.schematicChoices, svgInner });
+    views.push({ presetName: name, viewport, report });
     tiles.push({ label, svgInner, width: viewport.widthPx, height: viewport.heightPx });
     for (const detail of report.linkedDetails) {
       const detailCamera = presetToThreeCamera(detail.preset, viewport);

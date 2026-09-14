@@ -23,6 +23,10 @@ describe('review release refusal', () => {
       expect(report.refusals).toEqual(expect.arrayContaining([
         expect.objectContaining({ worldId: world.id, reason: 'uses_quarantined_assets' }),
         expect.objectContaining({ worldId: world.id, reason: 'fixture_not_release_candidate' }),
+        expect.objectContaining({ worldId: world.id, reason: 'canonical_hash_missing' }),
+      ]));
+      expect(report.refusals).not.toEqual(expect.arrayContaining([
+        expect.objectContaining({ worldId: world.id, reason: 'canonical_hash_mismatch' }),
       ]));
     }
     expect(report.c1.rejections).toEqual(expect.arrayContaining([expect.objectContaining({ reason: 'not_release_ready' })]));
@@ -30,7 +34,7 @@ describe('review release refusal', () => {
 
   it('does not bypass C1 when fixture status is changed', () => {
     const source = inputs();
-    const worlds = DEVELOPMENT_WORLDS.map((world) => ({ ...world, provenance: { ...world.provenance, status: 'release_candidate', usesQuarantinedAssets: false } })) as unknown as typeof DEVELOPMENT_WORLDS;
+    const worlds = DEVELOPMENT_WORLDS.map((world) => ({ ...world, provenance: { ...world.provenance, status: 'generated' as const, usesQuarantinedAssets: false } }));
     const report = assessReleaseExport({ ...source, worlds });
     expect(report.ok).toBe(false);
     expect(report.c1.rejections.length).toBeGreaterThan(0);
