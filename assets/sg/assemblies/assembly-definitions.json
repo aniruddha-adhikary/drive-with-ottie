@@ -1,0 +1,1281 @@
+{
+  "schema_version": 1,
+  "family": "assemblies",
+  "representation": "cited_constraints_and_reference_assemblies",
+  "review_status": "source_transcribed_unreviewed",
+  "release_ready": false,
+  "coordinate_convention": {
+    "image_axes": "right and up as seen by the intended approaching observer",
+    "world_axes": null,
+    "front_normal_world": null,
+    "rule_facing_requirement": "signal faces approaching traffic",
+    "integration_contract": "docs/SCENARIO-SYSTEM.md: Assembly and mount_integrity",
+    "required_instance_fields": [
+      "support_id",
+      "attachments",
+      "front_normal",
+      "intended_observer_or_approach",
+      "applicable_lanes",
+      "applicable_movements",
+      "linked_control_lines"
+    ],
+    "integration_note": "Required instance fields are repository integration requirements. They do not supply missing physical dimensions."
+  },
+  "definitions": [
+    {
+      "id": "sg.assemblies.definition.signal-vertical-rag",
+      "name": "Approach-facing vertical circular three-colour head",
+      "source_assets": [
+        "sg.assemblies.signal-circular-red",
+        "sg.assemblies.signal-circular-amber",
+        "sg.assemblies.signal-circular-green"
+      ],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, vertical arrangement and vertical lens dimensions",
+          "quotes": [
+            "the red light shall be placed above the amber light and the green light shall be placed below the amber light",
+            "the effective diameter of the lens of each light and arrow light shall be at least 200 mm",
+            "the height of the centre of the lens of the light or arrow light nearest to the ground surface shall be 2,290 mm except that it may be increased to 3,000 mm where owing to road gradient it is desirable to do so",
+            "shall not be more than 500 mm apart"
+          ]
+        }
+      ],
+      "aspects_top_to_bottom": [
+        "red",
+        "amber",
+        "green"
+      ],
+      "face_normal": "toward approaching traffic",
+      "dimensions_mm": {
+        "effective_lens_diameter": {
+          "minimum": 200,
+          "actual": null,
+          "endpoints": "effective optical lens diameter"
+        },
+        "lowest_lens_centre_above_ground": {
+          "nominal": 2290,
+          "gradient_adjustment_maximum": 3000,
+          "actual": null,
+          "condition": "Increase only where desirable owing to road gradient",
+          "endpoints": "ground surface to centre of lowest lens, including arrow lenses"
+        },
+        "adjacent_lens_centre_distance": {
+          "maximum": 500,
+          "actual": null,
+          "endpoints": "centre to centre of adjacent lenses"
+        },
+        "pole_height": null,
+        "housing_width": null,
+        "housing_height": null,
+        "housing_depth": null,
+        "attachment_offsets": null
+      },
+      "support": {
+        "family": null,
+        "attachment_type": null,
+        "required_for_instance": true
+      },
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "tp",
+          "pdf_page": 45,
+          "printed_page": "44",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            84.25,
+            145.58999633789062,
+            124.24400329589844,
+            258.69000244140625
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.25,
+            145.58999633789062,
+            124.24400329589844,
+            258.69000244140625
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 355,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "tp",
+          "pdf_page": 45,
+          "printed_page": "44",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            84.25,
+            282.39996337890625,
+            124.74299621582031,
+            394.2499694824219
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.25,
+            282.39996337890625,
+            124.74299621582031,
+            394.2499694824219
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 356,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "tp",
+          "pdf_page": 45,
+          "printed_page": "44",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            84.25,
+            422.25,
+            121.2490005493164,
+            526.75
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.25,
+            422.25,
+            121.2490005493164,
+            526.75
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 357,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.signal-horizontal-gar",
+      "name": "Approach-facing horizontal circular three-colour head",
+      "source_assets": [],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, horizontal arrangement and horizontal lens dimensions",
+          "quotes": [
+            "the red light shall be placed on the right of the amber light and the green light shall be placed on the left of the amber light",
+            "the effective diameter of the lens of each light and arrow light shall be at least 300 mm",
+            "the height of the centre of the lens of the light or arrow light nearest to the ground surface shall not be less than 5,200 mm",
+            "shall not be more than 500 mm apart"
+          ]
+        }
+      ],
+      "aspects_left_to_right_from_approach": [
+        "green",
+        "amber",
+        "red"
+      ],
+      "face_normal": "toward approaching traffic",
+      "dimensions_mm": {
+        "effective_lens_diameter": {
+          "minimum": 300,
+          "actual": null,
+          "endpoints": "effective optical lens diameter"
+        },
+        "lowest_lens_centre_above_ground": {
+          "minimum": 5200,
+          "actual": null,
+          "endpoints": "ground surface to centre of lowest lens, including any lower arrow lenses"
+        },
+        "adjacent_lens_centre_distance": {
+          "maximum": 500,
+          "actual": null,
+          "endpoints": "centre to centre of adjacent lenses"
+        },
+        "pole_height": null,
+        "housing_width": null,
+        "housing_height": null,
+        "housing_depth": null,
+        "attachment_offsets": null,
+        "structure_clearance": null
+      },
+      "support": {
+        "family": null,
+        "attachment_type": null,
+        "required_for_instance": true
+      },
+      "warnings": [
+        "No horizontal head illustration occurs in the assigned TP pages. No image or housing geometry fabricated.",
+        "5200 is a lowest-lens-centre minimum, not a pole height or general structural clearance."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": []
+    },
+    {
+      "id": "sg.assemblies.definition.signal-vertical-paired-arrows",
+      "name": "Vertical circular aspects with paired movement-arrow aspects",
+      "inherits": "sg.assemblies.definition.signal-vertical-rag",
+      "source_assets": [
+        "sg.assemblies.signal-through-green-right-green",
+        "sg.assemblies.signal-through-green-right-amber",
+        "sg.assemblies.signal-through-green-right-red"
+      ],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, vertical circular lights with arrow combinations",
+          "quotes": [
+            "each arrow light shall be placed at the same level with a light of the same colour"
+          ]
+        }
+      ],
+      "paired_arrow_placement": {
+        "red": "same vertical level as circular red",
+        "amber": "same vertical level as circular amber",
+        "green": "same vertical level as circular green",
+        "left_or_right_side_required_by_this_clause": null
+      },
+      "movement_binding": {
+        "arrow_direction": null,
+        "applicable_lanes": null,
+        "required_for_instance": true
+      },
+      "dimensions_mm": {
+        "column_spacing": null,
+        "housing_depth": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Circular and arrow states are independent; the handbook examples retain circular green while the right-arrow state changes."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "tp",
+          "pdf_page": 47,
+          "printed_page": "46",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            111.44999694824219,
+            157.29998779296875,
+            185.39999389648438,
+            262.91998291015625
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            111.44999694824219,
+            157.29998779296875,
+            185.39999389648438,
+            262.91998291015625
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 368,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "tp",
+          "pdf_page": 47,
+          "printed_page": "46",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            246.4199981689453,
+            157.29995727539062,
+            321.1199951171875,
+            263.77996826171875
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            246.4199981689453,
+            157.29995727539062,
+            321.1199951171875,
+            263.77996826171875
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 369,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "tp",
+          "pdf_page": 47,
+          "printed_page": "46",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            399.3500061035156,
+            157.29998779296875,
+            473.3210144042969,
+            263.04998779296875
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            399.3500061035156,
+            157.29998779296875,
+            473.3210144042969,
+            263.04998779296875
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 370,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.signal-horizontal-paired-arrows",
+      "name": "Horizontal circular aspects with arrow aspects below",
+      "inherits": "sg.assemblies.definition.signal-horizontal-gar",
+      "source_assets": [],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, horizontal circular lights with arrow combinations",
+          "quotes": [
+            "each arrow light shall be placed below the light of the same colour"
+          ]
+        }
+      ],
+      "paired_arrow_placement": {
+        "red": "below circular red",
+        "amber": "below circular amber",
+        "green": "below circular green"
+      },
+      "dimensions_mm": {
+        "row_spacing": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Lowest-lens-centre minimum applies to the lower arrow row; no source illustration extracted."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": []
+    },
+    {
+      "id": "sg.assemblies.definition.signal-additional-green-b",
+      "name": "Additional green B bus-priority aspect",
+      "inherits": "sg.assemblies.definition.signal-vertical-rag",
+      "source_assets": [
+        "sg.assemblies.signal-green-b-source-example"
+      ],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, additional green-light placement and green B permission",
+          "quotes": [
+            "at the same level on the left side of or above the red light facing the direction of the approaching traffic",
+            "any bus in the innermost left lane of the road before the stop line or broken lines",
+            "if its path is not obstructed by another vehicle",
+            "pass the signal and proceed straight on",
+            "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction, notwithstanding sub-paragraphs (vi) and (ix)"
+          ]
+        }
+      ],
+      "placement_from_approach": {
+        "allowed_alternatives": [
+          "left of red at same level",
+          "above red"
+        ],
+        "selected": null
+      },
+      "eligibility": {
+        "vehicle_class": "bus",
+        "lane": "innermost left lane",
+        "vehicle_position": "before applicable stop line or broken lines",
+        "movement": "straight",
+        "path_not_obstructed_by_another_vehicle": true,
+        "may_override_circular_red": true,
+        "must_obey_applicable_red_arrow": true,
+        "subject_to_police_officer_directions": true,
+        "applicable_lane_id": null,
+        "linked_control_line_id": null
+      },
+      "dimensions_mm": {
+        "offset_from_red": null,
+        "housing_depth": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "TP illustration places green B on the right of red; Rule 11 specifies left of or above red as seen by approaching traffic. Original artwork retained without mirroring. Placement conflict requires content review."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "tp",
+          "pdf_page": 46,
+          "printed_page": "45",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            84.25,
+            124.32000732421875,
+            153.85000610351562,
+            226.760009765625
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.25,
+            124.32000732421875,
+            153.85000610351562,
+            226.760009765625
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 361,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.signal-additional-green-arrow",
+      "name": "Additional green movement arrow",
+      "source_assets": [
+        "sg.assemblies.signal-red-with-right-green"
+      ],
+      "rule_evidence": [
+        {
+          "source_id": "rule11",
+          "locator": "Rule 11, additional-arrow placement and additional-green-arrow permission",
+          "quotes": [
+            "at the same level of the light of the same colour where the lights are arranged vertically",
+            "above the red light where the lights are arranged vertically",
+            "below the light of the same colour where the lights are arranged horizontally",
+            "may proceed in the direction or directions indicated by the green arrow or arrows with precedence to pedestrians"
+          ]
+        }
+      ],
+      "movement_permission": {
+        "only_indicated_directions": true,
+        "pedestrian_precedence": true,
+        "subject_to_police_officer_directions": true,
+        "may_override_circular_red_or_amber": true
+      },
+      "dimensions_mm": {
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Additional-arrow alternatives are separate from the same-colour alignment rule for paired multi-aspect combinations."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "tp",
+          "pdf_page": 45,
+          "printed_page": "44",
+          "drawing": null,
+          "drawing_revision": null,
+          "bbox_pdf_points": [
+            84.25,
+            554.6099853515625,
+            155.35000610351562,
+            659.0599975585938
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.25,
+            554.6099853515625,
+            155.35000610351562,
+            659.0599975585938
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": 358,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-low-roadside",
+      "name": "Low roadside traffic-sign supports",
+      "source_assets": [
+        "sg.assemblies.low-single-post-support",
+        "sg.assemblies.low-double-post-support",
+        "sg.assemblies.low-sign-fixing-section"
+      ],
+      "source_notes": [
+        "SUP4 note 9 identifies 200 mm-high central divider/roadside scupper-drain installation context."
+      ],
+      "support": {
+        "variants": [
+          "single SHS post",
+          "double SHS posts"
+        ],
+        "attachment": "rivet/flat/stiffener and tape fixing per section A-A",
+        "foundation": "concrete foundation shown; no strength or 3D geometry inferred"
+      },
+      "face_normal": null,
+      "context": "Variant-specific low traffic-sign support; not interchangeable with SUP5 or SUP15 mounting heights",
+      "dimensions_mm": {
+        "sign_bottom_above_ground": null,
+        "sign_width": null,
+        "sign_height": null,
+        "attachment_offsets": null
+      },
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 6,
+          "printed_page": "10-4",
+          "drawing": "LTA/SDRE14/10/SUP4",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            83.0,
+            47.0,
+            451.0,
+            698.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            83.0,
+            47.0,
+            451.0,
+            698.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 6,
+          "printed_page": "10-4",
+          "drawing": "LTA/SDRE14/10/SUP4",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            452.0,
+            169.0,
+            1135.0,
+            698.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            452.0,
+            169.0,
+            1135.0,
+            698.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 6,
+          "printed_page": "10-4",
+          "drawing": "LTA/SDRE14/10/SUP4",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            917.0,
+            338.0,
+            1139.0,
+            524.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            917.0,
+            338.0,
+            1139.0,
+            524.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": [
+            [
+              917.0,
+              512.0,
+              968.0,
+              524.0
+            ]
+          ]
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 6,
+          "bbox_pdf_points": [
+            82.0,
+            706.0,
+            748.0,
+            812.0
+          ],
+          "bbox_display_pdf_points": [
+            82.0,
+            706.0,
+            748.0,
+            812.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "detail": "SUP4 notes, including note 9"
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-holder-one",
+      "name": "Traffic-sign holder type 1 on lamp post or vertical support",
+      "source_assets": [
+        "sg.assemblies.lamp-post-sign-elevation",
+        "sg.assemblies.holder-type-one-height-variants",
+        "sg.assemblies.holder-type-one-isometric"
+      ],
+      "support": {
+        "family": "lamp post or vertical support",
+        "attachment": "aluminium flat-bar holder; stainless band/buckle around post"
+      },
+      "face_normal": null,
+      "context": "Traffic signs on existing vertical supports; source rear views describe fixing",
+      "dimensions_mm": {
+        "sign_bottom_above_ground": {
+          "value": 2400,
+          "endpoints": "ground level to bottom edge of sign in SUP5 elevation"
+        },
+        "panel_height_variants": [
+          "600 and below",
+          900,
+          1200
+        ],
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "2400 refers to the shown sign-bottom endpoint, not lens centre or pole top."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 7,
+          "printed_page": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            82.0,
+            65.0,
+            383.0,
+            402.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            82.0,
+            65.0,
+            383.0,
+            402.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 7,
+          "printed_page": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            402.0,
+            61.0,
+            1135.0,
+            698.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            402.0,
+            61.0,
+            1135.0,
+            698.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": [
+            [
+              402.0,
+              482.0,
+              516.0,
+              676.0
+            ]
+          ]
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 7,
+          "printed_page": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawing_revision": "B",
+          "bbox_pdf_points": [
+            175.0,
+            448.0,
+            535.0,
+            698.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            175.0,
+            448.0,
+            535.0,
+            698.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": [
+            [
+              402.0,
+              448.0,
+              535.0,
+              492.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-holder-two",
+      "name": "Traffic-sign holder type 2 on post or wall",
+      "source_assets": [
+        "sg.assemblies.holder-type-two",
+        "sg.assemblies.wall-mounted-sign",
+        "sg.assemblies.wall-plate"
+      ],
+      "support": {
+        "post_variant": "two 19 mm-wide stainless bands with buckles around lamp post or vertical support",
+        "wall_variant": "6 mm aluminium wall plate with holes for high-tensile threaded studs",
+        "sign_attachment": "4.8 mm-diameter rivets as required, aluminium square hollow section, stiffened and fully welded bracket"
+      },
+      "face_normal": null,
+      "dimensions_mm": {
+        "wall_plate_width": {
+          "value": 150,
+          "endpoints": "outer edge to outer edge"
+        },
+        "wall_plate_height": {
+          "value": 150,
+          "endpoints": "outer edge to outer edge"
+        },
+        "wall_plate_thickness": {
+          "value": 6,
+          "endpoints": "plate faces"
+        },
+        "wall_plate_hole_diameter": {
+          "value": 7.9,
+          "endpoints": "diameter of threaded-stud clearance hole"
+        },
+        "mount_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Post and wall variants have distinct attachment hardware; no common installation height is stated."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 9,
+          "printed_page": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            68.0,
+            567.0,
+            459.0,
+            1062.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            129.0,
+            68.0,
+            624.0,
+            459.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": [
+            [
+              539.0,
+              328.0,
+              624.0,
+              459.0
+            ]
+          ]
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 9,
+          "printed_page": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            330.0,
+            363.0,
+            695.0,
+            750.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            441.0,
+            330.0,
+            828.0,
+            695.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": [
+            [
+              441.0,
+              330.0,
+              543.0,
+              463.0
+            ],
+            [
+              809.0,
+              330.0,
+              828.0,
+              387.0
+            ]
+          ]
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 9,
+          "printed_page": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            462.0,
+            120.0,
+            673.0,
+            336.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            855.0,
+            462.0,
+            1071.0,
+            673.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-height-limit-rail",
+      "name": "Height-limit sign bracket type A on pedestrian-overhead-bridge rail",
+      "source_assets": [
+        "sg.assemblies.height-limit-bracket-type-a",
+        "sg.assemblies.height-limit-bracket-fixing"
+      ],
+      "support": {
+        "family": "pedestrian overhead bridge bottom rail",
+        "attachment": "two 10 mm-diameter bolts at rail attachment; high-bond tape and six 10 mm-diameter bolts with washers for sign"
+      },
+      "face_normal": null,
+      "displayed_restriction_m": 4.5,
+      "dimensions_mm": {
+        "sign_width": 900,
+        "sign_height": 900,
+        "installation_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "4.5 m is the sign's height restriction, not a bracket mounting height; variable beam-dependent reach remains unknown."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 16,
+          "printed_page": "10-14",
+          "drawing": "LTA/SDRE14/10/SUP14",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            96.0,
+            554.0,
+            690.0,
+            1036.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            155.0,
+            96.0,
+            637.0,
+            690.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 16,
+          "printed_page": "10-14",
+          "drawing": "LTA/SDRE14/10/SUP14",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            516.0,
+            842.0,
+            683.0,
+            1037.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            154.0,
+            516.0,
+            349.0,
+            683.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 16,
+          "bbox_pdf_points": [
+            706.0,
+            249.0,
+            812.0,
+            393.0
+          ],
+          "bbox_display_pdf_points": [
+            798.0,
+            706.0,
+            942.0,
+            812.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "detail": "SUP14 title: 4.5m height limit sign, 900mm × 900mm"
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-height-limit-wall",
+      "name": "Height-limit sign bracket type B on wall or beam",
+      "source_assets": [
+        "sg.assemblies.height-limit-bracket-type-b"
+      ],
+      "support": {
+        "family": "wall or beam",
+        "attachment": "five 12 mm-diameter adhesive anchor bolts; high-bond tape and six 10 mm-diameter bolts with washers for sign"
+      },
+      "face_normal": null,
+      "displayed_restriction_m": 4.5,
+      "dimensions_mm": {
+        "sign_width": 900,
+        "sign_height": 900,
+        "installation_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Bracket type B refers to type A for dimensions; no structural capacity inferred."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 16,
+          "printed_page": "10-14",
+          "drawing": "LTA/SDRE14/10/SUP14",
+          "drawing_revision": "-",
+          "bbox_pdf_points": [
+            87.0,
+            92.0,
+            690.0,
+            534.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            657.0,
+            87.0,
+            1099.0,
+            690.0
+          ],
+          "original_page_rotation_degrees": 90,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "sup",
+          "pdf_page": 16,
+          "bbox_pdf_points": [
+            706.0,
+            249.0,
+            812.0,
+            393.0
+          ],
+          "bbox_display_pdf_points": [
+            798.0,
+            706.0,
+            942.0,
+            812.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "detail": "SUP14 title: 4.5m height limit sign, 900mm × 900mm"
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-arterial",
+      "name": "Arterial-road sign support",
+      "source_assets": [
+        "sg.assemblies.arterial-sign-support"
+      ],
+      "support": {
+        "family": "75 × 75 × 3 mm hot-dipped-galvanised SHS",
+        "attachment": "4.8 mm-diameter rivets, no more than 150 mm apart",
+        "foundation": "600 × 600 × 900 mm C16/20 concrete shown"
+      },
+      "face_normal": null,
+      "context": {
+        "road_class": "arterial",
+        "maximum_sign_area_m2": 1.1
+      },
+      "dimensions_mm": {
+        "sign_bottom_above_ground": {
+          "value": 2400,
+          "endpoints": "ground surface to bottom edge of sign"
+        },
+        "sign_width": null,
+        "sign_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Foundation values are a source transcription, not a structural design approval."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 17,
+          "printed_page": "10-15",
+          "drawing": "LTA/SDRE14/10/SUP15",
+          "drawing_revision": "A",
+          "bbox_pdf_points": [
+            115.0,
+            168.0,
+            440.0,
+            629.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            115.0,
+            168.0,
+            440.0,
+            629.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.mount-expressway",
+      "name": "Expressway sign support",
+      "source_assets": [
+        "sg.assemblies.expressway-sign-support"
+      ],
+      "support": {
+        "family": "100 × 100 × 4 mm hot-dipped-galvanised SHS",
+        "attachment": "4.8 mm-diameter rivets, no more than 150 mm apart",
+        "foundation": "850 × 850 × 1000 mm C16/20 concrete shown"
+      },
+      "face_normal": null,
+      "context": {
+        "road_class": "expressway",
+        "maximum_sign_area_m2": 2.3
+      },
+      "dimensions_mm": {
+        "sign_bottom_above_ground": {
+          "value": 2400,
+          "endpoints": "ground surface to bottom edge of sign"
+        },
+        "sign_width": null,
+        "sign_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Foundation values are a source transcription, not a structural design approval."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "sup",
+          "pdf_page": 17,
+          "printed_page": "10-15",
+          "drawing": "LTA/SDRE14/10/SUP15",
+          "drawing_revision": "A",
+          "bbox_pdf_points": [
+            499.0,
+            168.0,
+            825.0,
+            629.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            499.0,
+            168.0,
+            825.0,
+            629.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        }
+      ]
+    },
+    {
+      "id": "sg.assemblies.definition.bus-stop-information",
+      "name": "Bus-stop address sign, pole and passenger information context",
+      "source_assets": [
+        "sg.assemblies.bus-stop-elevation",
+        "sg.assemblies.bus-stop-layout-plan-one",
+        "sg.assemblies.bus-stop-layout-plan-two",
+        "sg.assemblies.bus-stop-pole-example"
+      ],
+      "support": {
+        "address_and_number_sign": "bus shelter fascia",
+        "bus_services_information": "shelter panels with lighting provision",
+        "bus_stop_pole": "separate roadside pole shown; placement subject to LTA approval"
+      },
+      "face_normal": {
+        "address_and_number_sign": "toward oncoming traffic",
+        "bus_services_information": null,
+        "bus_stop_pole": null
+      },
+      "context": {
+        "approach_direction_evidence": "direction-of-travel arrows in both layout plans",
+        "bus_information_panels_are_distinct_from": "regulatory signs and signal heads"
+      },
+      "dimensions_mm": {
+        "sign_width": null,
+        "sign_height": null,
+        "mount_height": null,
+        "pole_height": null,
+        "attachment_offsets": null
+      },
+      "warnings": [
+        "Stop address/number lettering is not legible separable artwork in this source. No font or text content fabricated.",
+        "BUS5 is an assembly/layout reference; it is not a cleaned bus-stop sign face."
+      ],
+      "release_ready": false,
+      "license_status": "unreviewed",
+      "source_evidence": [
+        {
+          "source_id": "bus",
+          "pdf_page": 6,
+          "printed_page": "11-5",
+          "drawing": "LTA/SDRE14/11/BUS5",
+          "drawing_revision": "D",
+          "bbox_pdf_points": [
+            84.0,
+            43.0,
+            743.0,
+            264.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            84.0,
+            43.0,
+            743.0,
+            264.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "bus",
+          "pdf_page": 6,
+          "printed_page": "11-5",
+          "drawing": "LTA/SDRE14/11/BUS5",
+          "drawing_revision": "D",
+          "bbox_pdf_points": [
+            82.0,
+            265.0,
+            752.0,
+            482.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            82.0,
+            265.0,
+            752.0,
+            482.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "bus",
+          "pdf_page": 6,
+          "printed_page": "11-5",
+          "drawing": "LTA/SDRE14/11/BUS5",
+          "drawing_revision": "D",
+          "bbox_pdf_points": [
+            82.0,
+            489.0,
+            923.0,
+            698.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            82.0,
+            489.0,
+            923.0,
+            698.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "bus",
+          "pdf_page": 6,
+          "printed_page": "11-5",
+          "drawing": "LTA/SDRE14/11/BUS5",
+          "drawing_revision": "D",
+          "bbox_pdf_points": [
+            613.0,
+            97.0,
+            643.0,
+            176.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "bbox_display_pdf_points": [
+            613.0,
+            97.0,
+            643.0,
+            176.0
+          ],
+          "original_page_rotation_degrees": 0,
+          "image_xref": null,
+          "non_subject_context_exclusions_display_pdf_points": []
+        },
+        {
+          "source_id": "bus",
+          "pdf_page": 6,
+          "bbox_pdf_points": [
+            82.0,
+            706.0,
+            436.0,
+            812.0
+          ],
+          "bbox_display_pdf_points": [
+            82.0,
+            706.0,
+            436.0,
+            812.0
+          ],
+          "bbox_coordinate_system": "unrotated PyMuPDF page points; top-left origin; x right, y down",
+          "detail": "BUS5 notes 1–6; pole location subject to LTA approval"
+        }
+      ]
+    }
+  ],
+  "source_locator_note": "Source-evidence rectangles locate the reference diagrams. SUP14 sign size 900 × 900 is in its title block; BUS5 pole approval is in note 6; SUP4 installation context is in note 9. Those full-page sources remain required."
+}
