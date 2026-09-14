@@ -1,0 +1,9 @@
+node_modules/
+dist/
+apps/web/dist/
+out/
+coverage/
+assets/
+tools/asset_extraction/
+package-lock.json
+*.md
