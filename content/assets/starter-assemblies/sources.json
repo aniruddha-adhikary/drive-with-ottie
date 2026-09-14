@@ -1,0 +1,108 @@
+{
+  "schema": "ottie.candidate-sources/1",
+  "contractVersion": 1,
+  "notes": [
+    "Every hash below is copied verbatim from assets/sg/*/manifest.json and cross-checked by check.js.",
+    "Original PDFs stay outside Git. Re-download by URL and compare sha256 before any source check.",
+    "The Rule 11 hash covers a captured web text snapshot (tools/asset_extraction/assemblies/rule11-web-text.txt), not original HTML bytes; the capture is incomplete after the quoted clauses."
+  ],
+  "sources": [
+    {
+      "id": "lta-sdre-i-sup",
+      "manifestAliases": ["sup"],
+      "manifest": "assets/sg/assemblies/manifest.json",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-10_SUP_1-15_March_2026.pdf",
+      "publisher": "LTA",
+      "edition": null,
+      "collectionRevision": "I",
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "515db158a9c9f3f744aae8a54a05f8fbc0f97a3f08959dcdd5117f8ce745fda6",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 17,
+      "verifiedFacts": [
+        "SUP4 (pdf 6, printed 10-4, LTA/SDRE14/10/SUP4 rev B): low single/double SHS 50x50x2.3 post supports; sign 900 (max) wide x 1000 (max) high; height clearance 'VARIES FROM 500 - 1200'; note 1 lists minimum height clearance 900-1200 mm for sharp deviation barrier signs and 500 mm for Keep Left / Right Pass Either Side signs.",
+        "SUP5 (pdf 7, printed 10-5, LTA/SDRE14/10/SUP5 rev B): traffic sign on lamp post or vertical support; left elevation labels 2400 from ground level to bottom edge of sign; sign width 'NOT MORE THAN 900'; holder type 1 variants for panel heights 600 and below, 900 and 1200.",
+        "SUP6 (pdf 8, printed 10-6, LTA/SDRE14/10/SUP6 rev C): single post support with SHS 50x50x5.0 hot dipped galvanised, sign 900 (max) wide x 1000 (max) high, 2400 ground to sign bottom, 200x200x10 M.S. plate welded to SHS on 4 expansion bolts, 500x500x1000 C16/20 concrete; double post support 1100-1700 wide, posts 800 apart, 2400 ground to sign bottom, area not exceeding 1.35 m2.",
+        "SUP7 (pdf 9, printed 10-7, LTA/SDRE14/10/SUP7, no revision letter): traffic sign holder type 2 for a 600x600 or 600x450 traffic sign, 450 offset (reduce to 100 mm if the sign can clear the top of the vertical support), 2 nos 19 width stainless steel band with buckle around lamp post or vertical support; no installation height stated.",
+        "SUP15 (pdf 17, printed 10-15, LTA/SDRE14/10/SUP15 rev A): vertical supports for traffic sign with area not exceeding 1.1 m2 for arterial road (SHS 75x75x3, 600x600x900 C16/20 concrete) and 2.3 m2 for expressway (SHS 100x100x4); both elevations label 2400 from ground to bottom of sign; sign width and height 'VARIES'."
+      ],
+      "unresolved": [
+        "No SUP sheet establishes a universal sign mounting height, face normal or lateral offset from the kerb; each 2400 mm label applies only to the assembly drawn on that sheet.",
+        "No SUP sheet in the collection covers traffic signal poles, mast arms or signal head brackets."
+      ]
+    },
+    {
+      "id": "spf-btt-2026",
+      "manifestAliases": ["tp", "spf-btt-2026"],
+      "manifest": "assets/sg/assemblies/manifest.json",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf",
+      "publisher": "Singapore Police Force, Traffic Police",
+      "edition": "Updated 2 January 2026",
+      "collectionRevision": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 90,
+      "verifiedFacts": [
+        "pdf 47 / printed 46 'EXAMPLES': three vertical paired heads (image xrefs 368, 369, 370). Left: circular green + right-arrow green, 'Means GO for straight ahead vehicles and GO for right turn vehicles.' Middle: circular green + right-arrow amber, 'Means GO for straight ahead vehicles only. Vehicles turning right must get ready to STOP.' Right: circular green + right-arrow red, 'Means GO for straight ahead vehicles only. Vehicles turning right must stop behind the stop line.'",
+        "pdf 46 / printed 45: GREEN ARROW 'Means GO in the direction indicated. (Turn right)'; AMBER ARROW 'Means READY TO STOP behind the stop-line in the direction indicated.'; RED ARROW 'Means STOP behind the stop-line in the direction indicated. (Do not turn right even when there is no traffic from the opposite direction)'.",
+        "pdf 46 / printed 45: GREEN B 'Means GO for all buses only.' with illustration xref 361; the illustration places B to the right of red as seen by the reader.",
+        "pdf 11 / printed 10: Give Way 'Slow down. Stop if necessary. Give way to traffic on major road.'; Stop 'Stop before the white line. Give way to traffic from the right and left.'"
+      ],
+      "unresolved": [
+        "Signal illustrations are small raster images with no housing, pole, bracket or lens dimensions.",
+        "No horizontal signal head illustration exists in the handbook pages used here.",
+        "Page 2 states reproduction requires publisher permission; reuse remains unreviewed."
+      ]
+    },
+    {
+      "id": "rule11",
+      "manifestAliases": ["rule11"],
+      "manifest": "assets/sg/assemblies/manifest.json",
+      "url": "https://sso.agc.gov.sg/SL/RTA1961-R33?ProvIds=pr11-&ViewType=Within",
+      "publisher": "Singapore Statutes Online / Attorney-General's Chambers",
+      "edition": null,
+      "collectionRevision": null,
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "c0ec46b7d0a405fa076383364a7e1e2028a44a300b7cfd57dc0d74564c895f05",
+      "hashScope": "captured web_get_contents tool text, not original HTML bytes",
+      "pageCount": null,
+      "verifiedFacts": [
+        "Vertical circular order: red above amber, green below amber.",
+        "Vertical arrow combinations: each arrow light at the same level as the light of the same colour.",
+        "Vertical lens: effective diameter at least 200 mm; lowest lens centre 2,290 mm above ground, may be increased to 3,000 mm owing to road gradient; adjacent lens centres not more than 500 mm apart.",
+        "Horizontal circular order: red on the right of amber, green on the left of amber (facing approaching traffic); arrow lights below the light of the same colour; lens at least 300 mm; lowest lens centre not less than 5,200 mm.",
+        "Additional green light (B) where vertical: at the same level on the left side of or above the red light facing approaching traffic.",
+        "An illuminated red arrow prohibits vehicles from proceeding beyond the stop line or broken lines in that direction."
+      ],
+      "unresolved": [
+        "Direct HTTP retrieval returned 403; captured text ends partway through the final green-arrow paragraph."
+      ]
+    },
+    {
+      "id": "lta-sdre-i-tfm",
+      "manifestAliases": ["lta-sdre-i-tfm"],
+      "manifest": "assets/sg/mandatory/manifest.json",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-15_TFM_1-2_March_2026.pdf",
+      "publisher": "LTA",
+      "edition": null,
+      "collectionRevision": "I",
+      "publishedOn": null,
+      "effectiveFrom": null,
+      "retrievedAt": "2026-09-14",
+      "sha256": "8decfe2306c6fb1b738c82a82bc4d657ef6a8a16ba4a0a342522126fd0113af1",
+      "hashScope": "original downloaded PDF bytes",
+      "pageCount": 3,
+      "verifiedFacts": [
+        "TFM1 (pdf 2, printed 15-1): Give Way backing 600 x 600 (triangle, point down) and Stop backing 600 x 600 (octagon) as printed dimension labels; carried by the F0 face fixtures."
+      ],
+      "unresolved": ["TFM1 does not state mounting height, support family or lateral offset."]
+    }
+  ]
+}

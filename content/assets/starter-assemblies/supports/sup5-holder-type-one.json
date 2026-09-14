@@ -1,0 +1,225 @@
+{
+  "schema": "ottie.candidate-support/1",
+  "contractVersion": 1,
+  "id": "sg.candidate.support-sup5-holder-type-one",
+  "version": 1,
+  "name": "SUP5 holder type 1 on lamp post or vertical support, panel height 600 and below (candidate)",
+  "role": "sign_post",
+  "worldSupportFamily": "pole",
+  "dimensionsStatus": "sourced",
+  "allowedContexts": {
+    "controlRegimes": ["give_way", "stop"],
+    "roadClasses": ["minor_access", "local", "development_access"],
+    "notes": [
+      "SUP5 shows a traffic sign fixed to an existing lamp post or vertical support with holder type 1. Road classes are the F0 face fixtures' classes, not a source statement."
+    ]
+  },
+  "sourceDefinitionIds": ["sg.assemblies.definition.mount-holder-one"],
+  "sourceAssetIds": [
+    "sg.assemblies.lamp-post-sign-elevation",
+    "sg.assemblies.holder-type-one-height-variants",
+    "sg.assemblies.holder-type-one-isometric"
+  ],
+  "geometry": {
+    "kind": "support",
+    "heightMm": null,
+    "attachments": [
+      {
+        "name": "ground",
+        "offsetMm": { "x": 0, "y": 0, "z": 0 },
+        "accepts": ["ground"],
+        "basis": "sourced",
+        "note": "'GROUND LEVEL' label in the SUP5 left elevation."
+      },
+      {
+        "name": "sign_bottom_edge",
+        "offsetMm": { "x": 0, "y": 0, "z": 2400 },
+        "accepts": ["face"],
+        "basis": "sourced",
+        "note": "Printed label 2400 from ground level to the bottom edge of the sign in the SUP5 'TRAFFIC SIGN ON VERTICAL SUPPORT' elevation. Applies to that shown assembly only."
+      },
+      {
+        "name": "face_back_centre_600_panel",
+        "offsetMm": { "x": 0, "y": 0, "z": 2700 },
+        "accepts": ["face"],
+        "basis": "derived",
+        "note": "2400 (SUP5 sign bottom) + 300 (half of the 600 mm TFM1 backing height); uses the '600 & BELOW' holder variant. Not a printed dimension."
+      }
+    ]
+  },
+  "structure": {
+    "post": "existing lamp post or vertical support; section and height not given on SUP5",
+    "holder": "holder type 1: aluminium flat-bar holder, stainless steel band and buckle around the post; '600 & BELOW', 900 and 1200 panel-height variants share the sheet",
+    "standoffMm": 60,
+    "maximumSignMm": { "width": 900, "height": null }
+  },
+  "provenance": {
+    "family": "assemblies",
+    "representation": "parametric_geometry",
+    "drawingSheet": {
+      "drawing": "LTA/SDRE14/10/SUP5",
+      "revision": "B",
+      "title": "SUPPORT FOR TRAFFIC SIGN (SHEET 2 OF 4)",
+      "dateOfIssue": "2014-04-01",
+      "revisionDates": ["2017-09", "2022-04"],
+      "sheet": "2 of 4",
+      "printedPage": "10-5",
+      "collectionRevision": "I",
+      "readFrom": "title block rendered from the original PDF page 7"
+    },
+    "files": [
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/lamp-post-sign-elevation.png",
+        "sha256": "04f067cb76feb3f7b4fc22c6ffa72a6907fa2cc1e0a6d59d8c8a73b79abc13f7"
+      },
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/holder-type-one-height-variants.png",
+        "sha256": "8dc290c87a95f45e8c6f53da66f4038b862a2c7ed0cf972c67c939dd01f2faad"
+      },
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/holder-type-one-isometric.png",
+        "sha256": "5169b04470f0d6ea86bc73b403e46e6724ba03b11a78573c0b47f1f06e286212"
+      }
+    ],
+    "geometrySources": [
+      {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 7,
+        "printedPage": "10-5",
+        "drawing": "LTA/SDRE14/10/SUP5",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [82, 65, 383, 402]
+      },
+      {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 7,
+        "printedPage": "10-5",
+        "drawing": "LTA/SDRE14/10/SUP5",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [402, 61, 1135, 698]
+      }
+    ],
+    "meaningSources": [],
+    "measurements": [
+      {
+        "name": "sign_bottom_above_ground",
+        "valueMm": 2400,
+        "endpoints": "ground level to bottom edge of sign, SUP5 'TRAFFIC SIGN ON VERTICAL SUPPORT' elevation",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 7,
+          "printedPage": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [337.9, 212.6, 379.6, 274.9]
+        },
+        "notes": [
+          "Applies only to the assembly shown on SUP5. It is not a pole height, a lens-centre height or a universal mounting rule."
+        ]
+      },
+      {
+        "name": "sign_width_maximum",
+        "valueMm": null,
+        "maximumMm": 900,
+        "endpoints": "left to right outer edge of sign, labelled NOT MORE THAN 900",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 7,
+          "printedPage": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [193.6, 72.1, 277.1, 87.3]
+        }
+      },
+      {
+        "name": "holder_standoff",
+        "valueMm": 60,
+        "endpoints": "post face to sign panel, labelled 60 at the top of the holder type 1 side view ('600 & BELOW' variant)",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 7,
+          "printedPage": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [497.3, 72.1, 523.9, 87.3]
+        },
+        "notes": [
+          "Holder built from 25 x 20 x 6 THK aluminium flat bar welded to 250 x 25 x 6 THK bar; 4.8 dia rivets (5 nos) for the 600-and-below variant."
+        ]
+      },
+      {
+        "name": "panel_height_variant_600_and_below",
+        "valueMm": null,
+        "maximumMm": 600,
+        "endpoints": "panel height range served by the first holder variant, labelled 600 & BELOW",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 7,
+          "printedPage": "10-5",
+          "drawing": "LTA/SDRE14/10/SUP5",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [540.6, 198.9, 560.3, 259.7]
+        }
+      }
+    ],
+    "rawDimensionsMm": {},
+    "rawFamilyEvidence": {
+      "assembly_context": {
+        "view": "Traffic sign on lamp post or vertical support",
+        "support_required": true,
+        "mount": null,
+        "support_family": null,
+        "attachment_anchors_mm": null,
+        "face_normal_world": null,
+        "intended_observer_or_approach": null,
+        "reference_context": "LTA mounting/support engineering reference",
+        "is_3d_model": false
+      },
+      "definition_dimensions_mm": {
+        "sign_bottom_above_ground": {
+          "value": 2400,
+          "endpoints": "ground level to bottom edge of sign in SUP5 elevation"
+        },
+        "panel_height_variants": ["600 and below", 900, 1200],
+        "attachment_offsets": null
+      }
+    },
+    "extractionRecipe": {
+      "method": "Hand transcription of printed dimension labels from the original SUP PDF (hash verified) into candidate metadata; no artwork generated.",
+      "tool": "PyMuPDF page render for visual reading",
+      "toolVersion": "1.26.x",
+      "recipe": "content/assets/starter-assemblies/README.md",
+      "recipeSha256": null
+    },
+    "relatedAssetIds": []
+  },
+  "review": {
+    "extractionStatus": "extracted_reference",
+    "runtimeState": "draft",
+    "warnings": [
+      "2400 refers to the shown sign-bottom endpoint, not lens centre or pole top.",
+      "Three holder variants retained together because original dimension callouts share space; isolated parameter geometry deferred.",
+      "The lamp post / vertical support itself is not dimensioned on SUP5; pole height and section are unknown.",
+      "Engineering reference includes dimension leaders/labels; not cleaned production geometry."
+    ],
+    "contentApproved": false,
+    "reuseApproved": false,
+    "approvalEvidence": [],
+    "licenseStatus": "unreviewed",
+    "releaseStatusNote": "release_ready false: development candidate only",
+    "releaseReady": false
+  },
+  "unknowns": [
+    "lamp post / vertical support height and section",
+    "face normal relative to the carriageway",
+    "lateral offset from kerb",
+    "whether a lamp-post-mounted sign is acceptable at a Give Way or STOP control (site decision, not on SUP5)"
+  ]
+}
