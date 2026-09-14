@@ -22,7 +22,7 @@ function findExplanation(props: LessonScreenProps, option: Option | undefined): 
  * controlled view over attempt + presentation state supplied by the caller; it owns neither.
  */
 export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
-  const { question, world, bundle, attempt, presentation, preferences, sceneView, helpSlot, progressLabel, onSelectOption, onCheckAnswer, onContinue, onPresentationChange, onHelp, onLeave } = props;
+  const { question, world, bundle, attempt, presentation, preferences, sceneView, helpSlot, progressLabel, compactSceneHeightPx, onSelectOption, onCheckAnswer, onContinue, onPresentationChange, onHelp, onLeave } = props;
 
   const stemId = useId();
   const instructionId = useId();
@@ -60,8 +60,16 @@ export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
   const highlightEntityId = null;
   const compactFallback = useMemo(() => {
     const estimate = estimateCompactViewport();
-    return { width: estimate.widthPx, height: estimate.heightPx };
-  }, []);
+    return { width: estimate.widthPx, height: compactSceneHeightPx ?? estimate.heightPx };
+  }, [compactSceneHeightPx]);
+  const compactSceneStyle = compactSceneHeightPx === undefined ? undefined : { height: `${String(compactSceneHeightPx)}px` };
+  // Required evidence this view is not allowed to carry (a sign face in the top view) lives in another
+  // view of the same road; say which one rather than leaving the learner to discover it in the viewer.
+  const elsewhere = presentation.viewerEnlarged
+    ? []
+    : evidence
+        .filter((e) => !e.allowedViews.includes(presentation.cameraPreset))
+        .map((e): { id: string; view: CameraPresetName } => ({ id: e.id, view: e.allowedViews.find((v) => v !== 'entity_detail') ?? 'entity_detail' }));
 
   return (
     <ThemeScope preferences={preferences}>
@@ -82,9 +90,9 @@ export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
 
         <main className="ottie-lesson__content">
           {presentation.viewerEnlarged ? (
-            <div className="ottie-lesson__scene ottie-lesson__scene--placeholder" aria-hidden="true" />
+            <div className="ottie-lesson__scene ottie-lesson__scene--placeholder" aria-hidden="true" style={compactSceneStyle} />
           ) : (
-            <section className="ottie-lesson__scene" aria-label="Scene">
+            <section className="ottie-lesson__scene" aria-label="Scene" style={compactSceneStyle} data-testid="compact-scene">
               <SceneHost
                 sceneView={sceneView}
                 world={world}
@@ -100,6 +108,11 @@ export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
               </button>
             </section>
           )}
+          {elsewhere.length > 0 ? (
+            <p className="ottie-type-metadata ottie-lesson__elsewhere" data-testid="evidence-elsewhere">
+              Also part of this question, in the same road scene: {elsewhere.map((e) => `${e.id} (${PRESET_LABELS[e.view]}, via Enlarge)`).join('; ')}
+            </p>
+          ) : null}
 
           <h1 id={stemId} className="ottie-type-question ottie-lesson__stem">
             <TermText text={question.stem} bindings={question.stemBindings} origin={{ kind: 'stem' }} onHelp={onHelp} />

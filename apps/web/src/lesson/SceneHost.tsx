@@ -110,6 +110,7 @@ export function SceneHost({ sceneView, world, evidence, preset, preferences, hig
   }, [sceneView, world, evidence, preset, preferences, highlightEntityId, fallbackWidth, fallbackHeight, status]);
 
   const hidden = lastChange?.fit.hiddenEvidenceIds ?? [];
+  const linked = lastChange?.fit.linkedDetailEntityIds ?? [];
 
   return (
     <div className="ottie-scene-host" data-testid="scene-host" data-status={status} data-preset={preset}>
@@ -122,6 +123,11 @@ export function SceneHost({ sceneView, world, evidence, preset, preferences, hig
       {hidden.length > 0 ? (
         <p className="ottie-type-metadata ottie-scene-host__note" data-testid="hidden-evidence">
           Not visible in this view: {hidden.join(', ')}
+        </p>
+      ) : null}
+      {linked.length > 0 ? (
+        <p className="ottie-type-metadata ottie-scene-host__note" data-testid="linked-detail">
+          Too small to read here, so the Detail view (via Enlarge) shows it close up where it stands in this scene: {linked.join(', ')}
         </p>
       ) : null}
     </div>

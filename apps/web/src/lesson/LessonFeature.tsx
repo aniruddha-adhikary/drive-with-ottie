@@ -16,8 +16,8 @@ import { type GlossaryRequest } from '../glossary/types';
 import { useGlossary } from '../glossary/useGlossary';
 import { ComparisonPanel } from './ComparisonPanel';
 import { LessonScreen } from './LessonScreen';
-import { chooseInitialPreset } from './presets';
-import { type LessonRuntime, createBrowserLessonRuntime, estimateCompactViewport } from './runtime';
+import { chooseCompactView } from './presets';
+import { type LessonRuntime, compactHeightCandidates, createBrowserLessonRuntime, estimateCompactViewport } from './runtime';
 import { type HelpRequest } from './types';
 import './lesson.css';
 
@@ -33,6 +33,8 @@ type Exhausted = ContentExhaustedError['step'];
 
 interface ReadyScene {
   readonly attemptId: AttemptState['id'];
+  /** Compact scene height R2 fitting settled on for this question at the current window size. */
+  readonly compactSceneHeightPx: number;
   readonly presentation: PresentationState;
 }
 
@@ -157,8 +159,13 @@ export default function LessonFeature(props: LessonFeatureProps): React.JSX.Elem
       .ensureLoaded(world)
       .then(() => {
         if (cancelled) return;
-        const cameraPreset = chooseInitialPreset(stage.camera, question, world, estimateCompactViewport(), preferences);
-        setReady({ attemptId: attempt.id, presentation: { cameraPreset, viewerEnlarged: false, helpTermId: null, comparisonId: null } });
+        const viewport = estimateCompactViewport();
+        const view = chooseCompactView(stage.camera, question, world, viewport, compactHeightCandidates(viewport), preferences);
+        setReady({
+          attemptId: attempt.id,
+          compactSceneHeightPx: view.heightPx,
+          presentation: { cameraPreset: view.preset, viewerEnlarged: false, helpTermId: null, comparisonId: null },
+        });
         setComparison(null);
         closeGlossary();
       })
@@ -303,6 +310,7 @@ export default function LessonFeature(props: LessonFeatureProps): React.JSX.Elem
         presentation={glossary.reflect(ready.presentation)}
         preferences={preferences}
         sceneView={stage.sceneView}
+        compactSceneHeightPx={ready.compactSceneHeightPx}
         {...(progressLabel === undefined ? {} : { progressLabel })}
         onSelectOption={(optionId) => { act(() => session.select(run.id, optionId)); }}
         onCheckAnswer={() => { act(() => session.check(run.id)); }}

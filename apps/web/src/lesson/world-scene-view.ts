@@ -79,11 +79,13 @@ export interface WorldSceneView extends SceneView {
 }
 
 /**
- * R2 judges a preset against every requirement the world lists for it, so the fit runs over the
- * whole world's evidence; the lesson then reads back only the requirements this question needs.
+ * R2 frames the requirements it is handed and judges every requirement the preset advertises, so
+ * the fit is run over this question's requirements only: the camera tightens onto what the
+ * question needs, and evidence the preset lists for other questions is not allowed to hide it.
+ * The lesson then reads back only the requirements this question needs.
  */
 export function fitForQuestion(camera: EvidenceCameraPort, input: SceneInput): ViewFit {
-  const fit = camera.fit({ ...input, evidence: input.world.evidence });
+  const fit = camera.fit(input);
   const wanted = new Set(input.evidence.map((e) => e.id));
   return {
     camera: fit.camera,

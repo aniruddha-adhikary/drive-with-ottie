@@ -1,4 +1,6 @@
-import { type CameraPort, type CameraPresetName, type DeepReadonly, type EvidenceRequirement, type Question, type ViewerPreferences, type Viewport, type World } from '@ottie/contracts';
+import { type CameraPresetName, type DeepReadonly, type EvidenceRequirement, type Question, type ViewerPreferences, type Viewport, type World } from '@ottie/contracts';
+import { type EvidenceCameraPort } from '@ottie/renderer-cameras';
+import { fitForQuestion } from './world-scene-view';
 
 /** The evidence requirements a question needs, in world order. Unknown IDs are dropped, not invented. */
 export function questionEvidence(question: Question, world: DeepReadonly<World>): readonly EvidenceRequirement[] {
@@ -50,21 +52,58 @@ export function rankedPresets(question: Question, world: DeepReadonly<World>): r
  * requirement is reported by the SceneHost, never dropped, and no actor is moved to make it fit.
  */
 export function chooseInitialPreset(
-  camera: CameraPort,
+  camera: EvidenceCameraPort,
   question: Question,
   world: DeepReadonly<World>,
   viewport: Viewport,
   preferences: ViewerPreferences,
 ): CameraPresetName {
+  return chooseCompactView(camera, question, world, viewport, [viewport.heightPx], preferences).preset;
+}
+
+export interface CompactView {
+  readonly preset: CameraPresetName;
+  /** Compact scene height the chooser settled on (one of the offered candidates). */
+  readonly heightPx: number;
+  /** Required evidence the chosen view still cannot show readably; empty when the view is complete. */
+  readonly hiddenEvidenceIds: readonly string[];
+}
+
+/**
+ * Compact scene layout as a fitting problem: the scene keeps the phone's width and may grow taller
+ * (candidate heights, ascending) until some preset shows every required requirement at or above its
+ * authored minimum size. The smallest sufficient height wins so the question stays near the scene;
+ * when none suffices, the tallest candidate with the fewest hidden requirements is used and the
+ * remainder is reported for the enlarged viewer. Only camera numbers and CSS height change here.
+ */
+export function chooseCompactView(
+  camera: EvidenceCameraPort,
+  question: Question,
+  world: DeepReadonly<World>,
+  viewport: Viewport,
+  heightsPx: readonly number[],
+  preferences: ViewerPreferences,
+): CompactView {
   const evidence = questionEvidence(question, world);
-  const fallback = initialPresetFor(question, world);
   const wanted = new Set(evidence.map((e) => e.id));
-  let best: { name: CameraPresetName; hidden: number } | null = null;
-  for (const name of rankedPresets(question, world)) {
-    const fit = camera.fit({ world, evidence: world.evidence, preset: name, viewport, preferences, highlightEntityId: null });
-    const hidden = fit.hiddenEvidenceIds.filter((id) => wanted.has(id)).length;
-    if (hidden === 0) return name;
-    if (!best || hidden < best.hidden) best = { name, hidden };
+  const heights = [...new Set(heightsPx.map((h) => Math.round(h)).filter((h) => h > 0))].sort((a, b) => a - b);
+  if (heights.length === 0) heights.push(viewport.heightPx);
+  let best: CompactView | null = null;
+  for (const heightPx of heights) {
+    for (const preset of rankedPresets(question, world)) {
+      const fit = fitForQuestion(camera, {
+        world,
+        evidence,
+        preset,
+        viewport: { ...viewport, heightPx },
+        preferences,
+        highlightEntityId: null,
+      });
+      const { hiddenEvidenceIds } = fit;
+      const candidate: CompactView = { preset, heightPx, hiddenEvidenceIds };
+      if (hiddenEvidenceIds.length === 0) return candidate;
+      if (!best || hiddenEvidenceIds.length <= best.hiddenEvidenceIds.length) best = candidate;
+    }
   }
-  return best?.name ?? fallback;
+  return best ?? { preset: initialPresetFor(question, world), heightPx: heights[0] ?? viewport.heightPx, hiddenEvidenceIds: [...wanted] };
 }
