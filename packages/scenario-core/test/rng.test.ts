@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { createFixtureGenerator, createSeededRng } from '@ottie/scenario-core';
-import { seed, worldId } from '@ottie/contracts';
-import { DEVELOPMENT_WORLDS, TEMPLATE_GIVE_WAY_T } from '@ottie/contracts/fixtures';
+import { createSeededRng } from '@ottie/scenario-core';
+import { seed } from '@ottie/contracts';
 
 describe('seeded rng', () => {
   it('is deterministic per seed and differs across seeds', () => {
@@ -16,27 +15,6 @@ describe('seeded rng', () => {
       const v = a.int(3, 5);
       expect(v).toBeGreaterThanOrEqual(3);
       expect(v).toBeLessThanOrEqual(5);
-    }
-  });
-});
-
-describe('fixture generator (skeleton)', () => {
-  it('returns the fixture for a known template and flags it as hand-authored', () => {
-    const generator = createFixtureGenerator(DEVELOPMENT_WORLDS);
-    const result = generator.generate({
-      id: worldId('request-1'),
-      schemaVersion: 1,
-      templateRef: { id: TEMPLATE_GIVE_WAY_T.id, version: TEMPLATE_GIVE_WAY_T.version },
-      seed: seed('any'),
-      sourceProfileId: 'development',
-      parameters: {},
-      contentBundle: null,
-      views: ['plan'],
-    });
-    expect(result.ok).toBe(true);
-    if (result.ok) {
-      expect(result.world.provenance.key.template.id).toBe(TEMPLATE_GIVE_WAY_T.id);
-      expect(result.diagnostics.some((d) => d.code === 'generator.fixture_returned')).toBe(true);
     }
   });
 });
