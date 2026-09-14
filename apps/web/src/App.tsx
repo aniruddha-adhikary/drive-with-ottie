@@ -1,53 +1,51 @@
-import { useState } from 'react';
-import { type CameraPresetName, type DeepReadonly, type World } from '@ottie/contracts';
-import { DEVELOPMENT_WORLDS } from '@ottie/contracts/fixtures';
+import { Suspense, useEffect, useState } from 'react';
 import { DevelopmentBanner } from './components/DevelopmentBanner';
-import { FixturePicker } from './components/FixturePicker';
-import { ModuleStatusPanel } from './components/ModuleStatusPanel';
-import { SceneCanvas } from './components/SceneCanvas';
-import { WorldSummary } from './components/WorldSummary';
+import { FEATURE_ROUTES, findRoute, routePathFromHash } from './routes';
 
-function defaultWorld(): DeepReadonly<World> {
-  const first = DEVELOPMENT_WORLDS[0];
-  if (!first) throw new Error('no development worlds');
-  return first;
+function useHashPath(): string {
+  const [path, setPath] = useState(() => routePathFromHash(window.location.hash));
+  useEffect(() => {
+    const onChange = () => {
+      setPath(routePathFromHash(window.location.hash));
+    };
+    window.addEventListener('hashchange', onChange);
+    return () => {
+      window.removeEventListener('hashchange', onChange);
+    };
+  }, []);
+  return path;
 }
 
 /**
- * Web shell. Feature routes (Learn, Practice, Glossary, Progress) are added by U1/I1 under
- * apps/web/src/features/<feature>/ and mounted from apps/web/src/routes.tsx — see CONTRACTS.md.
+ * Web shell: development banner, the active feature route (the lesson by default) and a compact
+ * footer with the remaining routes. Feature modules live under apps/web/src/features/<name>/ and are
+ * registered in apps/web/src/routes.tsx.
  */
 export function App(): React.JSX.Element {
-  const [world, setWorld] = useState<DeepReadonly<World>>(defaultWorld);
-  const [preset, setPreset] = useState<CameraPresetName>('plan');
+  const path = useHashPath();
+  const route = findRoute(path);
+  const Feature = route.component;
 
   return (
     <div className="ottie-shell">
       <DevelopmentBanner />
-      <header className="ottie-header">
-        <h1>Drive with Ottie</h1>
-        <span>Singapore Basic Theory Test study prototype — foundation slice (F0)</span>
-      </header>
-      <main className="ottie-main">
-        <section aria-label="Scene">
-          <SceneCanvas world={world} preset={preset} />
-          <div className="ottie-controls" role="group" aria-label="Camera view" style={{ marginTop: '0.5rem' }}>
-            {world.cameraPresets.map((p) => (
-              <button key={p.name} type="button" aria-pressed={p.name === preset} onClick={() => {
-                setPreset(p.name);
-              }}>
-                {p.name.replace('_', ' ')}
-              </button>
-            ))}
-          </div>
-        </section>
-        <aside>
-          <FixturePicker worlds={DEVELOPMENT_WORLDS} selected={world} onSelect={(w) => { setWorld(w); setPreset('plan'); }} />
-          <WorldSummary world={world} />
-          <ModuleStatusPanel />
-        </aside>
-      </main>
+      <Suspense
+        fallback={
+          <p className="ottie-type-explanation" style={{ padding: '1rem' }} aria-busy="true">
+            Loading {route.label}…
+          </p>
+        }
+      >
+        <Feature />
+      </Suspense>
       <footer className="ottie-footer">
+        <nav aria-label="Development routes">
+          {FEATURE_ROUTES.map((r) => (
+            <a key={r.path} href={`#${r.path}`} aria-current={r.path === route.path ? 'page' : undefined} style={{ marginRight: '0.75rem' }}>
+              {r.label}
+            </a>
+          ))}
+        </nav>
         Build mode: {__OTTIE_BUILD_MODE__}. Device-local only; no accounts, no sync. No content here is release-approved.
       </footer>
     </div>

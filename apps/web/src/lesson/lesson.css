@@ -42,7 +42,9 @@
 
 .ottie-lesson__scene {
   position: relative;
-  min-height: 13.25rem; /* 212px design study height */
+  /* 212px design study minimum; grows with width so phone plan/oblique views keep evidence readable. */
+  min-height: 13.25rem;
+  height: clamp(13.25rem, 75vw, 22rem);
   border-radius: 1rem;
   overflow: hidden;
   background: var(--ottie-surface-white);
@@ -64,11 +66,12 @@
   display: flex;
   flex-direction: column;
   min-height: 13.25rem;
+  height: 100%;
 }
 
 .ottie-scene-host__surface {
   flex: 1 1 auto;
-  min-height: 13.25rem;
+  min-height: 0;
   position: relative;
 }
 
