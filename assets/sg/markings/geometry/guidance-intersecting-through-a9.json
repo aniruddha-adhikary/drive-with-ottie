@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "asset_id": "sg.markings.guidance-intersecting-through-a9",
+  "units": "mm",
+  "representation": "parametric_geometry",
+  "shape": "circle_groups",
+  "parameters_mm": {
+    "diameter": 150,
+    "within_group_centre_spacing": 1000,
+    "between_group_centre_spacing": 3000
+  },
+  "dots_per_group": 3,
+  "measurement_evidence": [
+    {
+      "parameter": "diameter",
+      "value": 150,
+      "unit": "mm",
+      "measurement_endpoints": [
+        "one edge of circular paint",
+        "opposite edge through its centre"
+      ],
+      "source": {
+        "source_id": "lta-sdre-I-rms",
+        "pdf_page": 2,
+        "printed_page": "8-1",
+        "drawing": "LTA/SDRE14/8/RMS1",
+        "drawing_revision": "D",
+        "bbox_pdf_points": [
+          174,
+          490,
+          562,
+          532
+        ]
+      },
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement"
+    },
+    {
+      "parameter": "within_group_centre_spacing",
+      "value": 1000,
+      "unit": "mm",
+      "measurement_endpoints": [
+        "centre of a dot",
+        "centre of the next dot in the same group"
+      ],
+      "source": {
+        "source_id": "lta-sdre-I-rms",
+        "pdf_page": 2,
+        "printed_page": "8-1",
+        "drawing": "LTA/SDRE14/8/RMS1",
+        "drawing_revision": "D",
+        "bbox_pdf_points": [
+          174,
+          490,
+          562,
+          532
+        ]
+      },
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement"
+    },
+    {
+      "parameter": "between_group_centre_spacing",
+      "value": 3000,
+      "unit": "mm",
+      "measurement_endpoints": [
+        "centre of last dot in a group",
+        "centre of first dot in the next group"
+      ],
+      "source": {
+        "source_id": "lta-sdre-I-rms",
+        "pdf_page": 2,
+        "printed_page": "8-1",
+        "drawing": "LTA/SDRE14/8/RMS1",
+        "drawing_revision": "D",
+        "bbox_pdf_points": [
+          174,
+          490,
+          562,
+          532
+        ]
+      },
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement"
+    }
+  ],
+  "display_sample": {
+    "groups": 2,
+    "axis": "x follows source group progression"
+  },
+  "unknown": [
+    "site-specific extent",
+    "site-specific placement"
+  ],
+  "license_status": "unreviewed",
+  "release_ready": false
+}
