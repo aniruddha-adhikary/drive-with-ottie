@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "family": "prohibitory",
+  "retrieved_at": "2026-09-14",
+  "pdf_coordinates": "Unrotated PDF page points; origin top-left, x right, y down; 1-based pdf_page.",
+  "png_dpi": 288,
+  "sources": [
+    {
+      "id": "lta-sdre-i-tfp",
+      "filename": "SDRE14-16_TFP_1-6_March_2026.pdf",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-16_TFP_1-6_March_2026.pdf",
+      "sha256": "73a6364958c1717254fd19e321a1f9d776fd66eea7ec144ce418641933f4f85a",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "pages": 7
+    },
+    {
+      "id": "lta-sdre-i-contents",
+      "filename": "Content_Page_March_2026.pdf",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/Content_Page_March_2026.pdf",
+      "sha256": "90ceee831a33fd99bdf00cc2f6d20603382fc69e10d1ea1ea3a82db4c9b6ea42",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "pages": 7
+    },
+    {
+      "id": "spf-basic-theory-2026",
+      "filename": "BT-ENG-2126.pdf",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "publisher": "Singapore Police Force / Traffic Police",
+      "collection_revision": null,
+      "pages": 90
+    }
+  ],
+  "sheets": [
+    {"pdf_page": 2, "printed_page": "16-1", "drawing": "LTA/SDRE14/16/TFP1", "drawing_revision": "-"},
+    {"pdf_page": 3, "printed_page": "16-2", "drawing": "LTA/SDRE14/16/TFP2", "drawing_revision": "-"},
+    {"pdf_page": 4, "printed_page": "16-3", "drawing": "LTA/SDRE14/16/TFP3", "drawing_revision": "A"},
+    {"pdf_page": 5, "printed_page": "16-4", "drawing": "LTA/SDRE14/16/TFP4", "drawing_revision": "-"},
+    {"pdf_page": 6, "printed_page": "16-5", "drawing": "LTA/SDRE14/16/TFP5", "drawing_revision": "-"},
+    {"pdf_page": 7, "printed_page": "16-6", "drawing": "LTA/SDRE14/16/TFP6", "drawing_revision": "-"}
+  ],
+  "crops": [
+    {"slug": "no-right-turn", "name": "No right turn", "pdf_page": 2, "bbox": [103, 120, 278, 296]},
+    {"slug": "no-left-turn", "name": "No left turn", "pdf_page": 2, "bbox": [412, 120, 587, 296]},
+    {"slug": "no-horning", "name": "No horning", "pdf_page": 2, "bbox": [676, 120, 851, 296]},
+    {"slug": "no-entry", "name": "No entry", "pdf_page": 2, "bbox": [931, 120, 1106, 296]},
+    {"slug": "speed-limit-50", "name": "Maximum speed limit — 50 km/h", "pdf_page": 2, "bbox": [197, 441, 372, 616]},
+    {"slug": "width-limit-2-3m", "name": "Width limit — 2.3 m", "pdf_page": 2, "bbox": [531, 441, 706, 616]},
+    {"slug": "weight-limit-10-tonnes", "name": "Weight limit — 10 tonnes", "pdf_page": 2, "bbox": [815, 441, 990, 616], "warnings": ["TFP1 explanatory text says laden or unladen weight; TP2026 PDF p13 additionally discusses police escort. Do not infer a complete enforcement rule from the face."]},
+    {"slug": "height-limit-4-5m-standard", "name": "Height limit — 4.5 m, standard face", "pdf_page": 3, "bbox": [222, 100, 397, 275]},
+    {"slug": "height-limit-4-5m-expressway", "name": "Height limit — 4.5 m, expressway face", "pdf_page": 3, "bbox": [758, 78, 1018, 338], "warnings": ["Explicit 900 mm expressway variant; not a resized copy of the separately extracted standard artwork."]},
+    {"slug": "no-overtaking", "name": "No overtaking", "pdf_page": 3, "bbox": [222, 442, 397, 617]},
+    {"slug": "lorry-restriction", "name": "Lorry restriction", "pdf_page": 3, "bbox": [801, 442, 976, 617]},
+    {"slug": "three-or-more-axles-restriction", "name": "Restriction of movement of vehicles with 3 or more axles", "pdf_page": 4, "bbox": [164, 58, 339, 233], "related_assets": ["three-or-more-axles-hours-plate"]},
+    {"slug": "three-or-more-axles-hours-plate", "name": "Three-or-more-axles restricted-hours supplementary plate", "pdf_page": 4, "bbox": [122, 242, 382, 653], "related_assets": ["three-or-more-axles-restriction"], "warnings": ["Historical hours are preserved verbatim from TFP3 rev A (September 2017). Current operational applicability has not been verified."]},
+    {"slug": "pedestrian-crossing-prohibition", "name": "Pedestrian crossing prohibition", "pdf_page": 4, "bbox": [543, 58, 718, 233], "related_assets": ["pedestrians-use-crossing-reverse", "pedestrians-use-underpass-reverse", "pedestrians-use-overpass-reverse"]},
+    {"slug": "hazardous-loads-prohibition", "name": "Hazardous loads prohibition", "pdf_page": 4, "bbox": [543, 415, 718, 590]},
+    {"slug": "pedestrians-use-crossing-reverse", "name": "PEDESTRIANS Use Crossing — reverse face", "pdf_page": 4, "bbox": [934, 58, 1109, 233], "warnings": ["The 2 mm outline callout is engineering annotation inside this reference face; it is not sign wording.", "TFP3's message note says Please Use Crossing; the face artwork omits Please. The artwork is preserved without resolving the discrepancy."]},
+    {"slug": "pedestrians-use-underpass-reverse", "name": "PEDESTRIANS Use Underpass — reverse face", "pdf_page": 4, "bbox": [934, 274, 1109, 449], "warnings": ["TFP3's message note says Please Use Underpass; the face artwork omits Please. The artwork is preserved without resolving the discrepancy."]},
+    {"slug": "pedestrians-use-overpass-reverse", "name": "PEDESTRIANS Use Overpass — reverse face", "pdf_page": 4, "bbox": [934, 479, 1109, 654], "warnings": ["TFP3's message note says Please Use Overpass; the face artwork omits Please. The artwork is preserved without resolving the discrepancy."]},
+    {"slug": "cyclists-use-crossing-reverse", "name": "CYCLISTS Use Crossing — reverse face", "pdf_page": 5, "bbox": [171, 110, 346, 285], "warnings": ["The 2 mm outline callout is engineering annotation inside this reference face; it is not sign wording."]},
+    {"slug": "cyclists-use-underpass-reverse", "name": "CYCLISTS Use Underpass — reverse face", "pdf_page": 5, "bbox": [455, 110, 630, 285]},
+    {"slug": "cyclists-use-overpass-reverse", "name": "CYCLISTS Use Overpass — reverse face", "pdf_page": 5, "bbox": [169, 427, 344, 602]},
+    {"slug": "four-waiting-lanes-ahead", "name": "Four Waiting Lanes Ahead", "pdf_page": 5, "bbox": [704, 234, 1069, 548], "warnings": ["Included because it is a face on TFP4. Its placement in chapter 16 does not establish a prohibitory traffic rule."]},
+    {"slug": "no-stopping-arrow-right", "name": "No stopping — right arrow", "pdf_page": 6, "bbox": [270, 78, 444, 252]},
+    {"slug": "no-stopping-arrows-both", "name": "No stopping — arrows in both directions", "pdf_page": 6, "bbox": [775, 78, 950, 252]},
+    {"slug": "no-waiting-arrow-right", "name": "No waiting — right arrow", "pdf_page": 6, "bbox": [274, 407, 449, 582]},
+    {"slug": "no-waiting-arrows-both", "name": "No waiting — arrows in both directions", "pdf_page": 6, "bbox": [774, 407, 949, 582]},
+    {"slug": "pedestrians-and-cyclists-crossing-prohibition", "name": "Pedestrian and cyclists crossing prohibition sign", "pdf_page": 7, "bbox": [204, 94, 379, 269], "related_assets": ["pedestrians-and-cyclists-use-crossing-reverse"]},
+    {"slug": "pedestrians-and-cyclists-use-crossing-reverse", "name": "PEDESTRIANS & CYCLISTS Use Crossing — reverse face", "pdf_page": 7, "bbox": [552, 94, 726, 269], "warnings": ["TFP6 caption says CYCLIST CROSSING PROHIBITION; the artwork explicitly addresses PEDESTRIANS & CYCLISTS. Both are preserved without resolving the caption discrepancy."]},
+    {"slug": "bicycle-crossing-50m-limit", "name": "Sign indicating fifty metres (50 m) limit of a bicycle crossing", "pdf_page": 7, "bbox": [873, 94, 1048, 269]},
+    {"slug": "cyclist-crossing-prohibition-left-assembly-face", "name": "Cyclist crossing prohibition — face above left arrow", "pdf_page": 7, "bbox": [357, 360, 532, 535], "related_assets": ["direction-plate-arrow-left"], "warnings": ["The tilted bicycle/road pictogram is drawn this way in TFP6. It has not been straightened or mirrored."]},
+    {"slug": "direction-plate-arrow-left", "name": "Cyclist crossing prohibition — left supplementary direction plate", "pdf_page": 7, "bbox": [354, 543, 536, 603], "related_assets": ["cyclist-crossing-prohibition-left-assembly-face"]},
+    {"slug": "cyclist-crossing-prohibition-right-assembly-face", "name": "Cyclist crossing prohibition — face above right arrow", "pdf_page": 7, "bbox": [753, 360, 928, 535], "related_assets": ["direction-plate-arrow-right"], "warnings": ["Extracted independently from the right-hand assembly in TFP6, even though its primary pictogram resembles the left assembly."]},
+    {"slug": "direction-plate-arrow-right", "name": "Cyclist crossing prohibition — right supplementary direction plate", "pdf_page": 7, "bbox": [750, 543, 932, 603], "related_assets": ["cyclist-crossing-prohibition-right-assembly-face"]}
+  ]
+}

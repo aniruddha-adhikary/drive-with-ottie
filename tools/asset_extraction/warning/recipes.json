@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "family": "warning",
+  "coordinate_system": "Displayed, upright PDF page points; origin top left; page rotation already applied; 72 points per inch",
+  "reference_scale": 3,
+  "sources": [
+    {
+      "id": "lta-sdre-I-tfw",
+      "filename": "SDRE14-17_TFW_1-9_March_2026.pdf",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-17_TFW_1-9_March_2026.pdf",
+      "sha256": "d90abfac839030bbe802a5ac1a0d9ff3390a4f40a1b32ed0e26b4cf3b500a1d3",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "retrieved_at": "2026-09-14",
+      "pages": 10
+    },
+    {
+      "id": "lta-sdre-I-contents",
+      "filename": "Content_Page_March_2026.pdf",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/Content_Page_March_2026.pdf",
+      "sha256": "90ceee831a33fd99bdf00cc2f6d20603382fc69e10d1ea1ea3a82db4c9b6ea42",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "retrieved_at": "2026-09-14",
+      "pages": 7
+    },
+    {
+      "id": "tp-basic-theory-2026",
+      "filename": "BT-ENG-2126.pdf",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "publisher": "Singapore Police Force, Traffic Police",
+      "collection_revision": null,
+      "retrieved_at": "2026-09-14",
+      "pages": 90
+    }
+  ],
+  "sheets": [
+    {
+      "sheet": 1,
+      "revision": "-",
+      "assets": [
+        {"slug": "two-way-traffic-ahead", "name": "Two way traffic ahead", "bbox": [150, 80, 390, 300]},
+        {"slug": "two-way-traffic-across-one-way-carriageway-ahead", "name": "Two way traffic across a one way carriageway ahead", "bbox": [440, 45, 750, 289]},
+        {"slug": "road-narrows-right-ahead", "name": "Road narrows on right ahead", "bbox": [800, 45, 1100, 298]},
+        {"slug": "crossroads-ahead", "name": "Cross roads ahead", "bbox": [100, 380, 385, 635]},
+        {"slug": "road-narrows-both-sides-ahead", "name": "Road narrows on both sides ahead", "bbox": [515, 420, 730, 635]},
+        {"slug": "road-narrows-left-ahead", "name": "Road narrows on left ahead", "bbox": [845, 380, 1140, 635]}
+      ]
+    },
+    {
+      "sheet": 2,
+      "revision": "-",
+      "assets": [
+        {"slug": "bend-right-ahead", "name": "Bend to the right ahead", "bbox": [148, 80, 380, 298]},
+        {"slug": "double-bend-right-first-ahead", "name": "Double bend ahead, first to the right", "bbox": [475, 80, 740, 298]},
+        {"slug": "series-of-bends-right-first-ahead", "name": "Series of bends first to the right ahead", "bbox": [880, 80, 1090, 298]},
+        {"slug": "bend-left-ahead", "name": "Bend to the left ahead", "bbox": [100, 414, 345, 634]},
+        {"slug": "double-bend-left-first-ahead", "name": "Double bend ahead, first to the left", "bbox": [492, 435, 745, 634]},
+        {"slug": "series-of-bends-left-first-ahead", "name": "Series of bends first to the left ahead", "bbox": [880, 435, 1090, 634]}
+      ]
+    },
+    {
+      "sheet": 3,
+      "revision": "-",
+      "assets": [
+        {"slug": "side-road-right-ahead", "name": "Side road to the right ahead", "bbox": [82, 66, 380, 308]},
+        {"slug": "staggered-junction-left-first-ahead", "name": "Staggered junction, left turn first ahead", "bbox": [509, 91, 741, 309]},
+        {"slug": "traffic-merges-from-left-ahead", "name": "Traffic merges from left ahead", "bbox": [805, 67, 1110, 310]},
+        {"slug": "side-road-left-ahead", "name": "Side road to the left ahead", "bbox": [125, 389, 440, 649]},
+        {"slug": "staggered-junction-right-first-ahead", "name": "Staggered junction, right turn first ahead", "bbox": [493, 432, 730, 635]},
+        {"slug": "traffic-merges-from-right-ahead", "name": "Traffic merges from right ahead", "bbox": [855, 393, 1145, 647]}
+      ]
+    },
+    {
+      "sheet": 4,
+      "revision": "-",
+      "assets": [
+        {"slug": "merging-into-traffic-right-ahead", "name": "Merging into traffic on right ahead", "bbox": [144, 70, 360, 293]},
+        {"slug": "t-junction-ahead", "name": "T-junction ahead", "bbox": [502, 69, 725, 293]},
+        {"slug": "roundabout-ahead", "name": "Roundabout ahead", "bbox": [889, 90, 1115, 292]},
+        {"slug": "merging-into-traffic-left-ahead", "name": "Merging into traffic on left ahead", "bbox": [95, 399, 336, 629]},
+        {"slug": "dual-carriageway-ends-ahead", "name": "Dual carriageway ends ahead", "bbox": [422, 388, 723, 631]},
+        {"slug": "traffic-signals-ahead", "name": "Traffic signals ahead", "bbox": [810, 388, 1114, 628]}
+      ]
+    },
+    {
+      "sheet": 5,
+      "revision": "-",
+      "assets": [
+        {"slug": "pedestrian-crossing-ahead", "name": "Pedestrian crossing ahead", "bbox": [170, 57, 405, 279]},
+        {"slug": "steep-hill-upwards-ahead", "name": "Steep hill upwards ahead", "bbox": [545, 79, 760, 279]},
+        {"slug": "slippery-road-ahead", "name": "Slippery road ahead", "bbox": [884, 78, 1100, 279]},
+        {"slug": "children-ahead", "name": "Children ahead", "bbox": [120, 360, 417, 609]},
+        {"slug": "steep-hill-downwards-ahead", "name": "Steep hill downwards ahead", "bbox": [545, 398, 760, 600]},
+        {"slug": "uneven-road-ahead", "name": "Uneven road ahead", "bbox": [884, 398, 1100, 609]}
+      ]
+    },
+    {
+      "sheet": 6,
+      "revision": "A",
+      "assets": [
+        {"slug": "height-limit-ahead-4-5m", "name": "Height limit ahead, 4.5m as drawn", "bbox": [148, 68, 376, 288], "warnings": ["The source permits different numerals for different restrictions. Only the depicted 4.5m lettering is extracted; no guessed font or alternative values."]},
+        {"slug": "reduce-speed-now", "name": "Reduce speed now", "bbox": [544, 53, 769, 288]},
+        {"slug": "horses-or-ponies-ahead", "name": "Horses or ponies ahead", "bbox": [169, 384, 400, 620]},
+        {"slug": "road-hump-ahead", "name": "Road hump ahead", "bbox": [464, 382, 769, 631]},
+        {"slug": "raised-zebra-crossing", "name": "Raised zebra crossing", "bbox": [801, 211, 1115, 627]}
+      ]
+    },
+    {
+      "sheet": 7,
+      "revision": "-",
+      "assets": [
+        {"slug": "erp-zone-ahead-size-600", "name": "Electronic road pricing zone ahead, 600mm size", "bbox": [100, 40, 370, 277], "size_variant": [600, 600], "warnings": ["Legacy ERP/CashCard wording in this sheet needs current content review.", "Shared drawing with the parenthesized 900mm variant; no artwork scaling performed."]},
+        {"slug": "erp-zone-ahead-size-900", "name": "Electronic road pricing zone ahead, 900mm size", "bbox": [100, 40, 370, 277], "size_variant": [900, 900], "warnings": ["Legacy ERP/CashCard wording in this sheet needs current content review.", "The 900mm dimensions are parenthesized on the same drawing; no separate 900mm artwork is depicted and no artwork scaling performed."]},
+        {"slug": "narrow-bridge-ahead", "name": "Narrow bridge ahead", "bbox": [452, 40, 727, 277]},
+        {"slug": "danger-ahead", "name": "Danger ahead", "bbox": [800, 40, 1100, 277]},
+        {"slug": "other-danger-ahead", "name": "Other danger ahead", "bbox": [157, 400, 395, 619]},
+        {"slug": "quayside-or-river-bank-ahead", "name": "Quayside or river bank ahead", "bbox": [511, 400, 724, 619]},
+        {"slug": "accident-area-ahead", "name": "Accident area ahead", "bbox": [735, 333, 1043, 646]}
+      ]
+    },
+    {
+      "sheet": 8,
+      "revision": "-",
+      "assets": [
+        {"slug": "sharp-deviation-left-size-1500", "name": "Sharp deviation, left-facing as drawn, 1500mm size", "bbox": [94, 44, 558, 199], "size_variant": [1500, 400], "warnings": ["Only the left-facing artwork is depicted. No right-facing sign has been fabricated by mirroring.", "Shared drawing with the parenthesized 3000mm variant; no artwork scaling performed."]},
+        {"slug": "sharp-deviation-left-size-3000", "name": "Sharp deviation, left-facing as drawn, 3000mm size", "bbox": [94, 44, 558, 199], "size_variant": [3000, 800], "warnings": ["Only the left-facing artwork is depicted. No right-facing sign has been fabricated by mirroring.", "The 3000 by 800mm dimensions are parenthesized on the same drawing; no separate artwork is depicted and no artwork scaling performed."]},
+        {"slug": "barrier-diagonal-as-drawn", "name": "Barrier, diagonal orientation as drawn", "bbox": [103, 266, 565, 419], "warnings": ["Source permits extending the barrier to a required length; only the depicted 1520mm example is extracted."]},
+        {"slug": "slow", "name": "Slow", "bbox": [213, 474, 430, 646]},
+        {"slug": "expressway-ahead", "name": "Expressway ahead", "bbox": [573, 47, 805, 286], "warnings": ["Source caption says the expressway speed limit is 80 km/hr. This has not been adopted as a universal current traffic rule."]},
+        {"slug": "restricted-zone-ahead", "name": "Restricted zone ahead", "bbox": [841, 44, 1139, 278], "warnings": ["Legacy restricted-zone face: current applicability is unverified."]},
+        {"slug": "pedestrian-in-road-ahead", "name": "Pedestrian in road ahead", "bbox": [529, 415, 805, 635]},
+        {"slug": "elderly-people", "name": "Elderly people", "bbox": [900, 366, 1136, 654], "warnings": ["Original face reads Elderly People; original caption also uses the historical term handicapped. No wording was modernized in the artwork."]}
+      ]
+    },
+    {
+      "sheet": 9,
+      "revision": "-",
+      "assets": [
+        {"slug": "low-flying-aircraft-ahead", "name": "Low flying aircraft ahead", "bbox": [129, 43, 393, 366]},
+        {"slug": "diversion-to-right-carriageway-ahead", "name": "Diversion to another carriageway to the right ahead", "bbox": [465, 43, 750, 292]},
+        {"slug": "diversion-to-left-carriageway-ahead", "name": "Diversion to another carriageway to the left ahead", "bbox": [819, 43, 1087, 292]},
+        {"slug": "u-turn-ahead", "name": "U-turn ahead", "bbox": [99, 412, 387, 658]},
+        {"slug": "u-turn-opposite-direction-ahead", "name": "U-turn ahead, from opposite direction", "bbox": [465, 403, 750, 643]},
+        {"slug": "merge-ahead", "name": "Merge ahead", "bbox": [832, 362, 1074, 657]}
+      ]
+    }
+  ]
+}

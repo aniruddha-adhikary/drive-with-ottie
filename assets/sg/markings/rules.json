@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "family": "markings",
+  "status": "cited_unreviewed",
+  "release_ready": false,
+  "scope": "Selected handbook rules associated with exported artwork. This is not a complete traffic-rule engine. Drawing extraction does not verify behavior.",
+  "rules": [
+    {
+      "id": "sg.markings.rule.give-way",
+      "asset_ids": ["sg.markings.control-give-way-d"],
+      "effect": {"action": "give_way", "to": "traffic on the major road", "when": "approaching parallel broken white lines across the road"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 36, "printed_page": "35", "section": "52(a)", "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."}
+    },
+    {
+      "id": "sg.markings.rule.stop",
+      "asset_ids": ["sg.markings.control-stop-j"],
+      "effect": {"action": "stop", "location": "close to and before the transverse stop line"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 36, "printed_page": "35", "section": "52(b)", "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."},
+      "warnings": ["Does not apply to the longitudinal paved-shoulder J asset despite shared geometry."]
+    },
+    {
+      "id": "sg.markings.rule.centre-broken",
+      "asset_ids": ["sg.markings.centre-broken-two-way-e"],
+      "effect": {"action": "keep_left", "crossing_condition": "road ahead is clear and it is safe"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 38, "printed_page": "37", "section": "53(a)-(b)", "quote": "Motorists can only cross a single continuous or broken white line when they can see that the road ahead is clear & it is safe to do so."}
+    },
+    {
+      "id": "sg.markings.rule.double-white",
+      "asset_ids": ["sg.markings.boundary-continuous-double-h"],
+      "effect": {"crossing": "prohibited", "parking": "prohibited on either side at all times", "overtaking_condition": "remain entirely to the left of the double lines"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 38, "printed_page": "37", "section": "53(c)", "quote": "Never cross double white lines. Making a U-turn or a right turn is not allowed on a road where such lines are painted."}
+    },
+    {
+      "id": "sg.markings.rule.single-yellow",
+      "asset_ids": ["sg.markings.parking-yellow-single-g"],
+      "effect": {"parking": "prohibited on marked side", "timezone": "Asia/Singapore", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "intervals": [["07:00", "19:00"]], "public_holidays_exempt": true},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 39, "printed_page": "38", "section": "53(d)", "quote": "An unbroken yellow line indicates no parking between 7.00am and 7.00pm on that side of the road where the line is drawn, except on Sundays and public holidays."}
+    },
+    {
+      "id": "sg.markings.rule.double-yellow",
+      "asset_ids": ["sg.markings.parking-yellow-double-i"],
+      "effect": {"parking": "prohibited at all times on marked side", "exception": "immediate picking up and letting down of passengers"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 39, "printed_page": "38", "section": "53(e)", "quote": "Unbroken double yellow lines indicate no parking at all times on that side of the road where these lines are drawn, except for the immediate picking up and letting down of passengers."}
+    },
+    {
+      "id": "sg.markings.rule.single-yellow-zigzag",
+      "asset_ids": ["sg.markings.parking-yellow-zigzag-o"],
+      "effect": {"parking": "prohibited at all times on marked side", "exception": "immediate picking up and letting down of passengers"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 39, "printed_page": "38", "section": "53(f)", "quote": "A single yellow zig-zag line indicates No Parking at all times on that side of the road where the line is drawn, except for the immediate picking up and letting down of passengers."}
+    },
+    {
+      "id": "sg.markings.rule.double-yellow-zigzag",
+      "asset_ids": ["sg.markings.stopping-yellow-double-zigzag-p"],
+      "effect": {"stopping": "prohibited at all times on marked side"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 39, "printed_page": "38", "section": "53(g)", "quote": "Double yellow zig-zag lines indicate No Stopping at all times on that side of the road where the lines are drawn."},
+      "warnings": ["RMS3 describes being prevented from proceeding by traffic conditions separately; this extract is not a complete exception model."]
+    },
+    {
+      "id": "sg.markings.rule.normal-bus-lane-hours",
+      "asset_ids": ["sg.markings.bus-lane-normal-l", "sg.markings.bus-lane-normal-turn-access-a1"],
+      "effect": {"restricted_actions": ["driving", "parking"], "timezone": "Asia/Singapore", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "intervals": [["07:30", "09:30"], ["17:00", "20:00"]], "public_holidays_exempt": true},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 41, "printed_page": "40", "section": "54(a)", "quote": "Mondays to Fridays: 7.30am to 9.30am and 5.00pm to 8.00pm, except on Saturdays, Sundays & Public Holidays."},
+      "warnings": ["Section 54 has vehicle exemptions and conditions on non-scheduled buses; do not apply hours alone as a full rule."]
+    },
+    {
+      "id": "sg.markings.rule.full-day-bus-lane-hours",
+      "asset_ids": ["sg.markings.bus-lane-full-day-q", "sg.markings.bus-lane-full-day-turn-access-a6"],
+      "effect": {"restricted_actions": ["driving", "parking"], "timezone": "Asia/Singapore", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "intervals": [["07:30", "23:00"]], "public_holidays_exempt": true},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 41, "printed_page": "40", "section": "54(b)", "quote": "Mondays to Saturdays: 7.30am to 11.00pm, except on Sundays & Public Holidays."},
+      "warnings": ["Section 54 vehicle exemptions also apply. Keep this current handbook text separate from older sign artwork with different hours."]
+    },
+    {
+      "id": "sg.markings.rule.white-crossing-zigzag",
+      "asset_ids": ["sg.markings.crossing-zebra-approach-k"],
+      "effect": {"stopping": "prohibited at all times", "overtaking_or_waiting": "should not occur in the vicinity"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 43, "printed_page": "42", "section": "55(a)", "quote": "The white zig-zag lines indicate no stopping at all times on this road. Vehicles should not overtake, or wait in the vicinity."},
+      "warnings": ["White K artwork preserved as printed. Wider zebra-crossing colour applicability remains unresolved."]
+    },
+    {
+      "id": "sg.markings.rule.direction-arrows",
+      "asset_ids": ["sg.markings.arrow-straight", "sg.markings.arrow-straight-right", "sg.markings.arrow-right", "sg.markings.arrow-diagonal-left", "sg.markings.arrow-diagonal-right-upper", "sg.markings.arrow-diagonal-right-lower"],
+      "effect": {"permitted_directions": "only those shown by the arrows"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 44, "printed_page": "43", "section": "56", "quote": "You should only proceed in the directions shown by the arrows."},
+      "warnings": ["Each SDRE engineering variant still needs application review."]
+    },
+    {
+      "id": "sg.markings.rule.merge-arrows",
+      "asset_ids": ["sg.markings.arrow-merge-inset-a-upper", "sg.markings.arrow-merge-inset-a-lower"],
+      "effect": {"advance_warning": "two lanes merging into one", "right_of_way": "alternate vehicles from the two lanes"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 44, "printed_page": "43", "section": "57", "quote": "Alternate vehicles from the two lanes have the right-of-way into the single lane."}
+    },
+    {
+      "id": "sg.markings.rule.turning-pocket",
+      "asset_ids": ["sg.markings.layout-turning-pocket-detail", "sg.markings.layout-turning-pocket-single-lane", "sg.markings.layout-turning-pocket-t-junction", "sg.markings.layout-turning-pocket-two-lanes"],
+      "effect": {"action": "stay within the right-turn pocket", "until": "clear to complete the turn"},
+      "citation": {"source_id": "spf-btt-2026", "pdf_page": 43, "printed_page": "42", "section": "55(b)", "quote": "Vehicles turning right at road junctions should stay within the pocket until it is clear to complete the turn."}
+    }
+  ]
+}
