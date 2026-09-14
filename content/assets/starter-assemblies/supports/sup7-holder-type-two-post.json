@@ -1,0 +1,176 @@
+{
+  "schema": "ottie.candidate-support/1",
+  "contractVersion": 1,
+  "id": "sg.candidate.support-sup7-holder-type-two-post",
+  "version": 1,
+  "name": "SUP7 offset holder type 2 on lamp post or vertical support for a 600 x 600 or 600 x 450 sign (candidate)",
+  "role": "sign_post",
+  "worldSupportFamily": "pole",
+  "dimensionsStatus": "schematic_unsourced",
+  "dimensionsStatusNote": "The holder arm, 450 mm lateral offset and band construction are printed on SUP7, but the vertical position of the sign is not. A world Support built from this candidate cannot claim sourced dimensions until a height is sourced or recorded as a scenario decision.",
+  "allowedContexts": {
+    "controlRegimes": ["give_way", "stop"],
+    "roadClasses": ["minor_access", "local", "development_access"],
+    "notes": [
+      "SUP7 is the only SUP sheet that names the 600 x 600 sign size used by the F0 Give Way and STOP faces. Road classes are the F0 face fixtures' classes, not a source statement."
+    ]
+  },
+  "sourceDefinitionIds": ["sg.assemblies.definition.mount-holder-two"],
+  "sourceAssetIds": ["sg.assemblies.holder-type-two"],
+  "geometry": {
+    "kind": "support",
+    "heightMm": null,
+    "attachments": [
+      {
+        "name": "ground",
+        "offsetMm": { "x": 0, "y": 0, "z": 0 },
+        "accepts": ["ground"],
+        "basis": "sourced",
+        "note": "Base of the lamp post or vertical support; SUP7 draws only the holder region."
+      },
+      {
+        "name": "face_back_centre_offset_450",
+        "offsetMm": { "x": 450, "y": 0, "z": 0 },
+        "accepts": ["face"],
+        "basis": "partial",
+        "note": "Lateral offset 450 from the post axis to the sign centre line is printed ('REDUCE TO 100mm IF TRAFFIC SIGN CAN CLEAR TOP OF VERTICAL SUPPORT'). The z value is unknown: SUP7 gives no installation height, so z = 0 here is a placeholder that a world must override with a scenario decision recorded as schematic."
+      }
+    ]
+  },
+  "structure": {
+    "post": "existing lamp post or vertical support; section and height not given on SUP7",
+    "holder": "holder type 2: aluminium square hollow section arm, stiffened and fully welded, 2 nos 19 width stainless steel band with buckle secured around lamp post or vertical support",
+    "signSizesMm": [
+      { "width": 600, "height": 600 },
+      { "width": 600, "height": 450 }
+    ],
+    "lateralOffsetMm": { "shown": 450, "reducedIfSignClearsPostTop": 100 }
+  },
+  "provenance": {
+    "family": "assemblies",
+    "representation": "parametric_geometry",
+    "drawingSheet": {
+      "drawing": "LTA/SDRE14/10/SUP7",
+      "revision": "-",
+      "title": "SUPPORT FOR TRAFFIC SIGN (SHEET 4 OF 4)",
+      "dateOfIssue": null,
+      "revisionDates": [],
+      "sheet": "4 of 4",
+      "printedPage": "10-7",
+      "collectionRevision": "I",
+      "readFrom": "title block rendered from the original PDF page 9 (page is rotated 90 degrees); no revision letter or dates are printed"
+    },
+    "files": [
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/holder-type-two.png",
+        "sha256": "a62b3c57ccb74c4783436ead79045873ef26e49ca8f96e6b503378d6a8b27a59"
+      }
+    ],
+    "geometrySources": [
+      {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 9,
+        "printedPage": "10-7",
+        "drawing": "LTA/SDRE14/10/SUP7",
+        "drawingRevision": "-",
+        "bboxPdfPoints": [68, 567, 459, 1062],
+        "bboxDisplayPdfPoints": [129, 68, 624, 459]
+      }
+    ],
+    "meaningSources": [],
+    "measurements": [
+      {
+        "name": "sign_centre_lateral_offset",
+        "valueMm": 450,
+        "endpoints": "post axis to sign centre line in the holder type 2 elevation",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 9,
+          "printedPage": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawingRevision": "-",
+          "bboxPdfPoints": [355.5, 748.9, 404.1, 884.9],
+          "bboxDisplayPdfPoints": [306.1, 355.5, 442.1, 404.1]
+        },
+        "notes": ["Reduce to 100 mm if the traffic sign can clear the top of the vertical support (printed note)."]
+      },
+      {
+        "name": "sign_width",
+        "valueMm": 600,
+        "endpoints": "sign width in the callout '600 X 600 OR 600 X 450 TRAFFIC SIGN'",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 9,
+          "printedPage": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawingRevision": "-",
+          "bboxPdfPoints": [154.2, 832.5, 183.8, 897.8],
+          "bboxDisplayPdfPoints": [293.2, 154.2, 358.5, 183.8]
+        }
+      },
+      {
+        "name": "band_width",
+        "valueMm": 19,
+        "endpoints": "width of each of the 2 nos stainless steel bands",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 9,
+          "printedPage": "10-7",
+          "drawing": "LTA/SDRE14/10/SUP7",
+          "drawingRevision": "-",
+          "bboxPdfPoints": [309.9, 959.3, 345.6, 1055.8],
+          "bboxDisplayPdfPoints": [135.2, 309.9, 231.7, 345.6]
+        }
+      }
+    ],
+    "rawDimensionsMm": {},
+    "rawFamilyEvidence": {
+      "assembly_context": {
+        "view": "Offset traffic sign holder type 2",
+        "support_required": true,
+        "mount": null,
+        "support_family": null,
+        "attachment_anchors_mm": null,
+        "face_normal_world": null,
+        "intended_observer_or_approach": null,
+        "reference_context": "LTA mounting/support engineering reference",
+        "is_3d_model": false
+      },
+      "sup7_note_9": "In general, traffic signs are to comprise of 2mm thick aluminum sheets. However, 3mm thick aluminium sheets must be used for the following signs: a) Traffic signs of size 900mm x 900mm. b) 'Directional Arrows' signs of size 600mm x 150mm. c) Signs erected at height clearance less than 2.2m such as 'Sharp Deviation', 'Keep Left / Right' and 'Pass Either Side' or d) Street name board installed on walls or bus shelters."
+    },
+    "extractionRecipe": {
+      "method": "Hand transcription of printed dimension labels from the original SUP PDF (hash verified) into candidate metadata; no artwork generated.",
+      "tool": "PyMuPDF page render for visual reading",
+      "toolVersion": "1.26.x",
+      "recipe": "content/assets/starter-assemblies/README.md",
+      "recipeSha256": null
+    },
+    "relatedAssetIds": ["sg.assemblies.wall-mounted-sign", "sg.assemblies.wall-plate"]
+  },
+  "review": {
+    "extractionStatus": "extracted_reference",
+    "runtimeState": "draft",
+    "warnings": [
+      "Post and wall variants have distinct attachment hardware; no common installation height is stated.",
+      "Only the post variant is modelled here; the wall variant (6 mm aluminium wall plate, threaded studs) is a different support family (wall_bracket) and is not a candidate for the first slice.",
+      "Recorded masks remove only neighboring, unrelated diagram/callout fragments; target artwork is unchanged.",
+      "Engineering reference includes dimension leaders/labels; not cleaned production geometry."
+    ],
+    "contentApproved": false,
+    "reuseApproved": false,
+    "approvalEvidence": [],
+    "licenseStatus": "unreviewed",
+    "releaseStatusNote": "release_ready false: development candidate only",
+    "releaseReady": false
+  },
+  "unknowns": [
+    "installation height of the sign (no dimension on SUP7)",
+    "lamp post / vertical support height and section",
+    "face normal relative to the carriageway",
+    "which side of the post the offset arm points (drawing shows one orientation; no rule)"
+  ]
+}
