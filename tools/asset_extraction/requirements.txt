@@ -1,0 +1,15 @@
+PyMuPDF==1.26.4
+Pillow==11.3.0
+pydantic==2.11.7
+pydantic-core==2.33.2
+annotated-types==0.7.0
+typing-extensions==4.14.1
+typing-inspection==0.4.1
+defusedxml==0.7.1
+svgpathtools==1.7.1
+svgwrite==1.4.3
+numpy==2.2.6
+scipy==1.15.3
+ruff==0.12.12
+mypy==1.17.1
+types-Pillow==10.2.0.20240822

@@ -26,6 +26,7 @@ ET.register_namespace("", SVG)
 class Source(TypedDict):
     id: str
     filename: str
+    page_count: int
     url: str
     sha256: str
     publisher: str
@@ -192,6 +193,9 @@ def source_paths(spec: Recipes, directory: Path, download: bool) -> dict[str, Pa
             raise ValueError(f"Missing source or hash mismatch: {path}")
         if not path.read_bytes().startswith(b"%PDF"):
             raise ValueError(f"Not an original PDF: {path}")
+        with pymupdf.open(path) as document:
+            if len(document) != source["page_count"]:
+                raise ValueError(f"Unexpected page count: {path}")
         paths[source["id"]] = path
     return paths
 
