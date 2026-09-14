@@ -1,0 +1,177 @@
+{
+  "schema": "ottie.candidate-support/1",
+  "contractVersion": 1,
+  "id": "sg.candidate.support-sup15-arterial-post",
+  "version": 1,
+  "name": "SUP15 vertical support for a traffic sign with area not exceeding 1.1 m2, arterial road (candidate)",
+  "role": "sign_post",
+  "worldSupportFamily": "post",
+  "dimensionsStatus": "sourced",
+  "allowedContexts": {
+    "controlRegimes": ["give_way", "stop"],
+    "roadClasses": ["major"],
+    "notes": [
+      "SUP15 titles this variant 'FOR ARTERIAL ROAD'; mapped to the F0 road class 'major'. The expressway variant (2.3 m2, SHS 100 x 100 x 4) is out of scope for Give Way / STOP faces and is not a candidate."
+    ]
+  },
+  "sourceDefinitionIds": ["sg.assemblies.definition.mount-arterial"],
+  "sourceAssetIds": ["sg.assemblies.arterial-sign-support"],
+  "geometry": {
+    "kind": "support",
+    "heightMm": null,
+    "attachments": [
+      {
+        "name": "ground",
+        "offsetMm": { "x": 0, "y": 0, "z": 0 },
+        "accepts": ["ground"],
+        "basis": "sourced",
+        "note": "Ground line in the SUP15 arterial elevation; 600 x 600 x 900 C16/20 concrete foundation below."
+      },
+      {
+        "name": "sign_bottom_edge",
+        "offsetMm": { "x": 0, "y": 0, "z": 2400 },
+        "accepts": ["face"],
+        "basis": "sourced",
+        "note": "Printed label 2400 from ground to the bottom of the sign in the arterial elevation. Applies to that shown assembly only."
+      },
+      {
+        "name": "face_back_centre_600_panel",
+        "offsetMm": { "x": 0, "y": 0, "z": 2700 },
+        "accepts": ["face"],
+        "basis": "derived",
+        "note": "2400 (SUP15 sign bottom) + 300 (half of the 600 mm TFM1 backing height). Not a printed dimension."
+      }
+    ]
+  },
+  "structure": {
+    "post": "SHS 75 x 75 x 3 hot dipped galvanised",
+    "foundation": "600 x 600 x 900 C16/20 concrete",
+    "signFixing": "4.8 dia rivets at 150 c/c; aluminium flat bar stiffener",
+    "maximumSignAreaM2": 1.1,
+    "signSizeMm": { "width": "VARIES", "height": "VARIES" }
+  },
+  "provenance": {
+    "family": "assemblies",
+    "representation": "parametric_geometry",
+    "drawingSheet": {
+      "drawing": "LTA/SDRE14/10/SUP15",
+      "revision": "A",
+      "title": "SUPPORT FOR TRAFFIC SIGN (FOR ARTERIAL AND EXPRESSWAY)",
+      "dateOfIssue": "2014-04-01",
+      "revisionDates": ["2020-07"],
+      "sheet": "1 of 1",
+      "printedPage": "10-15",
+      "collectionRevision": "I",
+      "readFrom": "title block rendered from the original PDF page 17"
+    },
+    "files": [
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/arterial-sign-support.png",
+        "sha256": "f03f7830efe845e50c25b19df6c8d01256047a866595da68cf50374f7377f152"
+      }
+    ],
+    "geometrySources": [
+      {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 17,
+        "printedPage": "10-15",
+        "drawing": "LTA/SDRE14/10/SUP15",
+        "drawingRevision": "A",
+        "bboxPdfPoints": [115, 168, 440, 629]
+      }
+    ],
+    "meaningSources": [],
+    "measurements": [
+      {
+        "name": "sign_bottom_above_ground",
+        "valueMm": 2400,
+        "endpoints": "ground to bottom of sign, SUP15 arterial road elevation",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 17,
+          "printedPage": "10-15",
+          "drawing": "LTA/SDRE14/10/SUP15",
+          "drawingRevision": "A",
+          "bboxPdfPoints": [355.3, 374.3, 384.9, 426.7]
+        },
+        "notes": [
+          "The expressway elevation on the same sheet repeats 2400 for its own assembly; neither label is a universal support-height rule."
+        ]
+      },
+      {
+        "name": "post_section",
+        "valueMm": 75,
+        "endpoints": "outer face to outer face of the square hollow section (75 x 75 x 3)",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 17,
+          "printedPage": "10-15",
+          "drawing": "LTA/SDRE14/10/SUP15",
+          "drawingRevision": "A",
+          "bboxPdfPoints": [142.7, 368.2, 229.3, 388.7]
+        }
+      },
+      {
+        "name": "foundation_depth",
+        "valueMm": 900,
+        "endpoints": "top to bottom of the 600 x 600 x 900 C16/20 concrete foundation",
+        "method": "printed_dimension_label",
+        "locator": {
+          "sourceId": "lta-sdre-i-sup",
+          "pdfPage": 17,
+          "printedPage": "10-15",
+          "drawing": "LTA/SDRE14/10/SUP15",
+          "drawingRevision": "A",
+          "bboxPdfPoints": [142.7, 517.1, 210.3, 536.8]
+        },
+        "notes": ["Source transcription, not a structural design approval."]
+      }
+    ],
+    "rawDimensionsMm": {},
+    "rawFamilyEvidence": {
+      "assembly_context": {
+        "view": "Arterial road traffic-sign support",
+        "support_required": true,
+        "mount": null,
+        "support_family": null,
+        "attachment_anchors_mm": null,
+        "face_normal_world": null,
+        "intended_observer_or_approach": null,
+        "reference_context": "LTA mounting/support engineering reference",
+        "is_3d_model": false
+      }
+    },
+    "extractionRecipe": {
+      "method": "Hand transcription of printed dimension labels from the original SUP PDF (hash verified) into candidate metadata; no artwork generated.",
+      "tool": "PyMuPDF page render for visual reading",
+      "toolVersion": "1.26.x",
+      "recipe": "content/assets/starter-assemblies/README.md",
+      "recipeSha256": null
+    },
+    "relatedAssetIds": ["sg.assemblies.expressway-sign-support"]
+  },
+  "review": {
+    "extractionStatus": "extracted_reference",
+    "runtimeState": "draft",
+    "warnings": [
+      "Arterial and expressway variants use different SHS and foundations; 2400 sign-bottom clearance is variant-specific.",
+      "Sign width and height are labelled VARIES; the sheet does not confirm a 600 x 600 face.",
+      "Engineering reference includes dimension leaders/labels; not cleaned production geometry."
+    ],
+    "contentApproved": false,
+    "reuseApproved": false,
+    "approvalEvidence": [],
+    "licenseStatus": "unreviewed",
+    "releaseStatusNote": "release_ready false: development candidate only",
+    "releaseReady": false
+  },
+  "unknowns": [
+    "post height above ground (top hidden behind sign)",
+    "face normal relative to the carriageway",
+    "lateral offset from kerb",
+    "whether Give Way / STOP faces occur on arterial approaches in the first slice (F0 fixtures use minor roads)"
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "schema": "ottie.candidate-assembly/1",
+  "contractVersion": 1,
+  "id": "sg.candidate.give-way-mounted",
+  "version": 1,
+  "name": "Mounted Give Way sign (candidate)",
+  "kind": "sign_face",
+  "status": {
+    "releaseReady": false,
+    "contentApproved": false,
+    "reuseApproved": false,
+    "licenseStatus": "unreviewed",
+    "runtimeState": "draft",
+    "quarantine": "Development candidate. Not release content. Nothing here grants source, content or reuse approval."
+  },
+  "part": {
+    "assetId": "sg.mandatory.give-way",
+    "assetVersion": 1,
+    "role": "give_way_sign",
+    "shape": "triangle_point_down",
+    "faceMm": { "width": 600, "height": 600 },
+    "files": [
+      {
+        "role": "reference_png",
+        "path": "assets/sg/mandatory/give-way.reference.png",
+        "sha256": "5bf71365eda80f838bfe19ed89700240d472115843b8084f399ae35df7062430"
+      },
+      {
+        "role": "renderer_svg",
+        "path": "assets/sg/mandatory/give-way.svg",
+        "sha256": "7c72fe963046566a2b3dfacc1402c17c6443ec99e9618a7db0300e118e0d2a9a"
+      }
+    ],
+    "geometrySource": {
+      "sourceId": "lta-sdre-i-tfm",
+      "pdfPage": 2,
+      "printedPage": "15-1",
+      "drawing": "LTA/SDRE14/15/TFM1",
+      "drawingRevision": "-",
+      "bboxPdfPoints": [415, 39, 730, 304]
+    },
+    "meaningSources": [
+      {
+        "sourceId": "spf-btt-2026",
+        "pdfPage": 11,
+        "printedPage": "10",
+        "drawing": null,
+        "drawingRevision": null,
+        "bboxPdfPoints": null,
+        "quote": "Slow down. Stop if necessary. Give way to traffic on major road."
+      }
+    ],
+    "partAttachmentName": "back_centre",
+    "partAttachmentOffsetMm": { "x": 0, "y": 0, "z": 0 },
+    "partAttachmentNote": "back_centre is the centre of the 600 x 600 backing in the asset frame (F0 asset). The face is a point-down triangle inside that square backing; the visual centroid sits above the backing centre. Source does not give a fixing-point offset."
+  },
+  "axes": {
+    "assetFrame": {
+      "front": { "x": 0, "y": -1, "z": 0 },
+      "up": { "x": 0, "y": 0, "z": 1 },
+      "readableSide": "front",
+      "mirrorAllowed": false,
+      "note": "Identical to the F0 FaceProfile for sg.mandatory.give-way: the face reads correctly to an observer standing on the -Y side looking toward +Y."
+    },
+    "worldPlacement": {
+      "frontNormalRule": "frontNormal = rotateZ(assetFront, pose.yaw). The face is legible only from the half-space on its frontNormal side; there is no camera-facing rotation.",
+      "approachRule": "frontNormal must oppose the governed approach heading: dot(frontNormal, [cos h, sin h, 0]) < 0, where h = intendedApproach.heading. Faces are placed so approaching drivers see the front.",
+      "upRule": "up stays world +Z; the sign is plumb on its post.",
+      "worldExamples": [
+        {
+          "intendedApproachHeadingName": "north",
+          "intendedApproachHeadingRadians": 1.5707963267948966,
+          "poseYawRadians": 0,
+          "frontNormal": { "x": 0, "y": -1, "z": 0 },
+          "up": { "x": 0, "y": 0, "z": 1 },
+          "note": "Matches the F0 fixture world sg-give-way-t-001 (minor road northbound; sign on the left verge at x = -4.1)."
+        }
+      ],
+      "leftTrafficPlacementNote": "LEFT traffic: the default roadside for a single sign is the left verge of the governed approach. This is a scenario convention, not a SUP/TFM/TP statement."
+    }
+  },
+  "compatibleSupports": [
+    {
+      "supportCandidateId": "sg.candidate.support-sup6-single-post",
+      "supportFamily": "post",
+      "supportAttachmentName": "face_back_centre_600_panel",
+      "partAttachmentName": "back_centre",
+      "heightAboveGroundMm": 2700,
+      "heightBasis": "derived: SUP6 2400 mm sign bottom + 300 mm half backing height",
+      "signBottomAboveGroundMm": 2400,
+      "dimensionsStatus": "sourced",
+      "preferredForDevelopmentFixture": true,
+      "applicability": "Dedicated post at a minor-road approach; the 600 x 600 face is within SUP6's 900 x 1000 maximum."
+    },
+    {
+      "supportCandidateId": "sg.candidate.support-sup5-holder-type-one",
+      "supportFamily": "pole",
+      "supportAttachmentName": "face_back_centre_600_panel",
+      "partAttachmentName": "back_centre",
+      "heightAboveGroundMm": 2700,
+      "heightBasis": "derived: SUP5 2400 mm sign bottom + 300 mm half backing height",
+      "signBottomAboveGroundMm": 2400,
+      "dimensionsStatus": "sourced",
+      "preferredForDevelopmentFixture": false,
+      "applicability": "Existing lamp post or vertical support; '600 & BELOW' holder variant. SUP5's 2400 mm belongs to that shown assembly only."
+    },
+    {
+      "supportCandidateId": "sg.candidate.support-sup7-holder-type-two-post",
+      "supportFamily": "pole",
+      "supportAttachmentName": "face_back_centre_offset_450",
+      "partAttachmentName": "back_centre",
+      "heightAboveGroundMm": null,
+      "heightBasis": "unknown: SUP7 states no installation height",
+      "signBottomAboveGroundMm": null,
+      "dimensionsStatus": "schematic_unsourced",
+      "preferredForDevelopmentFixture": false,
+      "applicability": "Offset holder for a 600 x 600 sign on an existing post; any height used in a world is a scenario decision."
+    },
+    {
+      "supportCandidateId": "sg.candidate.support-sup15-arterial-post",
+      "supportFamily": "post",
+      "supportAttachmentName": "face_back_centre_600_panel",
+      "partAttachmentName": "back_centre",
+      "heightAboveGroundMm": 2700,
+      "heightBasis": "derived: SUP15 2400 mm sign bottom + 300 mm half backing height",
+      "signBottomAboveGroundMm": 2400,
+      "dimensionsStatus": "sourced",
+      "preferredForDevelopmentFixture": false,
+      "applicability": "Arterial ('major') approaches only; outside the F0 face's minor-road contexts unless a world extends allowedContexts."
+    }
+  ],
+  "excludedSupports": [
+    {
+      "sourceAssetId": "sg.assemblies.low-single-post-support",
+      "reason": "SUP4 low roadside support: height clearance 500-1200 mm is intended for sharp-deviation / Keep Left / Pass Either Side signs (SUP4 note 1); not a Give Way mount."
+    },
+    {
+      "sourceAssetId": "sg.assemblies.wall-mounted-sign",
+      "reason": "SUP7 wall variant is a wall_bracket family with no installation height; not part of the first slice."
+    },
+    {
+      "sourceAssetId": "sg.assemblies.expressway-sign-support",
+      "reason": "SUP15 expressway variant (2.3 m2, SHS 100 x 100 x 4) is for expressway signs; Give Way is not an expressway control here."
+    },
+    {
+      "assetId": "sg.dev.sign-post-schematic",
+      "reason": "F0 development post is schematic_unsourced (2100 mm top_face_mount). Kept only as the current fixture fallback; superseded by the SUP6 candidate once integrated."
+    }
+  ],
+  "governedApproach": {
+    "approachCount": 1,
+    "facesGovernedApproachOnly": true,
+    "intendedApproach": "the minor / side-road approach that must give way",
+    "applicableLanes": "every entry lane of the governed approach that reaches the give-way line",
+    "applicableMovements": "every movement leaving the governed approach (left turn, right turn, straight where present)",
+    "linkedControlLine": {
+      "markingAssetId": "sg.markings.control-give-way-d",
+      "role": "give_way_line",
+      "geometryMm": { "rows": 2, "width": 100, "paintedLength": 1000, "clearGap": 1000, "interRowClearGap": 150 },
+      "placementRule": "The sign is placed on the approach side of its linked give-way line; the longitudinal distance between sign and line is not given by TFM1, TP or SUP."
+    },
+    "meaning": {
+      "text": "Slow down. Stop if necessary. Give way to traffic on major road.",
+      "locator": { "sourceId": "spf-btt-2026", "pdfPage": 11, "printedPage": "10" }
+    }
+  },
+  "measurements": [
+    {
+      "name": "backing_width",
+      "valueMm": 600,
+      "endpoints": "left outer backing edge to right outer backing edge",
+      "method": "printed_dimension_label",
+      "locator": {
+        "sourceId": "lta-sdre-i-tfm",
+        "pdfPage": 2,
+        "printedPage": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawingRevision": "-",
+        "bboxPdfPoints": [507, 39, 684, 58]
+      }
+    },
+    {
+      "name": "backing_height",
+      "valueMm": 600,
+      "endpoints": "top outer backing edge to bottom outer backing edge",
+      "method": "printed_dimension_label",
+      "locator": {
+        "sourceId": "lta-sdre-i-tfm",
+        "pdfPage": 2,
+        "printedPage": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawingRevision": "-",
+        "bboxPdfPoints": [705, 81, 728, 256]
+      }
+    },
+    {
+      "name": "sign_bottom_above_ground_sup6",
+      "valueMm": 2400,
+      "endpoints": "ground to bottom edge of sign on the SUP6 single post support",
+      "method": "printed_dimension_label",
+      "locator": {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 8,
+        "printedPage": "10-6",
+        "drawing": "LTA/SDRE14/10/SUP6",
+        "drawingRevision": "C",
+        "bboxPdfPoints": [450.2, 404.7, 483.6, 464.7]
+      },
+      "notes": ["Assembly-specific; see supports/sup6-single-post.json."]
+    },
+    {
+      "name": "sign_bottom_above_ground_sup5",
+      "valueMm": 2400,
+      "endpoints": "ground level to bottom edge of sign on the SUP5 vertical support",
+      "method": "printed_dimension_label",
+      "locator": {
+        "sourceId": "lta-sdre-i-sup",
+        "pdfPage": 7,
+        "printedPage": "10-5",
+        "drawing": "LTA/SDRE14/10/SUP5",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [337.9, 212.6, 379.6, 274.9]
+      },
+      "notes": ["Applies only to the SUP5 shown assembly."]
+    }
+  ],
+  "unknowns": [
+    "longitudinal distance from the sign to the give-way line",
+    "lateral offset of the post from the kerb / lane edge",
+    "post height above ground for every support candidate",
+    "fixing-point offset between the post and the backing centre (rivet/stiffener stack)",
+    "whether a second face is required for a multi-lane approach"
+  ],
+  "sourceGaps": [
+    "No official source in the collection states a mounting height for a Give Way sign in general; the 2400 mm values are per-assembly labels on SUP5, SUP6 and SUP15.",
+    "TFM1 gives the 600 x 600 backing only; it does not show a support.",
+    "TP handbook page 10 gives meaning only; no geometry."
+  ],
+  "warnings": [
+    "Do not read 2400 mm as a universal mounting rule.",
+    "The F0 fixture currently mounts this face at 2100 mm on a schematic post; that value has no source and must not be promoted."
+  ],
+  "fixtureCrossReference": {
+    "worldId": "sg-give-way-t-001",
+    "fixtureModule": "packages/contracts/src/fixtures/give-way-t-junction.ts",
+    "signFaceId": "minor.give-way-sign",
+    "supportId": "minor.give-way-post",
+    "currentSupport": "sg.dev.sign-post-schematic at top_face_mount, heightAboveGroundM 2.1, dimensionsStatus schematic_unsourced",
+    "integrationNote": "I1 may swap the fixture support for sg.candidate.support-sup6-single-post at 2.7 m (face_back_centre_600_panel) without touching the face asset. Keep dimensionsStatus 'sourced' only for the support; the sign-to-line distance stays a scenario decision."
+  }
+}

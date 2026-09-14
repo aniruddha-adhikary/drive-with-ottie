@@ -1,0 +1,320 @@
+{
+  "schema": "ottie.candidate-assembly/1",
+  "contractVersion": 1,
+  "id": "sg.candidate.signal-vertical-circular-green-right-arrow-red",
+  "version": 1,
+  "name": "Vertical signal head: circular green lit with right-turn arrow red lit (candidate)",
+  "kind": "signal_head",
+  "status": {
+    "releaseReady": false,
+    "contentApproved": false,
+    "reuseApproved": false,
+    "licenseStatus": "unreviewed",
+    "runtimeState": "draft",
+    "quarantine": "Development candidate. Not release content. Nothing here grants source, content or reuse approval. TP handbook page 2 states reproduction requires publisher permission."
+  },
+  "part": {
+    "assetId": "sg.assemblies.signal-through-green-right-red",
+    "assetVersion": 1,
+    "role": "vehicle_signal_head",
+    "representation": "source_reference",
+    "files": [
+      {
+        "role": "reference_png",
+        "path": "assets/sg/assemblies/signal-through-green-right-red.png",
+        "sha256": "7b09247af5282da4a71ee657c8285cd6045f4de23d7713acb2922bf48c57101c"
+      }
+    ],
+    "sourceIllustration": {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 47,
+      "printedPage": "46",
+      "drawing": null,
+      "drawingRevision": null,
+      "imageXref": 370,
+      "bboxPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875],
+      "bboxDisplayPdfPoints": [
+        399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+      ],
+      "originalPageRotationDegrees": 0,
+      "captionBboxPdfPoints": [389.74, 264.14, 485.13, 312.69],
+      "captionQuote": "Means GO for straight ahead vehicles only. Vehicles turning right must stop behind the stop line.",
+      "siblingIllustrations": [
+        {
+          "assetId": "sg.assemblies.signal-through-green-right-green",
+          "imageXref": 368,
+          "captionQuote": "Means GO for straight ahead vehicles and GO for right turn vehicles."
+        },
+        {
+          "assetId": "sg.assemblies.signal-through-green-right-amber",
+          "imageXref": 369,
+          "captionQuote": "Means GO for straight ahead vehicles only. Vehicles turning right must get ready to STOP."
+        }
+      ]
+    },
+    "illustratedState": {
+      "circular_red": "dark",
+      "circular_amber": "dark",
+      "circular_green": "lit",
+      "right_arrow_red": "lit",
+      "right_arrow_amber": "dark",
+      "right_arrow_green": "dark"
+    },
+    "partAttachmentName": "back_centre",
+    "partAttachmentOffsetMm": { "x": 0, "y": 0, "z": 0 },
+    "partAttachmentNote": "back_centre is the F0 asset's only attachment and sits at the asset origin. The source is a raster illustration with no housing dimensions, so the offset from the housing back to any lens centre is unknown; the world attachment height below is anchored on the lowest lens centre, not on the housing."
+  },
+  "axes": {
+    "assetFrame": {
+      "front": { "x": 0, "y": -1, "z": 0 },
+      "up": { "x": 0, "y": 0, "z": 1 },
+      "columnAxis": { "x": 1, "y": 0, "z": 0 },
+      "columnAxisNote": "columnAxis = up x front = (0,0,1) x (0,-1,0) = (1,0,0): viewer's left-to-right when standing on the -Y side looking toward +Y. Column 0 (circular) is on the viewer's left, column 1 (right arrows) on the viewer's right, as drawn in TP image xref 370.",
+      "mirrorAllowed": false,
+      "note": "Identical to the F0 SignalHeadProfile front/up for sg.assemblies.signal-through-green-right-red."
+    },
+    "worldPlacement": {
+      "frontNormalRule": "frontNormal = rotateZ(assetFront, pose.yaw). Rule 11 requires the lights to face the direction of approaching traffic; there is no camera-facing rotation.",
+      "approachRule": "frontNormal must oppose the governed approach heading: dot(frontNormal, [cos h, sin h, 0]) < 0, where h = intendedApproach.heading.",
+      "upRule": "up stays world +Z; vertical arrangement means the red/amber/green rows are stacked along +Z with red highest.",
+      "worldExamples": [
+        {
+          "intendedApproachHeadingName": "north",
+          "intendedApproachHeadingRadians": 1.5707963267948966,
+          "poseYawRadians": 0,
+          "frontNormal": { "x": 0, "y": -1, "z": 0 },
+          "up": { "x": 0, "y": 0, "z": 1 },
+          "note": "Matches the F0 fixture world sg-signal-green-right-red-001 head ns.nb.head.primary (northbound approach; pole on the left verge at x = -4.1, y = -5.5)."
+        },
+        {
+          "intendedApproachHeadingName": "south",
+          "intendedApproachHeadingRadians": -1.5707963267948966,
+          "poseYawRadians": 3.141592653589793,
+          "frontNormal": { "x": 0, "y": 1, "z": 0 },
+          "up": { "x": 0, "y": 0, "z": 1 },
+          "note": "Southbound head ns.sb.head.primary: the same asset rotated by pi; the arrow still points to the driver's right because the artwork is never mirrored."
+        }
+      ]
+    }
+  },
+  "lensLayout": {
+    "arrangement": "vertical",
+    "definitionIds": [
+      "sg.assemblies.definition.signal-vertical-rag",
+      "sg.assemblies.definition.signal-vertical-paired-arrows"
+    ],
+    "rows": [
+      { "index": 0, "colour": "red", "position": "top" },
+      { "index": 1, "colour": "amber", "position": "middle" },
+      { "index": 2, "colour": "green", "position": "bottom" }
+    ],
+    "columns": [
+      { "index": 0, "shape": "circular", "viewerSide": "left", "basis": "TP illustration xref 370" },
+      { "index": 1, "shape": "arrow_right", "viewerSide": "right", "basis": "TP illustration xref 370" }
+    ],
+    "slots": [
+      { "slot": "circular_red", "colour": "red", "shape": "circular", "column": 0, "row": 0 },
+      { "slot": "circular_amber", "colour": "amber", "shape": "circular", "column": 0, "row": 1 },
+      { "slot": "circular_green", "colour": "green", "shape": "circular", "column": 0, "row": 2 },
+      { "slot": "right_arrow_red", "colour": "red", "shape": "arrow_right", "column": 1, "row": 0 },
+      { "slot": "right_arrow_amber", "colour": "amber", "shape": "arrow_right", "column": 1, "row": 1 },
+      { "slot": "right_arrow_green", "colour": "green", "shape": "arrow_right", "column": 1, "row": 2 }
+    ],
+    "rowOrderEvidence": {
+      "sourceId": "rule11",
+      "section": "Rule 11, vertical arrangement and vertical lens dimensions",
+      "quote": "the red light shall be placed above the amber light and the green light shall be placed below the amber light"
+    },
+    "arrowRowEvidence": {
+      "sourceId": "rule11",
+      "section": "Rule 11, vertical circular lights with arrow combinations",
+      "quote": "each arrow light shall be placed at the same level with a light of the same colour"
+    },
+    "columnOrderEvidence": "Rule 11 fixes only same-level placement for arrows; it does not say which side the arrow column sits on. Column order (circular left, arrows right from the driver's view) is taken from the TP illustration and is illustration-derived, not statutory.",
+    "columnSpacingMm": null,
+    "lensDimensions": [
+      {
+        "name": "effective_lens_diameter",
+        "valueMm": null,
+        "minimumMm": 200,
+        "endpoints": "effective optical lens diameter",
+        "method": "statutory_text",
+        "locator": {
+          "sourceId": "rule11",
+          "section": "Rule 11, vertical arrangement and vertical lens dimensions",
+          "quote": "the effective diameter of the lens of each light and arrow light shall be at least 200 mm"
+        }
+      },
+      {
+        "name": "lowest_lens_centre_above_ground",
+        "valueMm": 2290,
+        "maximumMm": 3000,
+        "endpoints": "ground surface to centre of lowest lens, including arrow lenses",
+        "method": "statutory_text",
+        "locator": {
+          "sourceId": "rule11",
+          "section": "Rule 11, vertical arrangement and vertical lens dimensions",
+          "quote": "the height of the centre of the lens of the light or arrow light nearest to the ground surface shall be 2,290 mm except that it may be increased to 3,000 mm where owing to road gradient it is desirable to do so"
+        },
+        "notes": [
+          "2290 mm is the lowest vertical lens centre. It is not a pole height, a housing bottom or a bracket height."
+        ]
+      },
+      {
+        "name": "adjacent_lens_centre_distance",
+        "valueMm": null,
+        "maximumMm": 500,
+        "endpoints": "centre to centre of adjacent lenses",
+        "method": "statutory_text",
+        "locator": {
+          "sourceId": "rule11",
+          "section": "Rule 11, vertical arrangement and vertical lens dimensions",
+          "quote": "the centres of the lenses of the 2 lights, 2 arrow lights or any combination thereof placed next to each other shall not be more than 500 mm apart"
+        }
+      }
+    ],
+    "derivedRowHeightsMm": {
+      "basis": "lowest lens centre 2290 (Rule 11) + row pitch p, where 200 <= p <= 500 (lens diameter minimum to adjacent-centre maximum). p is unknown; the values are bounds, not measurements.",
+      "green_row_centre": 2290,
+      "amber_row_centre": { "minimumMm": 2490, "maximumMm": 2790 },
+      "red_row_centre": { "minimumMm": 2690, "maximumMm": 3290 }
+    }
+  },
+  "compatibleSupports": [],
+  "supportGap": {
+    "statement": "No official source in the collection (LTA SUP1-15, TP handbook, Rule 11 capture) draws or dimensions a traffic signal pole, mast arm or head bracket. No SUP-derived support is compatible with this head; SUP5/SUP6/SUP15's 2400 mm labels are sign-bottom clearances for traffic signs and do not transfer to signal heads.",
+    "currentFixtureSupport": {
+      "assetId": "sg.dev.signal-pole-schematic",
+      "supportFamily": "pole",
+      "supportAttachmentName": "head_mount",
+      "supportAttachmentZMm": 2290,
+      "heightMm": null,
+      "dimensionsStatus": "schematic_unsourced",
+      "note": "F0's schematic pole puts head_mount at z = 2290 so that the head's lowest lens centre lands on the Rule 11 value. That equates back_centre with the lowest lens centre, which is a schematic simplification (the real housing offset is unknown), not a source fact."
+    },
+    "requestedIfSourceAppears": "An extraction recipe change under tools/asset_extraction/assemblies/ if an official signal-pole / bracket drawing is added to the collection; nothing is to be fabricated meanwhile."
+  },
+  "governedApproach": {
+    "approachCount": 1,
+    "facesGovernedApproachOnly": true,
+    "intendedApproach": "one signalised approach; the head governs that approach's lanes only",
+    "applicableLanes": "every entry lane of the governed approach up to its stop line; the arrow column governs only the lanes from which a right turn is permitted",
+    "movementBinding": {
+      "circular_column": {
+        "movements": ["straight", "left where a left-turn movement exists and no separate left arrow governs it"],
+        "illustratedAspect": "circular_green",
+        "meaning": "GO for straight ahead vehicles",
+        "locator": {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "bboxPdfPoints": [389.74, 264.14, 485.13, 312.69]
+        }
+      },
+      "right_arrow_column": {
+        "movements": ["right"],
+        "illustratedAspect": "right_arrow_red",
+        "meaning": "Vehicles turning right must stop behind the stop line. Do not turn right even when there is no traffic from the opposite direction.",
+        "locators": [
+          {
+            "sourceId": "spf-btt-2026",
+            "pdfPage": 47,
+            "printedPage": "46",
+            "bboxPdfPoints": [389.74, 264.14, 485.13, 312.69]
+          },
+          {
+            "sourceId": "spf-btt-2026",
+            "pdfPage": 46,
+            "printedPage": "45",
+            "bboxPdfPoints": [387.94, 532.96, 487.05, 600.95],
+            "quote": "RED ARROW Means STOP behind the stop-line in the direction indicated. (Do not turn right even when there is no traffic from the opposite direction)"
+          },
+          {
+            "sourceId": "rule11",
+            "section": "Rule 11, red arrow",
+            "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+          }
+        ]
+      },
+      "independence": "Circular and arrow states are independent; the handbook examples retain circular green while the right-arrow state changes (xrefs 368, 369, 370)."
+    },
+    "linkedControlLine": {
+      "markingAssetId": "sg.markings.control-stop-j",
+      "role": "stop_line",
+      "geometryMm": {
+        "rows": 1,
+        "width": 300,
+        "paintedLength": null,
+        "clearGap": null,
+        "interRowClearGap": null,
+        "continuous": true
+      },
+      "placementRule": "Both TP and Rule 11 tie the red arrow prohibition to the stop line (or broken lines) of the governed approach; the head must link exactly that approach's stop line. Longitudinal distance from the head to the stop line is not given by any source here."
+    }
+  },
+  "measurements": [
+    {
+      "name": "illustration_pixel_size",
+      "valueMm": null,
+      "valuePx": { "width": 205, "height": 293 },
+      "endpoints": "TP image xref 370 raster size, 205 x 293 px; the illustration carries no scale",
+      "method": "raster_metadata",
+      "locator": {
+        "sourceId": "spf-btt-2026",
+        "pdfPage": 47,
+        "printedPage": "46",
+        "bboxPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875]
+      }
+    }
+  ],
+  "unknowns": [
+    "housing width, height and depth",
+    "column spacing (circular column to arrow column)",
+    "row pitch (bounded 200-500 mm by Rule 11, not measured)",
+    "offset from back_centre to the lowest lens centre",
+    "pole or mast-arm height and section",
+    "support family and bracket type",
+    "lateral offset of the support from the kerb / stop line",
+    "longitudinal distance from the head to the stop line",
+    "whether a secondary (far-side) head is required for the approach",
+    "visor, backboard and louvre geometry"
+  ],
+  "sourceGaps": [
+    {
+      "id": "green_b_placement_conflict",
+      "status": "unresolved; content review required",
+      "statement": "TP handbook page 46 (printed 45, image xref 361) draws the additional green 'B' to the right of red as seen by the reader; Rule 11 states any additional green light shall be placed 'at the same level on the left side of or above the red light facing the direction of the approaching traffic' where the lights are arranged vertically. Both statements are preserved verbatim; the original artwork is retained without mirroring; nothing here selects a placement. Green B is not part of this candidate's lens layout.",
+      "definitionId": "sg.assemblies.definition.signal-additional-green-b"
+    },
+    {
+      "id": "horizontal_head_artwork",
+      "status": "unresolved; no artwork exists in the collection",
+      "statement": "Rule 11 permits a horizontal arrangement (red on the right of amber, green on the left of amber, facing approaching traffic; arrow lights below the light of the same colour; lens at least 300 mm; lowest lens centre not less than 5,200 mm). No official horizontal illustration occurs in the TP pages used here and none has been drawn. This candidate is vertical only; the F0 SignalHeadProfile.arrangement value 'horizontal' has no candidate.",
+      "definitionId": "sg.assemblies.definition.signal-horizontal-gar"
+    },
+    {
+      "id": "rule11_capture_limits",
+      "status": "unresolved",
+      "statement": "The Rule 11 hash (c0ec46b7...) covers a captured web text snapshot, not original HTML; the capture ends partway through the final green-arrow paragraph. Direct HTTP retrieval returned 403."
+    },
+    {
+      "id": "signal_support_source",
+      "status": "unresolved",
+      "statement": "No official pole / mast-arm / bracket drawing for traffic signals is in the collection; see supportGap."
+    }
+  ],
+  "warnings": [
+    "2290 mm in Rule 11 is the lowest vertical lens centre, not a pole height.",
+    "SUP5/SUP6/SUP15 2400 mm labels are traffic-sign bottom clearances for the assemblies drawn there; they do not apply to signal heads.",
+    "Source illustration is a raster image; no housing geometry, pole or attachment offsets are known.",
+    "Circular and arrow states are independent; the handbook examples retain circular green while the right-arrow state changes."
+  ],
+  "fixtureCrossReference": {
+    "worldId": "sg-signal-green-right-red-001",
+    "fixtureModule": "packages/contracts/src/fixtures/signalised-junction-right-arrow.ts",
+    "signalHeadIds": ["ns.nb.head.primary", "ns.sb.head.primary"],
+    "supportIds": ["ns.nb.pole", "ns.sb.pole"],
+    "currentSupport": "sg.dev.signal-pole-schematic at head_mount, heightAboveGroundM 2.29, dimensionsStatus schematic_unsourced",
+    "integrationNote": "No support swap is available for I1: keep the schematic pole and its schematic_unsourced status. The lens layout, movement binding and stop-line link above match the F0 fixture and asset; no asset regeneration is required."
+  }
+}
