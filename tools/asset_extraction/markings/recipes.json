@@ -4,9 +4,9 @@
   "coordinate_system": "Unrotated PDF points, top-left origin, x right, y down. No measurement is inferred from crop coordinates.",
   "dpi": 216,
   "sources": [
-    {"id":"lta-sdre-I-rms","filename":"rms.pdf","url":"https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf","sha256":"262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059","publisher":"LTA","collection_revision":"I","retrieved_at":"2026-09-14"},
-    {"id":"lta-sdre-I-contents","filename":"contents.pdf","url":"https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/Content_Page_March_2026.pdf","sha256":"90ceee831a33fd99bdf00cc2f6d20603382fc69e10d1ea1ea3a82db4c9b6ea42","publisher":"LTA","collection_revision":"I","retrieved_at":"2026-09-14"},
-    {"id":"spf-btt-2026","filename":"handbook.pdf","url":"https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf","sha256":"4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa","publisher":"Singapore Police Force, Traffic Police","collection_revision":null,"retrieved_at":"2026-09-14"}
+    {"id":"lta-sdre-I-rms","filename":"rms.pdf","page_count":15,"url":"https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf","sha256":"262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059","publisher":"LTA","collection_revision":"I","retrieved_at":"2026-09-14"},
+    {"id":"lta-sdre-I-contents","filename":"contents.pdf","page_count":7,"url":"https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/Content_Page_March_2026.pdf","sha256":"90ceee831a33fd99bdf00cc2f6d20603382fc69e10d1ea1ea3a82db4c9b6ea42","publisher":"LTA","collection_revision":"I","retrieved_at":"2026-09-14"},
+    {"id":"spf-btt-2026","filename":"handbook.pdf","page_count":90,"url":"https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf","sha256":"4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa","publisher":"Singapore Police Force, Traffic Police","collection_revision":null,"retrieved_at":"2026-09-14"}
   ],
   "sheets": [
     {"sheet":1,"revision":"D","title":"Lane markings (sheet 1 of 3)"},
