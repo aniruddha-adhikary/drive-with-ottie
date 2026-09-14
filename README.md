@@ -1,15 +1,39 @@
 # Drive with Ottie
 
-Design documents for an ADHD-friendly Singapore Basic Theory Test study app,
-plus a source-backed Singapore road-control asset reference library. The revised
+Development modules and design documents for an ADHD-friendly Singapore Basic
+Theory Test study app, plus a source-backed Singapore road-control asset
+reference library. The revised
 [lesson composition](docs/VISUAL-SYSTEM.md#lesson-composition) gives four answers
 space beside the traffic scene; [the scenario contract](docs/SCENARIO-SYSTEM.md)
-explains how reviewed assets become reusable scenes. There is no runtime app
-or web-framework build in this repository.
+explains how reviewed assets become reusable scenes.
 
 See the [execution plan and agent dependency diagrams](docs/EXECUTION-PLAN.md)
 for the first working slice, parallel module ownership, content expansion and
 integration gates.
+
+## Development checkpoint
+
+The React/Vite app currently runs a **development fixture inspector**. The
+registry, deterministic generator, physical renderer, cameras, validators,
+four-option lesson components, glossary and local learning-state modules are
+collected here, but the lesson flow is not yet wired together. All road-control
+assets remain quarantined and unapproved for learner release.
+
+Use Node `24.20.0` and npm `11.19.0`:
+
+```sh
+source ~/.nvm/nvm.sh
+nvm install
+npm ci
+npm run dev
+```
+
+See the [current checkpoint and remaining work](docs/EXECUTION-PLAN.md#current-implementation-checkpoint)
+for verification results and integration findings. Lint, typecheck and build
+pass; the current test suite has **323 passing tests and one failing F0
+review-export skeleton assertion**. UI testing and independent source/scene
+review remain pending. The [F0 contract handoff](docs/implementation/CONTRACTS.md)
+documents the frozen interfaces and commands.
 
 ## Singapore asset library
 
