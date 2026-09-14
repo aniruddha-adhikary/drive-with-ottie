@@ -45,6 +45,8 @@ export interface LessonScreenProps extends LessonActions {
   readonly helpSlot?: ReactNode;
   /** Short progress copy for the compact header (e.g. "+0.8 km"). Positive-delta only; optional. */
   readonly progressLabel?: string;
+  /** Compact scene height chosen by evidence fitting; the stylesheet default applies when omitted. */
+  readonly compactSceneHeightPx?: number;
 }
 
 export type OptionResult = 'neutral' | 'correct' | 'incorrect_selected' | 'correct_selected';

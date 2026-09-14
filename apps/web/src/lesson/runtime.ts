@@ -159,3 +159,23 @@ export function estimateCompactViewport(): Viewport {
     safeInsetsPx: { top: 0, right: 0, bottom: 0, left: 0 },
   };
 }
+
+/** Compact scene layout tuning; teaching-layout choices, not source values. */
+export const COMPACT_SCENE = Object.freeze({
+  /** Taller candidates as multiples of the scene width, tried after the stylesheet default. */
+  heightSteps: [1, 1.2, 1.45],
+  /** The compact scene never takes more than this share of the window height. */
+  maxWindowShare: 0.7,
+} as const);
+
+/**
+ * Candidate compact heights, ascending: the stylesheet default first, then portrait-leaning steps
+ * capped at a share of the window so the question stays reachable. Long plan/oblique spreads
+ * (ego at the line, a car 30 m up the road) need the extra height on phones to reach their
+ * authored minimum pixel sizes without moving anything in the world.
+ */
+export function compactHeightCandidates(viewport: Viewport): readonly number[] {
+  const cap = Math.max(viewport.heightPx, Math.floor(window.innerHeight * COMPACT_SCENE.maxWindowShare));
+  const steps = COMPACT_SCENE.heightSteps.map((k) => Math.min(cap, Math.round(viewport.widthPx * k)));
+  return [...new Set([viewport.heightPx, ...steps.filter((h) => h > viewport.heightPx)])].sort((a, b) => a - b);
+}
