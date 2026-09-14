@@ -9,6 +9,7 @@ describe('learning queue', () => {
     const first = planQuestionQueue({ bundle: DEVELOPMENT_CONTENT_BUNDLE, topicIds: topics, seed: seed('one') });
     expect(planQuestionQueue({ bundle: DEVELOPMENT_CONTENT_BUNDLE, topicIds: topics, seed: seed('one') })).toEqual(first);
     expect([...planQuestionQueue({ bundle: DEVELOPMENT_CONTENT_BUNDLE, topicIds: topics, seed: seed('two') })].sort()).toEqual([...first].sort());
+    expect(planQuestionQueue({ bundle: DEVELOPMENT_CONTENT_BUNDLE, topicIds: [...topics, ...topics], seed: seed('one') })).toEqual(first);
     const excluded = first.at(0);
     expect(excluded).toBeDefined();
     if (!excluded) return;

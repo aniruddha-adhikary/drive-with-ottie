@@ -64,10 +64,10 @@ export function createLearningSession({
       const step = nextStep(snapshot, run, bundle);
       if (step.kind === 'resume_attempt') return snapshot;
       if (step.kind === 'exhausted') throw new ContentExhaustedError(step);
-      if (step.kind !== 'present') throw new LearningStateError(`Cannot present: ${step.kind}`, { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (step.kind !== 'present') throw new LearningStateError(`Cannot present: ${step.kind}`);
       const attemptsForRun = snapshot.attempts.filter((attempt) => attempt.runId === run);
       const question = bundle.questions.find((candidate) => candidate.id === step.questionId);
-      if (!question) throw new LearningStateError(`Question ${step.questionId} does not exist`, { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (!question) throw new LearningStateError(`Question ${step.questionId} does not exist`);
       const attempt: AttemptState = {
         id: attemptId(`${run}.a${attemptsForRun.length + 1}`),
         runId: run,
@@ -87,18 +87,18 @@ export function createLearningSession({
     select: async (run, optionId) => {
       const snapshot = await loadedSnapshot();
       const attempt = currentAttempt(snapshot, run);
-      if (!attempt) throw new LearningStateError('No current attempt', { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (!attempt) throw new LearningStateError('No current attempt');
       return store.apply({ type: 'option_selected', id: eventKey(snapshot, run), at: clock.now(), attemptId: attempt.id, optionId });
     },
     check: async (run) => {
       const snapshot = await loadedSnapshot();
       const attempt = currentAttempt(snapshot, run);
-      if (!attempt) throw new LearningStateError('No current attempt', { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (!attempt) throw new LearningStateError('No current attempt');
       if (attempt.phase === 'graded' || attempt.phase === 'continued') return snapshot;
-      if (attempt.selectedOptionId === null) throw new LearningStateError('Select an option before checking', { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (attempt.selectedOptionId === null) throw new LearningStateError('Select an option before checking');
       const question = bundle.questions.find((candidate) => candidate.id === attempt.questionId);
       const selected = question?.options.find((option) => option.id === attempt.selectedOptionId);
-      if (!selected) throw new LearningStateError('Selected option does not belong to the question', { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (!selected) throw new LearningStateError('Selected option does not belong to the question');
       return store.apply({ type: 'attempt_graded', id: eventKey(snapshot, run), at: clock.now(), attemptId: attempt.id, correct: selected.correct });
     },
     continue: async (run, roadDeltaM) => {
@@ -110,7 +110,7 @@ export function createLearningSession({
     openHelp: async (run, termId) => {
       const snapshot = await loadedSnapshot();
       const attempt = currentAttempt(snapshot, run);
-      if (!attempt) throw new LearningStateError('No current attempt', { type: 'run_paused', id: eventId(`invalid.${snapshot.appliedEventIds.length + 1}`), at: clock.now(), runId: run });
+      if (!attempt) throw new LearningStateError('No current attempt');
       return store.apply({ type: 'help_opened', id: eventKey(snapshot, run), at: clock.now(), attemptId: attempt.id, termId });
     },
     pause: async (run) => {
