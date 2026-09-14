@@ -1,5 +1,9 @@
 # F0 — Contracts, fixtures and toolchain
 
+This document preserves the original F0 handoff and its baseline module map.
+For delivered implementations and remaining integration work, see the
+[current execution checkpoint](../EXECUTION-PLAN.md#current-implementation-checkpoint).
+
 `CONTRACT_VERSION = 1` (`packages/contracts/src/version.ts`). This document is the handoff for every
 downstream execution-plan job (A1–A3, C1–C2, R1–R2, U1–U3, V1, T1, H1, I1, Q1–Q3). Read it together
 with the actual types under `packages/contracts/src/`; when the two disagree, the types win and this

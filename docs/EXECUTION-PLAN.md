@@ -1,15 +1,126 @@
 # Ottie execution plan and agent dependencies
 
-Planning baseline: `d03f0691b2b1f8ac9dd1d89bfdd3977067b1661c`, 14 September
-2026. This plan describes future implementation; it does not launch agents or
-claim that the application exists.
+Original planning baseline: `d03f0691b2b1f8ac9dd1d89bfdd3977067b1661c`.
+Implementation checkpoint: 14 September 2026, based on `main` at
+`181cdf9f8173e44a5c7e7366ab8c667ca94f2972` after
+[F0 was merged in PR #3](https://github.com/aniruddha-adhikary/drive-with-ottie/pull/3).
+The current branch consolidates delivered modules and records the remaining
+work. It is not the completed first working slice or a learner release.
+
+## Current implementation checkpoint
+
+**12 of 18 software assignments have delivered code.** F0 is already on `main`;
+this checkpoint adds the other eleven assignments. The workflow stopped before
+the final six assignments after a usage-limit interruption. The current request
+is to preserve the completed work in a PR, so unfinished agents are not being
+restarted as part of this checkpoint.
+
+“Delivered” below means the bounded module exists. It does not mean its
+cross-module acceptance criteria or independent review have passed.
+
+| ID | Mode | Delivered output | Original worker commit |
+|---|---|---|---|
+| F0 | Ultra | Versioned contracts, typed fixtures, React/Vite toolchain and fixture inspector; merged in PR #3 | `4aaa943` |
+| A1 | Normal | Give Way/STOP artwork and D/J/E/F marking candidates with reproducible checks | `34bac9c` |
+| A2 | Ultra | Mounted-sign and vertical-signal candidates with sourced dimensions and explicit unknowns | `4725e0f` |
+| A3 | Normal | Starter rules, terms, official source register and syllabus coverage inventory | `7de9f65` |
+| C1 | Normal | Runtime registry compiler, provenance checks, dependency closure and release refusal | `befe911` |
+| C2 | Ultra | Deterministic immutable-world generator, directed lanes, anchors and signal movement semantics | `0e3ab5d` |
+| R1 | Ultra | Physical road, paint, actor, support, sign and signal scene graph | `b179c7c` |
+| R2 | Ultra | Four camera families, fitting, visibility diagnostics and linked detail-view data | `d75ea83` |
+| U1 | Normal | Four-option lesson components and enlarged viewer shell | `22980ea` |
+| U2 | Normal | Attempt/run transitions, queue, progress and device-local persistence | `f624587` |
+| U3 | Normal | Glossary/explainer, confusables, focus/scroll restoration and comparison requests | `915dd81` |
+| V1 | Ultra | Ten semantic validator families and mutation cases | `40d460f` |
+
+The worker changes were applied in dependency order onto the squash-merged F0
+baseline. Their source branches remain available. The frozen public contracts
+were not changed during consolidation.
+
+### What is runnable now
+
+`npm run dev` starts the existing development fixture inspector. Its canvas
+still uses `buildSchematicScene`; the R1 renderer and R2 evidence-aware cameras
+are module implementations awaiting I1 wiring. U1 and U3 components have DOM
+tests but are not mounted by the app route registry. U1 still uses a stub scene
+and ephemeral React state; U2 persistence is not connected to it.
+
+Starter candidates and meanings exist as source-backed development inputs.
+T1 has not authored the final scenario/question packages. Comparison requests
+exist, but comparison-world derivation and rendering remain unfinished.
+
+### Checks on the consolidated modules
+
+Run with Node `24.20.0` and npm `11.19.0`:
+
+| Check | Result |
+|---|---|
+| `npm run lint` | Passed |
+| `npm run typecheck` | Passed |
+| `npm run test` | **323 passed, 1 failed** across 40 files |
+| `npm run build` | Passed; Vite reports a large application chunk |
+| `npm run review:export` | Runs; three F0 fixtures report zero semantic errors with explicit quarantine/source warnings |
+| `node content/assets/starter-assemblies/check.js` | Passed |
+| `python3 content/assets/starter-signs-markings/generate.py check` | Candidate output reproduces byte-for-byte |
+| `python3 -m unittest discover -s content/assets/starter-signs-markings -p 'test_*.py' -v` | 10 passed |
+
+The failing test is `tools/scenario-review/src/cli.test.ts:11`: the F0 skeleton
+expects at least one semantic validator not to have run. V1 now reports all ten
+families. The CLI also prints an empty “validators NOT run” line. H1 must
+reconcile the review-output contract and its obsolete skeleton expectation;
+this checkpoint does not weaken validation to satisfy that assertion.
+Consequently `npm run check` is not green.
+
+These are local module checks, not Q1's final integration verification. No
+browser/UI testing or Q3 independent source/scene review has run on this
+checkpoint. Original PDF inspection reported by asset workers is retained as
+provenance; this consolidation did not repeat their extraction review.
+
+### Open findings and integration handoffs
+
+- **C2/T1:** some Give Way left-turn variations with major-road traffic on the
+  non-conflicting side claim a priority relationship that is not present.
+  V1 correctly reports `question_evidence.priority_evidence_without_conflict`.
+  T1 must exclude those questions until the relationship/evidence is corrected;
+  the validator must continue rejecting the invalid claim.
+- **R2/I1:** the signal fixture's phone-sized plan view cannot make the
+  oncoming actor readable at the current threshold. The diagnostic is
+  `camera_evidence.too_small`. Resolve this through an appropriate initial
+  view or linked evidence presentation while preserving physical geometry.
+- **A2/T1:** signal support dimensions remain schematic; horizontal signal
+  artwork and Green B placement are unresolved. F0/C2 model north–south signal
+  heads only. Do not describe the fixture as a fully sourced junction or
+  include the crossing variant before its separate evidence is resolved.
+- **H1:** review output currently summarizes F0 fixtures. Camera contact
+  sheets, generated-world exports and end-to-end asset-change impact reports
+  are not implemented.
+- **I1:** connect real geometry/cameras, content, glossary and U2 persistence.
+  Pass C1's source records into the validation context alongside A3's source
+  register. Keep source/reuse approval separate from development loading.
+- **Q1/Q3:** verify the same integrated commit after I1. Q2 remains a separate
+  browser-testing handoff requiring user approval.
+
+### Next execution order
+
+1. Review this intermediate PR and retain its commit as the next baseline.
+2. Run **T1 (Normal)** and **H1 (Normal)** concurrently using the delivered
+   dependency modules.
+3. After T1, run **Q0 (Lite)** for a bounded wording review.
+4. Run **I1 (Ultra)** after T1, H1, Q0, U2 and U3 are ready. Reconcile the
+   findings above rather than treating collected branches as an integrated app.
+5. Run **Q1 (Normal)** and **Q3 (Ultra)** on the exact I1 commit; request Q2
+   approval for browser testing. M1 remains pending until all required gates pass.
+
+Do not resume the old workflow unchanged: its recorded I1 instructions predate
+this consolidation. A future run must use the accepted checkpoint baseline and
+avoid reapplying worker commits already present.
 
 ## Recommended execution model
 
 Use a **dependency-driven dynamic workflow with up to five concurrent
 software agents on separate VMs**, plus the parent as orchestrator. The first
-working slice has **17 software-agent work packages**, one separate UI-testing
-handoff, and a milestone gate. These are assignments over time, not 18 agents
+working slice has **18 software-agent work packages**, one separate UI-testing
+handoff, and a milestone gate. These are assignments over time, not 19 agents
 started together. Agents consume additional ACUs; concurrency reduces elapsed
 time, not total work or cost.
 
@@ -34,9 +145,9 @@ the first three situations.
 | Input | Use in implementation | Remaining work |
 |---|---|---|
 | [339 asset records and extraction tools](../README.md) | Stable IDs, original artwork, measurements, source hashes and coverage | Select and review runtime candidates; preserve unresolved records |
-| [Scenario contract](SCENARIO-SYSTEM.md) | World coordinates, lane graph, assemblies, cameras and validators | Implement schemas, APIs, geometry and checks |
-| [Visual system and v3 layout](VISUAL-SYSTEM.md) | Typography, colours, four-option layout and secondary scene controls | Implement responsive components and verify them in use |
-| [Product design](../DESIGN.md) | Open-ended runs, gentle return, glossary, Sign Book, milestones and mock exam | Implement behaviour, persistence and content |
+| [Scenario contract](SCENARIO-SYSTEM.md) and [v1 contracts](implementation/CONTRACTS.md) | World coordinates, lane graph, assemblies, cameras and validators | Wire implemented modules together and close recorded findings |
+| [Visual system and v3 layout](VISUAL-SYSTEM.md) | Typography, colours, four-option layout and secondary scene controls | Integrate U1/U3 with the real scene and verify them in use |
+| [Product design](../DESIGN.md) | Open-ended runs, gentle return, glossary, Sign Book, milestones and mock exam | Connect U2 persistence and implement the remaining product/content tracks |
 | [Official source register](research/SINGAPORE-ROAD-CONTROLS.md) | Geometry versus meaning, effective editions and known conflicts | Resolve applicability for the selected teaching scenarios |
 
 All current assets have `release_ready: false`. A development review fixture
@@ -44,11 +155,11 @@ can display explicitly labelled reference material; the learner release
 bundle must pass the existing approval rules. Work on source review starts
 early and does not prevent independent implementation against typed fixtures.
 
-### Planning assumptions to record in F0
+### Established foundation decisions and remaining scope
 
-- Recommended first target: responsive web prototype, TypeScript and one
-  Three.js world. React is a proposed UI choice; no JS application/toolchain
-  has been installed in this repository. Keep content contracts portable.
+- F0 established a responsive web prototype using TypeScript, React, Vite and
+  one Three.js world. The toolchain is installed through `npm ci`; content
+  contracts remain framework-free and portable.
 - Prefer device-local progress for the first prototype. Accounts, cloud sync,
   a backend and public deployment are separate scope decisions.
 - Author starter questions from reviewed official material. The asset
@@ -87,7 +198,9 @@ flowchart TD
     V1 --> T1
     V1 --> H1["H1 · Review exports and change impact"]
     R2 --> H1
+    T1 --> Q0["Q0 · Bounded wording review"]
     T1 --> I1["I1 · Wire the working slice"]
+    Q0 --> I1
     H1 --> I1
     U2 --> I1
     U3 --> I1
@@ -97,7 +210,12 @@ flowchart TD
     Q1 --> M1["M1 · First working slice verified"]
     Q2 --> M1
     Q3 --> M1
+    classDef delivered fill:#CEF1EE,stroke:#18344B,color:#18344B
+    class F0,A1,A2,A3,C1,C2,R1,R2,U1,U2,U3,V1 delivered
 ```
+
+Shaded nodes have delivered modules in this checkpoint; unshaded nodes remain
+pending. Delivery does not imply integration or release approval.
 
 Q2 also needs user approval for UI-driven testing. M1 is an integration
 milestone, not content/reuse approval or permission to publish.
@@ -106,8 +224,9 @@ milestone, not content/reuse approval or permission to publish.
 
 The table is the canonical static task inventory. Dependency lists omit
 redundant ancestors: for example, T1 consumes the C1/C2/A3 outputs through V1.
-All ownership paths below are **proposed**, except the existing extraction
-paths. F0 must create a usable skeleton and imports before workers branch.
+Ownership paths were established by F0 and used for the delivered modules.
+T1 may add uniquely named tests under `tests/content/` without changing A3's
+`starter-content.test.ts`. I1 owns shared loaders, route wiring and root config.
 Minutes are initial advisory soft limits per software-agent call, not promises.
 
 | ID | Deliverable | Depends on | Exclusive write ownership | Done when | Minutes |
@@ -125,16 +244,18 @@ Minutes are initial advisory soft limits per software-agent call, not promises.
 | U3 | Implement term bindings, explainers, confusables and explicit comparison/replay requests | U1 | `apps/web/src/glossary/` | Terms work in stems and choices; help never selects/submits an option; close restores focus/scroll; comparison requests preserve original traffic and attempt state | 25 |
 | V1 | Implement semantic validators and meaningful mutation tests | C1, C2, A3 | `packages/scenario-validation/` | Bad topology, control context, mounts, approach association, unsupported signal movements and invalid actual/hypothetical bindings fail named checks | 30 |
 | T1 | Author the Give Way, STOP and signalised-junction packages with questions and explanations | A1, A2, V1 | `content/scenarios/starter/`, `content/questions/starter/`, starter comparison data | All real IDs resolve; answer rules and geometry pass V1; comparison deltas are explicit; source gaps prevent affected variants being called verified | 30 |
+| Q0 | Review starter wording for clarity, four distinct options and non-punitive explanations | T1 | Read-only review report; no production edits | Concrete wording findings returned to I1 without changing road meaning or claiming source approval | 15 |
 | H1 | Build review/export commands and asset-to-scenario-to-question change-impact reports | R2, V1 | `tools/scenario-review/`, `packages/review-export/` | Export includes world JSON, seeds, sources, labelled camera contact sheets, diagnostics and hashes; changing an asset identifies every affected fixture/question for regeneration and review | 30 |
-| I1 | Assemble dependency commits and connect the real scene, glossary, registry and attempt engine | T1, H1, U2, U3 | Integration entrypoints, route wiring, generated registries and dependency updates | All three scenarios can be answered; Check becomes Continue; Enlarge/help preserve state; review exports include warnings and development-only assets | 25 |
+| I1 | Connect the real scene, glossary, registry and attempt engine from the accepted checkpoint | T1, H1, Q0, U2, U3 | Integration entrypoints, route wiring, generated registries and dependency updates | All three scenarios can be answered; Check becomes Continue; Enlarge/help preserve state; review exports include warnings and development-only assets | 25 |
 | Q1 | Run complete shell-based regression/build checks and inspect the bundled artifact | I1 | `tests/integration/`, verification report | Lint/typecheck/build pass; data and mutation tests pass; seeds/reloads/state invariance covered; learner export cannot include quarantined assets | 25 |
 | Q2 | Exercise and record the first slice through the UI | I1 | Persistent testing agent; no source edits during its run | Four choices, large text, keyboard, view switching, glossary, feedback and reload verified; failures reported against the tested commit | — |
 | Q3 | Independently compare source evidence, rendered assemblies and question answers | I1 | Review report; source/module fixes go back to their owners | Reviewer checks exact source locators, actual placement and learner-facing meaning; review findings and unresolved questions are explicit | 30 |
 | M1 | Accept the first working slice | Q1, Q2, Q3 | Orchestrator gate; no new implementation | Checks and review refer to the same integrated commit; required failures resolved; prototype versus release status stated accurately | — |
 
-### What F0 must freeze to make this parallelism real
+### What F0 froze to enable parallel implementation
 
-F0 is a short prerequisite, not a complete engine implementation. It provides:
+F0 provided the shared contracts and fixtures below. The module implementations
+listed in the checkpoint were built against that foundation:
 
 | Contract | Producers / consumers |
 |---|---|
@@ -157,23 +278,22 @@ it. If a breaking change is unavoidable, stop only the affected subgraph.
 
 ## Parallel schedule and critical path
 
-After F0, eight tasks are eligible, but only five start. The recommended first
-allocation is **C1, C2, A3, R1 and U1**: these unlock the most downstream work.
-As slots free, run A2/A1, R2, U2/U3 and V1 based on readiness and critical-path
-length. Do not wait for a whole visual, data or UI “phase” to finish.
+The delivered first wave started **C1, C2, A3, R1 and U1** after F0, then used
+free slots for A2/A1, R2, U2/U3 and V1. A future continuation starts at T1/H1,
+as described above; it must not repeat that completed wave.
 
 Two important paths converge at I1:
 
-- F0 → C1/C2/A3 → V1 → T1 → I1 → Q1/Q2/Q3 → M1.
+- F0 → C1/C2/A3 → V1 → T1 → Q0 → I1 → Q1/Q2/Q3 → M1.
 - F0 → R1 → R2 → H1 → I1 → Q1/Q2/Q3 → M1.
 
 A1/A2 can delay T1; U2/U3 can delay I1. Faster work on Sign Book cannot remove
 either bottleneck. Prioritize a blocked prerequisite over starting another
 independent polish task.
 
-The advisory task values imply roughly **3–3.5 hours on the longest initial
-dependency chain before queueing or rework**, not an end-to-end guarantee.
-Budget **one to two coordinated Devin sessions for the first working slice**.
+The original estimate was **one to two coordinated Devin sessions for the
+first working slice**, excluding queueing and rework. Re-estimate the remaining
+T1/H1/I1 work from this checkpoint's findings before scheduling a continuation.
 The fuller app/content work is another **one to three sessions once E0 bounds
 the selected syllabus and asset batches**. Source questions, rights decisions,
 product choices and learner-review scheduling are external waits, excluded
@@ -329,10 +449,11 @@ A `ready` implementation task must identify its pushed output commit.
 - F0 and the integrator are the sole writers of shared contracts/configuration,
   root routing and lockfiles. Workers request a dependency or API addition;
   the coordinator publishes it once.
-- Keep contributors on separate feature branches; open one implementation PR
-  after F0 passes basic checks and append reviewed integrations to it. Use the
-  explicitly chosen base containing this design/library; if PR #2 is unmerged,
-  record that dependency instead of pretending its commits are on main.
+- Keep contributors on separate feature branches. PR #2 and the F0 PR #3 are
+  merged; do not append work to either merged PR. This consolidation uses a
+  fresh branch from current `main`. Continue an open checkpoint PR only when
+  explicitly chosen, or branch from its accepted successor baseline. Account
+  for squash-merged history when importing older worker commits.
   No automated merge to main is part of this plan.
 - Do not require a giant all-worker merge before testing: run each module's
   checks on its own branch, compatibility checks on dependency assemblies,
@@ -359,9 +480,11 @@ A `ready` implementation task must identify its pushed output commit.
   milestone decisions. Keep scope, recorded agent usage and external blockers
   visible to the user without flooding the conversation with routine updates.
 
-For implementation this graph fits `run_workflow`; the script should be
-authored against the finalized F0/E0 contracts. A guessed full implementation
-workflow is deliberately not presented as an already-tested executable here.
+The first wave ran through `run_workflow` as
+`wfr-7cb56fcf048c498fa2ff90fe3f1540da`. Its recorded outputs are provenance for
+the checkpoint. A continuation must use the accepted consolidated commit and
+the remaining task graph, rather than replaying integration prompts written
+before this PR existed.
 
 ## Verification ownership
 
