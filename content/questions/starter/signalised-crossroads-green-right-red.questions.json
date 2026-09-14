@@ -1,0 +1,453 @@
+{
+  "$comment": "T1 starter question package (schema ottie.starter-question-package/1; shapes documented in content/questions/starter/README.md). Original four-option questions bound to the generated worlds of content/scenarios/starter/signalised-crossroads-green-right-red.json. Rules, terms and source locators are the A3 records in content/rules and content/terms/starter; nothing here is copied from the Traffic Police handbook question bank. Development only, unreviewed.",
+  "schema": "ottie.starter-question-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.signalised-crossroads-green-right-red.questions",
+  "scenarioPackageId": "starter.signalised-crossroads-green-right-red",
+  "topicId": "traffic-signals",
+  "explanations": [
+    {
+      "id": "starter.signal.red-arrow-stops-right-turn",
+      "ruleIds": ["red-arrow-prohibits-movement"],
+      "paragraphs": [
+        "The red right-turn arrow is lit. It prohibits the right turn, even though the round green lets straight-ahead and left-turning traffic go.",
+        "Wait behind the stop line. A clear gap in the oncoming traffic changes nothing while the red arrow is lit."
+      ],
+      "termIds": ["red-arrow-signal", "circular-green-signal", "stop-line"],
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, red arrow",
+          "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875],
+          "bboxDisplayPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875],
+          "section": "Examples, circular green with red right arrow",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.gap-does-not-matter",
+      "ruleIds": ["red-arrow-prohibits-movement"],
+      "paragraphs": [
+        "How far away the oncoming car is does not matter. The handbook is explicit: do not turn right on a red arrow even when there is no traffic from the opposite direction."
+      ],
+      "termIds": ["red-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "RED ARROW",
+          "quote": "Do not turn right even when there is no traffic from the opposite direction"
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.circular-green-does-not-override-arrow",
+      "ruleIds": ["red-arrow-prohibits-movement", "circular-green-permits-uncontrolled-movements"],
+      "paragraphs": [
+        "A round green does not override an arrow. Where an arrow is lit for a movement, the arrow decides that movement; the round green only covers the movements no arrow speaks for.",
+        "Here the round green covers straight ahead and left. The red arrow covers right, so the right turn must wait."
+      ],
+      "termIds": ["circular-green-signal", "red-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated green light",
+          "quote": "turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.amber-arrow-not-permission",
+      "ruleIds": ["amber-arrow-ready-to-stop"],
+      "paragraphs": [
+        "An amber arrow means get ready to STOP in the direction it points. It is never a signal that the turn is about to be allowed.",
+        "Only a green arrow, or a round green with no arrow lit for your direction, lets the right turn go."
+      ],
+      "termIds": ["amber-arrow-signal", "green-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "AMBER ARROW",
+          "quote": "Means “READY TO STOP” behind the stop-line in the direction indicated."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.circular-green-permits-straight",
+      "ruleIds": ["circular-green-permits-uncontrolled-movements"],
+      "paragraphs": [
+        "The round green is lit and no arrow is lit for straight ahead. So the round green decides your movement: you may go straight when it is safe.",
+        "The red arrow is lit only for the right turn. It does not stop vehicles going straight or turning left."
+      ],
+      "termIds": ["circular-green-signal", "red-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN",
+          "quote": "Look to the right and left to ensure it is safe before you proceed."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.red-arrow-governs-only-its-direction",
+      "ruleIds": ["red-arrow-prohibits-movement"],
+      "paragraphs": [
+        "A red arrow prohibits proceeding in the direction it points, and only that direction. It is not a round red.",
+        "With the round green lit, straight-ahead vehicles go; only right-turning vehicles wait."
+      ],
+      "termIds": ["red-arrow-signal", "circular-green-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, red arrow",
+          "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.straight-does-not-yield-to-oncoming",
+      "ruleIds": ["circular-green-permits-uncontrolled-movements"],
+      "paragraphs": [
+        "Your straight-ahead path does not cross the oncoming car's straight-ahead path, so there is nothing to give way to. Look right and left, then go.",
+        "Waiting for oncoming traffic is a right-turn habit; it belongs to the comparison where the right arrow is not lit and the round green governs the turn."
+      ],
+      "termIds": ["circular-green-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN",
+          "quote": "Look to the right and left to ensure it is safe before you proceed."
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.circular-red-stops-straight",
+      "ruleIds": ["circular-red-prohibits-all-movements"],
+      "paragraphs": [
+        "Only a lit round red stops every movement on the approach. The comparison scene shows this junction with the round red lit: then even straight-ahead vehicles wait behind the stop line.",
+        "In the actual scene the round red is dark; a red arrow does not act as a round red."
+      ],
+      "termIds": ["circular-red-signal", "red-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, RED",
+          "quote": "Means “STOP”."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated red light",
+          "quote": "the illuminated red light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road provided in conjunction with the signals"
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.dark-arrow-hands-turn-to-circular",
+      "ruleIds": ["circular-green-permits-uncontrolled-movements"],
+      "paragraphs": [
+        "When no arrow is lit for the right turn, the round green governs it: you may turn right after giving way to oncoming traffic and pedestrians, subject to any sign."
+      ],
+      "termIds": ["circular-green-signal", "red-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated green light",
+          "quote": "turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals"
+        }
+      ]
+    },
+    {
+      "id": "starter.signal.green-arrow-permits-turn",
+      "ruleIds": ["green-arrow-permits-indicated-movement"],
+      "paragraphs": [
+        "A green right arrow means GO in that direction after making sure oncoming traffic is clear."
+      ],
+      "termIds": ["green-arrow-signal"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN ARROW",
+          "quote": "Means “GO” but only in the direction indicated after ensuring that oncoming traffic is clear."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "starter.signal.q1.right-turn-with-clear-gap",
+      "version": 1,
+      "topicId": "traffic-signals",
+      "worldId": "starter.signal.right-turn-green-with-red-arrow",
+      "stem": "You are driving the car and want to turn right. On the signal ahead the round green light is lit and the red right-turn arrow is lit. The oncoming car is still far away, leaving a clear gap. May you turn right now?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-lane-intent"] },
+        { "role": "actual", "text": "round green light", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] },
+        { "role": "actual", "text": "red right-turn arrow", "termId": "red-arrow-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] },
+        { "role": "actual", "text": "oncoming car", "termId": null, "entityId": "ns.sb.car", "evidenceIds": ["ev.oncoming-car"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "No. Stop behind the stop line: the red arrow forbids the right turn even when the way is clear.",
+          "bindings": [
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "ns.nb.stop-line", "evidenceIds": ["ev.nb-stop-line"] },
+            { "role": "actual", "text": "red arrow", "termId": "red-arrow-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.signal.red-arrow-stops-right-turn"
+        },
+        {
+          "id": "b",
+          "text": "Yes, because the round green light is lit and the oncoming car is far enough away for a safe turn.",
+          "bindings": [
+            { "role": "actual", "text": "round green light", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] },
+            { "role": "actual", "text": "oncoming car", "termId": null, "entityId": "ns.sb.car", "evidenceIds": ["ev.oncoming-car"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.gap-does-not-matter"
+        },
+        {
+          "id": "c",
+          "text": "Yes, because the round green light is lit and green means go for every movement.",
+          "bindings": [
+            { "role": "actual", "text": "round green light", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.circular-green-does-not-override-arrow"
+        },
+        {
+          "id": "d",
+          "text": "Yes, but only once the arrow turns amber, because an amber arrow means the turn is about to be allowed.",
+          "bindings": [
+            { "role": "hypothetical", "text": "amber arrow", "termId": "amber-arrow-signal", "comparisonId": null }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.amber-arrow-not-permission"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.nb-head-aspects", "ev.nb-stop-line", "ev.ego-lane-intent", "ev.oncoming-car"],
+      "answerRule": { "ruleId": "red-arrow-prohibits-movement", "version": 2 },
+      "explanationId": "starter.signal.red-arrow-stops-right-turn",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "RED ARROW",
+          "quote": "Do not turn right even when there is no traffic from the opposite direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875],
+          "bboxDisplayPdfPoints": [399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875],
+          "section": "Examples, circular green with red right arrow",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, red arrow",
+          "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    },
+    {
+      "id": "starter.signal.q2.straight-ahead-with-red-arrow",
+      "version": 1,
+      "topicId": "traffic-signals",
+      "worldId": "starter.signal.straight-green-with-red-arrow",
+      "stem": "You are driving the car and want to go straight ahead. On the signal ahead the round green light is lit and the red right-turn arrow is lit. What may you do?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-lane-intent"] },
+        { "role": "actual", "text": "round green light", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] },
+        { "role": "actual", "text": "red right-turn arrow", "termId": "red-arrow-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Go straight ahead when it is safe: the round green covers your movement, and the red arrow applies only to turning right.",
+          "bindings": [
+            { "role": "actual", "text": "round green", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] },
+            { "role": "actual", "text": "red arrow", "termId": "red-arrow-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.signal.circular-green-permits-straight"
+        },
+        {
+          "id": "b",
+          "text": "Stop behind the stop line: a lit red arrow means every vehicle on this approach must stop.",
+          "bindings": [
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "ns.nb.stop-line", "evidenceIds": ["ev.nb-stop-line"] },
+            { "role": "actual", "text": "red arrow", "termId": "red-arrow-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.red-arrow-governs-only-its-direction"
+        },
+        {
+          "id": "c",
+          "text": "Wait until the oncoming car has passed: on a round green, going straight must give way to oncoming traffic.",
+          "bindings": [
+            { "role": "actual", "text": "oncoming car", "termId": null, "entityId": "ns.sb.car", "evidenceIds": ["ev.oncoming-car"] },
+            { "role": "actual", "text": "round green", "termId": "circular-green-signal", "entityId": "ns.nb.head.primary", "evidenceIds": ["ev.nb-head-aspects"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.straight-does-not-yield-to-oncoming"
+        },
+        {
+          "id": "d",
+          "text": "Treat it like a round red light: whenever any red lens is lit, nobody may pass the stop line.",
+          "bindings": [
+            { "role": "hypothetical", "text": "round red light", "termId": "circular-red-signal", "comparisonId": "cmp.starter.signal.straight.circular-red" },
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "ns.nb.stop-line", "evidenceIds": ["ev.nb-stop-line"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.signal.circular-red-stops-straight"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.nb-head-aspects", "ev.nb-stop-line", "ev.ego-lane-intent", "ev.oncoming-car"],
+      "answerRule": { "ruleId": "circular-green-permits-uncontrolled-movements", "version": 1 },
+      "explanationId": "starter.signal.circular-green-permits-straight",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Examples",
+          "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN",
+          "quote": "Look to the right and left to ensure it is safe before you proceed."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated green light",
+          "quote": "turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals"
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    }
+  ]
+}
