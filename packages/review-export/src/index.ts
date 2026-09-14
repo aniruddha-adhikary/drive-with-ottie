@@ -1,8 +1,8 @@
-/**
- * @ottie/review-export — H1 owns this module (review packs, change-impact reports, release gates).
- *
- * F0 provides `describeWorldForReview`, a plain-data summary used by the CLI skeleton. Release
- * gating and image export are NOT implemented.
- */
-export { MODULE_STATUS } from './status';
-export { describeWorldForReview, type WorldReviewSummary } from './describe';
+export { MODULE_STATUS } from './status.js';
+export { describeWorldForReview, type WorldReviewSummary } from './describe.js';
+export { REVIEW_VIEWPORT, type ReviewInputs, type ReviewPackOptions } from './inputs.js';
+export { buildWorldProvenance, type WorldProvenanceExport } from './provenance.js';
+export { composeContactSheet, type ContactSheetHeader, type ContactSheetTile } from './contact-sheet.js';
+export { buildReviewPack, type ReviewPack, type ReviewWorldPack } from './pack.js';
+export { assetChangeImpact, impactForAssets, type AssetImpactReport } from './impact.js';
+export { assessReleaseExport, type ReviewRefusalReason, type ReviewReleaseExport, type ReleaseRefusal } from './release.js';
