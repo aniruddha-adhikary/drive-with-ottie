@@ -3,6 +3,7 @@ import { type CameraPresetName, type Explanation, type Option } from '@ottie/con
 import { ThemeScope } from '../theme';
 import { ChoiceList } from './ChoiceList';
 import { initialPresetFor, questionEvidence } from './presets';
+import { estimateCompactViewport } from './runtime';
 import { SceneHost } from './SceneHost';
 import { PRESET_LABELS, SceneViewer } from './SceneViewer';
 import { TermText } from './TermText';
@@ -57,6 +58,10 @@ export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
   };
 
   const highlightEntityId = null;
+  const compactFallback = useMemo(() => {
+    const estimate = estimateCompactViewport();
+    return { width: estimate.widthPx, height: estimate.heightPx };
+  }, []);
 
   return (
     <ThemeScope preferences={preferences}>
@@ -88,6 +93,7 @@ export function LessonScreen(props: LessonScreenProps): React.JSX.Element {
                 preferences={preferences}
                 highlightEntityId={highlightEntityId}
                 label={`Road scene for this question, ${PRESET_LABELS[presentation.cameraPreset]}`}
+                fallbackSizePx={compactFallback}
               />
               <button ref={enlargeRef} type="button" className="ottie-btn ottie-btn--quiet ottie-lesson__enlarge" onClick={openViewer} aria-haspopup="dialog" aria-expanded={false}>
                 Enlarge
