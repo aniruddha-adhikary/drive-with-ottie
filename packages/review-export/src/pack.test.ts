@@ -12,7 +12,7 @@ import { createFileArtworkSource } from '@ottie/renderer-geometry/artwork.node.j
 import { cameraMatrices } from '@ottie/renderer-cameras';
 import { canonicalWorldJson } from '@ottie/scenario-core';
 import { buildReviewPack } from './pack';
-import { writeReviewPack } from './write.node';
+import { writeReviewPack } from './write.node.js';
 
 const REPO_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../../..');
 

@@ -2,11 +2,11 @@ import { type Diagnostic, type Sha256, type ValidationReport, type Viewport } fr
 import { canonicalJson } from '@ottie/contracts';
 import { buildDependencyIndex, exportRelease, type DependencyClosure, type ReleaseExport, type SourceConflict } from '@ottie/asset-registry';
 import { loadWorldArtwork, type SceneIssue, type SchematicChoice } from '@ottie/renderer-geometry';
-import { withDom } from './render.node';
+import { withDom } from './render.node.js';
 import { buildWorldProvenance, type WorldProvenanceExport } from './provenance';
 import { composeContactSheet } from './contact-sheet';
 import { buildWorldViews, type ReviewView } from './views';
-import { RENDERER_LIMITATIONS } from './render.node';
+import { RENDERER_LIMITATIONS } from './render.node.js';
 import { type ReviewInputs, type ReviewPackOptions, REVIEW_VIEWPORT } from './inputs';
 import { missingValidators, validateQuestion, validateWorld } from '@ottie/scenario-validation';
 import { sha256Hex } from '@ottie/scenario-core';
