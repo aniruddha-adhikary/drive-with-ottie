@@ -4,7 +4,10 @@ import { type CameraPreset, type DeepReadonly, type Viewport } from '@ottie/cont
 const RAD_TO_DEG = 180 / Math.PI;
 
 /** Presentation only: reads the preset, never writes to the world. */
-export function presetToThreeCamera(preset: DeepReadonly<CameraPreset>, viewport: Viewport): PerspectiveCamera | OrthographicCamera {
+export function presetToThreeCamera(
+  preset: DeepReadonly<CameraPreset>,
+  viewport: Viewport,
+): PerspectiveCamera | OrthographicCamera {
   const aspect = viewport.widthPx / Math.max(1, viewport.heightPx);
   let camera: PerspectiveCamera | OrthographicCamera;
   if (preset.projection === 'perspective') {
