@@ -13,7 +13,8 @@ export function planQuestionQueue({
   readonly exclude?: readonly QuestionId[];
 }): readonly QuestionId[] {
   const excluded = new Set(exclude);
-  const questions = topicIds.flatMap((topic) =>
+  const uniqueTopicIds = [...new Set(topicIds)];
+  const questions = uniqueTopicIds.flatMap((topic) =>
     bundle.questions.filter((question) => question.topicId === topic && !excluded.has(question.id)).map((question) => question.id),
   );
   const rng = createSeededRng(seed);

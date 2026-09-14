@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { LEARNING_STATE_SCHEMA_VERSION, type EpochMs } from '@ottie/contracts';
+import { type EpochMs } from '@ottie/contracts';
 
 const idSchema = z.string().min(1);
 const preferencesSchema = z
@@ -64,5 +64,3 @@ export type LoadReport =
   | { readonly status: 'ok'; readonly savedAt: EpochMs }
   | { readonly status: 'corrupted'; readonly detail: string; readonly quarantinedKey: string }
   | { readonly status: 'version_mismatch'; readonly found: number; readonly expected: number; readonly quarantinedKey: string };
-
-export { LEARNING_STATE_SCHEMA_VERSION };
