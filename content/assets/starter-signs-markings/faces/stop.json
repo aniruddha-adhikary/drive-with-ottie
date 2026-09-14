@@ -1,0 +1,146 @@
+{
+  "artwork": {
+    "backing_perimeter_bbox_user_units": [
+      165.6,
+      84.0,
+      335.64,
+      254.04
+    ],
+    "backing_perimeter_extent_mm": [
+      599.9,
+      599.9
+    ],
+    "file": "faces/stop.svg",
+    "identical_to": "assets/sg/mandatory/stop.svg",
+    "note": "Byte-identical copy of the official cleaned extraction; no redraw, no fonts substituted.",
+    "sha256": "c090dffdeb788fb7a7aabed64791b1465489eae0cc6f8cdf8e366b328348bc50",
+    "user_unit_to_mm": 3.527778,
+    "viewbox_user_units": [
+      164.0,
+      82.0,
+      173.0,
+      174.0
+    ]
+  },
+  "attachments": [
+    {
+      "accepts": [
+        "support"
+      ],
+      "name": "back_centre",
+      "offset_mm": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "semantics": "Centre of the rear of the backing plate; the face centre is at the same point on the front side."
+    }
+  ],
+  "axes": {
+    "front": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "note": "Readable side faces -Y of the asset frame; the world pose yaw turns -Y onto the approach heading's reverse so approaching drivers read the face. Never camera-facing.",
+    "right": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "candidate_id": "sg.dev.starter.face.stop",
+  "content_approved": false,
+  "face_m": {
+    "height": 0.6,
+    "width": 0.6
+  },
+  "face_mm": {
+    "extent_note": "viewBox includes a transparent margin around the 600x600 backing; map the backing perimeter, not the viewBox, to the face quad.",
+    "height": 600,
+    "height_endpoints": "top outer backing edge to bottom outer backing edge",
+    "viewbox_extent_mm": [
+      610.3,
+      613.8
+    ],
+    "width": 600,
+    "width_endpoints": "left outer backing edge to right outer backing edge"
+  },
+  "kind": "sign_face",
+  "license_status": "unreviewed",
+  "meaning_source": {
+    "action": "stop_before_line",
+    "pdf_page": 11,
+    "printed_page": "10",
+    "source_id": "spf-btt-2026",
+    "text": "Stop before the white line. Give way to traffic from the right and left.",
+    "yield_to": "traffic from right and left"
+  },
+  "release_ready": false,
+  "reuse_approved": false,
+  "review": {
+    "status": "cleaned_unverified",
+    "warnings": [
+      "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+      "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+      "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+      "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+      "Artwork extraction does not verify legal applicability or grant reproduction rights."
+    ]
+  },
+  "role": "stop_sign",
+  "runtime_state": "development_candidate",
+  "schema_version": 1,
+  "shape": "octagon",
+  "source": {
+    "date_of_issue": "APR 2014",
+    "face_bbox_pdf_points": [
+      164,
+      82,
+      337,
+      256
+    ],
+    "locator": {
+      "bbox_pdf_points": [
+        135,
+        38,
+        372,
+        302
+      ],
+      "drawing": "LTA/SDRE14/15/TFM1",
+      "drawing_revision": "-",
+      "pdf_page": 2,
+      "printed_page": "15-1",
+      "source_id": "lta-sdre-i-tfm"
+    },
+    "pdf": {
+      "id": "lta-sdre-i-tfm",
+      "page_count": 3,
+      "sha256": "8decfe2306c6fb1b738c82a82bc4d657ef6a8a16ba4a0a342522126fd0113af1",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-15_TFM_1-2_March_2026.pdf"
+    },
+    "scale": "1:10",
+    "sheet": "1 OF 2"
+  },
+  "source_asset_id": "sg.mandatory.stop",
+  "unknowns": [
+    "mounting height",
+    "support family",
+    "lateral offset from kerb",
+    "physical colour/material specification (source RGB only)"
+  ],
+  "verification": {
+    "locator_visually_verified": true,
+    "method": "generate.py verify-sources re-opens the hash-pinned PDF and measures the backing/paint path bounds at 1:10.",
+    "vector_measurements_expected_mm": {
+      "backing_height": 600,
+      "backing_width": 600,
+      "octagon_width": 560
+    }
+  }
+}

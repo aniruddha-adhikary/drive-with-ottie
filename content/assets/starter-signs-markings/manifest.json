@@ -1,0 +1,337 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "sg.dev.starter.face.give-way",
+      "content_approved": false,
+      "control_regimes": [
+        "give_way"
+      ],
+      "files": {
+        "json": "faces/give-way.json",
+        "svg": "faces/give-way.svg"
+      },
+      "kind": "sign_face",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "reference_png": "5bf71365eda80f838bfe19ed89700240d472115843b8084f399ae35df7062430",
+        "renderer_svg": "7c72fe963046566a2b3dfacc1402c17c6443ec99e9618a7db0300e118e0d2a9a"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "give_way_sign",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.mandatory.give-way",
+      "source_locator": {
+        "bbox_pdf_points": [
+          415,
+          39,
+          730,
+          304
+        ],
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "source_id": "lta-sdre-i-tfm"
+      },
+      "starter_layouts": [
+        "sg.world.dev.give-way-t-junction"
+      ]
+    },
+    {
+      "candidate_id": "sg.dev.starter.face.stop",
+      "content_approved": false,
+      "control_regimes": [
+        "stop"
+      ],
+      "files": {
+        "json": "faces/stop.json",
+        "svg": "faces/stop.svg"
+      },
+      "kind": "sign_face",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "reference_png": "016e34004949f812122ee21b5b045ac6cf7c806165794065964f7bd427eff3db",
+        "renderer_svg": "c090dffdeb788fb7a7aabed64791b1465489eae0cc6f8cdf8e366b328348bc50"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "stop_sign",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.mandatory.stop",
+      "source_locator": {
+        "bbox_pdf_points": [
+          135,
+          38,
+          372,
+          302
+        ],
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "source_id": "lta-sdre-i-tfm"
+      },
+      "starter_layouts": [
+        "sg.world.dev.stop-development-access"
+      ]
+    },
+    {
+      "candidate_id": "sg.dev.starter.marking.give-way-line-d",
+      "content_approved": false,
+      "control_regimes": [
+        "give_way"
+      ],
+      "files": {
+        "json": "markings/give-way-line-d.json"
+      },
+      "kind": "road_marking",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "geometry_json": "1d34711addbb6a2541db0bfee0becbc88b2332608422cf4e195d4227f7aa8eb1",
+        "reference_png": "711a32ef5b372a40f50ac5e61012d5c475707104cd84e10c870e0eb0b551b0b6",
+        "reference_svg": "3eb55e5ab19cea7fc421dcbe5d47a7bc319e996ea922495139ae5fdf05e353b8",
+        "renderer_svg": "74c82ce84ed08c420cff765190309f76b1ecb2339bbfcbafb65907e8536c6e48"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "give_way_line",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.markings.control-give-way-d",
+      "source_locator": {
+        "bbox_pdf_points": [
+          145,
+          88,
+          532,
+          127
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "starter_layouts": [
+        "sg.world.dev.give-way-t-junction"
+      ]
+    },
+    {
+      "candidate_id": "sg.dev.starter.marking.stop-line-j",
+      "content_approved": false,
+      "control_regimes": [
+        "stop",
+        "signalised"
+      ],
+      "files": {
+        "json": "markings/stop-line-j.json"
+      },
+      "kind": "road_marking",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "geometry_json": "bdc9598effd5df60cc2b32574e44aa75eaefe4e2ef589640284963a22118e1a2",
+        "reference_png": "b785e831fa9ec2ef342f7d6ff9408431d0f33921a945085364aa439a5180343e",
+        "reference_svg": "e3197b3c3c8fe072161a819cd97acb250076b1a59ef83b2e757191a8ae112c05",
+        "renderer_svg": "1defe91fe9da0248bbaf1b74076a79f162fa067ce2c2c5ad71066e7418f4a049"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "stop_line",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.markings.control-stop-j",
+      "source_locator": {
+        "bbox_pdf_points": [
+          145,
+          340,
+          532,
+          379
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "starter_layouts": [
+        "sg.world.dev.stop-development-access",
+        "sg.world.dev.signalised-right-arrow"
+      ]
+    },
+    {
+      "candidate_id": "sg.dev.starter.marking.centre-broken-e",
+      "content_approved": false,
+      "control_regimes": [
+        "give_way",
+        "stop",
+        "signalised"
+      ],
+      "files": {
+        "json": "markings/centre-broken-e.json"
+      },
+      "kind": "road_marking",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "geometry_json": "c3e296d009d17bf6bf0ca220150d0ba1b00bd71c32d191e25bbac009d1bd93e9",
+        "reference_png": "6cade2542bbc314bd1c607f6ce41e47f7dc6fd83b5a89a6e4ff90bc88a216400",
+        "reference_svg": "5bc2e8c10c448700e817a600cfed1e057d133c9a954e761f0ae9b8bc08d05011",
+        "renderer_svg": "f141cff192f13b19779274ca08ffb18140d6c29e0faa7aaa6ae82009b62c7170"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "centre_line",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.markings.centre-broken-two-way-e",
+      "source_locator": {
+        "bbox_pdf_points": [
+          145,
+          129,
+          532,
+          169
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "starter_layouts": [
+        "sg.world.dev.give-way-t-junction",
+        "sg.world.dev.stop-development-access",
+        "sg.world.dev.signalised-right-arrow"
+      ]
+    },
+    {
+      "candidate_id": "sg.dev.starter.marking.centre-continuous-f",
+      "content_approved": false,
+      "control_regimes": [
+        "give_way",
+        "stop",
+        "signalised"
+      ],
+      "files": {
+        "json": "markings/centre-continuous-f.json"
+      },
+      "kind": "road_marking",
+      "license_status": "unreviewed",
+      "original_file_sha256": {
+        "geometry_json": "c7cbf380164d03612fb90e8e4e969c5e92961488a17b438f053335a04efc22dd",
+        "reference_png": "40f9b6f5f62f68cbecf7f0fb5c4ed4b20af3c76527c4647bce007eda8b8acd89",
+        "reference_svg": "cee6ee17b51279824ec3810a0fc3641a386e847e317576f8914603a5c8865afc",
+        "renderer_svg": "64f27da0ef5179637029f77179b74cf00d607122736f25c38cccddb0d325eebe"
+      },
+      "release_ready": false,
+      "reuse_approved": false,
+      "role": "centre_line_no_crossing",
+      "runtime_state": "development_candidate",
+      "source_asset_id": "sg.markings.centre-continuous-single-f",
+      "source_locator": {
+        "bbox_pdf_points": [
+          145,
+          171,
+          532,
+          209
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "starter_layouts": [
+        "sg.world.dev.give-way-t-junction",
+        "sg.world.dev.stop-development-access",
+        "sg.world.dev.signalised-right-arrow"
+      ]
+    }
+  ],
+  "content_approved": false,
+  "contract_version": 1,
+  "family": "starter-signs-markings",
+  "generator": {
+    "path": "content/assets/starter-signs-markings/generate.py",
+    "version": 1
+  },
+  "inputs": {
+    "mandatory_manifest": {
+      "path": "assets/sg/mandatory/manifest.json",
+      "sha256": "e4f2a746cb8cae3ea9225db04f2aef2cff7df204e50538f627dc34b86113e766"
+    },
+    "markings_manifest": {
+      "path": "assets/sg/markings/manifest.json",
+      "sha256": "77aaafe86db5590e16ca38e88dfd5224c045e2d4cd5f15a274a3ace3ccaac50c"
+    }
+  },
+  "license_status": "unreviewed",
+  "purpose": "DEVELOPMENT runtime candidates for the Give Way, STOP and signalised starter layouts. Not release content.",
+  "release_ready": false,
+  "reuse_approved": false,
+  "runtime_state": "development_candidate",
+  "schema_version": 1,
+  "source_sheets": {
+    "LTA/SDRE14/15/TFM1": {
+      "date_of_issue": "APR 2014",
+      "pdf_page": 2,
+      "printed_page": "15-1",
+      "revision": "-",
+      "scale": "1:10",
+      "source_id": "lta-sdre-i-tfm",
+      "title": "TRAFFIC MANDATORY SIGNS (SHEET 1 OF 2)"
+    },
+    "LTA/SDRE14/8/RMS2": {
+      "date_of_issue": "APR 2014",
+      "pdf_page": 3,
+      "printed_page": "8-2",
+      "revision": "B",
+      "revision_history": {
+        "A": "OCT 2015",
+        "B": "SEP 2017"
+      },
+      "scale": "1:100",
+      "source_id": "lta-sdre-I-rms",
+      "title": "LANE MARKINGS (SHEET 2 OF 3)"
+    }
+  },
+  "sources": {
+    "lta-sdre-I-rms": {
+      "collection_revision": "I",
+      "page_count": 15,
+      "publisher": "LTA",
+      "retrieved_at": "2026-09-14",
+      "sha256": "262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf"
+    },
+    "lta-sdre-i-tfm": {
+      "collection_revision": "I",
+      "page_count": 3,
+      "publisher": "LTA",
+      "retrieved_at": "2026-09-14",
+      "sha256": "8decfe2306c6fb1b738c82a82bc4d657ef6a8a16ba4a0a342522126fd0113af1",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-15_TFM_1-2_March_2026.pdf"
+    },
+    "spf-btt-2026": {
+      "collection_revision": null,
+      "page_count": 90,
+      "publisher": "Singapore Police Force, Traffic Police",
+      "retrieved_at": "2026-09-14",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf"
+    }
+  },
+  "starter_paint_scope": {
+    "excluded": [
+      "B/C lane separators: every starter road has one lane per direction, so no same-direction lane separation exists",
+      "J paved-shoulder boundary: expressway context, not present in starter layouts",
+      "edge lines, yellow lines, zig-zag, bus lane, yellow box: not required by the starter layouts"
+    ],
+    "included": [
+      "D give-way line",
+      "J stop line",
+      "E broken two-way centre line",
+      "F continuous single centre line"
+    ]
+  },
+  "unresolved": [
+    "Signalised starter layout stop-line placement relative to signal heads is not settled by RMS2; only the J stroke geometry is supplied.",
+    "Whether the starter roads use E (broken) or F (continuous) centre paint near each junction is a layout decision for T1; both strokes are supplied.",
+    "Sign face mounting height, support family and lateral offset remain unsourced (schematic post in fixtures)."
+  ]
+}

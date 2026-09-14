@@ -1,0 +1,230 @@
+{
+  "attaches_to": "control_line",
+  "candidate_id": "sg.dev.starter.marking.give-way-line-d",
+  "colour": {
+    "status": "Source PDF display colour; not a physical paint colour specification",
+    "svg": "#ffffff"
+  },
+  "content_approved": false,
+  "derived_row_centre_spacing_mm": 250,
+  "frame": {
+    "origin": "outer paint edge of row 0 at the row start",
+    "units": "m",
+    "x": "along the painted row (transverse to travel for control lines, along travel for centre lines)",
+    "y": "perpendicular to the row within the road plane; row 0 sits at y = 0, further rows at +y"
+  },
+  "kind": "road_marking",
+  "license_status": "unreviewed",
+  "measurement_evidence": [
+    {
+      "measurement_endpoints": [
+        "paint edge on one side of a row",
+        "opposite paint edge of the same row"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "width",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          88,
+          532,
+          127
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 100
+    },
+    {
+      "measurement_endpoints": [
+        "start edge of one painted segment",
+        "end edge of that segment"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "painted_length",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          88,
+          532,
+          127
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 1000
+    },
+    {
+      "measurement_endpoints": [
+        "end edge of a painted segment",
+        "start edge of the next painted segment"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "clear_gap",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          88,
+          532,
+          127
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 1000
+    },
+    {
+      "measurement_endpoints": [
+        "inner edge of first row",
+        "nearest inner edge of second row"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "inter_row_clear_gap",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          88,
+          532,
+          127
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 150
+    }
+  ],
+  "orientation": "transverse",
+  "original_geometry": {
+    "file": "assets/sg/markings/geometry/control-give-way-d.json",
+    "renderer_svg": "assets/sg/markings/geometry/control-give-way-d.svg",
+    "renderer_svg_sha256": "74c82ce84ed08c420cff765190309f76b1ecb2339bbfcbafb65907e8536c6e48",
+    "sha256": "1d34711addbb6a2541db0bfee0becbc88b2332608422cf4e195d4227f7aa8eb1"
+  },
+  "parameters_mm": {
+    "clear_gap": 1000,
+    "inter_row_clear_gap": 150,
+    "painted_length": 1000,
+    "width": 100
+  },
+  "release_ready": false,
+  "reuse_approved": false,
+  "review": {
+    "status": "verified_geometry",
+    "warnings": [
+      "Dimension leaders/context in reference PNG are not production paint.",
+      "Selected original paint paths require content review; original PNG remains authoritative.",
+      "Parameter-generated SVG is distinct from source vector extraction; sample extent is illustrative."
+    ]
+  },
+  "role": "give_way_line",
+  "runtime_state": "development_candidate",
+  "sample_note": "Rectangles are generated from parameters_mm for a short sample; renderers should tile stroke_m along the anchor instead of using these directly.",
+  "sample_rectangles_m": [
+    {
+      "row": 0,
+      "x0": 0.0,
+      "x1": 1.0,
+      "y0": 0.0,
+      "y1": 0.1
+    },
+    {
+      "row": 0,
+      "x0": 2.0,
+      "x1": 3.0,
+      "y0": 0.0,
+      "y1": 0.1
+    },
+    {
+      "row": 1,
+      "x0": 0.0,
+      "x1": 1.0,
+      "y0": 0.25,
+      "y1": 0.35
+    },
+    {
+      "row": 1,
+      "x0": 2.0,
+      "x1": 3.0,
+      "y0": 0.25,
+      "y1": 0.35
+    }
+  ],
+  "schema_version": 1,
+  "semantic_notes": [
+    "Two broken transverse rows form ONE Give Way line; a single row is a different marking.",
+    "Row 0 is the row nearest approaching traffic; row 1 lies 150 mm clear beyond it."
+  ],
+  "source": {
+    "date_of_issue": "APR 2014",
+    "description_on_sheet": "Two parallel white lines indicate that traffic approaching these lines is to give way to oncoming traffic either on the left or right.",
+    "locator": {
+      "bbox_pdf_points": [
+        145,
+        88,
+        532,
+        127
+      ],
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawing_revision": "B",
+      "pdf_page": 3,
+      "printed_page": "8-2",
+      "source_id": "lta-sdre-I-rms"
+    },
+    "pdf": {
+      "id": "lta-sdre-I-rms",
+      "page_count": 15,
+      "sha256": "262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf"
+    },
+    "revision_history": {
+      "A": "OCT 2015",
+      "B": "SEP 2017"
+    },
+    "scale": "1:100",
+    "sheet": "2 OF 3"
+  },
+  "source_asset_id": "sg.markings.control-give-way-d",
+  "stroke_m": {
+    "clear_gap_m": 1.0,
+    "continuous": false,
+    "extent_m": null,
+    "extent_note": "Extent along x is supplied by the placing anchor (control-line polyline or centreline segment); the sample rectangles are illustrative only.",
+    "inter_row_clear_gap_m": 0.15,
+    "painted_length_m": 1.0,
+    "period_m": 2.0,
+    "rows": 2,
+    "total_transverse_width_m": 0.35,
+    "width_m": 0.1
+  },
+  "unknowns": [
+    "site-specific line extent",
+    "site-specific placement"
+  ],
+  "verification": {
+    "locator_visually_verified": true,
+    "method": "generate.py verify-sources re-opens the hash-pinned RMS PDF and measures the white fill rectangles inside bbox_pdf_points at 1:100.",
+    "vector_measurements_expected_mm": {
+      "clear_gap": 1000,
+      "inter_row_clear_gap": 150,
+      "painted_length": 1000,
+      "rows": 2,
+      "width": 100
+    }
+  }
+}
