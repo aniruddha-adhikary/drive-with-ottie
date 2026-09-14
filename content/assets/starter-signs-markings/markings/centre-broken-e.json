@@ -1,0 +1,190 @@
+{
+  "attaches_to": "road_centreline",
+  "candidate_id": "sg.dev.starter.marking.centre-broken-e",
+  "colour": {
+    "status": "Source PDF display colour; not a physical paint colour specification",
+    "svg": "#ffffff"
+  },
+  "content_approved": false,
+  "derived_row_centre_spacing_mm": null,
+  "frame": {
+    "origin": "outer paint edge of row 0 at the row start",
+    "units": "m",
+    "x": "along the painted row (transverse to travel for control lines, along travel for centre lines)",
+    "y": "perpendicular to the row within the road plane; row 0 sits at y = 0, further rows at +y"
+  },
+  "kind": "road_marking",
+  "license_status": "unreviewed",
+  "measurement_evidence": [
+    {
+      "measurement_endpoints": [
+        "paint edge on one side of a row",
+        "opposite paint edge of the same row"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "width",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          129,
+          532,
+          169
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 150
+    },
+    {
+      "measurement_endpoints": [
+        "start edge of one painted segment",
+        "end edge of that segment"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "painted_length",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          129,
+          532,
+          169
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 2750
+    },
+    {
+      "measurement_endpoints": [
+        "end edge of a painted segment",
+        "start edge of the next painted segment"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "clear_gap",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          129,
+          532,
+          169
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 2750
+    }
+  ],
+  "orientation": "longitudinal",
+  "original_geometry": {
+    "file": "assets/sg/markings/geometry/centre-broken-two-way-e.json",
+    "renderer_svg": "assets/sg/markings/geometry/centre-broken-two-way-e.svg",
+    "renderer_svg_sha256": "f141cff192f13b19779274ca08ffb18140d6c29e0faa7aaa6ae82009b62c7170",
+    "sha256": "c3e296d009d17bf6bf0ca220150d0ba1b00bd71c32d191e25bbac009d1bd93e9"
+  },
+  "parameters_mm": {
+    "clear_gap": 2750,
+    "painted_length": 2750,
+    "width": 150
+  },
+  "release_ready": false,
+  "reuse_approved": false,
+  "review": {
+    "status": "verified_geometry",
+    "warnings": [
+      "Dimension leaders/context in reference PNG are not production paint.",
+      "Selected original paint paths require content review; original PNG remains authoritative.",
+      "Parameter-generated SVG is distinct from source vector extraction; sample extent is illustrative."
+    ]
+  },
+  "role": "centre_line",
+  "runtime_state": "development_candidate",
+  "sample_note": "Rectangles are generated from parameters_mm for a short sample; renderers should tile stroke_m along the anchor instead of using these directly.",
+  "sample_rectangles_m": [
+    {
+      "row": 0,
+      "x0": 0.0,
+      "x1": 2.75,
+      "y0": 0.0,
+      "y1": 0.15
+    },
+    {
+      "row": 0,
+      "x0": 5.5,
+      "x1": 8.25,
+      "y0": 0.0,
+      "y1": 0.15
+    }
+  ],
+  "schema_version": 1,
+  "semantic_notes": [
+    "Two-way carriageway centre line separating the single with-reference and against-reference lanes of every starter road."
+  ],
+  "source": {
+    "date_of_issue": "APR 2014",
+    "description_on_sheet": "These white lines are used as centre lines on a two-way carriageway.",
+    "locator": {
+      "bbox_pdf_points": [
+        145,
+        129,
+        532,
+        169
+      ],
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawing_revision": "B",
+      "pdf_page": 3,
+      "printed_page": "8-2",
+      "source_id": "lta-sdre-I-rms"
+    },
+    "pdf": {
+      "id": "lta-sdre-I-rms",
+      "page_count": 15,
+      "sha256": "262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf"
+    },
+    "revision_history": {
+      "A": "OCT 2015",
+      "B": "SEP 2017"
+    },
+    "scale": "1:100",
+    "sheet": "2 OF 3"
+  },
+  "source_asset_id": "sg.markings.centre-broken-two-way-e",
+  "stroke_m": {
+    "clear_gap_m": 2.75,
+    "continuous": false,
+    "extent_m": null,
+    "extent_note": "Extent along x is supplied by the placing anchor (control-line polyline or centreline segment); the sample rectangles are illustrative only.",
+    "inter_row_clear_gap_m": null,
+    "painted_length_m": 2.75,
+    "period_m": 5.5,
+    "rows": 1,
+    "total_transverse_width_m": 0.15,
+    "width_m": 0.15
+  },
+  "unknowns": [
+    "site-specific line extent",
+    "site-specific placement"
+  ],
+  "verification": {
+    "locator_visually_verified": true,
+    "method": "generate.py verify-sources re-opens the hash-pinned RMS PDF and measures the white fill rectangles inside bbox_pdf_points at 1:100.",
+    "vector_measurements_expected_mm": {
+      "clear_gap": 2750,
+      "painted_length": 2750,
+      "rows": 1,
+      "width": 150
+    }
+  }
+}

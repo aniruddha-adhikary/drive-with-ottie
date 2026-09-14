@@ -1,0 +1,135 @@
+{
+  "attaches_to": "control_line",
+  "candidate_id": "sg.dev.starter.marking.stop-line-j",
+  "colour": {
+    "status": "Source PDF display colour; not a physical paint colour specification",
+    "svg": "#ffffff"
+  },
+  "content_approved": false,
+  "derived_row_centre_spacing_mm": null,
+  "frame": {
+    "origin": "outer paint edge of row 0 at the row start",
+    "units": "m",
+    "x": "along the painted row (transverse to travel for control lines, along travel for centre lines)",
+    "y": "perpendicular to the row within the road plane; row 0 sits at y = 0, further rows at +y"
+  },
+  "kind": "road_marking",
+  "license_status": "unreviewed",
+  "measurement_evidence": [
+    {
+      "measurement_endpoints": [
+        "paint edge on one side of a row",
+        "opposite paint edge of the same row"
+      ],
+      "method": "Visual transcription of printed dimension label; not PDF pixel measurement",
+      "parameter": "width",
+      "source": {
+        "bbox_pdf_points": [
+          145,
+          340,
+          532,
+          379
+        ],
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawing_revision": "B",
+        "pdf_page": 3,
+        "printed_page": "8-2",
+        "source_id": "lta-sdre-I-rms"
+      },
+      "unit": "mm",
+      "value": 300
+    }
+  ],
+  "orientation": "transverse",
+  "original_geometry": {
+    "file": "assets/sg/markings/geometry/control-stop-j.json",
+    "renderer_svg": "assets/sg/markings/geometry/control-stop-j.svg",
+    "renderer_svg_sha256": "1defe91fe9da0248bbaf1b74076a79f162fa067ce2c2c5ad71066e7418f4a049",
+    "sha256": "bdc9598effd5df60cc2b32574e44aa75eaefe4e2ef589640284963a22118e1a2"
+  },
+  "parameters_mm": {
+    "width": 300
+  },
+  "release_ready": false,
+  "reuse_approved": false,
+  "review": {
+    "status": "verified_geometry",
+    "warnings": [
+      "Shares J geometry with longitudinal paved-shoulder boundary; semantic role must remain separate.",
+      "Dimension leaders/context in reference PNG are not production paint.",
+      "Selected original paint paths require content review; original PNG remains authoritative.",
+      "Parameter-generated SVG is distinct from source vector extraction; sample extent is illustrative."
+    ]
+  },
+  "role": "stop_line",
+  "runtime_state": "development_candidate",
+  "sample_note": "Rectangles are generated from parameters_mm for a short sample; renderers should tile stroke_m along the anchor instead of using these directly.",
+  "sample_rectangles_m": [
+    {
+      "row": 0,
+      "x0": 0.0,
+      "x1": 4.0,
+      "y0": 0.0,
+      "y1": 0.3
+    }
+  ],
+  "schema_version": 1,
+  "semantic_notes": [
+    "RMS2 J is a single 300 mm continuous white line used BOTH along expressways adjacent to paved shoulders AND as stop lines.",
+    "This candidate carries only the stop_line role; the paved-shoulder use is sg.markings.edge-paved-shoulder-j and is deliberately not a starter candidate."
+  ],
+  "source": {
+    "date_of_issue": "APR 2014",
+    "description_on_sheet": "This continuous white line is used along expressway adjacent to paved shoulder and also as stop lines.",
+    "locator": {
+      "bbox_pdf_points": [
+        145,
+        340,
+        532,
+        379
+      ],
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawing_revision": "B",
+      "pdf_page": 3,
+      "printed_page": "8-2",
+      "source_id": "lta-sdre-I-rms"
+    },
+    "pdf": {
+      "id": "lta-sdre-I-rms",
+      "page_count": 15,
+      "sha256": "262ec3c439c8101945b7504e09e19c172485c5568cf7ba2f997fefa732d44059",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-8_RMS_1-14_March_2026.pdf"
+    },
+    "revision_history": {
+      "A": "OCT 2015",
+      "B": "SEP 2017"
+    },
+    "scale": "1:100",
+    "sheet": "2 OF 3"
+  },
+  "source_asset_id": "sg.markings.control-stop-j",
+  "stroke_m": {
+    "clear_gap_m": null,
+    "continuous": true,
+    "extent_m": null,
+    "extent_note": "Extent along x is supplied by the placing anchor (control-line polyline or centreline segment); the sample rectangles are illustrative only.",
+    "inter_row_clear_gap_m": null,
+    "painted_length_m": null,
+    "period_m": null,
+    "rows": 1,
+    "total_transverse_width_m": 0.3,
+    "width_m": 0.3
+  },
+  "unknowns": [
+    "site-specific line extent",
+    "site-specific placement"
+  ],
+  "verification": {
+    "locator_visually_verified": true,
+    "method": "generate.py verify-sources re-opens the hash-pinned RMS PDF and measures the white fill rectangles inside bbox_pdf_points at 1:100.",
+    "vector_measurements_expected_mm": {
+      "rows": 1,
+      "width": 300
+    }
+  }
+}
