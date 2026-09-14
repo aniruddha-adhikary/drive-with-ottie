@@ -1,0 +1,121 @@
+## Page 1: Road Traffic (Traffic Signs) Rules - Singapore Statutes Online
+URL: https://sso.agc.gov.sg/SL/RTA1961-R33?ProvIds=pr11-&ViewType=Within
+
+Road Traffic (Traffic Signs) Rules - Singapore Statutes Online 
+
+| The 3-colour system |
+| --- |
+
+11. In a 3-colour system —
+
+(a)
+
+the signals shall consist of 3 lights, which shall be red, amber and green respectively, except that there may be —
+
+| (i) | any red, amber or green arrow light; |
+| --- | --- |
+| (ii) | any combination of red, amber or green arrow lights; or |
+| (iii) | such other additional green light or lights as may be provided for in this rule for special purposes; |
+
+the signals shall consist of 3 arrows (either in left, right or straight ahead direction), which shall be red, amber and green respectively, except that there may be —
+
+| (i) | any red, amber or green arrow light; |
+| --- | --- |
+| (ii) | any combination of red, amber or green arrow lights; or |
+| (iii) | such other additional green light or lights as may be provided for in this rule for special purposes; |
+
+the red, amber and green lights shall be arranged vertically or horizontally facing the direction of approaching traffic and —
+
+| (i) | where they are arranged vertically, the red light shall be placed above the amber light and the green light shall be placed below the amber light; |
+| --- | --- |
+| (ii) | where they are arranged horizontally, the red light shall be placed on the right of the amber light and the green light shall be placed on the left of the amber light; |
+| (iii) | where they are arranged vertically with any combination of red, amber or green arrow lights, each arrow light shall be placed at the same level with a light of the same colour; and |
+| (iv) | where they are arranged horizontally with any combination of red, amber or green arrow lights, each arrow light shall be placed below the light of the same colour; |
+
+any additional arrow light referred to in paragraph (a)(i) shall be placed —
+
+| (i) | at the same level of the light of the same colour where the lights are arranged vertically; |
+| --- | --- |
+| (ii) | above the red light where the lights are arranged vertically; or |
+| (iii) | below the light of the same colour where the lights are arranged horizontally; |
+
+any additional green light referred to in paragraph (a)(iii) shall be placed at the same level on the left side of or above the red light facing the direction of the approaching traffic where the lights are arranged vertically;
+
+the red, amber and green arrow lights of the same direction shall be arranged vertically or horizontally facing the direction of approaching traffic and —
+
+| (i) | where they are arranged vertically, the red arrow light shall be placed above the amber arrow light and the green arrow light shall be placed below the amber arrow light; |
+| --- | --- |
+| (ii) | where they are arranged horizontally, the red arrow light shall be placed on the right of the amber arrow light and the green arrow light shall be placed on the left of the amber arrow light; |
+| (iii) | where they are arranged vertically with any combination of red, amber and green arrow lights of different directions, they shall be placed at the same level of the arrow lights of the same colour; and |
+| (iv) | where they are arranged horizontally with any combination of red, amber and green arrow lights of different directions, they shall be placed below the arrow light of the same colour; |
+
+any additional arrow light referred to in paragraph (b) (i) shall be placed —
+
+| (i) | at the same level of the arrow light of the same colour where the arrow lights are arranged vertically; |
+| --- | --- |
+| (ii) | above the red arrow light where the arrow lights are arranged vertically; and |
+| (iii) | below the arrow light of the same colour where the arrow lights are arranged horizontally; |
+
+any additional green light referred to in paragraph (b) (iii) shall be placed at the same level on the left side of or above the red arrow light facing the direction of the approaching traffic where the lights are arranged vertically;
+
+where the lights and arrow lights are arranged vertically —
+
+| (i) | the effective diameter of the lens of each light and arrow light shall be at least 200 mm; |
+| --- | --- |
+| (ii) | the height of the centre of the lens of the light or arrow light nearest to the ground surface shall be 2,290 mm except that it may be increased to 3,000 mm where owing to road gradient it is desirable to do so; and |
+| (iii) | the centres of the lenses of the 2 lights, 2 arrow lights or any combination thereof placed next to each other shall not be more than 500 mm apart; |
+
+where the lights and arrow lights are arranged horizontally —
+
+| (i) | the effective diameter of the lens of each light and arrow light shall be at least 300 mm; |
+| --- | --- |
+| (ii) | the height of the centre of the lens of the light or arrow light nearest to the ground surface shall not be less than 5,200 mm; and |
+| (iii) | the centres of the lenses of the 2 lights, 2 arrow lights or any combination thereof placed next to each other shall not be more than 500 mm apart; and |
+
+subject to the directions of any police officer who may be engaged in the control of traffic —
+
+the illuminated red light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road provided in conjunction with the signals, subject to sub-paragraphs (v), (ix), (x) and (xi);
+
+the illuminated amber light shall be taken to denote an impending change from green light to red light and as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road provided in conjunction with the signals except in the case of any vehicle which is so close to such line when the amber light first appears that it cannot safely be stopped before the line;
+
+the illuminated green light shall be taken to indicate that vehicles may pass the signal and proceed straight on, or with due regard to the safety of other users of the road and precedence to pedestrians and on-coming traffic, turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals, subject to sub-paragraphs (x) and (xi);
+
+(iv)
+
+where the green light shows one or more illuminated arrow or arrows, it shall be taken to indicate that vehicles may only proceed in the direction or directions indicated by the arrow or arrows (where the arrow points upwards, vehicles may only proceed straight ahead);
+
+where the signals consist of one or more additional green arrow light or lights —
+
+| (A) | the illuminated green arrow light or lights shall be taken to indicate that vehicles, notwithstanding that they would otherwise be required by the illuminated red or amber light to stop, may proceed in the direction or directions indicated by the green arrow or arrows with precedence to pedestrians; and |
+| --- | --- |
+| (B) | the illuminated intermittent green arrow flashing light shall be taken as prohibiting vehicles from proceeding beyond the stop line on the road provided in conjunction with the signals except in the case of any vehicle which is so close to such line when the green arrow light first flashes that it cannot safely be stopped before the line; |
+
+where the signals consist of an additional green light showing the letter “B”, it shall be taken to indicate that any bus in the innermost left lane of the road before the stop line or broken lines on the road provided in conjunction with the signals may —
+
+| (A) | notwithstanding that it would otherwise be required by the illuminated red light to stop; and |
+| --- | --- |
+| (B) | if its path is not obstructed by another vehicle, |
+
+| pass the signal and proceed straight on; |
+| --- |
+
+the illuminated intermittent red light and the illuminated intermittent red arrow light flashing at the rate of between 60 to 80 flashes per minute shall be taken to indicate that vehicles shall stop at the stop line provided in conjunction with the signals and may thereafter, with caution and due regard to the safety of other users of the road and precedence to pedestrians and to traffic in other directions, proceed beyond the stop line;
+
+the illuminated intermittent amber light and the illuminated intermittent amber arrow light flashing at the rate of between 60 to 80 flashes per minute shall be taken to indicate that vehicles shall slow down on approaching the signals and may thereafter, with caution and due regard to the safety of other users of the road and precedence to pedestrians, proceed beyond the stop line provided in conjunction with the signals;
+
+(ix)
+
+where allowed by the appropriate sign as shown in diagram 161 (a) or 161 (b) in Part III of the Schedule, a vehicle which —
+
+| (A) | is on a lane from which a left turn or a right turn may, by virtue of any sign or marking as shown in the Schedule, be made; and |
+| --- | --- |
+| (B) | in compliance with the illuminated red light, has stopped at the stop line or broken lines on the road provided in conjunction with the signals, |
+
+| may, with caution and due regard to the safety of other users of the road and precedence to pedestrians and to traffic in other directions, proceed beyond the stop line or broken lines and make a left turn or a right turn, as the case may be; |
+| --- |
+
+the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction, notwithstanding sub-paragraphs (vi) and (ix);
+
+the illuminated amber arrow light shall be taken to denote an impending change from green arrow light to red arrow light and as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road provided in conjunction with the signals except in the case of any vehicle which is so close to such line when the amber arrow light first appears that it cannot safely be stopped before the line, notwithstanding that they would otherwise be required by the illuminated green or amber light or lights to proceed on; and
+
+the illuminated green arrow light shall be taken to indicate that vehicles, notw
