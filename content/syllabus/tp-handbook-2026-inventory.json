@@ -1,0 +1,1080 @@
+{
+  "$comment": "Inventory of the Traffic Police 'Basic Theory of Driving' handbook (spf-btt-2026, updated 2 January 2026), transcribed from its contents pages (PDF pp.2–3, printed 1–2). Every section is listed once with its printed and PDF page. `coverage` says honestly what content/** provides: 'sourced' = starter terms/rules cite this section with exact locators; 'partial' = only part of the section is covered; 'conflicted' = an official-source conflict is recorded and unresolved; 'missing' = no starter content yet. Listing a section is NOT a claim that questions exist for it. No question bank, exam format, pass mark or CDC material is asserted. Development content only.",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "sourceId": "spf-btt-2026",
+  "contentsLocator": {
+    "sourceId": "spf-btt-2026",
+    "pdfPage": 2,
+    "printedPage": "1",
+    "drawing": null,
+    "drawingRevision": null,
+    "bboxPdfPoints": null,
+    "section": "CONTENTS",
+    "quote": "PART B (to be tested during Basic Theory Test)"
+  },
+  "coverageStates": {
+    "sourced": "Starter terms/rules cite this section with exact page locators.",
+    "partial": "Some items in the section have starter terms/rules; the rest is missing.",
+    "conflicted": "An official-source conflict touches this section and is recorded, not resolved.",
+    "missing": "No starter content; the section is inventoried only."
+  },
+  "parts": [
+    {
+      "id": "part-a",
+      "label": "PART A: Driving Licences",
+      "testedInBtt": false,
+      "note": "Not marked 'to be tested' in the contents; inventoried for completeness only.",
+      "sections": [
+        {
+          "id": "a.introduction",
+          "label": "Introduction",
+          "printedPage": "3",
+          "pdfPage": 4,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.what-is-a-driving-licence",
+          "label": "What Is A Driving Licence?",
+          "printedPage": "3",
+          "pdfPage": 4,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.fitness-to-drive",
+          "label": "Fitness To Drive",
+          "printedPage": "3",
+          "pdfPage": 4,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.classes-of-driving-licences",
+          "label": "Classes Of Driving Licences",
+          "printedPage": "3",
+          "pdfPage": 4,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.test-of-competence-to-drive",
+          "label": "Test Of Competence To Drive",
+          "printedPage": "4",
+          "pdfPage": 5,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": [],
+          "note": "§4(a) states the BTT curriculum is 'broadly covered' by this handbook; it does not give question count, pass mark or format."
+        },
+        {
+          "id": "a.provisional-driving-licence",
+          "label": "Provisional Driving Licence (PDL)",
+          "printedPage": "4",
+          "pdfPage": 5,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.validity-of-driving-licence",
+          "label": "Validity Of Driving Licence",
+          "printedPage": "4",
+          "pdfPage": 5,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.new-drivers",
+          "label": "'NEW' Drivers",
+          "printedPage": "5",
+          "pdfPage": 6,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.dips",
+          "label": "Driver Improvement Points System (DIPS)",
+          "printedPage": "5",
+          "pdfPage": 6,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.medical-examination",
+          "label": "Medical Examination",
+          "printedPage": "7",
+          "pdfPage": 8,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "a.online-portals",
+          "label": "Online Portals",
+          "printedPage": "8",
+          "pdfPage": 9,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "id": "part-b",
+      "label": "PART B (to be tested during Basic Theory Test)",
+      "testedInBtt": true,
+      "note": "The contents page marks Part B as tested. That is the only exam-scope statement used here.",
+      "sections": [
+        {
+          "id": "b.signs.mandatory",
+          "label": "Signs and Signals: Mandatory Signs",
+          "printedPage": "9",
+          "pdfPage": 10,
+          "coverage": "partial",
+          "termIds": ["stop-sign", "give-way-sign"],
+          "ruleIds": ["stop-before-stop-line", "give-way-at-double-broken-line"],
+          "conflicts": [],
+          "note": "Only Stop and Give Way (PDF p.11, printed 10) have starter terms; the other mandatory signs are missing."
+        },
+        {
+          "id": "b.signs.prohibitory",
+          "label": "Prohibitory Signs",
+          "printedPage": "11",
+          "pdfPage": 12,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.warning",
+          "label": "Warning Signs",
+          "printedPage": "14",
+          "pdfPage": 15,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.regulatory",
+          "label": "Regulatory Signs",
+          "printedPage": "19",
+          "pdfPage": 20,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.information",
+          "label": "Information Signs",
+          "printedPage": "21",
+          "pdfPage": 22,
+          "coverage": "conflicted",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": [
+            {
+              "id": "full-day-bus-lane-hours",
+              "summary": "LTA SDRE TFI1 rev A prints full-day bus-lane hours 07:30–20:00; the handbook §54(b) (PDF p.41, printed 40) states Mondays to Saturdays 7.30am to 11.00pm except Sundays and public holidays.",
+              "locators": [
+                {
+                  "sourceId": "spf-btt-2026",
+                  "pdfPage": 41,
+                  "printedPage": "40",
+                  "drawing": null,
+                  "drawingRevision": null,
+                  "bboxPdfPoints": null,
+                  "section": "§54(b) Full-Day Bus Lane",
+                  "quote": "Mondays to Saturdays: 7.30am to 11.00pm, except on Sundays & Public Holidays"
+                }
+              ],
+              "resolution": "unresolved; recorded in docs/research/SINGAPORE-ROAD-CONTROLS.md 'Source conflicts' item 1. No starter content asserts either set of hours."
+            }
+          ]
+        },
+        {
+          "id": "b.signs.pedestrian-crossing",
+          "label": "Pedestrian Crossing Signs",
+          "printedPage": "24",
+          "pdfPage": 25,
+          "coverage": "conflicted",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": [
+            {
+              "id": "zebra-colour-applicability",
+              "summary": "LTA SDRE TMM4 notes on white/yellow crossings need contextual interpretation against its zebra illustration and the handbook; not resolved.",
+              "locators": [],
+              "resolution": "unresolved; docs/research/SINGAPORE-ROAD-CONTROLS.md 'Source conflicts' item 2."
+            }
+          ]
+        },
+        {
+          "id": "b.signs.tunnels",
+          "label": "Traffic Signs For Tunnels",
+          "printedPage": "25",
+          "pdfPage": 26,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.pedal-cycles",
+          "label": "Signs For Pedal-Cycles",
+          "printedPage": "26",
+          "pdfPage": 27,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.directional",
+          "label": "Directional Signs",
+          "printedPage": "27",
+          "pdfPage": 28,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.emas",
+          "label": "Expressway Monitoring And Advisory System (EMAS)",
+          "printedPage": "29",
+          "pdfPage": 30,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.facility",
+          "label": "Facility Signs",
+          "printedPage": "34",
+          "pdfPage": 35,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signs.vehicle-markings",
+          "label": "Vehicle Markings",
+          "printedPage": "34",
+          "pdfPage": 35,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.markings.common",
+          "label": "Common Road Markings",
+          "printedPage": "35",
+          "pdfPage": 36,
+          "coverage": "partial",
+          "termIds": ["give-way-line", "stop-line"],
+          "ruleIds": ["give-way-at-double-broken-line", "stop-before-stop-line"],
+          "conflicts": [
+            {
+              "id": "crossing-marking-phase-out",
+              "summary": "§52(c) (PDF p.36, printed 35) says parallel dashed/solid white crossing lines 'will be phased out'; no completion date is given by any reviewed source.",
+              "locators": [
+                {
+                  "sourceId": "spf-btt-2026",
+                  "pdfPage": 36,
+                  "printedPage": "35",
+                  "drawing": null,
+                  "drawingRevision": null,
+                  "bboxPdfPoints": null,
+                  "section": "§52(c) Parallel Dashed / Solid White Lines",
+                  "quote": "Parallel dashed or solid white lines (will be phased out)"
+                }
+              ],
+              "resolution": "unresolved; docs/research/SINGAPORE-ROAD-CONTROLS.md 'Source conflicts' item 3. Starter content covers only §52(a) and §52(b)."
+            }
+          ],
+          "note": "§52(a) parallel broken white lines and §52(b) single white line are sourced; §52(c)–(e) crossings and all markings ALONG the road (§53–§57) are missing."
+        },
+        {
+          "id": "b.markings.direction-arrows",
+          "label": "Direction Arrows",
+          "printedPage": "43",
+          "pdfPage": 44,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.markings.merging-arrows",
+          "label": "Merging Arrow Markings",
+          "printedPage": "43",
+          "pdfPage": 44,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signals.traffic-lights",
+          "label": "Signals (Traffic Lights)",
+          "printedPage": "44",
+          "pdfPage": 45,
+          "coverage": "partial",
+          "termIds": [
+            "circular-red-signal",
+            "circular-amber-signal",
+            "flashing-amber-signal",
+            "circular-green-signal",
+            "green-arrow-signal",
+            "amber-arrow-signal",
+            "red-arrow-signal",
+            "green-b-signal"
+          ],
+          "ruleIds": [
+            "circular-red-prohibits-all-movements",
+            "circular-amber-stop-unless-too-close",
+            "flashing-amber-signal-out-of-order",
+            "circular-green-permits-uncontrolled-movements",
+            "red-arrow-prohibits-movement",
+            "amber-arrow-ready-to-stop",
+            "green-arrow-permits-indicated-movement",
+            "green-b-buses-only"
+          ],
+          "conflicts": [
+            {
+              "id": "rule11-green-arrow-capture-truncated",
+              "summary": "The stored Rule 11 capture ends mid-sentence in the final green-arrow paragraph; direct retrieval returned 403. Statutory coverage of that paragraph is missing, not conflicting.",
+              "locators": [
+                {
+                  "sourceId": "rule11",
+                  "pdfPage": null,
+                  "printedPage": null,
+                  "drawing": null,
+                  "drawingRevision": null,
+                  "bboxPdfPoints": null,
+                  "section": "Rule 11, green arrow (final paragraph)",
+                  "quote": "the illuminated green arrow light shall be taken to indicate that vehicles, notw"
+                }
+              ],
+              "resolution": "unresolved until an original capture of Rule 11 is obtained and hashed."
+            }
+          ],
+          "note": "ALL RED, FLICKERING GREEN ARROW and ADVANCED WARNING LIGHTS (PDF pp.45–46) are described in the handbook but have no starter term. Only the vertical head with a right-turn arrow has a quarantined illustration; no horizontal signal artwork exists or was invented."
+        },
+        {
+          "id": "b.signals.on-the-road",
+          "label": "Signals (On The Road)",
+          "printedPage": "46",
+          "pdfPage": 47,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signals.police-officer",
+          "label": "Signals Given By A Police Officer",
+          "printedPage": "47",
+          "pdfPage": 48,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.signals.hand-signals",
+          "label": "Hand Signals",
+          "printedPage": "49",
+          "pdfPage": 50,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.keep-left",
+          "label": "Traffic Rules and Regulations: The Keep-Left Rule",
+          "printedPage": "50",
+          "pdfPage": 51,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.lane-discipline",
+          "label": "Lane Discipline",
+          "printedPage": "50",
+          "pdfPage": 51,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.overtaking",
+          "label": "Overtaking",
+          "printedPage": "50",
+          "pdfPage": 51,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.road-hogging",
+          "label": "Road-Hogging",
+          "printedPage": "52",
+          "pdfPage": 53,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.speed-limits",
+          "label": "Speed Limits",
+          "printedPage": "52",
+          "pdfPage": 53,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.give-way-at-junctions",
+          "label": "The 'Give Way' Rule At Road Junctions",
+          "printedPage": "52",
+          "pdfPage": 53,
+          "coverage": "sourced",
+          "termIds": ["give-way-sign", "stop-sign", "major-road", "uncontrolled-junction"],
+          "ruleIds": [
+            "give-way-at-double-broken-line",
+            "stop-before-stop-line",
+            "uncontrolled-junction-priority"
+          ],
+          "conflicts": [],
+          "note": "§81 and §82(a)–(c) are fully cited. No World fixture yet exercises §82."
+        },
+        {
+          "id": "b.rules.roundabouts",
+          "label": "Roundabouts",
+          "printedPage": "53",
+          "pdfPage": 54,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.expressways",
+          "label": "Driving On Expressways",
+          "printedPage": "54",
+          "pdfPage": 55,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.yellow-box",
+          "label": "Yellow-Box Junctions",
+          "printedPage": "54",
+          "pdfPage": 55,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.u-turns",
+          "label": "U-Turns",
+          "printedPage": "56",
+          "pdfPage": 57,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.stopping-and-parking",
+          "label": "Stopping And Parking",
+          "printedPage": "56",
+          "pdfPage": 57,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.seat-belts",
+          "label": "Seat Belts",
+          "printedPage": "57",
+          "pdfPage": 58,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.lights",
+          "label": "Lights",
+          "printedPage": "57",
+          "pdfPage": 58,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.alcohol",
+          "label": "Alcohol",
+          "printedPage": "58",
+          "pdfPage": 59,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.light-goods-vehicles",
+          "label": "Light Goods Vehicles",
+          "printedPage": "58",
+          "pdfPage": 59,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.height-limits",
+          "label": "Height Limits",
+          "printedPage": "58",
+          "pdfPage": 59,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.rules.mobile-devices",
+          "label": "Use Of Mobile Communication Device While Driving",
+          "printedPage": "59",
+          "pdfPage": 60,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.moving-off",
+          "label": "Code of Conduct on the Road: Moving Off",
+          "printedPage": "60",
+          "pdfPage": 61,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.mirrors-and-signals",
+          "label": "Mirrors And Signals",
+          "printedPage": "60",
+          "pdfPage": 61,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.driving-along",
+          "label": "Driving Along",
+          "printedPage": "60",
+          "pdfPage": 61,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.tailgating",
+          "label": "Tailgating",
+          "printedPage": "60",
+          "pdfPage": 61,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.safe-following-distance",
+          "label": "Safe Following Distance",
+          "printedPage": "60",
+          "pdfPage": 61,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.two-second-rule",
+          "label": "The 'Two-Second' Rule",
+          "printedPage": "61",
+          "pdfPage": 62,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.stopping-distance",
+          "label": "Stopping Distance",
+          "printedPage": "61",
+          "pdfPage": 62,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.reversing",
+          "label": "Reversing",
+          "printedPage": "62",
+          "pdfPage": 63,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.pedestrians-and-cyclists",
+          "label": "Safety Of Pedestrians And Cyclists",
+          "printedPage": "62",
+          "pdfPage": 63,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.emergency-vehicles",
+          "label": "Emergency Vehicles",
+          "printedPage": "62",
+          "pdfPage": 63,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.general-safe-driving",
+          "label": "General Safe Driving",
+          "printedPage": "62",
+          "pdfPage": 63,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.defensive-driving",
+          "label": "Safe Driving Technique (Defensive Driving Technique)",
+          "printedPage": "65",
+          "pdfPage": 66,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.conduct.traffic-light-junctions",
+          "label": "Stopping And Moving Off At Traffic Light Junctions",
+          "printedPage": "70",
+          "pdfPage": 71,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": [],
+          "note": "Related to the traffic-signal starter terms but not itself cited; do not count it as covered."
+        },
+        {
+          "id": "b.conduct.roadworthiness",
+          "label": "Roadworthiness",
+          "printedPage": "70",
+          "pdfPage": 71,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.car.front-rear-view",
+          "label": "Parts and Controls of a Car: Front View/Rear View",
+          "printedPage": "71",
+          "pdfPage": 72,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.car.instrument-panel",
+          "label": "The Instrument Panel (Dashboard)",
+          "printedPage": "72",
+          "pdfPage": 73,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.car.driving-controls",
+          "label": "Names Of Various Driving Controls",
+          "printedPage": "72",
+          "pdfPage": 73,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.work-zones.road-users",
+          "label": "Work Zones: Road Users At Work Zones",
+          "printedPage": "73",
+          "pdfPage": 74,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.work-zones.signs",
+          "label": "Work Zone Signs",
+          "printedPage": "73",
+          "pdfPage": 74,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.friendly-streets-safety",
+          "label": "Driving in Special Zones: Friendly Streets Safety",
+          "printedPage": "75",
+          "pdfPage": 76,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.friendly-streets-driving",
+          "label": "Driving In Friendly Streets",
+          "printedPage": "75",
+          "pdfPage": 76,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.school-zone-safety",
+          "label": "School Zone Safety",
+          "printedPage": "75",
+          "pdfPage": 76,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.school-zone-driving",
+          "label": "Driving In School Zones",
+          "printedPage": "76",
+          "pdfPage": 77,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.silver-zone-safety",
+          "label": "Silver Zone Safety",
+          "printedPage": "76",
+          "pdfPage": 77,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.special-zones.silver-zone-driving",
+          "label": "Driving In Silver Zone",
+          "printedPage": "76",
+          "pdfPage": 77,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.tunnels.daily-driving-rules",
+          "label": "Driving in Tunnels: Daily Driving Rules",
+          "printedPage": "77",
+          "pdfPage": 78,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.av.introduction",
+          "label": "Autonomous Vehicle: Introduction",
+          "printedPage": "78",
+          "pdfPage": 79,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.av.recognise",
+          "label": "How to recognise an Autonomous Vehicles on trial?",
+          "printedPage": "78",
+          "pdfPage": 79,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.av.interact",
+          "label": "How to interact with an Autonomous Vehicle on trial?",
+          "printedPage": "78",
+          "pdfPage": 79,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.e-motorcycle.introduction",
+          "label": "Electric Motorcycle: Introduction",
+          "printedPage": "79",
+          "pdfPage": 80,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.e-motorcycle.features",
+          "label": "Features of electric motorcycle",
+          "printedPage": "79",
+          "pdfPage": 80,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "b.e-motorcycle.licence-classes",
+          "label": "Classes of Driving Licence for Electric Motorcycle",
+          "printedPage": "79",
+          "pdfPage": 80,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "id": "part-c",
+      "label": "PART C (Useful Information)",
+      "testedInBtt": false,
+      "note": "Not marked 'to be tested' in the contents; inventoried for completeness only.",
+      "sections": [
+        {
+          "id": "c.parking-ura-hdb",
+          "label": "Parking In URA/HDB Car Parks",
+          "printedPage": "80",
+          "pdfPage": 81,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.lane-use-signs",
+          "label": "Lane Use And Variable Message Signs (LUS)",
+          "printedPage": "82",
+          "pdfPage": 83,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.tunnel-emergency-facilities",
+          "label": "Emergency Facilities (Tunnels)",
+          "printedPage": "82",
+          "pdfPage": 83,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.tunnel-emergency-procedures",
+          "label": "Emergency/Incident Procedures (Tunnels)",
+          "printedPage": "83",
+          "pdfPage": 84,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.eco-driving.introduction",
+          "label": "Eco-Driving: Introduction",
+          "printedPage": "83",
+          "pdfPage": 84,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.eco-driving.what-is",
+          "label": "What is ECO-driving?",
+          "printedPage": "85",
+          "pdfPage": 86,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.eco-driving.how-to",
+          "label": "How to adopt ECO-driving?",
+          "printedPage": "85",
+          "pdfPage": 86,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.theft.introduction",
+          "label": "Security Measures To Prevent Theft: Introduction",
+          "printedPage": "87",
+          "pdfPage": 88,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.theft.motorcycles",
+          "label": "Motorcycles",
+          "printedPage": "87",
+          "pdfPage": 88,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.theft.cars",
+          "label": "Cars",
+          "printedPage": "87",
+          "pdfPage": 88,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.theft.general",
+          "label": "General",
+          "printedPage": "87",
+          "pdfPage": 88,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        },
+        {
+          "id": "c.motor-claims-framework",
+          "label": "Key Points Of The Motor Claims Framework (MCF)",
+          "printedPage": "88",
+          "pdfPage": 89,
+          "coverage": "missing",
+          "termIds": [],
+          "ruleIds": [],
+          "conflicts": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "junction-priority",
+      "label": "Who goes first at a junction",
+      "description": "Give Way versus Stop controls and the handbook's give-way rule at junctions with a major road or with no controls at all. Give Way is not an unconditional Stop.",
+      "questionIds": [],
+      "termIds": [
+        "give-way-sign",
+        "stop-sign",
+        "give-way-line",
+        "stop-line",
+        "major-road",
+        "uncontrolled-junction"
+      ]
+    },
+    {
+      "id": "traffic-signals",
+      "label": "Traffic light meanings by movement",
+      "description": "Circular lights speak to every movement; arrow lights speak to one. A lit red right-turn arrow prohibits the right turn even while the circular green is lit.",
+      "questionIds": [],
+      "termIds": [
+        "circular-red-signal",
+        "circular-amber-signal",
+        "flashing-amber-signal",
+        "circular-green-signal",
+        "green-arrow-signal",
+        "amber-arrow-signal",
+        "red-arrow-signal",
+        "green-b-signal"
+      ]
+    }
+  ],
+  "topicsNote": "Topic records follow Topic in packages/contracts/src/content.ts. questionIds are empty on purpose: A3 owns no questions, and the F0 development questions remain fixtures. Topic IDs match the F0 fixture topics so the same IDs can be used when fixtures are replaced."
+}
