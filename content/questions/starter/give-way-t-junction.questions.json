@@ -1,0 +1,331 @@
+{
+  "$comment": "T1 starter question package (schema ottie.starter-question-package/1; shapes documented in content/questions/starter/README.md). Original four-option questions bound to the generated worlds of content/scenarios/starter/give-way-t-junction.json. Rules, terms and source locators are the A3 records in content/rules and content/terms/starter; nothing here is copied from the Traffic Police handbook question bank. Development only, unreviewed.",
+  "schema": "ottie.starter-question-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.give-way-t-junction.questions",
+  "scenarioPackageId": "starter.give-way-t-junction",
+  "topicId": "junction-priority",
+  "explanations": [
+    {
+      "id": "starter.give-way.yield-to-major-road",
+      "ruleIds": ["give-way-at-double-broken-line"],
+      "paragraphs": [
+        "Your lane ends at a Give Way line: two rows of broken white lines, with the GIVE WAY sign beside them. Traffic on the major road goes first.",
+        "Slow down and be ready to stop. Turn only when the lorry has passed or is far enough away that it will not need to brake for you. You stop only if that is what it takes to let it pass."
+      ],
+      "termIds": ["give-way-line", "give-way-sign", "major-road"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+        }
+      ]
+    },
+    {
+      "id": "starter.give-way.slow-proceed-when-clear",
+      "ruleIds": ["give-way-at-double-broken-line"],
+      "paragraphs": [
+        "A Give Way line asks you to slow down and give way to traffic on the major road. It does not ask for a full stop every time.",
+        "When the major road is clear, keep slowing, look both ways, and turn. Stop only if a vehicle appears that you would otherwise get in the way of."
+      ],
+      "termIds": ["give-way-line", "give-way-sign"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        }
+      ]
+    },
+    {
+      "id": "starter.give-way.not-a-stop",
+      "ruleIds": ["give-way-at-double-broken-line", "stop-before-stop-line"],
+      "paragraphs": [
+        "Two rows of broken lines are a Give Way line. The control that requires a complete stop every time is the single continuous white line with a STOP sign; the comparison scene shows that junction with a STOP control instead.",
+        "At a Give Way line you stop only if that is necessary to let major-road traffic pass."
+      ],
+      "termIds": ["give-way-line", "stop-line", "stop-sign"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        }
+      ]
+    },
+    {
+      "id": "starter.give-way.any-major-road-vehicle",
+      "ruleIds": ["give-way-at-double-broken-line", "uncontrolled-junction-priority"],
+      "paragraphs": [
+        "At a Give Way control you give way to every vehicle on the major road, whether it comes from your left or your right and whatever its size.",
+        "The rule about giving way to traffic from the right belongs to uncontrolled junctions, where there is no traffic light, GIVE WAY sign or STOP sign. This junction has a GIVE WAY sign, so that rule does not apply here."
+      ],
+      "termIds": ["give-way-sign", "major-road", "uncontrolled-junction"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§82",
+          "quote": "At an uncontrolled junction where there are no traffic lights, “GIVE WAY” sign or “STOP” sign:"
+        }
+      ]
+    },
+    {
+      "id": "starter.give-way.no-priority-over-major-road",
+      "ruleIds": ["give-way-at-double-broken-line"],
+      "paragraphs": [
+        "The Give Way line is across your lane, so the duty to give way is yours. Reaching the junction first, flashing your lights or speeding up does not move that duty onto the major-road driver.",
+        "Traffic on the major road does not give way to you."
+      ],
+      "termIds": ["give-way-line", "major-road"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "starter.give-way.q1.right-turn-lorry-from-left",
+      "version": 1,
+      "topicId": "junction-priority",
+      "worldId": "starter.give-way.right-turn-lorry-from-left",
+      "stem": "You are driving the car on the minor road and want to turn right onto the major road. A lorry is coming along the major road from your left. Your lane ends at a double broken white line with a GIVE WAY sign beside it. What must you do?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-lane"] },
+        { "role": "glossary", "text": "major road", "termId": "major-road" },
+        { "role": "actual", "text": "lorry", "termId": null, "entityId": "major.lorry", "evidenceIds": ["ev.major-lorry"] },
+        { "role": "actual", "text": "double broken white line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] },
+        { "role": "actual", "text": "GIVE WAY sign", "termId": "give-way-sign", "entityId": "minor.give-way-sign", "evidenceIds": ["ev.give-way-sign"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Slow down, stop if necessary, and let the lorry on the major road pass before you turn right.",
+          "bindings": [
+            { "role": "actual", "text": "the lorry", "termId": null, "entityId": "major.lorry", "evidenceIds": ["ev.major-lorry", "ev.priority-relationship"] },
+            { "role": "glossary", "text": "major road", "termId": "major-road" }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.give-way.yield-to-major-road"
+        },
+        {
+          "id": "b",
+          "text": "Turn right now: the lorry on the major road is coming from your left, so it has to give way to you.",
+          "bindings": [
+            { "role": "actual", "text": "the lorry", "termId": null, "entityId": "major.lorry", "evidenceIds": ["ev.major-lorry"] },
+            { "role": "glossary", "text": "major road", "termId": "major-road" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.any-major-road-vehicle"
+        },
+        {
+          "id": "c",
+          "text": "Come to a complete stop at the line every time, because these lines mean STOP.",
+          "bindings": [
+            { "role": "actual", "text": "the line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] },
+            { "role": "hypothetical", "text": "STOP", "termId": "stop-sign", "comparisonId": "cmp.starter.give-way.right-turn.vs-stop" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.not-a-stop"
+        },
+        {
+          "id": "d",
+          "text": "Flash your headlights and turn right; the lorry must slow down because you reached the double broken white line first.",
+          "bindings": [
+            { "role": "actual", "text": "the lorry", "termId": null, "entityId": "major.lorry", "evidenceIds": ["ev.major-lorry"] },
+            { "role": "actual", "text": "double broken white line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.no-priority-over-major-road"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.give-way-line", "ev.give-way-sign", "ev.major-lorry", "ev.ego-lane", "ev.priority-relationship"],
+      "answerRule": { "ruleId": "give-way-at-double-broken-line", "version": 2 },
+      "explanationId": "starter.give-way.yield-to-major-road",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    },
+    {
+      "id": "starter.give-way.q2.left-turn-clear-major-road",
+      "version": 1,
+      "topicId": "junction-priority",
+      "worldId": "starter.give-way.left-turn-clear-major-road",
+      "stem": "You are driving the car and want to turn left onto the major road. As far as you can see, the major road is clear. A double broken white line crosses your lane and a GIVE WAY sign stands on the left. What does the line require of you?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-lane"] },
+        { "role": "glossary", "text": "major road", "termId": "major-road" },
+        { "role": "actual", "text": "double broken white line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] },
+        { "role": "actual", "text": "GIVE WAY sign", "termId": "give-way-sign", "entityId": "minor.give-way-sign", "evidenceIds": ["ev.give-way-sign"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Slow down and be ready to stop, but you may turn left without stopping while the major road stays clear.",
+          "bindings": [
+            { "role": "glossary", "text": "major road", "termId": "major-road" }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.give-way.slow-proceed-when-clear"
+        },
+        {
+          "id": "b",
+          "text": "Stop completely before the line every time, as you would at a single solid stop line.",
+          "bindings": [
+            { "role": "actual", "text": "the line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] },
+            { "role": "hypothetical", "text": "single solid stop line", "termId": "stop-line", "comparisonId": "cmp.starter.give-way.left-turn.vs-stop" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.not-a-stop"
+        },
+        {
+          "id": "c",
+          "text": "Treat the junction as uncontrolled and give way only to traffic coming from your right.",
+          "bindings": [
+            { "role": "glossary", "text": "uncontrolled", "termId": "uncontrolled-junction" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.any-major-road-vehicle"
+        },
+        {
+          "id": "d",
+          "text": "Nothing: the line tells traffic on the major road to give way to you as you join it.",
+          "bindings": [
+            { "role": "actual", "text": "the line", "termId": "give-way-line", "entityId": "minor.give-way-line", "evidenceIds": ["ev.give-way-line"] },
+            { "role": "glossary", "text": "major road", "termId": "major-road" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.give-way.no-priority-over-major-road"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.give-way-line", "ev.give-way-sign", "ev.ego-lane"],
+      "answerRule": { "ruleId": "give-way-at-double-broken-line", "version": 2 },
+      "explanationId": "starter.give-way.slow-proceed-when-clear",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    }
+  ]
+}

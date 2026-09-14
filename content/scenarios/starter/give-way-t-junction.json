@@ -1,0 +1,316 @@
+{
+  "$comment": "T1 starter scenario package (schema ottie.starter-scenario-package/1; shapes documented in content/scenarios/starter/README.md). Development only: quarantined assets, unreviewed content, no source/content/reuse approval. Worlds are produced by the shared generator (@ottie/scenario-core createDevelopmentGenerator) from the pinned template, seed, source profile and registry hash; nothing here is a hand-authored world.",
+  "schema": "ottie.starter-scenario-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.give-way-t-junction",
+  "topicId": "junction-priority",
+  "title": "Give Way at a T junction",
+  "summary": "A minor access road joins an east-west major road. The ego car approaches northbound behind the RMS2 marking D double broken line with a TFM1 GIVE WAY face on the left verge. One world has a lorry approaching on the major road from the ego's left while the ego turns right; the other has the major road clear while the ego turns left.",
+  "template": {
+    "id": "sg.t-junction.give-way",
+    "version": 1
+  },
+  "pins": {
+    "generatorVersion": 1,
+    "worldSchemaVersion": 1,
+    "sourceProfileId": "sg-sources-2026-09",
+    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+  },
+  "worlds": [
+    {
+      "worldId": "starter.give-way.right-turn-lorry-from-left",
+      "label": "Right turn onto the major road; lorry approaching from the left",
+      "seed": "t1-give-way-right-lorry-001",
+      "parameters": {
+        "minorApproach": "south",
+        "egoMovement": "right",
+        "majorRoadVehicle.category": "lorry",
+        "majorRoadVehicle.approach": "west"
+      },
+      "views": [
+        "plan",
+        "study_oblique",
+        "approach_ego",
+        "entity_detail"
+      ],
+      "canonicalHash": "2dafca3c7163a6eb33e273bd40a3dc4f7422f9dc613f68e528c55ca982d3c2d6",
+      "entities": {
+        "ego": "ego.car",
+        "lorry": "major.lorry",
+        "giveWayLine": "minor.give-way-line",
+        "giveWaySign": "minor.give-way-sign",
+        "giveWayPost": "minor.give-way-post",
+        "egoLane": "minor.with.0",
+        "egoMovement": "minor.with.0.right",
+        "lorryLane": "major.with.0",
+        "lorryMovement": "major.with.0.straight"
+      },
+      "evidenceIds": {
+        "giveWayLine": "ev.give-way-line",
+        "giveWaySign": "ev.give-way-sign",
+        "majorLorry": "ev.major-lorry",
+        "egoLane": "ev.ego-lane",
+        "priority": "ev.priority-relationship"
+      },
+      "notes": [
+        "majorRoadVehicle.approach=west places the lorry eastbound on major.with.0, i.e. approaching from the ego's LEFT. The right turn (minor.with.0.right) conflicts with major.with.0.straight, so ev.priority-relationship names a real conflict.",
+        "Selected deliberately instead of a left turn with a vehicle from the far side: those configurations are the known C2 finding (question_evidence.priority_evidence_without_conflict) and are not authored here."
+      ]
+    },
+    {
+      "worldId": "starter.give-way.left-turn-clear-major-road",
+      "label": "Left turn onto the major road; no major-road traffic in view",
+      "seed": "t1-give-way-left-clear-001",
+      "parameters": {
+        "minorApproach": "south",
+        "egoMovement": "left",
+        "majorRoadVehicle.category": "car",
+        "majorRoadVehicle.approach": "none"
+      },
+      "views": [
+        "plan",
+        "study_oblique",
+        "approach_ego",
+        "entity_detail"
+      ],
+      "canonicalHash": "f530eb88b60bd66016a3a0b7e8bf15879eaaee6f49f6eab39bef3f010649841b",
+      "entities": {
+        "ego": "ego.car",
+        "giveWayLine": "minor.give-way-line",
+        "giveWaySign": "minor.give-way-sign",
+        "giveWayPost": "minor.give-way-post",
+        "egoLane": "minor.with.0",
+        "egoMovement": "minor.with.0.left"
+      },
+      "evidenceIds": {
+        "giveWayLine": "ev.give-way-line",
+        "giveWaySign": "ev.give-way-sign",
+        "egoLane": "ev.ego-lane"
+      },
+      "notes": [
+        "majorRoadVehicle.approach=none: the template emits no major-road actor and no priority evidence. majorRoadVehicle.category is pinned only so the request is fully explicit; the layout does not use it here.",
+        "Used for the 'stop only if necessary' half of the Give Way meaning: with the major road clear the learner slows and proceeds without a compulsory stop."
+      ]
+    }
+  ],
+  "assetCandidates": [
+    {
+      "entityKey": "giveWaySign",
+      "runtimeAssetId": "sg.mandatory.give-way",
+      "a1CandidateId": "sg.dev.starter.face.give-way",
+      "a2AssemblyId": "sg.candidate.give-way-mounted",
+      "a1CandidateFile": "content/assets/starter-signs-markings/faces/give-way.json",
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/give-way-mounted.json",
+      "sourceDimensionsMm": {
+        "width": 600,
+        "height": 600
+      },
+      "sourceLocator": {
+        "sourceId": "lta-sdre-i-tfm",
+        "pdfPage": 2,
+        "printedPage": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawingRevision": "-",
+        "bboxPdfPoints": [
+          415,
+          39,
+          730,
+          304
+        ]
+      },
+      "unknowns": [
+        "mounting height",
+        "support family",
+        "lateral offset from kerb",
+        "physical colour/material specification (source RGB only)"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "giveWayLine",
+      "runtimeAssetId": "sg.markings.control-give-way-d",
+      "a1CandidateId": "sg.dev.starter.marking.give-way-line-d",
+      "a2AssemblyId": null,
+      "a1CandidateFile": "content/assets/starter-signs-markings/markings/give-way-line-d.json",
+      "a2AssemblyFile": null,
+      "sourceDimensionsMm": {
+        "width": 100,
+        "painted_length": 1000,
+        "clear_gap": 1000,
+        "inter_row_clear_gap": 150
+      },
+      "sourceLocator": {
+        "sourceId": "lta-sdre-I-rms",
+        "pdfPage": 3,
+        "printedPage": "8-2",
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [
+          145,
+          88,
+          532,
+          127
+        ]
+      },
+      "unknowns": [
+        "site-specific line extent",
+        "site-specific placement"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "giveWayPost",
+      "runtimeAssetId": "sg.dev.sign-post-schematic",
+      "a1CandidateId": null,
+      "a2AssemblyId": "sg.candidate.give-way-mounted",
+      "a1CandidateFile": null,
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/give-way-mounted.json",
+      "sourceDimensionsMm": {
+        "height": null
+      },
+      "sourceLocator": null,
+      "unknowns": [
+        "The generated world keeps the F0 schematic post (2.1 m mount, dimensionsStatus schematic_unsourced). A2 lists SUP6/SUP5/SUP15 candidates with a printed 2400 mm sign-bottom clearance on those sheets only and SUP7 with no installation height; choosing one is an I1/C2 layout change, not a T1 content choice, and 2400 mm is not a universal mounting rule."
+      ],
+      "worldDimensionsStatus": "schematic_unsourced"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "cmp.starter.give-way.right-turn.vs-stop",
+      "baseWorldId": "starter.give-way.right-turn-lorry-from-left",
+      "kind": "replace_control",
+      "delta": {
+        "replaceMarking": {
+          "id": "minor.give-way-line",
+          "withAssetId": "sg.markings.control-stop-j",
+          "role": "stop_line"
+        },
+        "replaceSignFace": {
+          "id": "minor.give-way-sign",
+          "withAssetId": "sg.mandatory.stop"
+        }
+      },
+      "label": "Same junction with a STOP control instead",
+      "explanationId": "starter.give-way.not-a-stop",
+      "generation": null,
+      "generationNote": "A STOP control at this junction is not a configuration of sg.t-junction.give-way@1, and sg.t-junction.stop@1 is a different layout. The delta is declarative; applying it to the base world is a comparison-applier responsibility (I1/renderer), not a T1 regeneration."
+    },
+    {
+      "id": "cmp.starter.give-way.left-turn.vs-stop",
+      "baseWorldId": "starter.give-way.left-turn-clear-major-road",
+      "kind": "replace_control",
+      "delta": {
+        "replaceMarking": {
+          "id": "minor.give-way-line",
+          "withAssetId": "sg.markings.control-stop-j",
+          "role": "stop_line"
+        },
+        "replaceSignFace": {
+          "id": "minor.give-way-sign",
+          "withAssetId": "sg.mandatory.stop"
+        }
+      },
+      "label": "Same clear junction with a STOP control instead",
+      "explanationId": "starter.give-way.not-a-stop",
+      "generation": null,
+      "generationNote": "See cmp.starter.give-way.right-turn.vs-stop."
+    },
+    {
+      "id": "cmp.starter.give-way.right-turn.lorry-as-bus",
+      "baseWorldId": "starter.give-way.right-turn-lorry-from-left",
+      "kind": "swap_actor_class",
+      "delta": {
+        "actorId": "major.lorry",
+        "toCategory": "bus"
+      },
+      "label": "Same junction with a bus instead of the lorry",
+      "explanationId": "starter.give-way.any-major-road-vehicle",
+      "generation": {
+        "worldId": "starter.give-way.right-turn-bus-from-left",
+        "seed": "t1-give-way-right-lorry-001",
+        "parameters": {
+          "minorApproach": "south",
+          "egoMovement": "right",
+          "majorRoadVehicle.category": "bus",
+          "majorRoadVehicle.approach": "west"
+        },
+        "canonicalHash": "e26f59d87bd13c9e09d6342040ab34e453dcb912b9c0e7c1497cf26d051216f0"
+      },
+      "generationNote": null
+    }
+  ],
+  "exclusions": [
+    "Pedestrian crossings (zebra, signalised, school) are not placed: no starter marking or sign for them has been separately sourced.",
+    "Lane separators B/C, edge/yellow lines, box markings and centre paint variants are outside the starter paint scope (A1 README); the layout places only the RMS2 D control line.",
+    "No traffic lights: the junction is unsignalised and the template emits no signal head or controller."
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 11,
+      "printedPage": "10",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "Mandatory Signs, Give Way",
+      "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 36,
+      "printedPage": "35",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "§52(a) Parallel Broken White Lines",
+      "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 53,
+      "printedPage": "52",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "§81 The 'Give Way' Rule At Road Junctions",
+      "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+    },
+    {
+      "sourceId": "lta-sdre-I-rms",
+      "pdfPage": 3,
+      "printedPage": "8-2",
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawingRevision": "B",
+      "bboxPdfPoints": [
+        145,
+        88,
+        532,
+        127
+      ],
+      "section": "Marking D",
+      "quote": null
+    },
+    {
+      "sourceId": "lta-sdre-i-tfm",
+      "pdfPage": 2,
+      "printedPage": "15-1",
+      "drawing": "LTA/SDRE14/15/TFM1",
+      "drawingRevision": "-",
+      "bboxPdfPoints": [
+        415,
+        39,
+        730,
+        304
+      ],
+      "section": "Give Way face",
+      "quote": null
+    }
+  ],
+  "unresolved": [
+    "The handbook does not define 'major road' formally; the starter term major-road is glossary-only (A3 rule give-way-at-double-broken-line unresolved note, preserved).",
+    "Whether a Give Way sign is always accompanied by marking D is not stated by TP or SDRE; this package pairs them because the C2 layout does, not because a source requires it.",
+    "Sign mounting height, post and the 1 m line setback in the generated world are schematic teaching choices recorded in the world's provenance notes, not source values."
+  ]
+}

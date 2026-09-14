@@ -1,0 +1,276 @@
+{
+  "$comment": "T1 starter question package (schema ottie.starter-question-package/1; shapes documented in content/questions/starter/README.md). Original four-option questions bound to the generated world of content/scenarios/starter/stop-development-access.json. Rules, terms and source locators are the A3 records in content/rules and content/terms/starter; nothing here is copied from the Traffic Police handbook question bank. Development only, unreviewed.",
+  "schema": "ottie.starter-question-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.stop-development-access.questions",
+  "scenarioPackageId": "starter.stop-development-access",
+  "topicId": "junction-priority",
+  "explanations": [
+    {
+      "id": "starter.stop.stop-then-yield",
+      "ruleIds": ["stop-before-stop-line"],
+      "paragraphs": [
+        "The STOP sign and the single continuous white line mean a complete stop, close to and before the line, with the front of the car behind it.",
+        "Stopping does not give you priority. After the stop, give way to traffic from the right and the left, then move off when it is safe."
+      ],
+      "termIds": ["stop-sign", "stop-line"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "Where there is a “STOP” sign, stop before the stop-line."
+        }
+      ]
+    },
+    {
+      "id": "starter.stop.close-to-and-before-line",
+      "ruleIds": ["stop-before-stop-line"],
+      "paragraphs": [
+        "The handbook says stop close to and before the line. Both halves matter: not over the line, and not far back on the approach.",
+        "Your front must stay behind the line. Stopping with the wheels on the line, or well before the sign, is not a stop at the line."
+      ],
+      "termIds": ["stop-line", "stop-sign"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(b) Single White Line",
+          "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."
+        }
+      ]
+    },
+    {
+      "id": "starter.stop.not-a-give-way",
+      "ruleIds": ["stop-before-stop-line", "give-way-at-double-broken-line"],
+      "paragraphs": [
+        "Slowing and rolling through when the road looks clear is what a Give Way line allows; the comparison scene shows this access with that control instead.",
+        "A STOP sign with a single continuous line means stop every time, even when nothing is coming."
+      ],
+      "termIds": ["stop-line", "stop-sign", "give-way-line"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        }
+      ]
+    },
+    {
+      "id": "starter.stop.yield-after-stopping",
+      "ruleIds": ["stop-before-stop-line"],
+      "paragraphs": [
+        "The STOP control is on your lane only. The car on the local road is not asked to stop for you, whether you stopped first or not.",
+        "After your stop you give way to traffic from the right and the left. The local-road car goes first; you go when the road is clear."
+      ],
+      "termIds": ["stop-sign", "stop-line"],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "starter.stop.q1.who-goes-first-after-stopping",
+      "version": 1,
+      "topicId": "junction-priority",
+      "worldId": "starter.stop.right-turn-car-from-right",
+      "stem": "You are driving the car towards the STOP sign and the single white line, and will turn right. A car on the local road is approaching from your right. After you stop, who goes first?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-before-line"] },
+        { "role": "actual", "text": "STOP sign", "termId": "stop-sign", "entityId": "access.stop-sign", "evidenceIds": ["ev.stop-sign"] },
+        { "role": "actual", "text": "single white line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line"] },
+        { "role": "actual", "text": "car on the local road", "termId": null, "entityId": "local.car", "evidenceIds": ["ev.crossing-car"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "The car on the local road. After stopping at the stop line, give way to traffic from the right and left, then move off when the road is clear.",
+          "bindings": [
+            { "role": "actual", "text": "car on the local road", "termId": null, "entityId": "local.car", "evidenceIds": ["ev.crossing-car"] },
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line"] }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.stop.stop-then-yield"
+        },
+        {
+          "id": "b",
+          "text": "You do: because you stopped at the stop line first, the car on the local road must wait for you.",
+          "bindings": [
+            { "role": "actual", "text": "car on the local road", "termId": null, "entityId": "local.car", "evidenceIds": ["ev.crossing-car"] },
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.yield-after-stopping"
+        },
+        {
+          "id": "c",
+          "text": "You do, as long as you keep rolling slowly through the line without a full stop, as at a Give Way line.",
+          "bindings": [
+            { "role": "actual", "text": "the line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line"] },
+            { "role": "hypothetical", "text": "Give Way line", "termId": "give-way-line", "comparisonId": "cmp.starter.stop.right-turn.vs-give-way" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.not-a-give-way"
+        },
+        {
+          "id": "d",
+          "text": "Neither: the car on the local road must also stop, because your stop line makes this an uncontrolled junction where everyone waits until it is empty.",
+          "bindings": [
+            { "role": "actual", "text": "car on the local road", "termId": null, "entityId": "local.car", "evidenceIds": ["ev.crossing-car"] },
+            { "role": "actual", "text": "stop line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line"] },
+            { "role": "glossary", "text": "uncontrolled junction", "termId": "uncontrolled-junction" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.yield-after-stopping"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.stop-sign", "ev.stop-line", "ev.ego-before-line", "ev.crossing-car"],
+      "answerRule": { "ruleId": "stop-before-stop-line", "version": 2 },
+      "explanationId": "starter.stop.stop-then-yield",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "Where there is a “STOP” sign, stop before the stop-line."
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    },
+    {
+      "id": "starter.stop.q2.where-to-stop",
+      "version": 1,
+      "topicId": "junction-priority",
+      "worldId": "starter.stop.right-turn-car-from-right",
+      "stem": "You are driving the car up to the STOP sign at the end of the access road. Where exactly must the car stop?",
+      "stemBindings": [
+        { "role": "actual", "text": "the car", "termId": null, "entityId": "ego.car", "evidenceIds": ["ev.ego-before-line"] },
+        { "role": "actual", "text": "STOP sign", "termId": "stop-sign", "entityId": "access.stop-sign", "evidenceIds": ["ev.stop-sign"] }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "text": "Close to and before the single white line, with the front of the car behind the line.",
+          "bindings": [
+            { "role": "actual", "text": "single white line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.stop-line", "ev.ego-before-line"] }
+          ],
+          "correct": true,
+          "rationaleExplanationId": "starter.stop.close-to-and-before-line"
+        },
+        {
+          "id": "b",
+          "text": "With the front wheels on the white line, so you can see further along the local road.",
+          "bindings": [
+            { "role": "actual", "text": "white line", "termId": "stop-line", "entityId": "access.stop-line", "evidenceIds": ["ev.ego-before-line"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.close-to-and-before-line"
+        },
+        {
+          "id": "c",
+          "text": "Anywhere before the STOP sign, as long as you stop somewhere on the access road.",
+          "bindings": [
+            { "role": "actual", "text": "STOP sign", "termId": "stop-sign", "entityId": "access.stop-sign", "evidenceIds": ["ev.stop-sign"] }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.close-to-and-before-line"
+        },
+        {
+          "id": "d",
+          "text": "You need not stop at all if the local road is clear; slow down as you would at a Give Way line.",
+          "bindings": [
+            { "role": "hypothetical", "text": "Give Way line", "termId": "give-way-line", "comparisonId": "cmp.starter.stop.right-turn.vs-give-way" }
+          ],
+          "correct": false,
+          "rationaleExplanationId": "starter.stop.not-a-give-way"
+        }
+      ],
+      "requiredEvidenceIds": ["ev.stop-sign", "ev.stop-line", "ev.ego-before-line"],
+      "answerRule": { "ruleId": "stop-before-stop-line", "version": 2 },
+      "explanationId": "starter.stop.close-to-and-before-line",
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(b) Single White Line",
+          "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        }
+      ],
+      "reviewStatus": "development",
+      "authorship": "original"
+    }
+  ]
+}
