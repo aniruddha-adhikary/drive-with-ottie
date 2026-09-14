@@ -72,31 +72,47 @@ Deliberately absent: a red streak counter, a daily-goal ring that can be
 
 ```text
 ┌─────────────────────────────────┐
-│  ✕     ━━━━━━━━━━━━━━━━░░░░      │   Top bar: exit and optional road
-│                                 │   progress; no combo to lose.
+│  ✕        Junctions         ···  │   Exit, topic and overflow menu.
 │  ┌───────────────────────────┐  │
-│  │   [SCENE]                 │  │   Rendered road scene. Signs, lights
-│  │   Junction, your car in   │  │   and markings that the question
-│  │   the left lane, a Give   │  │   depends on are drawn in the scene.
-│  │   Way sign at the mouth,  │  │   Relevant traffic state stays fixed
-│  │   a bus approaching from  │  │   while the learner answers.
-│  │   the right.              │  │
+│  │  [Your signal]           │  │   Signalised junction, mounted heads
+│  │  circular green         │  │   and your car in its left-hand lane.
+│  │  right arrow red        │  │   A linked detail uses the SAME head
+│  │           [junction]    │  │   and frozen state as the road scene.
+│  │                 Enlarge │  │
 │  └───────────────────────────┘  │
 │                                 │
-│  You are approaching a          │
-│  junction with a ˍˍˍˍˍˍˍˍˍ      │   Dashed-underlined terms are
-│  give way sign. What must       │   tappable → explainer sheet (3.3).
-│  you do?                        │
+│  May you turn right now?         │
+│  Choose one answer              │
 │                                 │
-│  ○ Stop completely before the line          │
-│  ○ Slow down and give way to traffic        │
-│  ○ Proceed if your lane is clear            │
-│  ○ Sound horn and proceed                   │
+│  ○ Yes, if the junction is clear.│
+│  ○ Yes, because the circular     │
+│    light is green.               │
+│  ○ No. Wait behind the stop line.│   Dashed terms work in choices too.
+│  ○ Yes, after giving way to      │
+│    oncoming traffic.             │
+│                                 │
+│         [ Check answer ]         │
 └─────────────────────────────────┘
 ```
 
 Rules:
 
+- **Reserve space for the answers.** The 390 × 844 layout study uses a
+  212 px scene, a 64 px stem, four 61 px answer rows separated by 8 px and
+  one 52 px primary action. All four answers fit at the illustrated text
+  size. Longer wording, smaller screens and enlarged type use normal page
+  scrolling; do not truncate options or shrink their type to preserve the
+  diagram. Keep bottom padding so a sticky action cannot cover the last
+  choice. See the [visual system](docs/VISUAL-SYSTEM.md).
+- **One primary action at a time.** Select an answer, then `Check answer`.
+  Selecting is not grading. Tapping a glossary term never selects the row
+  or submits the answer. After grading, the same action area becomes
+  `Continue`; feedback is inline and does not obscure unanswered choices.
+- **Hide secondary scene controls.** A single `Enlarge` affordance opens
+  the scene viewer; camera presets and bounded adjustments live there.
+  Settings and road progress live in the top overflow menu. Do not show
+  a permanent toolbar of view/help/replay/settings buttons above the
+  options. Required evidence is visible before opening the viewer.
 - **Every visual dependency is present.** Bind terms in stems and answer
   choices to the scene, a comparison scene, or a glossary asset as appropriate.
   A hypothetical distractor must not add a nonexistent control to the actual
@@ -105,15 +121,22 @@ Rules:
 - **No timer by default.** Timed mode is opt-in (mock exam). Uxcel's "Time's
   up!" red bar is exactly what we avoid outside mock mode:
   https://mobbin.com/screens/f9c879ef-633e-4285-92c8-e530539e8563
-- **Answer feedback is instant and inline** (Duolingo bottom sheet pattern), not
-  a modal. Correct: green sheet, one-line "why", `Continue`. Wrong: amber (not
-  red), one-line "why", `Got it`, and an optional correct-action replay.
+- **Answer feedback follows Check answer immediately and stays inline.**
+  Correct: a calm confirmation and one-line "why". Wrong: amber (not red)
+  explanation and an optional correct-action replay. Both use `Continue`.
   Reference: https://mobbin.com/screens/dd4176cc-8b60-49d2-bfa6-7f5f659dd262
 - **Momentum without a reset.** Keep the next action immediate and show
   accumulated progress. Mistakes do not remove a combo, scenery or progress.
 
 Reference for image-led question layout: Nibble
 https://mobbin.com/screens/b154590d-1c76-43e2-8526-ca68f700e290
+
+The signal example is grounded in the Traffic Police handbook's printed p46
+(PDF p47): circular green permits straight-ahead movement while a red right
+arrow requires right-turning vehicles to stop behind the stop line. The
+layout study uses the extracted `sg.assemblies.signal-through-green-right-red`
+reference in both the mounted scene head and its labelled detail. It is a
+design study, not a released lesson or approved physical junction model.
 
 ### 3.3 Term Explainer — the dashed-underline sheet
 

@@ -1,9 +1,11 @@
 # Drive with Ottie
 
 Design documents for an ADHD-friendly Singapore Basic Theory Test study app,
-plus a source-backed Singapore road-control asset reference library. The design
-documents are unchanged by the asset integration. There is no runtime app or
-web-framework build in this repository.
+plus a source-backed Singapore road-control asset reference library. The revised
+[lesson composition](docs/VISUAL-SYSTEM.md#lesson-composition) gives four answers
+space beside the traffic scene; [the scenario contract](docs/SCENARIO-SYSTEM.md)
+explains how reviewed assets become reusable scenes. There is no runtime app
+or web-framework build in this repository.
 
 ## Singapore asset library
 
