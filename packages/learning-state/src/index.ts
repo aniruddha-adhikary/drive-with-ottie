@@ -1,9 +1,15 @@
-/**
- * @ottie/learning-state — U2 owns this module (runs, attempts, preferences, device-local persistence).
- *
- * F0 provides in-memory `Storage`/`Clock` ports for tests and a browser `localStorage` adapter for
- * the web shell. The `LearningStore` itself (events, snapshots, progress) is NOT implemented.
- */
 export { MODULE_STATUS } from './status';
 export { createMemoryStorage, createFixedClock } from './ports';
 export { createLocalStorageAdapter } from './local-storage';
+export { EMPTY_SNAPSHOT, applyLearningEvent } from './reducer';
+export type { ReduceOutcome, ReducerContext } from './reducer';
+export { nextStep, planQuestionQueue, reviewCandidates } from './queue';
+export type { NextStep } from './queue';
+export { learningSnapshotSchema, persistedPayloadSchema } from './schema';
+export type { LoadReport } from './schema';
+export { createLearningStore, LearningStateError } from './store';
+export type { LearningStoreOptions, LearningStoreWithPersistence } from './store';
+export { ContentExhaustedError, createLearningSession } from './session';
+export type { LearningSession } from './session';
+export { DEFAULT_PRESENTATION, reducePresentation } from './presentation';
+export type { PresentationAction } from './presentation';
