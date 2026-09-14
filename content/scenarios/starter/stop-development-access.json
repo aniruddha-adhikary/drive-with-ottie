@@ -1,0 +1,233 @@
+{
+  "$comment": "T1 starter scenario package (schema ottie.starter-scenario-package/1; shapes documented in content/scenarios/starter/README.md). Development only: quarantined assets, unreviewed content, no source/content/reuse approval. Worlds are produced by the shared generator (@ottie/scenario-core createDevelopmentGenerator) from the pinned template, seed, source profile and registry hash; nothing here is a hand-authored world.",
+  "schema": "ottie.starter-scenario-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.stop-development-access",
+  "topicId": "junction-priority",
+  "title": "STOP at a development access",
+  "summary": "A development access road meets a north-south local road. The ego car approaches westbound behind the RMS2 marking J single continuous stop line with a TFM1 STOP face on the left verge, intending to turn right. A car on the local road approaches from the north, i.e. from the ego's right.",
+  "template": {
+    "id": "sg.t-junction.stop",
+    "version": 1
+  },
+  "pins": {
+    "generatorVersion": 1,
+    "worldSchemaVersion": 1,
+    "sourceProfileId": "sg-sources-2026-09",
+    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+  },
+  "worlds": [
+    {
+      "worldId": "starter.stop.right-turn-car-from-right",
+      "label": "Right turn out of the access; local-road car approaching from the right",
+      "seed": "t1-stop-right-car-north-001",
+      "parameters": {
+        "accessApproach": "east",
+        "egoMovement": "right",
+        "crossingVehicle.approach": "north"
+      },
+      "views": [
+        "plan",
+        "study_oblique",
+        "approach_ego",
+        "entity_detail"
+      ],
+      "canonicalHash": "76ffbec1f9b011b4b7f7d3ffd42f517f3251e3d7c49181b68f7451b99bd23839",
+      "entities": {
+        "ego": "ego.car",
+        "crossingCar": "local.car",
+        "stopLine": "access.stop-line",
+        "stopSign": "access.stop-sign",
+        "stopPost": "access.stop-post",
+        "egoLane": "access.with.0",
+        "egoMovement": "access.with.0.right",
+        "crossingLane": "local.with.0",
+        "crossingMovement": "local.with.0.straight"
+      },
+      "evidenceIds": {
+        "stopLine": "ev.stop-line",
+        "stopSign": "ev.stop-sign",
+        "egoFrontBeforeLine": "ev.ego-before-line",
+        "crossingCar": "ev.crossing-car"
+      },
+      "notes": [
+        "The ego heads west; crossingVehicle.approach=north puts the local car southbound on local.with.0, approaching from the ego's RIGHT. access.with.0.right conflicts with and yields to local.with.0.straight (stop_then_yield).",
+        "ev.ego-before-line is relative_position evidence: the ego's front is upstream of access.stop-line, so 'stop before the line' is a fact the world can show, not a caption."
+      ]
+    }
+  ],
+  "assetCandidates": [
+    {
+      "entityKey": "stopSign",
+      "runtimeAssetId": "sg.mandatory.stop",
+      "a1CandidateId": "sg.dev.starter.face.stop",
+      "a2AssemblyId": "sg.candidate.stop-mounted",
+      "a1CandidateFile": "content/assets/starter-signs-markings/faces/stop.json",
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/stop-mounted.json",
+      "sourceDimensionsMm": {
+        "width": 600,
+        "height": 600
+      },
+      "sourceLocator": {
+        "sourceId": "lta-sdre-i-tfm",
+        "pdfPage": 2,
+        "printedPage": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawingRevision": "-",
+        "bboxPdfPoints": [
+          135,
+          38,
+          372,
+          302
+        ]
+      },
+      "unknowns": [
+        "mounting height",
+        "support family",
+        "lateral offset from kerb",
+        "physical colour/material specification (source RGB only)"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "stopLine",
+      "runtimeAssetId": "sg.markings.control-stop-j",
+      "a1CandidateId": "sg.dev.starter.marking.stop-line-j",
+      "a2AssemblyId": null,
+      "a1CandidateFile": "content/assets/starter-signs-markings/markings/stop-line-j.json",
+      "a2AssemblyFile": null,
+      "sourceDimensionsMm": {
+        "width": 300
+      },
+      "sourceLocator": {
+        "sourceId": "lta-sdre-I-rms",
+        "pdfPage": 3,
+        "printedPage": "8-2",
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [
+          145,
+          340,
+          532,
+          379
+        ]
+      },
+      "unknowns": [
+        "site-specific line extent",
+        "site-specific placement",
+        "RMS2 J shares its geometry with the expressway paved-shoulder line; it is a stop line here only because the world's marking role is stop_line"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "stopPost",
+      "runtimeAssetId": "sg.dev.sign-post-schematic",
+      "a1CandidateId": null,
+      "a2AssemblyId": "sg.candidate.stop-mounted",
+      "a1CandidateFile": null,
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/stop-mounted.json",
+      "sourceDimensionsMm": {
+        "height": null
+      },
+      "sourceLocator": null,
+      "unknowns": [
+        "The generated world keeps the F0 schematic post (2.1 m mount, dimensionsStatus schematic_unsourced). A2 lists SUP6/SUP5/SUP15 candidates with a printed 2400 mm sign-bottom clearance on those sheets only and SUP7 with no installation height; choosing one is an I1/C2 layout change, not a T1 content choice."
+      ],
+      "worldDimensionsStatus": "schematic_unsourced"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "cmp.starter.stop.right-turn.vs-give-way",
+      "baseWorldId": "starter.stop.right-turn-car-from-right",
+      "kind": "replace_control",
+      "delta": {
+        "replaceMarking": {
+          "id": "access.stop-line",
+          "withAssetId": "sg.markings.control-give-way-d",
+          "role": "give_way_line"
+        },
+        "replaceSignFace": {
+          "id": "access.stop-sign",
+          "withAssetId": "sg.mandatory.give-way"
+        }
+      },
+      "label": "Same access with a Give Way control instead",
+      "explanationId": "starter.stop.not-a-give-way",
+      "generation": null,
+      "generationNote": "A Give Way control at this access is not a configuration of sg.t-junction.stop@1, and sg.t-junction.give-way@1 is a different layout. The delta is declarative; applying it is a comparison-applier responsibility (I1/renderer)."
+    }
+  ],
+  "exclusions": [
+    "Pedestrian crossings are not placed: no starter marking or sign for them has been separately sourced.",
+    "No traffic lights: the access is unsignalised and the template emits no signal head or controller.",
+    "Only the RMS2 J stop line is placed as control paint; lane separators, edge lines and box markings are outside the starter paint scope (A1 README)."
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 11,
+      "printedPage": "10",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "Mandatory Signs, Stop",
+      "quote": "Stop before the white line. Give way to traffic from the right and left"
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 36,
+      "printedPage": "35",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "§52(b) Single White Line",
+      "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 53,
+      "printedPage": "52",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "§81 The 'Give Way' Rule At Road Junctions",
+      "quote": "Where there is a “STOP” sign, stop before the stop-line."
+    },
+    {
+      "sourceId": "lta-sdre-I-rms",
+      "pdfPage": 3,
+      "printedPage": "8-2",
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawingRevision": "B",
+      "bboxPdfPoints": [
+        145,
+        340,
+        532,
+        379
+      ],
+      "section": "Marking J",
+      "quote": null
+    },
+    {
+      "sourceId": "lta-sdre-i-tfm",
+      "pdfPage": 2,
+      "printedPage": "15-1",
+      "drawing": "LTA/SDRE14/15/TFM1",
+      "drawingRevision": "-",
+      "bboxPdfPoints": [
+        135,
+        38,
+        372,
+        302
+      ],
+      "section": "Stop face",
+      "quote": null
+    }
+  ],
+  "unresolved": [
+    "The handbook does not state a minimum stopping duration; 'stop' is modelled as speed = 0 with the front before the line (A3 rule stop-before-stop-line unresolved note, preserved).",
+    "Sign mounting height, post and the 1 m line setback in the generated world are schematic teaching choices recorded in the world's provenance notes, not source values."
+  ]
+}

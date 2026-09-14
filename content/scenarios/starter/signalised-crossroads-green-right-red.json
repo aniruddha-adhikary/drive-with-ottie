@@ -1,0 +1,372 @@
+{
+  "$comment": "T1 starter scenario package (schema ottie.starter-scenario-package/1; shapes documented in content/scenarios/starter/README.md). Development only: quarantined assets, unreviewed content, no source/content/reuse approval. Worlds are produced by the shared generator (@ottie/scenario-core createDevelopmentGenerator) from the pinned template, seed, source profile and registry hash; nothing here is a hand-authored world.",
+  "schema": "ottie.starter-scenario-package/1",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "id": "starter.signalised-crossroads-green-right-red",
+  "topicId": "traffic-signals",
+  "title": "Signalised crossroads: circular green with a red right-turn arrow",
+  "summary": "A north-south road crosses an east-west road under signal control. The ego car approaches northbound behind the RMS2 marking J stop line; the primary head on its approach shows circular green lit with the right-turn arrow red lit (Traffic Police handbook illustration, PDF page 47). One world has the ego intending to turn right, the other going straight. Only the north-south heads exist in the extraction set, so east-west permissions come from the phase plan.",
+  "template": {
+    "id": "sg.crossroads.signalised",
+    "version": 1
+  },
+  "pins": {
+    "generatorVersion": 1,
+    "worldSchemaVersion": 1,
+    "sourceProfileId": "sg-sources-2026-09",
+    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+  },
+  "worlds": [
+    {
+      "worldId": "starter.signal.right-turn-green-with-red-arrow",
+      "label": "Ego intends to turn right; circular green lit, right arrow red lit",
+      "seed": "t1-signal-right-green-red-001",
+      "parameters": {
+        "egoApproach": "south",
+        "egoMovement": "right",
+        "nsCircular": "green",
+        "nsRightArrow": "red"
+      },
+      "views": [
+        "plan",
+        "study_oblique",
+        "approach_ego",
+        "entity_detail"
+      ],
+      "canonicalHash": "b8680df2be9efa3a705768ef5dcab4b362a3e13f0677fd7a6f38c6ba2cc53148",
+      "entities": {
+        "ego": "ego.car",
+        "oncoming": "ns.sb.car",
+        "nbHead": "ns.nb.head.primary",
+        "sbHead": "ns.sb.head.primary",
+        "nbStopLine": "ns.nb.stop-line",
+        "nbPole": "ns.nb.pole",
+        "controller": "junction.controller",
+        "egoLane": "ns.with.0",
+        "egoMovement": "ns.with.0.right",
+        "oncomingMovement": "ns.against.0.straight"
+      },
+      "evidenceIds": {
+        "nbHeadState": "ev.nb-head-aspects",
+        "nbStopLine": "ev.nb-stop-line",
+        "egoLaneAndIntent": "ev.ego-lane-intent",
+        "oncoming": "ev.oncoming-car"
+      },
+      "notes": [
+        "The controller derives permission(ns.with.0.right) = stop from the lit right_arrow_red on ns.nb.head.primary, while circular_green gives ns.with.0.straight and ns.with.0.left proceed_permissive. Nothing is inferred from lens position or artwork."
+      ]
+    },
+    {
+      "worldId": "starter.signal.straight-green-with-red-arrow",
+      "label": "Ego intends to go straight; circular green lit, right arrow red lit",
+      "seed": "t1-signal-straight-green-red-001",
+      "parameters": {
+        "egoApproach": "south",
+        "egoMovement": "straight",
+        "nsCircular": "green",
+        "nsRightArrow": "red"
+      },
+      "views": [
+        "plan",
+        "study_oblique",
+        "approach_ego",
+        "entity_detail"
+      ],
+      "canonicalHash": "7c22cfd85ff6195ec4602ef4443d1ec9aba72fd3ede26c5dafa23b6c11ba7444",
+      "entities": {
+        "ego": "ego.car",
+        "oncoming": "ns.sb.car",
+        "nbHead": "ns.nb.head.primary",
+        "sbHead": "ns.sb.head.primary",
+        "nbStopLine": "ns.nb.stop-line",
+        "nbPole": "ns.nb.pole",
+        "controller": "junction.controller",
+        "egoLane": "ns.with.0",
+        "egoMovement": "ns.with.0.straight",
+        "oncomingMovement": "ns.against.0.straight"
+      },
+      "evidenceIds": {
+        "nbHeadState": "ev.nb-head-aspects",
+        "nbStopLine": "ev.nb-stop-line",
+        "egoLaneAndIntent": "ev.ego-lane-intent",
+        "oncoming": "ev.oncoming-car"
+      },
+      "notes": [
+        "Same aspect state as the right-turn world; only the ego's declared movement differs, so ev.ego-lane-intent now names ns.with.0.straight, which the circular green permits."
+      ]
+    }
+  ],
+  "assetCandidates": [
+    {
+      "entityKey": "nbHead",
+      "runtimeAssetId": "sg.assemblies.signal-through-green-right-red",
+      "a1CandidateId": null,
+      "a2AssemblyId": "sg.candidate.signal-vertical-circular-green-right-arrow-red",
+      "a1CandidateFile": null,
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/signal-vertical-circular-green-right-arrow-red.json",
+      "sourceDimensionsMm": {
+        "lowest_lens_centre_above_ground": 2290,
+        "lowest_lens_centre_above_ground_max": 3000,
+        "effective_lens_diameter_min": 200,
+        "adjacent_lens_centre_distance_max": 500,
+        "effective_lens_diameter": null,
+        "adjacent_lens_centre_distance": null,
+        "column_spacing": null
+      },
+      "sourceLocator": {
+        "sourceId": "spf-btt-2026",
+        "pdfPage": 47,
+        "printedPage": "46",
+        "drawing": null,
+        "drawingRevision": null,
+        "bboxPdfPoints": [
+          399.3500061035156,
+          157.29998779296875,
+          473.3210144042969,
+          263.04998779296875
+        ],
+        "bboxDisplayPdfPoints": [
+          399.3500061035156,
+          157.29998779296875,
+          473.3210144042969,
+          263.04998779296875
+        ],
+        "section": "Examples, circular green with red right arrow",
+        "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+      },
+      "unknowns": [
+        "housing dimensions, column spacing and the offset from housing back to any lens centre (raster illustration only)",
+        "no official signal support drawing exists in the reviewed collection; the pole is the F0 schematic fallback",
+        "horizontal heads have no reviewed artwork and are not modelled",
+        "Green 'B' placement conflict between TP page 47 and Rule 11 remains unresolved and is not modelled"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "nbStopLine",
+      "runtimeAssetId": "sg.markings.control-stop-j",
+      "a1CandidateId": "sg.dev.starter.marking.stop-line-j",
+      "a2AssemblyId": null,
+      "a1CandidateFile": "content/assets/starter-signs-markings/markings/stop-line-j.json",
+      "a2AssemblyFile": null,
+      "sourceDimensionsMm": {
+        "width": 300
+      },
+      "sourceLocator": {
+        "sourceId": "lta-sdre-I-rms",
+        "pdfPage": 3,
+        "printedPage": "8-2",
+        "drawing": "LTA/SDRE14/8/RMS2",
+        "drawingRevision": "B",
+        "bboxPdfPoints": [
+          145,
+          340,
+          532,
+          379
+        ]
+      },
+      "unknowns": [
+        "site-specific line extent",
+        "site-specific placement",
+        "stop-line position relative to the signal head is not settled by RMS2 (A1 manifest unresolved note, preserved)"
+      ],
+      "worldDimensionsStatus": null
+    },
+    {
+      "entityKey": "nbPole",
+      "runtimeAssetId": "sg.dev.signal-pole-schematic",
+      "a1CandidateId": null,
+      "a2AssemblyId": "sg.candidate.signal-vertical-circular-green-right-arrow-red",
+      "a1CandidateFile": null,
+      "a2AssemblyFile": "content/assets/starter-assemblies/assemblies/signal-vertical-circular-green-right-arrow-red.json",
+      "sourceDimensionsMm": {
+        "height": null
+      },
+      "sourceLocator": null,
+      "unknowns": [
+        "Schematic pole (dimensionsStatus schematic_unsourced). The A2 signal candidate has an empty compatibleSupports list because no official signal support drawing was reviewed; the 2.29 m lens height in the world is the Rule 11 nominal, not a site value."
+      ],
+      "worldDimensionsStatus": "schematic_unsourced"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "cmp.starter.signal.right-turn.arrow-dark",
+      "baseWorldId": "starter.signal.right-turn-green-with-red-arrow",
+      "kind": "change_signal_state",
+      "delta": {
+        "aspectStates": [
+          {
+            "headId": "ns.nb.head.primary",
+            "slot": "right_arrow_red",
+            "state": "dark"
+          },
+          {
+            "headId": "ns.sb.head.primary",
+            "slot": "right_arrow_red",
+            "state": "dark"
+          }
+        ]
+      },
+      "label": "Same junction when no right arrow is lit: the circular green then governs the right turn",
+      "explanationId": "starter.signal.dark-arrow-hands-turn-to-circular",
+      "generation": {
+        "worldId": "starter.signal.right-turn-green-arrow-dark",
+        "seed": "t1-signal-right-green-red-001",
+        "parameters": {
+          "egoApproach": "south",
+          "egoMovement": "right",
+          "nsCircular": "green",
+          "nsRightArrow": "dark"
+        },
+        "canonicalHash": "0b4669e0adcc947121140d820701831c415a5229800efe419f9b7f0f3a14ac75"
+      },
+      "generationNote": "Both north-south heads share one controller state, so the delta darkens the arrow on both heads exactly as nsRightArrow=dark does."
+    },
+    {
+      "id": "cmp.starter.signal.right-turn.arrow-green",
+      "baseWorldId": "starter.signal.right-turn-green-with-red-arrow",
+      "kind": "change_signal_state",
+      "delta": {
+        "aspectStates": [
+          {
+            "headId": "ns.nb.head.primary",
+            "slot": "right_arrow_red",
+            "state": "dark"
+          },
+          {
+            "headId": "ns.nb.head.primary",
+            "slot": "right_arrow_green",
+            "state": "lit"
+          }
+        ]
+      },
+      "label": "Same junction when the right arrow turns green",
+      "explanationId": "starter.signal.green-arrow-permits-turn",
+      "generation": null,
+      "generationNote": "Not regenerated: nsCircular=green with nsRightArrow=green lights a protected right arrow on BOTH heads while the opposing straight movement proceeds, which V1 reports as signal_movements.unsupported_phase_combination (known C2 finding). The declarative delta changes only the northbound head; a comparison applier must give the southbound head a compatible state before this world can pass V1."
+    },
+    {
+      "id": "cmp.starter.signal.straight.circular-red",
+      "baseWorldId": "starter.signal.straight-green-with-red-arrow",
+      "kind": "change_signal_state",
+      "delta": {
+        "aspectStates": [
+          {
+            "headId": "ns.nb.head.primary",
+            "slot": "circular_green",
+            "state": "dark"
+          },
+          {
+            "headId": "ns.nb.head.primary",
+            "slot": "circular_red",
+            "state": "lit"
+          },
+          {
+            "headId": "ns.sb.head.primary",
+            "slot": "circular_green",
+            "state": "dark"
+          },
+          {
+            "headId": "ns.sb.head.primary",
+            "slot": "circular_red",
+            "state": "lit"
+          }
+        ]
+      },
+      "label": "Same junction when the circular light is red",
+      "explanationId": "starter.signal.circular-red-stops-straight",
+      "generation": {
+        "worldId": "starter.signal.straight-red-with-red-arrow",
+        "seed": "t1-signal-straight-green-red-001",
+        "parameters": {
+          "egoApproach": "south",
+          "egoMovement": "straight",
+          "nsCircular": "red",
+          "nsRightArrow": "red"
+        },
+        "canonicalHash": "c1b951e879e5b1b2980e5042d707028c9d1202d8e919d4507d5d105973a8516e"
+      },
+      "generationNote": null
+    }
+  ],
+  "exclusions": [
+    "Pedestrian crossings and pedestrian signals are not placed: none has been separately sourced.",
+    "No east-west signal heads: the extraction set holds one signal head reference, so east-west permissions are asserted by the phase plan with empty governedByAspects (world provenance note, preserved).",
+    "No Green 'B', flashing amber, amber-arrow or horizontal-head states are authored; their rules exist in A3 but have no starter fixture or artwork."
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 47,
+      "printedPage": "46",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": [
+        399.3500061035156,
+        157.29998779296875,
+        473.3210144042969,
+        263.04998779296875
+      ],
+      "bboxDisplayPdfPoints": [
+        399.3500061035156,
+        157.29998779296875,
+        473.3210144042969,
+        263.04998779296875
+      ],
+      "section": "Examples, circular green with red right arrow",
+      "quote": "Means “GO” for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 46,
+      "printedPage": "45",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "RED ARROW",
+      "quote": "Do not turn right even when there is no traffic from the opposite direction"
+    },
+    {
+      "sourceId": "spf-btt-2026",
+      "pdfPage": 45,
+      "printedPage": "44",
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "§58 Traffic Lights, GREEN",
+      "quote": "Look to the right and left to ensure it is safe before you proceed."
+    },
+    {
+      "sourceId": "rule11",
+      "pdfPage": null,
+      "printedPage": null,
+      "drawing": null,
+      "drawingRevision": null,
+      "bboxPdfPoints": null,
+      "section": "Rule 11, red arrow",
+      "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+    },
+    {
+      "sourceId": "lta-sdre-I-rms",
+      "pdfPage": 3,
+      "printedPage": "8-2",
+      "drawing": "LTA/SDRE14/8/RMS2",
+      "drawingRevision": "B",
+      "bboxPdfPoints": [
+        145,
+        340,
+        532,
+        379
+      ],
+      "section": "Marking J",
+      "quote": null
+    }
+  ],
+  "unresolved": [
+    "Rule 11 capture ends partway through the green-arrow paragraph; the red-arrow paragraph is complete (A3 rule red-arrow-prohibits-movement unresolved note, preserved).",
+    "The handbook illustrates the right arrow only; left and straight-ahead red arrows are not authored.",
+    "Signal housing, column spacing, pole height and mount are unknown in the source; poles are schematic and 2.29 m is the Rule 11 nominal lens height, not a site value."
+  ]
+}
