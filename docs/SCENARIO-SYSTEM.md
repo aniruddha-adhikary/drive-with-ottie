@@ -174,7 +174,9 @@ floating over the road. Link it to the world entity. If lane association is
 part of the question, an isolated face close-up cannot satisfy that evidence
 by itself.
 
-Initially provide useful presets and bounded adjustments; unrestricted orbit
+Keep useful presets and bounded adjustments inside the enlarged scene
+viewer, reached through one affordance in the lesson scene. Do not allocate
+a persistent camera toolbar above the answer choices. Unrestricted orbit
 is unnecessary. A camera switch changes only presentation state. It must
 not randomize vehicles, re-run the generator, cycle lights, restart replay,
 submit an answer or lose glossary focus.
@@ -189,6 +191,58 @@ Start review at representative 320, 390 and 768 CSS-pixel widths, including
 large text and reduced motion. These are proposed test cases, not an
 established device-support policy. Approve legibility thresholds from actual
 rendered reviews and learner testing rather than guessing legal dimensions.
+
+The lesson composition reserves an answer region before choosing a camera:
+scene fitting cannot consume space allocated to the stem, full options or
+primary action. See [the v3 layout policy](VISUAL-SYSTEM.md#lesson-composition).
+At large text sizes, scroll the content rather than truncating choices or
+rendering the required signal below its reviewed readable size.
+
+## 4.1 Extracted assets feeding the renderer
+
+The [asset index](../assets/sg/index.json) and
+[reproduction guide](../README.md#reproduce-and-validate) now exist. They
+contain 339 source-backed records, including reference crops, isolated
+vectors and measured geometry. This extraction library is an input to the
+planned runtime registry, not a completed scenario generator.
+
+Use the following promotion path:
+
+```text
+Official PDF bytes + revision + hash
+  → page/drawing inventory + crop/path/measurement recipe
+  → individual reference / cleaned vector / parametric geometry
+  → source comparison + applicability/content/reuse review
+  → approved runtime asset + explicit placement/assembly contract
+  → reviewed scenario template + question/evidence bindings
+  → generated world + scene/evidence validation
+```
+
+Every original stays source-addressable. A cleaned renderer file must not
+overwrite the reference crop. Road paint uses millimetre measurements with
+label endpoints; signs use an approved face plus a separately defined
+support; signals combine reviewed heads, approach normals and
+movement-specific states. An extracted engineering elevation is a
+reference, not automatically a mesh or a complete mounting rule.
+
+The common validator currently checks source/file hashes, coverage, asset
+IDs, local paths, SVG safety, nonblank files, stale recipes/indexes and
+release flags. Family validators add source-path/pixel and measurement
+checks. These checks establish extraction integrity. They do not yet run
+the `mounting`, `signal_movement`, `camera_evidence` or scene-invariance
+validators below; those require the production scene model and renderer.
+
+All current assets have `release_ready: false`. The generator must resolve
+only approved registry versions for learner-facing exports. A development
+review fixture may explicitly load quarantined assets, displaying that
+status in its review output; this is not a production-release bypass.
+
+Initial implementation slice: one approved Give Way face plus support and
+paired marking, one Stop assembly, and one signalised straight/right-turn
+fixture. Review the same world at plan/approach/detail views and lesson
+sizes. Mutation tests must reject a floating face, mirrored arrow,
+misordered lenses, right-turn permission on red, an obscured required
+control, and a camera change that mutates traffic or answer state.
 
 ## 5. Deterministic generation
 
