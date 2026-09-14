@@ -6,12 +6,14 @@ import { describe, expect, it } from 'vitest';
 import { buildDependencyIndex, compileRegistry, createRegistryResolver, curationFromDefinitions } from '@ottie/asset-registry';
 import { computeRegistryHash } from '@ottie/asset-registry/hash.node.js';
 import { loadExtractionLibrary } from '@ottie/asset-registry/library.node.js';
-import { canonicalJson } from '@ottie/contracts';
+import { canonicalJson, metres } from '@ottie/contracts';
 import { DEVELOPMENT_ASSETS, DEVELOPMENT_CONTENT_BUNDLE, DEVELOPMENT_TEMPLATES, DEVELOPMENT_WORLDS, EXTRACTED_DEVELOPMENT_ASSETS } from '@ottie/contracts/fixtures';
 import { createFileArtworkSource } from '@ottie/renderer-geometry/artwork.node.js';
 import { cameraMatrices } from '@ottie/renderer-cameras';
 import { canonicalWorldJson } from '@ottie/scenario-core';
+import { buildWorldScene } from '@ottie/renderer-geometry';
 import { buildReviewPack } from './pack';
+import { SVG_PAINT_LAYERS, applySvgPaintLayers, assessSvgTile } from './render.node.js';
 import { writeReviewPack } from './write.node.js';
 
 const REPO_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../../..');
@@ -53,6 +55,14 @@ describe('review pack export', () => {
       expect(world.views.map((view) => view.presetName)).toEqual(expect.arrayContaining(['plan', 'study_oblique', 'approach_ego', 'entity_detail']));
       for (const view of world.views) {
         expect(view.report.matrices).toEqual(cameraMatrices(view.report.camera, view.viewport));
+        expect(view.svg.reliable).toBe(view.svg.reasons.length === 0);
+      }
+      const approach = world.views.find((view) => view.presetName === 'approach_ego');
+      expect(approach?.svg.reliable).toBe(true);
+      expect(approach?.svg.hiddenEntityIds).toEqual(expect.arrayContaining([expect.stringMatching(/ego/)]));
+      for (const sheet of world.contactSheets) {
+        expect(sheet.svg).toMatch(/approach_ego[^<]*hidden for this tile/);
+        expect(sheet.svg).not.toMatch(/SVG UNRELIABLE/);
       }
       for (const sheet of world.contactSheets) {
         expect(sheet.svg).toContain('xmlns="http://www.w3.org/2000/svg"');
@@ -110,5 +120,32 @@ describe('review pack export', () => {
     const world = DEVELOPMENT_WORLDS[0];
     if (!world) throw new Error('fixture has no world');
     expect(index.worldClosure(world.id)?.worlds).toContain(world.id);
+  });
+});
+
+describe('svg paint layers', () => {
+  it('forces flat surfaces under raised geometry without moving any object', () => {
+    const source = inputs();
+    const world = DEVELOPMENT_WORLDS[0];
+    if (!world) throw new Error('fixture has no world');
+    const scene = buildWorldScene(world, { resolver: source.resolver });
+    const before = new Map<string, number[]>();
+    scene.root.traverse((object) => before.set(object.uuid, object.position.toArray()));
+    const report = applySvgPaintLayers(scene.root);
+    expect(report.ground).toBe(1);
+    expect(report.roadSurface).toBeGreaterThan(0);
+    expect(report.marking).toBeGreaterThan(0);
+    scene.root.traverse((object) => {
+      expect(object.position.toArray()).toEqual(before.get(object.uuid));
+      if (object.name === 'ground') expect(object.renderOrder).toBe(SVG_PAINT_LAYERS.ground);
+      else if (object.name.startsWith('road-surface:')) expect(object.renderOrder).toBe(SVG_PAINT_LAYERS.roadSurface);
+      else if (object.name.startsWith('marking:')) expect(object.renderOrder).toBe(SVG_PAINT_LAYERS.marking);
+      else expect(object.renderOrder).toBeGreaterThanOrEqual(0);
+    });
+    const aboveGround = world.cameraPresets.find((preset) => preset.name === 'study_oblique');
+    if (!aboveGround) throw new Error('fixture has no study_oblique preset');
+    expect(assessSvgTile(scene, aboveGround).reliable).toBe(true);
+    expect(assessSvgTile(scene, { ...aboveGround, eye: { ...aboveGround.eye, z: metres(-1) } }).reliable).toBe(false);
+    scene.dispose();
   });
 });
