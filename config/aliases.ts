@@ -20,6 +20,7 @@ export const rootAliases: Readonly<Record<string, string>> = {
   '@ottie/renderer-evidence': path.join(repoRoot, 'packages/renderer/evidence/src/index.ts'),
   '@ottie/learning-state': path.join(repoRoot, 'packages/learning-state/src/index.ts'),
   '@ottie/review-export': path.join(repoRoot, 'packages/review-export/src/index.ts'),
+  '@ottie/starter-content': path.join(repoRoot, 'packages/starter-content/src/index.ts'),
 };
 
 /** Directory aliases: `import x from '@ottie/content/terms/starter/foo.json'`. */

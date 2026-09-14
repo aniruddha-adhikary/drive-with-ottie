@@ -15,7 +15,7 @@
     "generatorVersion": 1,
     "worldSchemaVersion": 1,
     "sourceProfileId": "sg-sources-2026-09",
-    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+    "assetRegistryHash": "911955e3b7941717e71cef6d836fb09eae5d521a0a4f55e49cfba88dbc1066d7"
   },
   "worlds": [
     {
@@ -33,7 +33,7 @@
         "approach_ego",
         "entity_detail"
       ],
-      "canonicalHash": "76ffbec1f9b011b4b7f7d3ffd42f517f3251e3d7c49181b68f7451b99bd23839",
+      "canonicalHash": "27ef61f183bcadfc8e94f03d88c0466322a933f0b1395832d5f3a85b671764a8",
       "entities": {
         "ego": "ego.car",
         "crossingCar": "local.car",

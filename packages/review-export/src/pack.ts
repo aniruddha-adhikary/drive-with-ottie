@@ -1,6 +1,6 @@
 import { type Diagnostic, type Sha256, type ValidationReport, type Viewport } from '@ottie/contracts';
 import { canonicalJson } from '@ottie/contracts';
-import { buildDependencyIndex, exportRelease, type DependencyClosure, type ReleaseExport, type SourceConflict } from '@ottie/asset-registry';
+import { buildDependencyIndex, type DependencyClosure, type SourceConflict } from '@ottie/asset-registry';
 import { loadWorldArtwork, type SceneIssue, type SchematicChoice } from '@ottie/renderer-geometry';
 import { withDom } from './render.node.js';
 import { buildWorldProvenance, type WorldProvenanceExport } from './provenance';
@@ -9,6 +9,7 @@ import { buildWorldViews, type ReviewView } from './views';
 import { RENDERER_LIMITATIONS } from './render.node.js';
 import { type ReviewInputs, type ReviewPackOptions, REVIEW_VIEWPORT } from './inputs';
 import { missingValidators, validateQuestion, validateWorld } from '@ottie/scenario-validation';
+import { type ReviewReleaseExport, assessReleaseExport } from './release';
 import { sha256Hex } from '@ottie/scenario-core';
 
 export interface ReviewWorldPack {
@@ -19,7 +20,8 @@ export interface ReviewWorldPack {
   readonly views: readonly ReviewView[];
   readonly contactSheets: readonly { readonly viewport: Viewport; readonly svg: string }[];
   readonly closure: DependencyClosure;
-  readonly release: ReleaseExport;
+  /** The same unified assessment `assessReleaseExport` returns for the CLI, rooted at this world. */
+  readonly release: ReviewReleaseExport;
 }
 
 export interface ReviewPack {
@@ -63,14 +65,7 @@ export async function buildReviewPack(inputs: ReviewInputs, options: ReviewPackO
         views,
         contactSheets: sheets,
         closure: index.worldClosure(world.id) ?? { root: world.id, assets: [], definitions: [], references: [], worlds: [], templates: [], missing: [world.id] },
-        release: exportRelease({
-          registry: inputs.registry,
-          registryHash: inputs.registryHash,
-          worlds: [world],
-          ...(inputs.templates ? { templates: inputs.templates } : {}),
-          ...(inputs.bundles ? { bundles: inputs.bundles } : {}),
-          roots: { worlds: [world.id] },
-        }),
+        release: assessReleaseExport(inputs, { worlds: [world.id] }),
       };
       return worldPack;
     });

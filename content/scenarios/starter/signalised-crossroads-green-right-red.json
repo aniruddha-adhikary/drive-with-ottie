@@ -15,7 +15,7 @@
     "generatorVersion": 1,
     "worldSchemaVersion": 1,
     "sourceProfileId": "sg-sources-2026-09",
-    "assetRegistryHash": "cf3e151d8016322db6006c13b39a61ed6b03030e97b4bf734530dea38bc499d5"
+    "assetRegistryHash": "911955e3b7941717e71cef6d836fb09eae5d521a0a4f55e49cfba88dbc1066d7"
   },
   "worlds": [
     {
@@ -34,7 +34,7 @@
         "approach_ego",
         "entity_detail"
       ],
-      "canonicalHash": "b8680df2be9efa3a705768ef5dcab4b362a3e13f0677fd7a6f38c6ba2cc53148",
+      "canonicalHash": "19961d3646ed4537b94a4113736148a18e86b81389969b4ffe118ab8aa7e565c",
       "entities": {
         "ego": "ego.car",
         "oncoming": "ns.sb.car",
@@ -73,7 +73,7 @@
         "approach_ego",
         "entity_detail"
       ],
-      "canonicalHash": "7c22cfd85ff6195ec4602ef4443d1ec9aba72fd3ede26c5dafa23b6c11ba7444",
+      "canonicalHash": "29ed363f24983289464df825dad7f081b7c6dc3cc2092fdd4053d24d9814701a",
       "entities": {
         "ego": "ego.car",
         "oncoming": "ns.sb.car",
@@ -220,7 +220,7 @@
           "nsCircular": "green",
           "nsRightArrow": "dark"
         },
-        "canonicalHash": "0b4669e0adcc947121140d820701831c415a5229800efe419f9b7f0f3a14ac75"
+        "canonicalHash": "b62a0d34a990b13a78b877a002f73c537e5d618faa2daf28e85ba3dff9313b47"
       },
       "generationNote": "Both north-south heads share one controller state, so the delta darkens the arrow on both heads exactly as nsRightArrow=dark does."
     },
@@ -286,7 +286,7 @@
           "nsCircular": "red",
           "nsRightArrow": "red"
         },
-        "canonicalHash": "c1b951e879e5b1b2980e5042d707028c9d1202d8e919d4507d5d105973a8516e"
+        "canonicalHash": "ef37c027cb6a1bf2225185c719abb4e180db31ceb30f6ab87dec85510b715e2b"
       },
       "generationNote": null
     }

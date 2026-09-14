@@ -62,7 +62,9 @@ describe('review pack export', () => {
         for (const preset of ['plan', 'study_oblique', 'approach_ego', 'entity_detail']) expect(sheet.svg).toContain(preset);
       }
       expect(world.release.ok).toBe(false);
-      expect(world.release.rejections.length).toBeGreaterThan(0);
+      expect(world.release.c1.rejections.length).toBeGreaterThan(0);
+      expect(world.release.refusals.length).toBeGreaterThan(0);
+      expect(world.release.refusals.every((refusal) => refusal.worldId === world.worldId)).toBe(true);
       for (const file of world.provenance.files) {
         if (file.actualSha256 !== null && file.manifestSha256 !== null) {
           expect(file.actualSha256).toBe(file.manifestSha256);
@@ -89,6 +91,13 @@ describe('review pack export', () => {
       expect(readFileSync(path.join(firstDir, firstWorldId, sheetName), 'utf8')).toBe(readFileSync(path.join(secondDir, firstWorldId, sheetName), 'utf8'));
       const digest = createHash('sha256').update(readFileSync(path.join(firstDir, 'manifest.json'))).digest('hex');
       expect(digest).toMatch(/^[0-9a-f]{64}$/);
+      const limitations = JSON.parse(readFileSync(path.join(firstDir, 'renderer-limitations.json'), 'utf8')) as { rendererLimitations: string[] };
+      expect(limitations.rendererLimitations).toEqual(pack.rendererLimitations);
+      expect(limitations.rendererLimitations.length).toBeGreaterThan(0);
+      const registryDiagnostics = JSON.parse(readFileSync(path.join(firstDir, 'registry-diagnostics.json'), 'utf8')) as { registryHash: string; registryDiagnostics: unknown[] };
+      expect(registryDiagnostics.registryHash).toBe(pack.registryHash);
+      expect(registryDiagnostics.registryDiagnostics).toEqual(pack.registryDiagnostics);
+      expect(firstManifest.files.map((file) => file.path)).toEqual(['renderer-limitations.json', 'registry-diagnostics.json']);
     } finally {
       rmSync(firstDir, { recursive: true, force: true });
       rmSync(secondDir, { recursive: true, force: true });

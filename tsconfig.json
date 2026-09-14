@@ -42,6 +42,8 @@
       "@ottie/learning-state/*": ["packages/learning-state/src/*"],
       "@ottie/review-export": ["packages/review-export/src/index.ts"],
       "@ottie/review-export/*": ["packages/review-export/src/*"],
+      "@ottie/starter-content": ["packages/starter-content/src/index.ts"],
+      "@ottie/starter-content/*": ["packages/starter-content/src/*"],
       "@ottie/content/*": ["content/*"],
       "@ottie/sg-assets/*": ["assets/sg/*"],
       "@ottie/web/*": ["apps/web/src/*"]
