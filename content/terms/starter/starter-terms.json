@@ -1,0 +1,477 @@
+{
+  "$comment": "Canonical starter Term records (Term in packages/contracts/src/content.ts, contract version 1). This file is the single canonical owner of every term ID below; other modules reference IDs, they do not redefine them. IDs also present in packages/contracts/src/fixtures/content.ts denote the same concept (fixtures are a development stand-in). Explainers are original ADHD-friendly wording; quotes live only in sourceRefs. Development content only; every illustratedBy asset is quarantined (release_ready=false).",
+  "contractVersion": 1,
+  "reviewStatus": "development",
+  "terms": [
+    {
+      "id": "give-way-sign",
+      "label": "GIVE WAY sign",
+      "shortDefinition": "An inverted red-bordered triangle: slow down, stop only if you need to, and let traffic on the major road go first.",
+      "explainer": [
+        "Give Way is a question, not an order to stop: 'Is anyone on the major road about to be affected by me?' If no one is, you can keep rolling.",
+        "If someone is, slow or stop until they have passed. Stopping is the tool, not the rule.",
+        "It usually sits with the double broken white line (Give Way line) across your lane."
+      ],
+      "confusableWith": ["stop-sign", "give-way-line"],
+      "illustratedBy": [{ "id": "sg.mandatory.give-way", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Give Way",
+          "quote": "Slow down. Stop if necessary. Give way to traffic on major road"
+        },
+        {
+          "sourceId": "lta-sdre-i-tfm",
+          "pdfPage": 2,
+          "printedPage": "15-1",
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "drawingRevision": "-",
+          "bboxPdfPoints": [415, 39, 730, 304]
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "stop-sign",
+      "label": "STOP sign",
+      "shortDefinition": "A red octagon: come to a complete stop before the white line every time, then give way to traffic from the right and left.",
+      "explainer": [
+        "STOP is unconditional. Empty road, clear view, late for something: still stop, wheels not turning, before the line.",
+        "Only after you have stopped do you look right and left and move off when it is safe.",
+        "Difference from Give Way: Give Way lets you keep moving when clear; STOP never does."
+      ],
+      "confusableWith": ["give-way-sign", "stop-line"],
+      "illustratedBy": [{ "id": "sg.mandatory.stop", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 11,
+          "printedPage": "10",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Mandatory Signs, Stop",
+          "quote": "Stop before the white line. Give way to traffic from the right and left"
+        },
+        {
+          "sourceId": "lta-sdre-i-tfm",
+          "pdfPage": 2,
+          "printedPage": "15-1",
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "drawingRevision": "-",
+          "bboxPdfPoints": [135, 38, 372, 302]
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "give-way-line",
+      "label": "Give Way line",
+      "shortDefinition": "Two rows of short broken white lines across your lane: give way to traffic on the major road ahead.",
+      "explainer": [
+        "Broken means 'you may cross when it is safe'. Two rows tell you the road ahead has priority.",
+        "Same behaviour as the GIVE WAY sign: slow, check, stop only if you must, go when clear."
+      ],
+      "confusableWith": ["stop-line", "give-way-sign"],
+      "illustratedBy": [{ "id": "sg.markings.control-give-way-d", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(a) Parallel Broken White Lines",
+          "quote": "Parallel broken white lines indicate that traffic approaching these lines must give way to traffic on a major road."
+        },
+        {
+          "sourceId": "lta-sdre-I-rms",
+          "pdfPage": 3,
+          "printedPage": "8-2",
+          "drawing": "LTA/SDRE14/8/RMS2",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [145, 88, 532, 127]
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "stop-line",
+      "label": "Stop line",
+      "shortDefinition": "One continuous white line across your lane: stop close to and before it.",
+      "explainer": [
+        "Solid means 'do not cross until you are allowed'. With a STOP sign that means a full stop every time; at traffic lights it is where you wait on red or amber.",
+        "Stop with the front of your vehicle behind the line, not on it."
+      ],
+      "confusableWith": ["give-way-line", "stop-sign"],
+      "illustratedBy": [{ "id": "sg.markings.control-stop-j", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 36,
+          "printedPage": "35",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§52(b) Single White Line",
+          "quote": "Horizontal white line indicates that traffic is required to stop and must stop close to and before this line."
+        },
+        {
+          "sourceId": "lta-sdre-I-rms",
+          "pdfPage": 3,
+          "printedPage": "8-2",
+          "drawing": "LTA/SDRE14/8/RMS2",
+          "drawingRevision": "B",
+          "bboxPdfPoints": [145, 340, 532, 379]
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "major-road",
+      "label": "Major road",
+      "shortDefinition": "At a junction, the road whose traffic has priority; you give way to it from a GIVE WAY or STOP control.",
+      "explainer": [
+        "The handbook uses 'major road' for the road you are joining or crossing at a Give Way or Stop control. Its traffic does not have to slow for you.",
+        "Glossary term only: the handbook does not give a formal definition, so this is context, not a test of geometry."
+      ],
+      "confusableWith": [],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§81 The 'Give Way' Rule At Road Junctions",
+          "quote": "When approaching a junction with a major road, slow down gradually and give way to traffic on the major road."
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "uncontrolled-junction",
+      "label": "Uncontrolled junction",
+      "shortDefinition": "A junction with no traffic lights, GIVE WAY sign or STOP sign; priority follows the handbook's give-way rule instead.",
+      "explainer": [
+        "Nothing is telling you who goes first, so the rule does: going straight or turning left, give way to traffic coming straight from your right.",
+        "Turning right is the heavy case: give way to straight-through traffic from every direction, to right-turners from your right and to left-turners coming towards you."
+      ],
+      "confusableWith": ["major-road"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 53,
+          "printedPage": "52",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§82",
+          "quote": "At an uncontrolled junction where there are no traffic lights, \u201cGIVE WAY\u201d sign or \u201cSTOP\u201d sign:"
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "circular-red-signal",
+      "label": "Circular red",
+      "shortDefinition": "A round red light: STOP behind the stop line, for every movement, unless a green arrow or green 'B' says otherwise for your movement.",
+      "explainer": [
+        "Round lights talk to every movement from your lane. Red means nobody goes.",
+        "The only way past a red is a lit green arrow for the exact movement you want (or a green 'B' if you are driving a bus)."
+      ],
+      "confusableWith": ["red-arrow-signal", "circular-amber-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, RED",
+          "quote": "Means \u201cSTOP\u201d."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, vertical arrangement and vertical lens dimensions",
+          "quote": "the red light shall be placed above the amber light and the green light shall be placed below the amber light"
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "circular-amber-signal",
+      "label": "Circular amber",
+      "shortDefinition": "A round steady amber light: red is coming; stop behind the line unless you are already too close to stop safely.",
+      "explainer": [
+        "Amber is not 'speed up'. Treat it as red unless braking would be unsafe because you are almost at the line.",
+        "Flashing amber is a different signal with a different meaning: see Flashing amber."
+      ],
+      "confusableWith": ["flashing-amber-signal", "amber-arrow-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, AMBER",
+          "quote": "Means \u201cSTOP\u201d unless you are so close to the stop-line when the lights turn AMBER that you cannot stop safely."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated amber light",
+          "quote": "the illuminated amber light shall be taken to denote an impending change from green light to red light"
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "flashing-amber-signal",
+      "label": "Flashing amber",
+      "shortDefinition": "A round amber light that flashes: the signals are out of order; proceed with caution and give way to traffic on your right.",
+      "explainer": [
+        "Flashing means the lights have stopped controlling the junction. You are back to judging it yourself.",
+        "Slow down, look, and let traffic from the right go first."
+      ],
+      "confusableWith": ["circular-amber-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, FLASHING AMBER",
+          "quote": "Means that the traffic light signals are out of order. Proceed with caution. Give way to traffic on the right."
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "circular-green-signal",
+      "label": "Circular green",
+      "shortDefinition": "A round green light: GO for any movement that does not have its own lit arrow, after checking right and left.",
+      "explainer": [
+        "Round green is permission for the movements nobody else is talking about. If an arrow light is lit for your movement, the arrow wins.",
+        "Green is not a guarantee. Look right and left, give way to pedestrians and to oncoming traffic before turning."
+      ],
+      "confusableWith": ["red-arrow-signal", "green-arrow-signal"],
+      "illustratedBy": [{ "id": "sg.assemblies.signal-through-green-right-red", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN",
+          "quote": "Look to the right and left to ensure it is safe before you proceed."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, illuminated green light",
+          "quote": "turn left or right subject to any sign prohibiting left or right turn or in conjunction with the arrow light signals"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "bboxDisplayPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "section": "Examples, circular green with red right arrow",
+          "quote": "Means \u201cGO\u201d for straight ahead vehicles only. Vehicles turning right must stop behind the stop line."
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "red-arrow-signal",
+      "label": "Red arrow",
+      "shortDefinition": "A red arrow: STOP behind the stop line for the movement it points to, even if the round green is lit and the way looks clear.",
+      "explainer": [
+        "Arrows talk to one movement only. A red right arrow means: no right turn, full stop.",
+        "The round green beside it still lets straight-ahead traffic go. Two lights, two answers. The arrow's answer for its own movement always wins."
+      ],
+      "confusableWith": ["circular-green-signal", "circular-red-signal", "amber-arrow-signal"],
+      "illustratedBy": [{ "id": "sg.assemblies.signal-through-green-right-red", "version": 1 }],
+      "sourceRefs": [
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, red arrow",
+          "quote": "the illuminated red arrow light shall be taken as prohibiting vehicles from proceeding beyond the stop line or broken lines on the road in that direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "RED ARROW",
+          "quote": "Do not turn right even when there is no traffic from the opposite direction"
+        },
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 47,
+          "printedPage": "46",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "bboxDisplayPdfPoints": [
+            399.3500061035156, 157.29998779296875, 473.3210144042969, 263.04998779296875
+          ],
+          "section": "Examples, circular green with red right arrow",
+          "quote": "Vehicles turning right must stop behind the stop line."
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "amber-arrow-signal",
+      "label": "Amber arrow",
+      "shortDefinition": "A steady amber arrow: the movement it points to is about to be prohibited; get ready to stop behind the line for that movement.",
+      "explainer": [
+        "Same idea as round amber, but for one movement only. Turning right on amber arrow: stop unless you are too close to stop safely.",
+        "The round green next to it still applies to straight-ahead traffic."
+      ],
+      "confusableWith": ["circular-amber-signal", "red-arrow-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "AMBER ARROW",
+          "quote": "Means \u201cREADY TO STOP\u201d behind the stop-line in the direction indicated."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, amber arrow",
+          "quote": "the illuminated amber arrow light shall be taken to denote an impending change from green arrow light to red arrow light"
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "green-arrow-signal",
+      "label": "Green arrow",
+      "shortDefinition": "A green arrow: GO, but only in the direction it points, after making sure oncoming traffic is clear.",
+      "explainer": [
+        "A green arrow is permission for exactly one movement. It can let you turn right even while the round light is red.",
+        "It does not clear the road for you: check oncoming traffic and pedestrians first."
+      ],
+      "confusableWith": ["circular-green-signal", "red-arrow-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 45,
+          "printedPage": "44",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "§58 Traffic Lights, GREEN ARROW",
+          "quote": "Means \u201cGO\u201d but only in the direction indicated after ensuring that oncoming traffic is clear."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, additional green arrow light",
+          "quote": "notwithstanding that they would otherwise be required by the illuminated red or amber light to stop, may proceed in the direction or directions indicated by the green arrow or arrows with precedence to pedestrians"
+        }
+      ],
+      "reviewStatus": "development"
+    },
+    {
+      "id": "green-b-signal",
+      "label": "Green 'B'",
+      "shortDefinition": "An extra green light showing the letter B: GO for buses only. It changes nothing for a car or motorcycle.",
+      "explainer": [
+        "If you are not driving a bus, the 'B' is not for you. Follow the round lights and arrows as usual.",
+        "It lets a bus in the innermost left lane move off ahead of other traffic."
+      ],
+      "confusableWith": ["circular-green-signal", "green-arrow-signal"],
+      "illustratedBy": [],
+      "sourceRefs": [
+        {
+          "sourceId": "spf-btt-2026",
+          "pdfPage": 46,
+          "printedPage": "45",
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "GREEN 'B'",
+          "quote": "Means \u201cGO\u201d for all buses only."
+        },
+        {
+          "sourceId": "rule11",
+          "pdfPage": null,
+          "printedPage": null,
+          "drawing": null,
+          "drawingRevision": null,
+          "bboxPdfPoints": null,
+          "section": "Rule 11, additional green light showing the letter B",
+          "quote": "any bus in the innermost left lane of the road before the stop line or broken lines on the road provided in conjunction with the signals may"
+        }
+      ],
+      "reviewStatus": "development"
+    }
+  ]
+}
