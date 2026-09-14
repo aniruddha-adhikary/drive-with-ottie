@@ -22,42 +22,45 @@ export const RENDERER_LIMITATIONS: readonly string[] = [
   'rasterisation not performed (SVG only; no PNG delegate available in shell)',
 ];
 
-export function createDomForArtwork(): () => void {
-  if (typeof globalThis.document !== 'undefined') return () => undefined;
+export function withDom<T>(fn: () => T): T {
+  if (typeof globalThis.document !== 'undefined') return fn();
+  const priorWindow = (globalThis as { window?: unknown }).window;
   const dom: JSDOMLike = new JSDOM('<!doctype html><html><body></body></html>');
   Object.assign(globalThis, { document: dom.window.document, window: dom.window });
-  return () => {
+  let restored = false;
+  const restore = () => {
+    if (restored) return;
+    restored = true;
     delete (globalThis as { document?: Document }).document;
-    delete (globalThis as { window?: unknown }).window;
+    if (priorWindow === undefined) delete (globalThis as { window?: unknown }).window;
+    else Object.assign(globalThis, { window: priorWindow });
   };
+  try {
+    const result = fn();
+    if (result && typeof (result as { then?: unknown }).then === 'function') {
+      return (result as unknown as Promise<unknown>).finally(restore) as T;
+    }
+    restore();
+    return result;
+  } catch (error) {
+    restore();
+    throw error;
+  }
 }
 
 export function renderSceneTileSvg(root: Object3D, camera: Camera, viewport: Viewport): string {
-  const priorDocument = globalThis.document;
-  const priorWindow = (globalThis as { window?: unknown }).window;
-  let dom: JSDOMLike | null = null;
   if (typeof globalThis.document === 'undefined') {
-    dom = new JSDOM('<!doctype html><html><body></body></html>');
-    Object.assign(globalThis, { document: dom.window.document, window: dom.window });
+    throw new Error('renderSceneTileSvg requires a document; call withDom() in Node');
   }
-  try {
-    const renderer = new SVGRenderer();
-    renderer.setSize(viewport.widthPx, viewport.heightPx);
-    renderer.setClearColor(new Color(0xffffff), 1);
-    const scene = new Scene();
-    scene.add(root);
-    renderer.render(scene, camera);
-    const svg = renderer.domElement.outerHTML;
-    const open = svg.indexOf('>');
-    const close = svg.lastIndexOf('</svg>');
-    scene.remove(root);
-    return open >= 0 && close > open ? svg.slice(open + 1, close) : svg;
-  } finally {
-    if (dom) {
-      if (priorDocument === undefined) delete (globalThis as { document?: Document }).document;
-      else Object.assign(globalThis, { document: priorDocument });
-      if (priorWindow === undefined) delete (globalThis as { window?: unknown }).window;
-      else Object.assign(globalThis, { window: priorWindow });
-    }
-  }
+  const renderer = new SVGRenderer();
+  renderer.setSize(viewport.widthPx, viewport.heightPx);
+  renderer.setClearColor(new Color(0xffffff), 1);
+  const scene = new Scene();
+  scene.add(root);
+  renderer.render(scene, camera);
+  const svg = renderer.domElement.outerHTML;
+  const open = svg.indexOf('>');
+  const close = svg.lastIndexOf('</svg>');
+  scene.remove(root);
+  return open >= 0 && close > open ? svg.slice(open + 1, close) : svg;
 }
