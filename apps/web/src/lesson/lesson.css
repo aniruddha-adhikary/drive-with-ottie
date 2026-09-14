@@ -1,0 +1,316 @@
+/*
+ * Compact lesson layout. All vertical sizes are em/rem so the learner text scale grows everything;
+ * the page scrolls normally and choices are never in their own scroll container.
+ */
+.ottie-lesson {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 44rem;
+  margin: 0 auto;
+  background: var(--ottie-surface-paper);
+}
+
+.ottie-lesson__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  min-height: 3rem;
+  padding: max(0.5rem, env(safe-area-inset-top)) 1rem 0.25rem;
+}
+
+.ottie-lesson__topic {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.ottie-lesson__leave {
+  flex: 0 0 auto;
+  padding-block: 0.35em;
+}
+
+.ottie-lesson__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  padding: 0.5rem 1rem 1rem;
+  /* Room so the sticky primary action never covers the last choice or feedback. */
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+.ottie-lesson__scene {
+  position: relative;
+  min-height: 13.25rem; /* 212px design study height */
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--ottie-surface-white);
+  border: 1px solid color-mix(in srgb, var(--ottie-text-ink) 12%, transparent);
+}
+
+.ottie-lesson__scene--placeholder {
+  background: color-mix(in srgb, var(--ottie-text-ink) 6%, var(--ottie-surface-paper));
+}
+
+.ottie-lesson__enlarge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.5em 0.9em;
+}
+
+.ottie-scene-host {
+  display: flex;
+  flex-direction: column;
+  min-height: 13.25rem;
+}
+
+.ottie-scene-host__surface {
+  flex: 1 1 auto;
+  min-height: 13.25rem;
+  position: relative;
+}
+
+.ottie-scene-host__surface canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ottie-scene-host__note {
+  margin: 0;
+  padding: 0.25rem 0.75rem 0.5rem;
+}
+
+.ottie-scene-stub {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25em;
+  padding: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8125em;
+  color: var(--ottie-text-muted);
+  background: repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb, var(--ottie-text-ink) 5%, transparent) 12px 24px);
+  overflow-wrap: anywhere;
+}
+
+.ottie-lesson__stem {
+  overflow-wrap: anywhere;
+}
+
+.ottie-lesson__instruction {
+  margin: -0.25em 0 0;
+}
+
+.ottie-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ottie-choice {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: 0.75em;
+  align-items: start;
+  min-height: var(--ottie-min-hit);
+  padding: 0.75em 0.875em;
+  border-radius: 0.875em;
+  border: 2px solid color-mix(in srgb, var(--ottie-text-ink) 14%, transparent);
+  background: var(--ottie-surface-white);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color var(--ottie-motion-duration) ease-out,
+    background-color var(--ottie-motion-duration) ease-out;
+}
+
+.ottie-choice__marker {
+  display: inline-grid;
+  place-items: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  font-weight: 700;
+  font-size: 0.875em;
+  color: var(--ottie-text-muted);
+}
+
+.ottie-choice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  min-width: 0;
+}
+
+.ottie-choice__text {
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.ottie-choice[data-state='selected'] {
+  border-color: var(--ottie-brand-action);
+  background: color-mix(in srgb, var(--ottie-brand-action) 8%, var(--ottie-surface-white));
+}
+
+.ottie-choice[data-state='selected'] .ottie-choice__marker {
+  background: var(--ottie-brand-action);
+  border-color: var(--ottie-brand-action);
+  color: var(--ottie-surface-white);
+}
+
+.ottie-choice[data-state='locked'] {
+  cursor: default;
+}
+
+.ottie-choice[data-result='neutral'][data-state='locked'] {
+  opacity: 0.7;
+}
+
+.ottie-choice[data-result='correct'],
+.ottie-choice[data-result='correct_selected'] {
+  border-color: var(--ottie-feedback-correct);
+  background: var(--ottie-feedback-correct-surface);
+}
+
+.ottie-choice[data-result='correct'] .ottie-choice__marker,
+.ottie-choice[data-result='correct_selected'] .ottie-choice__marker {
+  background: var(--ottie-feedback-correct);
+  border-color: var(--ottie-feedback-correct);
+  color: var(--ottie-surface-white);
+}
+
+.ottie-choice[data-result='incorrect_selected'] {
+  border-color: var(--ottie-feedback-incorrect);
+  background: var(--ottie-feedback-incorrect-surface);
+}
+
+.ottie-choice[data-result='incorrect_selected'] .ottie-choice__marker {
+  background: var(--ottie-feedback-incorrect);
+  border-color: var(--ottie-feedback-incorrect);
+  color: var(--ottie-surface-white);
+}
+
+.ottie-choice__cue {
+  color: inherit;
+}
+
+.ottie-choice__cue::before {
+  content: '— ';
+}
+
+.ottie-lesson__feedback:empty {
+  display: none;
+}
+
+.ottie-lesson__feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.875em 1em;
+  border-radius: 0.875em;
+  background: var(--ottie-brand-mint);
+}
+
+.ottie-lesson__feedback[data-result='none'] {
+  display: none;
+}
+
+.ottie-lesson__feedback[data-result='incorrect'] {
+  background: var(--ottie-surface-white);
+  border: 2px solid color-mix(in srgb, var(--ottie-text-ink) 14%, transparent);
+}
+
+.ottie-lesson__verdict {
+  margin: 0;
+}
+
+.ottie-lesson__action {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, var(--ottie-surface-paper) 70%, transparent);
+}
+
+/* Enlarged viewer */
+.ottie-viewer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: color-mix(in srgb, var(--ottie-text-ink) 55%, transparent);
+}
+
+.ottie-viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 44rem;
+  max-height: 100dvh;
+  overflow: auto;
+  background: var(--ottie-surface-paper);
+  color: var(--ottie-text-ink);
+}
+
+@media (min-width: 44rem) and (min-height: 40rem) {
+  .ottie-viewer-backdrop {
+    align-items: center;
+    padding: 1rem;
+  }
+  .ottie-viewer {
+    max-height: calc(100dvh - 2rem);
+    border-radius: 1rem;
+  }
+}
+
+.ottie-viewer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: max(0.5rem, env(safe-area-inset-top)) 1rem 0.5rem;
+}
+
+.ottie-viewer__title {
+  margin: 0;
+}
+
+.ottie-viewer__scene {
+  flex: 1 1 auto;
+  min-height: 16rem;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--ottie-surface-white);
+}
+
+.ottie-viewer__scene .ottie-scene-host,
+.ottie-viewer__scene .ottie-scene-host__surface {
+  min-height: 16rem;
+  height: 100%;
+}
+
+.ottie-viewer__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.ottie-viewer__controls .ottie-btn {
+  flex: 1 1 8rem;
+}
+
+.ottie-viewer__note {
+  margin: 0;
+  padding: 0 1rem calc(0.75rem + env(safe-area-inset-bottom));
+}
