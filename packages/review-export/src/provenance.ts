@@ -1,7 +1,7 @@
 import { type AssetDefinition, type DeepReadonly, type Sha256, type SourceLocator, type SourceRef, type World } from '@ottie/contracts';
 import { type CompiledRegistry, type DependencyClosure, type DependencyIndex } from '@ottie/asset-registry';
 import { canonicalWorldJson, computeCanonicalHash, verifyCanonicalHash } from '@ottie/scenario-core';
-import { sha256OfFile } from '@ottie/asset-registry/library.node';
+import { sha256OfFile } from '@ottie/asset-registry/library.node.js';
 import path from 'node:path';
 import { existsSync } from 'node:fs';
 

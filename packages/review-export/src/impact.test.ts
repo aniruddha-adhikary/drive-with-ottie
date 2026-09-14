@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { compileRegistry, createRegistryResolver, curationFromDefinitions } from '@ottie/asset-registry';
-import { computeRegistryHash } from '@ottie/asset-registry/hash.node';
-import { loadExtractionLibrary } from '@ottie/asset-registry/library.node';
+import { computeRegistryHash } from '@ottie/asset-registry/hash.node.js';
+import { loadExtractionLibrary } from '@ottie/asset-registry/library.node.js';
 import { assetId } from '@ottie/contracts';
 import { ASSET_SIGNAL_HEAD_THROUGH_GREEN_RIGHT_RED, DEVELOPMENT_ASSETS, DEVELOPMENT_CONTENT_BUNDLE, DEVELOPMENT_TEMPLATES, DEVELOPMENT_WORLDS, EXTRACTED_DEVELOPMENT_ASSETS, QUESTION_GIVE_WAY } from '@ottie/contracts/fixtures';
 import { assetChangeImpact } from './impact';

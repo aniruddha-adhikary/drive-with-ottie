@@ -1,14 +1,14 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { compileRegistry, curationFromDefinitions, createRegistryResolver } from '@ottie/asset-registry';
-import { loadExtractionLibrary } from '@ottie/asset-registry/library.node';
-import { computeRegistryHash } from '@ottie/asset-registry/hash.node';
+import { loadExtractionLibrary } from '@ottie/asset-registry/library.node.js';
+import { computeRegistryHash } from '@ottie/asset-registry/hash.node.js';
 import { DEVELOPMENT_ASSETS, DEVELOPMENT_CONTENT_BUNDLE, DEVELOPMENT_TEMPLATES, DEVELOPMENT_WORLDS, EXTRACTED_DEVELOPMENT_ASSETS } from '@ottie/contracts/fixtures';
 import { type AssetId, type DeepReadonly, type Viewport, type World } from '@ottie/contracts';
-import { createFileArtworkSource } from '@ottie/renderer-geometry/artwork.node';
+import { createFileArtworkSource } from '@ottie/renderer-geometry/artwork.node.js';
 import { developmentAssetResolver, missingValidators, REQUIRED_WORLD_VALIDATORS, validateWorld } from '@ottie/scenario-validation';
 import { assetChangeImpact, assessReleaseExport, buildReviewPack, describeWorldForReview, type ReviewInputs, type WorldReviewSummary } from '@ottie/review-export';
-import { writeReviewPack } from '@ottie/review-export/write.node';
+import { writeReviewPack } from '@ottie/review-export/write.node.js';
 
 /**
  * Usage: summary [--json], export --out <dir> [--world <id>]... [--viewport WxH] [--json],

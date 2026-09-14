@@ -1,4 +1,4 @@
-import { type ModuleStatus } from '@ottie/contracts/module-status';
+import { type ModuleStatus } from '@ottie/contracts/module-status.js';
 
 export const MODULE_STATUS: ModuleStatus = {
   module: '@ottie/review-export',

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { compileRegistry, createRegistryResolver, curationFromDefinitions } from '@ottie/asset-registry';
-import { computeRegistryHash } from '@ottie/asset-registry/hash.node';
-import { loadExtractionLibrary } from '@ottie/asset-registry/library.node';
+import { computeRegistryHash } from '@ottie/asset-registry/hash.node.js';
+import { loadExtractionLibrary } from '@ottie/asset-registry/library.node.js';
 import { DEVELOPMENT_ASSETS, DEVELOPMENT_CONTENT_BUNDLE, DEVELOPMENT_TEMPLATES, DEVELOPMENT_WORLDS, EXTRACTED_DEVELOPMENT_ASSETS } from '@ottie/contracts/fixtures';
 import { assessReleaseExport } from './release';
 
