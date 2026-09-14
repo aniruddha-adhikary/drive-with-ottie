@@ -1,0 +1,2510 @@
+{
+  "schema_version": 1,
+  "family": "mandatory",
+  "sources": [
+    {
+      "id": "lta-sdre-i-tfm",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/SDRE14-15_TFM_1-2_March_2026.pdf",
+      "sha256": "8decfe2306c6fb1b738c82a82bc4d657ef6a8a16ba4a0a342522126fd0113af1",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "page_count": 3,
+      "retrieved_at": "2026-09-14"
+    },
+    {
+      "id": "lta-sdre-i-contents",
+      "url": "https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Street_Work_Proposals/Standards_and_Specifications/SDRE/Content_Page_March_2026.pdf",
+      "sha256": "90ceee831a33fd99bdf00cc2f6d20603382fc69e10d1ea1ea3a82db4c9b6ea42",
+      "publisher": "LTA",
+      "collection_revision": "I",
+      "page_count": 7,
+      "retrieved_at": "2026-09-14"
+    },
+    {
+      "id": "spf-btt-2026",
+      "url": "https://www.police.gov.sg/-/media/SPF/Advisories/TP/BT-ENG-2126.pdf",
+      "sha256": "4f258856a25b8d0a44e9091f361ce0a07e24138b9a8515620936d088d3c7cefa",
+      "publisher": "Singapore Traffic Police",
+      "collection_revision": null,
+      "page_count": 90,
+      "retrieved_at": "2026-09-14"
+    }
+  ],
+  "assets": [
+    {
+      "id": "sg.mandatory.stop",
+      "name": "Stop",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/stop.reference.png",
+        "renderer_svg": "assets/sg/mandatory/stop.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          135,
+          38,
+          372,
+          302
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          164,
+          82,
+          337,
+          256
+        ],
+        "source_paint_path_indices_zero_based": [
+          0,
+          1,
+          2,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          395,
+          396,
+          397,
+          398,
+          399,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          736,
+          737,
+          738,
+          739
+        ],
+        "backing_path_indices_zero_based": [
+          19,
+          20,
+          21,
+          22,
+          736,
+          737,
+          738,
+          739
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            164,
+            39,
+            338,
+            60
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            352,
+            82,
+            369,
+            256
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "stop_before_line",
+        "yield_to": "traffic from right and left",
+        "text": "Stop before the white line. Give way to traffic from the right and left.",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 11,
+        "printed_page": "10"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "016e34004949f812122ee21b5b045ac6cf7c806165794065964f7bd427eff3db",
+        "renderer_svg": "c090dffdeb788fb7a7aabed64791b1465489eae0cc6f8cdf8e366b328348bc50"
+      }
+    },
+    {
+      "id": "sg.mandatory.give-way",
+      "name": "Give Way",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/give-way.reference.png",
+        "renderer_svg": "assets/sg/mandatory/give-way.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          415,
+          39,
+          730,
+          304
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          509,
+          82,
+          682,
+          256
+        ],
+        "source_paint_path_indices_zero_based": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          94,
+          95,
+          96,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          386,
+          387,
+          388,
+          740,
+          741,
+          742,
+          743
+        ],
+        "backing_path_indices_zero_based": [
+          83,
+          84,
+          85,
+          86,
+          740,
+          741,
+          742,
+          743
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            507,
+            39,
+            684,
+            58
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            705,
+            81,
+            728,
+            256
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "slow_down_and_stop_if_necessary",
+        "yield_to": "traffic on major road",
+        "text": "Slow down. Stop if necessary. Give way to traffic on major road.",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 11,
+        "printed_page": "10"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "5bf71365eda80f838bfe19ed89700240d472115843b8084f399ae35df7062430",
+        "renderer_svg": "7c72fe963046566a2b3dfacc1402c17c6443ec99e9618a7db0300e118e0d2a9a"
+      }
+    },
+    {
+      "id": "sg.mandatory.stop-children",
+      "name": "Stop — children",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/stop-children.reference.png",
+        "renderer_svg": "assets/sg/mandatory/stop-children.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          847,
+          47,
+          1110,
+          287
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          904,
+          90,
+          1078,
+          264
+        ],
+        "source_paint_path_indices_zero_based": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273
+        ],
+        "backing_path_indices_zero_based": [
+          105
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights.",
+          "The source shows a manually operated sign with a handle; renderer_svg isolates the complete octagonal face and omits the handle. Reference PNG retains the handle stub. Panel height is not explicitly dimensioned."
+        ]
+      },
+      "dimensions_mm": {
+        "panel_width": {
+          "value": 600,
+          "endpoints": "left outer octagonal panel edge to right outer octagonal panel edge",
+          "evidence_bbox": [
+            904,
+            46,
+            1078,
+            67
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "stop_for_children",
+        "text": "Stop for children to cross the road.",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 11,
+        "printed_page": "10"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "cc5b167a4e7d3d263d206c6e55b5bddc9ae628ff30edbaa65d20dfe7403b6d62",
+        "renderer_svg": "994cc2eecb1d53899ddb82aa965ec8bd753aabcfe5bf5e00000bf60b5de456f2"
+      }
+    },
+    {
+      "id": "sg.mandatory.ahead-only",
+      "name": "Ahead only",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/ahead-only.reference.png",
+        "renderer_svg": "assets/sg/mandatory/ahead-only.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          91,
+          408,
+          355,
+          623
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          140,
+          448,
+          313,
+          621
+        ],
+        "source_paint_path_indices_zero_based": [
+          16,
+          364,
+          365,
+          366,
+          367,
+          378,
+          408,
+          752,
+          753,
+          754,
+          755
+        ],
+        "backing_path_indices_zero_based": [
+          364,
+          365,
+          366,
+          378,
+          752,
+          753,
+          754,
+          755
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            138,
+            407,
+            315,
+            426
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            339,
+            448,
+            355,
+            622
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "proceed_ahead_only",
+        "text": "Ahead only",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "4de4cb9aad9974c5518e0437ce930dfc00f37bd818067bf89aa470e8d4b11c4b",
+        "renderer_svg": "025eaa2c587beb5bf07d914d0b778c8605f922c765b3a567d53e2e9292f99dbb"
+      }
+    },
+    {
+      "id": "sg.mandatory.turn-left",
+      "name": "Turn left",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/turn-left.reference.png",
+        "renderer_svg": "assets/sg/mandatory/turn-left.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          458,
+          402,
+          718,
+          623
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          508,
+          448,
+          681,
+          621
+        ],
+        "source_paint_path_indices_zero_based": [
+          17,
+          280,
+          281,
+          283,
+          284,
+          355,
+          409,
+          748,
+          749,
+          750,
+          751
+        ],
+        "backing_path_indices_zero_based": [
+          280,
+          281,
+          283,
+          355,
+          748,
+          749,
+          750,
+          751
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            507,
+            401,
+            682,
+            420
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            701,
+            448,
+            717,
+            621
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "turn_left_only",
+        "text": "Turn left only",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "860cb53b786d45333f55aca1d42e225e466ddbbe52172c5d9056827c9d4b84d3",
+        "renderer_svg": "a6f5752d5a64336457a8a14e80f26b351f0087d3cd117b93a6347103d03bcd6e"
+      }
+    },
+    {
+      "id": "sg.mandatory.turn-right",
+      "name": "Turn right",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/turn-right.reference.png",
+        "renderer_svg": "assets/sg/mandatory/turn-right.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 2,
+        "printed_page": "15-1",
+        "drawing": "LTA/SDRE14/15/TFM1",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          866,
+          407,
+          1119,
+          623
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          905,
+          448,
+          1078,
+          621
+        ],
+        "source_paint_path_indices_zero_based": [
+          18,
+          342,
+          343,
+          344,
+          345,
+          346,
+          410,
+          744,
+          745,
+          746,
+          747
+        ],
+        "backing_path_indices_zero_based": [
+          342,
+          343,
+          344,
+          345,
+          744,
+          745,
+          746,
+          747
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            904,
+            407,
+            1079,
+            425
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            870,
+            448,
+            886,
+            621
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 2,
+          "drawing": "LTA/SDRE14/15/TFM1",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "turn_right_only",
+        "text": "Turn right only",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "00934bd9a279aab75e242ff01a0d34d2d1fde1df546dbac87d1362e1b71812f6",
+        "renderer_svg": "f1cb85ff7ceb52bde51df7cdbd1fc77ab085a64db7cee14feee53acccc78153b"
+      }
+    },
+    {
+      "id": "sg.mandatory.turn-left-ahead",
+      "name": "Turn left ahead",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/turn-left-ahead.reference.png",
+        "renderer_svg": "assets/sg/mandatory/turn-left-ahead.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          82,
+          68,
+          335,
+          298
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          126,
+          122,
+          299,
+          295
+        ],
+        "source_paint_path_indices_zero_based": [
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          425,
+          426,
+          427,
+          428,
+          1641
+        ],
+        "backing_path_indices_zero_based": [
+          26,
+          27,
+          28,
+          29,
+          425,
+          426,
+          427,
+          428
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            125,
+            67,
+            299,
+            88
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            320,
+            121,
+            335,
+            296
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "turn_left_at_junction_ahead",
+        "text": "Turn left ahead",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "8141df48b9b70f4104bf94d91cfadf94d1df65811bc1f36bd72742af125e9e4d",
+        "renderer_svg": "0b1a7133041d4b6c789f92a31225146a8343274363dae6ad5b3be204d6f05fc7"
+      }
+    },
+    {
+      "id": "sg.mandatory.pass-either-side-600",
+      "name": "Pass either side (600 × 600 mm)",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/pass-either-side-600.reference.png",
+        "renderer_svg": "assets/sg/mandatory/pass-either-side-600.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          384,
+          67,
+          686,
+          329
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          457,
+          122,
+          630,
+          295
+        ],
+        "source_paint_path_indices_zero_based": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          98,
+          99,
+          100,
+          429,
+          430,
+          431,
+          432,
+          1642
+        ],
+        "backing_path_indices_zero_based": [
+          84,
+          85,
+          86,
+          87,
+          429,
+          430,
+          431,
+          432
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            457,
+            66,
+            630,
+            87
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            668,
+            121,
+            685,
+            296
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "pass_on_either_side",
+        "text": "Split traffic (Vehicles may pass on either side)",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "0f0b9fc39fd9ab5c772fb084bf1dacff7b6a8b9027cf0ad9a401f685b02addb9",
+        "renderer_svg": "f2ecac9d2296add511931b150105e07dcb7bbf36cbb3a4af18ae965b2e748709"
+      }
+    },
+    {
+      "id": "sg.mandatory.pass-either-side-900",
+      "name": "Pass either side (900 × 900 mm)",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/pass-either-side-900.reference.png",
+        "renderer_svg": "assets/sg/mandatory/pass-either-side-900.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          739,
+          49,
+          1137,
+          393
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          811,
+          90,
+          1069,
+          349
+        ],
+        "source_paint_path_indices_zero_based": [
+          106,
+          107,
+          108,
+          109,
+          110,
+          114,
+          115,
+          125,
+          445,
+          446,
+          447,
+          448,
+          1643
+        ],
+        "backing_path_indices_zero_based": [
+          106,
+          107,
+          108,
+          109,
+          445,
+          446,
+          447,
+          448
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 900,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            810,
+            49,
+            1070,
+            68
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 900,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            1121,
+            90,
+            1137,
+            350
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "pass_on_either_side",
+        "text": "Split traffic (Vehicles may pass on either side)",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "66c8222407d200f3dfb4bcfa1a97b9d31141edd308155bffdf2999ae434cda13",
+        "renderer_svg": "1152cf7082b3928eebfb36cdd23d05725085bf1b2eda5ecddd56f9cf9aca8184"
+      }
+    },
+    {
+      "id": "sg.mandatory.turn-right-ahead",
+      "name": "Turn right ahead",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/turn-right-ahead.reference.png",
+        "renderer_svg": "assets/sg/mandatory/turn-right-ahead.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          82,
+          422,
+          341,
+          637
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          126,
+          461,
+          299,
+          634
+        ],
+        "source_paint_path_indices_zero_based": [
+          54,
+          55,
+          56,
+          57,
+          58,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          76,
+          433,
+          434,
+          435,
+          436,
+          1644
+        ],
+        "backing_path_indices_zero_based": [
+          54,
+          55,
+          56,
+          57,
+          433,
+          434,
+          435,
+          436
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights."
+        ]
+      },
+      "dimensions_mm": {
+        "backing_width": {
+          "value": 600,
+          "endpoints": "left outer backing edge to right outer backing edge",
+          "evidence_bbox": [
+            125,
+            422,
+            299,
+            443
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        },
+        "backing_height": {
+          "value": 600,
+          "endpoints": "top outer backing edge to bottom outer backing edge",
+          "evidence_bbox": [
+            82,
+            461,
+            98,
+            635
+          ],
+          "source_id": "lta-sdre-i-tfm",
+          "pdf_page": 3,
+          "drawing": "LTA/SDRE14/15/TFM2",
+          "units": "mm"
+        }
+      },
+      "traffic_rule": {
+        "action": "turn_right_at_junction_ahead",
+        "text": "Turn right ahead",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "f09b4e544770ea79ebe1eadd0d2a5b4c4c42e7ff98b02d8da10e5e8b5367b2d5",
+        "renderer_svg": "682d2ef64575f8ac1c79b9af7cef001ea263acc528a5f42f0f6b912aacc1b994"
+      }
+    },
+    {
+      "id": "sg.mandatory.keep-left",
+      "name": "Keep left",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/keep-left.reference.png",
+        "renderer_svg": "assets/sg/mandatory/keep-left.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          409,
+          432,
+          670,
+          660
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          457,
+          461,
+          630,
+          635
+        ],
+        "source_paint_path_indices_zero_based": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          121,
+          122,
+          123,
+          124,
+          437,
+          438,
+          439,
+          440,
+          1645
+        ],
+        "backing_path_indices_zero_based": [
+          14,
+          15,
+          22,
+          23,
+          437,
+          438,
+          439,
+          440
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights.",
+          "No overall backing size label appears beside this illustration; size is left unknown rather than inferred from nearby signs or the drawing scale."
+        ]
+      },
+      "dimensions_mm": {},
+      "traffic_rule": {
+        "action": "pass_left_of_obstruction",
+        "text": "Keep left",
+        "source_id": "spf-btt-2026",
+        "pdf_page": 10,
+        "printed_page": "9"
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "24c685be33838145e3134a23677443d8ab0e6186c719977cea2b0d677a473ce3",
+        "renderer_svg": "18eb96c0e7f13075cde3c43a450327d3f0e880cfebad5c2e0e84999d5c37f01f"
+      }
+    },
+    {
+      "id": "sg.mandatory.keep-right",
+      "name": "Keep right",
+      "kind": "sign_face",
+      "representation": "cleaned_vector",
+      "files": {
+        "reference_svg": null,
+        "reference_png": "assets/sg/mandatory/keep-right.reference.png",
+        "renderer_svg": "assets/sg/mandatory/keep-right.svg",
+        "geometry_json": null
+      },
+      "source": {
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "drawing": "LTA/SDRE14/15/TFM2",
+        "drawing_revision": "-",
+        "bbox_pdf_points": [
+          820,
+          432,
+          1081,
+          660
+        ]
+      },
+      "extraction": {
+        "method": "Select original paint paths including outlined lettering and backing. Add white interior from the joined original backing perimeter; omit engineering annotations.",
+        "tool": "PyMuPDF",
+        "tool_version": "1.26.4",
+        "recipe": "tools/asset_extraction/mandatory/recipe.json",
+        "recipe_sha256": "ee09a66fafa00fa9155f690ebb611a15ea408b3294fc969766ab3db9e01e625a",
+        "face_bbox_pdf_points": [
+          858,
+          461,
+          1031,
+          635
+        ],
+        "source_paint_path_indices_zero_based": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          441,
+          442,
+          443,
+          444,
+          1646
+        ],
+        "backing_path_indices_zero_based": [
+          0,
+          1,
+          2,
+          13,
+          441,
+          442,
+          443,
+          444
+        ],
+        "reference_representation": "source_reference",
+        "reference_dpi": 216
+      },
+      "review": {
+        "status": "cleaned_unverified",
+        "warnings": [
+          "Reference PNG retains dimension leaders and source annotations; it is not a production texture.",
+          "White paper inside the original backing perimeter is made opaque; transparent outside. This interpretation requires content review.",
+          "Source RGB colours and lettering paths are preserved; they are not certified physical colour/material specifications.",
+          "MuPDF PDF-to-SVG numeric colour conversion differs from PDF raster output by up to one RGB byte value in flat regions; no manual colour changes are applied.",
+          "Artwork extraction does not verify legal applicability or grant reproduction rights.",
+          "No overall backing size label appears beside this illustration; size is left unknown rather than inferred from nearby signs or the drawing scale.",
+          "The handbook mandatory-sign overview does not illustrate Keep Right; its rule transcription cites the TFM2 caption."
+        ]
+      },
+      "dimensions_mm": {},
+      "traffic_rule": {
+        "action": "pass_right_of_obstruction",
+        "text": "This sign indicates that vehicles shall proceed on the right of some permanent or temporary obstruction. It may be used as part of traffic bollards on islands or refuges and may be qualified with a supplementary plate.",
+        "source_id": "lta-sdre-i-tfm",
+        "pdf_page": 3,
+        "printed_page": "15-2",
+        "bbox_pdf_points": [
+          846,
+          661,
+          1069,
+          696
+        ]
+      },
+      "license_status": "unreviewed",
+      "release_ready": false,
+      "file_sha256": {
+        "reference_png": "c39fcc0ab089f934a3c9489d506503b336b2b6fdc518b8917be9703b6ced1319",
+        "renderer_svg": "30ffa959bb066d9cf5e3a6bd66a92f355622972333e6e2739270f51e7ddc33ac"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "source_id": "lta-sdre-i-tfm",
+      "pdf_page": 1,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Chapter contents/index; no sign-face artwork."
+    },
+    {
+      "source_id": "lta-sdre-i-tfm",
+      "pdf_page": 2,
+      "drawing": "LTA/SDRE14/15/TFM1",
+      "asset_ids": [
+        "sg.mandatory.stop",
+        "sg.mandatory.give-way",
+        "sg.mandatory.stop-children",
+        "sg.mandatory.ahead-only",
+        "sg.mandatory.turn-left",
+        "sg.mandatory.turn-right"
+      ],
+      "status": "extracted",
+      "reason": "All six illustrated sign faces extracted; dimensions/captions retained as reference evidence. No face or size variant deferred. Title block and structural handle are not sign faces."
+    },
+    {
+      "source_id": "lta-sdre-i-tfm",
+      "pdf_page": 3,
+      "drawing": "LTA/SDRE14/15/TFM2",
+      "asset_ids": [
+        "sg.mandatory.turn-left-ahead",
+        "sg.mandatory.pass-either-side-600",
+        "sg.mandatory.pass-either-side-900",
+        "sg.mandatory.turn-right-ahead",
+        "sg.mandatory.keep-left",
+        "sg.mandatory.keep-right"
+      ],
+      "status": "extracted",
+      "reason": "All six illustrated sign faces extracted; dimensions/captions retained as reference evidence. No face or size variant deferred. Title block and structural handle are not sign faces."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 1,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection cover: April 2014 edition, Revision I March 2026."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 2,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "General notes; note 9 establishes millimetres unless stated otherwise."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 3,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection table of contents; no sign faces for extraction."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 4,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection table of contents; no sign faces for extraction."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 5,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection table of contents; no sign faces for extraction."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 6,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection table of contents; no sign faces for extraction."
+    },
+    {
+      "source_id": "lta-sdre-i-contents",
+      "pdf_page": 7,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Collection table of contents; no sign faces for extraction."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 1,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 2,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 3,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 4,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 5,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 6,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 7,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 8,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 9,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 10,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Mandatory-sign learner meanings transcribed as cited rules. Artwork extraction is scoped to the two TFM sheets, not handbook illustrations."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 11,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "reference_only",
+      "reason": "Mandatory-sign learner meanings transcribed as cited rules. Artwork extraction is scoped to the two TFM sheets, not handbook illustrations."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 12,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 13,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 14,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 15,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 16,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 17,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 18,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 19,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 20,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 21,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 22,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 23,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 24,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 25,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 26,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 27,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 28,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 29,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 30,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 31,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 32,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 33,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 34,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 35,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 36,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 37,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 38,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 39,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 40,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 41,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 42,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 43,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 44,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 45,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 46,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 47,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 48,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 49,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 50,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 51,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 52,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 53,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 54,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 55,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 56,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 57,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 58,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 59,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 60,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 61,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 62,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 63,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 64,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 65,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 66,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 67,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 68,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 69,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 70,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 71,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 72,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 73,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 74,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 75,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 76,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 77,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 78,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 79,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 80,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 81,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 82,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 83,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 84,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 85,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 86,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 87,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 88,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 89,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    },
+    {
+      "source_id": "spf-btt-2026",
+      "pdf_page": 90,
+      "drawing": null,
+      "asset_ids": [],
+      "status": "not_applicable",
+      "reason": "Supporting handbook page outside the TFM face-extraction scope; no artwork extraction attempted. Cover/publication matter or other learner material."
+    }
+  ]
+}
