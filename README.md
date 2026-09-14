@@ -7,6 +7,10 @@ space beside the traffic scene; [the scenario contract](docs/SCENARIO-SYSTEM.md)
 explains how reviewed assets become reusable scenes. There is no runtime app
 or web-framework build in this repository.
 
+See the [execution plan and agent dependency diagrams](docs/EXECUTION-PLAN.md)
+for the first working slice, parallel module ownership, content expansion and
+integration gates.
+
 ## Singapore asset library
 
 **339 semantic assets across six families; 0 approved for release.**

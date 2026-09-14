@@ -324,6 +324,9 @@ dependent fixtures through reverse dependency lookup.
 
 ## 8. Independent implementation tracks
 
+The [execution plan](EXECUTION-PLAN.md) expands these tracks into agent-sized
+tasks, dependency diagrams, ownership boundaries and acceptance checkpoints.
+
 | Track | Deliverable | Dependency / acceptance |
 |---|---|---|
 | A. Typography and UI tokens | Font files/notices, contrast-tested tokens, scalable question/help layouts | Independent of world geometry; theme change leaves controls unchanged |
@@ -333,11 +336,13 @@ dependent fixtures through reverse dependency lookup.
 | E. Question/explainer binding | Stems/options, actual/hypothetical bindings, help and selection persistence | Uses C; can develop against fixed fixture JSON |
 | F. Review and authoring | Contact-sheet export, mutation harness, source/seed inspector, constrained editor | Contracts from B–E; release export blocked by unresolved errors |
 
-Start with **Give Way + STOP + a signalised crossing** as the vertical slice,
-so both signs and lights are exercised early. Then cover the remaining
-fixtures before expanding the question bank. Build a template selector with
-parameter fields and an error panel first; a freehand road editor is not
-needed to validate this architecture.
+Start with **Give Way + STOP + a signalised junction** as the vertical slice,
+so both signs and lights are exercised early. Include the crossing variant
+once its paint, heads and placement evidence are resolved; the junction alone
+does not validate crossing behaviour. Then cover the remaining fixtures before
+expanding the question bank. Build a template selector with parameter fields
+and an error panel first; a freehand road editor is not needed to validate
+this architecture.
 
 The author sees allowed assets, applicable sources, generated views and
 actionable validation errors. They edit facts and anchors, not per-camera
