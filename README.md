@@ -13,11 +13,21 @@ integration gates.
 
 ## Development checkpoint
 
-The React/Vite app currently runs a **development fixture inspector**. The
-registry, deterministic generator, physical renderer, cameras, validators,
-four-option lesson components, glossary and local learning-state modules are
-collected here, but the lesson flow is not yet wired together. All road-control
-assets remain quarantined and unapproved for learner release.
+The React/Vite app now runs a **three-scenario development lesson** as its
+default route (`#/`): a Give Way T-junction, a STOP-controlled development
+access and a signalised crossroads with a circular green and a red right-arrow.
+Each question shows a generated world drawn by the R1 physical renderer and
+framed by R2 evidence-aware cameras, four answers, Check Answer → Continue,
+glossary/confusable help with preserved focus and scroll, explicit comparison
+rendering in a separate world, and device-local attempt/progress/seed state
+restored across reloads. The old F0 fixture inspector remains at `#/inspector`.
+
+The browser loads only the exact starter registry closure
+(`content/registry/starter-closure.json`: 14 assets, 18 sources) pinned by the
+three scenario packages; a registry or authored canonical-hash mismatch refuses
+to load rather than rendering stale geometry. Everything shown is development
+content: all road-control assets remain quarantined (`release_ready=false`) and
+unapproved for learner release, and the lesson says so on screen.
 
 Use Node `24.20.0` and npm `11.19.0`:
 
@@ -28,12 +38,28 @@ npm ci
 npm run dev
 ```
 
-See the [current checkpoint and remaining work](docs/EXECUTION-PLAN.md#current-implementation-checkpoint)
-for verification results and integration findings. Lint, typecheck and build
-pass; the current test suite has **323 passing tests and one failing F0
-review-export skeleton assertion**. UI testing and independent source/scene
-review remain pending. The [F0 contract handoff](docs/implementation/CONTRACTS.md)
-documents the frozen interfaces and commands.
+Checks and review exports (all run against the generated starter worlds):
+
+```sh
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+npm run review:export                                   # summary of every starter world
+npm run review:export -- export --out <dir>             # canonical JSON, provenance, diagnostics, contact sheets
+npm run review:export -- impact --asset <asset-id>      # asset -> world -> question change impact
+npm run review:export -- release                        # exits 1 while any refusal stands
+npm run review:export -- closure --write                # regenerate the starter closure after registry changes
+npm run review:export -- pins --write                   # regenerate scenario pins; review the diff
+```
+
+`release` is expected to refuse: every starter world uses quarantined assets and
+the C1 gate still rejects development-status terms, unresolved rules and
+unreviewed templates. See the [integration checkpoint](docs/EXECUTION-PLAN.md#current-implementation-checkpoint)
+for the check results, remaining gates and review artifacts. Browser/UI testing
+(Q2) and independent source/scene review (Q3) have not run on the integrated
+commit. The [F0 contract handoff](docs/implementation/CONTRACTS.md) documents
+the frozen interfaces.
 
 ## Singapore asset library
 

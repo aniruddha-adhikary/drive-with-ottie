@@ -1,22 +1,24 @@
 # Ottie execution plan and agent dependencies
 
 Original planning baseline: `d03f0691b2b1f8ac9dd1d89bfdd3977067b1661c`.
-Implementation checkpoint: 14 September 2026, based on `main` at
-`181cdf9f8173e44a5c7e7366ab8c667ca94f2972` after
-[F0 was merged in PR #3](https://github.com/aniruddha-adhikary/drive-with-ottie/pull/3).
-The current branch consolidates delivered modules and records the remaining
-work. It is not the completed first working slice or a learner release.
+Module consolidation checkpoint: 14 September 2026, `main` at
+`fafe29df790e68a45e56f0cdb3d843e60157aa41` after
+[PRs #2–#4](https://github.com/aniruddha-adhikary/drive-with-ottie/pull/4).
+Integration checkpoint: 14 September 2026,
+[I1 merged in PR #5](https://github.com/aniruddha-adhikary/drive-with-ottie/pull/5)
+(`15fc383f58618f26b61f4cada6d3770566909ee8`), which integrates T1 and H1 and
+wires the first runnable lesson. It is a development prototype, not a verified
+first working slice (Q1/Q2/Q3 have not run on it) and not a learner release.
 
 ## Current implementation checkpoint
 
-**12 of 18 software assignments have delivered code.** F0 is already on `main`;
-this checkpoint adds the other eleven assignments. The workflow stopped before
-the final six assignments after a usage-limit interruption. The current request
-is to preserve the completed work in a PR, so unfinished agents are not being
-restarted as part of this checkpoint.
+**16 of 18 software assignments have delivered code.** F0 was merged in PR #3,
+A1–A3, C1, C2, R1, R2, U1–U3 and V1 in PR #4, and T1, H1, Q0 and I1 in PR #5.
+Q1, Q2, Q3 and the M1 acceptance gate remain.
 
-“Delivered” below means the bounded module exists. It does not mean its
-cross-module acceptance criteria or independent review have passed.
+“Delivered” below means the bounded module exists and, for I1, that the
+cross-module checks listed under *Integration checks* pass. It does not mean
+independent review has passed or that any content is approved.
 
 | ID | Mode | Delivered output | Original worker commit |
 |---|---|---|---|
@@ -32,6 +34,10 @@ cross-module acceptance criteria or independent review have passed.
 | U2 | Normal | Attempt/run transitions, queue, progress and device-local persistence | `f624587` |
 | U3 | Normal | Glossary/explainer, confusables, focus/scroll restoration and comparison requests | `915dd81` |
 | V1 | Ultra | Ten semantic validator families and mutation cases | `40d460f` |
+| T1 | Normal | Three starter scenario packages and three question packages (six four-option questions, five pinned base worlds, comparison deltas, source locators) | `d068abe` |
+| Q0 | Lite | Read-only wording review; direct replacements applied by I1 only where traffic meaning is unchanged | — |
+| H1 | Normal | Review pack export, contact sheets, asset change impact and release assessment | `e93103e` |
+| I1 | Ultra | Runtime content boundary, real R1/R2 lesson as default route, U2/U3 wiring, comparison stages, integration tests, review-export migration to generated worlds | PR #5 |
 
 The worker changes were applied in dependency order onto the squash-merged F0
 baseline. Their source branches remain available. The frozen public contracts
@@ -39,17 +45,51 @@ were not changed during consolidation.
 
 ### What is runnable now
 
-`npm run dev` starts the existing development fixture inspector. Its canvas
-still uses `buildSchematicScene`; the R1 renderer and R2 evidence-aware cameras
-are module implementations awaiting I1 wiring. U1 and U3 components have DOM
-tests but are not mounted by the app route registry. U1 still uses a stub scene
-and ephemeral React state; U2 persistence is not connected to it.
+`npm run dev` opens the lesson at `#/` (`apps/web/src/lesson/LessonFeature.tsx`);
+the F0 fixture inspector is kept at `#/inspector` as a secondary debug route.
 
-Starter candidates and meanings exist as source-backed development inputs.
-T1 has not authored the final scenario/question packages. Comparison requests
-exist, but comparison-world derivation and rendering remain unfinished.
+- **Content boundary** (`packages/starter-content`): the committed starter
+  closure (`content/registry/starter-closure.json`, 14 assets / 18 sources
+  projected from the C1 registry `911955e3…`) is the only registry data the
+  browser loads. `loadStarterContentSet()` builds the resolver and C2 generator
+  from it, loads the three T1 scenario and question packages, regenerates every
+  pinned world, verifies each authored canonical hash, merges A3 official
+  sources with the C1 source records the assets cite (rejecting hash conflicts),
+  runs V1 over every world and question, and derives comparison worlds. Any
+  registry-hash, canonical-hash or closure-hash mismatch throws
+  `StarterContentError` instead of degrading. `npm run review:export -- closure
+  --write` and `-- pins --write` are the only ways to regenerate the closure and
+  pins; their diffs are reviewed, never hand-edited.
+- **Lesson** (`apps/web/src/lesson`): `createLessonRuntime()` owns a main
+  `WorldStage` and a separate comparison stage, each an R1 `WorldRenderer` plus
+  an R2 `EvidenceCameraPort` behind the real Three.js `SceneView` adapter
+  (`world-scene-view.ts`). The compact scene chooses the shortest scene height
+  and preset that shows every requirement the view may carry
+  (`chooseCompactView`); evidence that only another view may carry (a sign face
+  in the top view) is named on screen, and R2 linked close-ups are labelled with
+  their place in the same road scene. Camera controls live only in the enlarged
+  viewer; physical controls stay approach-facing. Check Answer/Continue,
+  progress labels, U3 glossary/confusable help with focus and scroll
+  restoration, and U2 attempt/progress/seed persistence (browser `localStorage`)
+  are wired. Comparison and replay render in the comparison stage from a
+  separately generated or applied immutable world and never touch the current
+  question, attempt, answer or seed. Content exhaustion offers review and other
+  stretches instead of ending the run.
+- **Comparisons**: Give Way↔STOP replacement (applied), lorry→bus and
+  arrow-dark / circular-red signal variants (generated). The green circular +
+  green right-arrow comparison is **unavailable** with its V1 refusal shown:
+  the generator does not author a protected right turn against the opposing
+  movements, and the phase is never rendered as valid.
+- **Review/export** (`packages/review-export`, `tools/scenario-review`): the
+  CLI runs against the generated starter worlds through the same boundary.
+  One `assessReleaseExport` produces the CLI and per-world `release.json`,
+  layering H1 world-validation, canonical-hash and bundled question-validation
+  refusals over every C1 rejection. Packs serialize root
+  `renderer-limitations.json` and `registry-diagnostics.json`. Contact sheets
+  paint flat surfaces in layers and mark a tile unreliable rather than claiming
+  evidence visible when the static SVG cannot show it.
 
-### Checks on the consolidated modules
+### Integration checks (I1, PR #5 head)
 
 Run with Node `24.20.0` and npm `11.19.0`:
 
@@ -57,63 +97,77 @@ Run with Node `24.20.0` and npm `11.19.0`:
 |---|---|
 | `npm run lint` | Passed |
 | `npm run typecheck` | Passed |
-| `npm run test` | **323 passed, 1 failed** across 40 files |
-| `npm run build` | Passed; Vite reports a large application chunk |
-| `npm run review:export` | Runs; three F0 fixtures report zero semantic errors with explicit quarantine/source warnings |
-| `node content/assets/starter-assemblies/check.js` | Passed |
-| `python3 content/assets/starter-signs-markings/generate.py check` | Candidate output reproduces byte-for-byte |
-| `python3 -m unittest discover -s content/assets/starter-signs-markings -p 'test_*.py' -v` | 10 passed |
+| `npm run test` | **397 passed** across 47 files |
+| `npm run build` | Passed; Three.js chunk 980 kB, lesson 256 kB, shell 194 kB, inspector 10 kB; artwork is one lazy chunk per file under `assets/sg/` |
+| `npm run review:export` | 11 generated starter worlds, `ok=true`, all ten required validator families ran for each |
+| `npm run review:export -- export --out <dir>` | 11 worlds, `packHash 3d5bd75a…`, root renderer limitations and registry diagnostics written |
+| `npm run review:export -- impact --asset sg.mandatory.give-way` | Direct record found; transitive give-way worlds, questions and bundle listed |
+| `npm run review:export -- release` | **Refused, exit 1**: `uses_quarantined_assets` for all 11 worlds plus 51 C1 rejections (development terms, unresolved rules, unreviewed template) |
 
-The failing test is `tools/scenario-review/src/cli.test.ts:11`: the F0 skeleton
-expects at least one semantic validator not to have run. V1 now reports all ten
-families. The CLI also prints an empty “validators NOT run” line. H1 must
-reconcile the review-output contract and its obsolete skeleton expectation;
-this checkpoint does not weaken validation to satisfy that assertion.
-Consequently `npm run check` is not green.
+Integration tests added: generation → registry → scene → camera → question
+(`apps/web/src/lesson/LessonFeature.test.tsx`, `world-scene-view.test.ts`),
+adaptive compact fitting (`presets.test.ts`), state restoration and duplicate
+grading, help/view invariance, comparison immutability, content exhaustion
+offering review, boundary hash refusals and the unavailable green/green phase
+(`packages/starter-content/src/load.test.ts`), release refusal and impact over
+the starter closure (`tools/scenario-review/src/cli.test.ts`).
 
-These are local module checks, not Q1's final integration verification. No
-browser/UI testing or Q3 independent source/scene review has run on this
-checkpoint. Original PDF inspection reported by asset workers is retained as
-provenance; this consolidation did not repeat their extraction review.
+Review artifacts for Q3 (generated from the PR #5 head, not committed):
+[review pack](https://app.devin.ai/attachments/bee34791-e7de-4f1e-a400-d296e5b473e7/ottie-review-pack-i1.zip),
+contact sheets for
+[Give Way](https://app.devin.ai/attachments/de5631e8-d296-4617-a6a0-2a08e32d5956/sheet-starter.give-way.right-turn-lorry-from-left.png),
+[STOP](https://app.devin.ai/attachments/cb3c6f09-9b22-472c-8782-8f1db0c0a4fa/sheet-starter.stop.right-turn-car-from-right.png) and
+[signal](https://app.devin.ai/attachments/df147a2e-bdea-43b4-8427-a842227aa0e6/sheet-starter.signal.right-turn-green-with-red-arrow.png),
+[impact report](https://app.devin.ai/attachments/09004949-9ac5-4d4a-ad7c-74f575e5672c/ottie-impact-give-way.json) and
+[release refusal](https://app.devin.ai/attachments/cc87c2e5-3eaf-4130-af4a-8d382e7e6127/ottie-release-refusal.json).
+The PNGs were rasterised from the exported SVGs with headless Chrome outside
+the repository; the pack itself is SVG-only.
 
-### Open findings and integration handoffs
+These are shell checks by the integrator, not Q1's independent verification.
+No browser/UI testing (Q2) or independent source/scene review (Q3) has run on
+the integrated commit.
 
-- **C2/T1:** some Give Way left-turn variations with major-road traffic on the
-  non-conflicting side claim a priority relationship that is not present.
-  V1 correctly reports `question_evidence.priority_evidence_without_conflict`.
-  T1 must exclude those questions until the relationship/evidence is corrected;
-  the validator must continue rejecting the invalid claim.
-- **R2/I1:** the signal fixture's phone-sized plan view cannot make the
-  oncoming actor readable at the current threshold. The diagnostic is
-  `camera_evidence.too_small`. Resolve this through an appropriate initial
-  view or linked evidence presentation while preserving physical geometry.
-- **A2/T1:** signal support dimensions remain schematic; horizontal signal
-  artwork and Green B placement are unresolved. F0/C2 model north–south signal
-  heads only. Do not describe the fixture as a fully sourced junction or
-  include the crossing variant before its separate evidence is resolved.
-- **H1:** review output currently summarizes F0 fixtures. Camera contact
-  sheets, generated-world exports and end-to-end asset-change impact reports
-  are not implemented.
-- **I1:** connect real geometry/cameras, content, glossary and U2 persistence.
-  Pass C1's source records into the validation context alongside A3's source
-  register. Keep source/reuse approval separate from development loading.
-- **Q1/Q3:** verify the same integrated commit after I1. Q2 remains a separate
-  browser-testing handoff requiring user approval.
+### Open findings and remaining gates
+
+- **Q1/Q2/Q3 → M1:** run Q1 and Q3 on the merged I1 commit; Q2 needs the
+  user's separate approval for browser testing. M1 stays pending until all
+  three pass on the same commit.
+- **Content status:** every asset is quarantined and every term, rule and
+  template is development-status, so `release` refuses by design. Source,
+  content and reuse approval are separate human decisions; nothing in I1
+  grants them.
+- **Signals:** only the north–south heads are modelled; housing, column
+  spacing, pole height and mount are unknown in the source and drawn
+  schematically; horizontal signal artwork and Green B placement stay
+  unresolved. The green/green comparison stays unavailable until a protected
+  phase is authored against all opposing movements.
+- **Priority claims:** V1 keeps rejecting Give Way variants that claim a
+  priority relationship with non-conflicting traffic; T1 excludes them.
+- **Phone plan view:** solved by adaptive compact height/preset selection and
+  labelled linked details; no actor was moved and no threshold weakened. A sign
+  face is only judged in the views allowed to carry it (approach/detail), so
+  the top view names it as “also part of this question” rather than claiming
+  it visible.
+- **Static review renders:** the SVG contact sheets keep the documented
+  painter’s-algorithm, flat-shading, no-near-plane-clipping and no-text
+  limitations; unreliable tiles are marked as such in the pack.
+- **Bundle:** Three.js is the dominant chunk and Vite emits one small lazy
+  chunk per artwork file under `assets/sg/`; only the closure's 14 assets are
+  ever requested by the lesson. Trimming the Three import surface and
+  collapsing artwork chunks into a manifest are optional follow-ups.
 
 ### Next execution order
 
-1. Review this intermediate PR and retain its commit as the next baseline.
-2. Run **T1 (Normal)** and **H1 (Normal)** concurrently using the delivered
-   dependency modules.
-3. After T1, run **Q0 (Lite)** for a bounded wording review.
-4. Run **I1 (Ultra)** after T1, H1, Q0, U2 and U3 are ready. Reconcile the
-   findings above rather than treating collected branches as an integrated app.
-5. Run **Q1 (Normal)** and **Q3 (Ultra)** on the exact I1 commit; request Q2
-   approval for browser testing. M1 remains pending until all required gates pass.
+1. Run **Q1 (Normal)** and **Q3 (Ultra)** on the merged I1 commit; request Q2
+   approval for browser testing. M1 remains pending until all required gates
+   pass.
+2. Route any Q1/Q3 findings back to their module owners as ordinary commits on
+   new branches from `main`; never push to a merged PR branch.
+3. Only after M1, schedule the bounded expansion tracks below.
 
-Do not resume the old workflow unchanged: its recorded I1 instructions predate
-this consolidation. A future run must use the accepted checkpoint baseline and
-avoid reapplying worker commits already present.
+Do not resume the old workflow unchanged: its recorded T1/H1/I1 instructions
+predate PR #5. A future run must start from current `main` and avoid
+reapplying worker commits already present.
 
 ## Recommended execution model
 
