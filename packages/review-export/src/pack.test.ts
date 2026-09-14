@@ -46,6 +46,9 @@ describe('review pack export', () => {
       const fixture = DEVELOPMENT_WORLDS.find((candidate) => candidate.id === world.worldId);
       if (!fixture) throw new Error(`missing fixture ${world.worldId}`);
       expect(world.provenance.canonicalJson).toBe(canonicalWorldJson(fixture));
+      expect(world.diagnostics.sceneIssues).not.toEqual(expect.arrayContaining([expect.objectContaining({ code: 'artwork_unavailable' })]));
+      expect(world.diagnostics.sceneIssues).not.toEqual(expect.arrayContaining([expect.objectContaining({ code: 'artwork_missing' })]));
+      expect(world.provenance.files).toEqual(expect.arrayContaining([expect.objectContaining({ role: 'renderer_svg', matches: true })]));
       expect(world.views.length).toBeGreaterThanOrEqual(4);
       expect(world.views.map((view) => view.presetName)).toEqual(expect.arrayContaining(['plan', 'study_oblique', 'approach_ego', 'entity_detail']));
       for (const view of world.views) {
@@ -55,6 +58,7 @@ describe('review pack export', () => {
         expect(sheet.svg).toContain('xmlns="http://www.w3.org/2000/svg"');
         expect(sheet.svg).toContain('NOT RELEASE CONTENT');
         expect(sheet.svg).toContain('<path');
+        expect(sheet.svg).toContain('viewBox="-640 -400 1280 800"');
         for (const preset of ['plan', 'study_oblique', 'approach_ego', 'entity_detail']) expect(sheet.svg).toContain(preset);
       }
       expect(world.release.ok).toBe(false);
